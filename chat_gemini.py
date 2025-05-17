@@ -9,7 +9,7 @@ st.title("Vox")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
 # Configurações do funcionamento básico do Vox
-st.session_state.key_api = 'AIzaSyB3p67yshN1VsNaE5oZLXsd5M7mOCWILEA'
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 if 'historico' not in st.session_state:
     st.session_state.historico = []

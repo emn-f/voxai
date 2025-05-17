@@ -3,6 +3,8 @@ import random
 
 import streamlit as st
 import google.generativeai as genai
+import os
+
 
 from instrucoes import INSTRUCOES_VOX
 

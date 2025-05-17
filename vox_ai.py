@@ -20,12 +20,11 @@ genai.configure(api_key=st.session_state.key_api)
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
 api_online = api_key.startswith("AI")  # Gemini API keys geralmente começam com "AI"
 
-# Exibe status na barra lateral
-with st.sidebar:
-    if api_online:
-        st.success("🟢 Chave API do Gemini AI Online")
-    else:
-        st.error("🔴 Chave não localizada. Entre em contato com o administrador")
+# Status API
+if api_online:
+    st.success("🟢 Chave API do Gemini AI Online")
+else:
+    st.error("🔴 Chave não localizada. Entre em contato com o administrador")
 
 # Histórico do modelo (com instruções) e histórico de exibição (sem)
 if 'historico' not in st.session_state:
@@ -56,7 +55,12 @@ if 'key_api' in st.session_state:
         """
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
         with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(mensagem_boas_vindas)
+          st.markdown(mensagem_boas_vindas)
+    if api_online:
+        prompt = st.chat_input('Digite aqui...')
+    else:
+        st.chat_input('API OFFLINE: verifique a configuração da chave Gemini.', disabled=True)
+        prompt = None
 
     prompt = st.chat_input('Digite aqui...')
     if prompt:

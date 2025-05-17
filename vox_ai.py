@@ -11,34 +11,29 @@ from data.info import SOBRE
 from src.persona import preparar_prompt
 from src.utils import carregar_base_vox, buscar_por_tema
 
-# Utilizando base de dados local
 base_vox = carregar_base_vox("data/base.json") 
 
-# Interface da página
 st.set_page_config(
     page_title='Vox - Assistente de Apoio e Informação LGBTQIA+',
     page_icon='🗣️',
-    layout="wide",  # Melhora a responsividade em dispositivos móveis
-    initial_sidebar_state="collapsed"  # Sidebar começa fechada, útil para celular
+    layout="wide", 
+    initial_sidebar_state="collapsed"
 )
 st.title("Vox 🌈")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
 
-# Menu
 with open("static/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 with st.sidebar:
     st.markdown(SOBRE, unsafe_allow_html=True)
        
-# Configuração da API (secreta no deploy)
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
 st.session_state.key_api = api_key
 genai.configure(api_key=st.session_state.key_api)
 
 
-# Histórico do modelo (com instruções) e histórico de exibição (sem)
 if 'historico' not in st.session_state:
     st.session_state.historico = [{"role": "user", "parts": [INSTRUCOES_VOX]}]
 if 'historico_exibir' not in st.session_state:
@@ -47,7 +42,6 @@ if 'historico_exibir' not in st.session_state:
 modelo = genai.GenerativeModel('gemini-2.0-flash')
 chat = modelo.start_chat(history=st.session_state.historico)
 
-# Só exibe o histórico real, sem o prompt do sistema
 for msg in st.session_state.historico_exibir:
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
@@ -56,7 +50,6 @@ for msg in st.session_state.historico_exibir:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(msg["parts"][0])
 
-# Primeira mensagem do assistente
 if 'key_api' in st.session_state:
     if 'primeira_vez' not in st.session_state:
         st.session_state.primeira_vez = True
@@ -74,7 +67,6 @@ if 'key_api' in st.session_state:
 
     prompt = st.chat_input('Digite aqui...')
 
-    # Foco no campo de input do chat
     with open("static/focus_input.js") as f:
         js_code = f.read()
     st.components.v1.html(
@@ -90,11 +82,9 @@ if 'key_api' in st.session_state:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
-        # Detecta tema no prompt
         temas_chave = ["acolhimento", "prep", "hiv", "retificação", "documento", "psicológico", "direitos"]
         tema_detectado = next((t for t in temas_chave if t in prompt.lower()), None)
 
-        # Busca por informação complementar
         informacao_complementar = ""
         if tema_detectado:
             resultados = buscar_por_tema(tema_detectado, base_vox)

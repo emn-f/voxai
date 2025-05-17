@@ -55,13 +55,13 @@ O Vox foi criado por estudantes de diferentes áreas, com o objetivo de facilita
 
 ## 👥 Equipe
 
-- Emanuel Arlan Sousa Silva Ferreira — Engenharia de Software (Coordenador do Projeto)
-- Alicia Santos Silva Batista — Direito
-- Brenda Moreira Lobo Pires — Direito
-- Fernanda Carvalho do Souza — Biomedicina
-- Kauã Araujo Santos — Engenharia de Software
-- Lucca Rievers Pertigas — Engenharia de Software
-- Marcio Claudio Ventura Ferreira — Engenharia de Software
+- Emanuel Ferreira — Engenharia de Software (Coordenador do Projeto)
+- Alicia Batista — Direito
+- Brenda Pires — Direito
+- Fernanda Souza — Biomedicina
+- Kauã Araujo — Engenharia de Software
+- Lucca Pertigas — Engenharia de Software
+- Marcio Ventura — Engenharia de Software
 
 ## 📬 Contato
 

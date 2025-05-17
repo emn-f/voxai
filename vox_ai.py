@@ -56,13 +56,13 @@ if 'key_api' in st.session_state:
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
         with st.chat_message("assistant", avatar="🤖"):
           st.markdown(mensagem_boas_vindas)
+    prompt = st.chat_input('Digite aqui...')
     if api_online:
         prompt = st.chat_input('Digite aqui...')
     else:
         st.chat_input('API OFFLINE: verifique a configuração da chave Gemini.', disabled=True)
         prompt = None
 
-    prompt = st.chat_input('Digite aqui...')
     if prompt:
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})

@@ -15,7 +15,8 @@ st.title("Vox")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
 # Configuração da API (secreta no deploy)
-st.session_state.key_api = 'GEMINI_API_KEY'
+api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
+st.session_state.key_api = api_key
 genai.configure(api_key=st.session_state.key_api)
 
 

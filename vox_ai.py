@@ -6,7 +6,6 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
-
 from base_dados.instrucoes import INSTRUCOES_VOX
 from base_dados.saudacao import SAUDACAO
 

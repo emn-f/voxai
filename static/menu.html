@@ -1,0 +1,26 @@
+<html>
+<button id="vox-float-btn">☰</button>
+<div id="vox-float-menu">
+        <h4>Sobre o Vox 🌈</h4>
+        <p>O <b>Vox</b> é um assistente de apoio e informação <b>LGBTQIA+</b>.<br>
+        Aqui você encontra acolhimento, informações e recursos confiáveis.</p>
+        <h5>Equipe do Projeto</h5>
+        <ul>
+            <li><b>👑 Emanuel Arlan Sousa Silva Ferreira</b> — Engenharia de Software (Líder)</li>
+            <li>Alicia Santos Silva Batista — Direito</li>
+            <li>Brenda Moreira Lobo Pires — Direito</li>
+            <li>Fernanda Carvalho do Souza — Biomedicina</li>
+            <li>Kauã Araujo Santos — Engenharia de Software</li>
+            <li>Lucca Rievers Pertigas — Engenharia de Software</li>
+            <li>Marcio Claudio Ventura Ferreira — Engenharia de Software</li>
+        </ul>
+        <button onclick="document.getElementById('vox-float-menu').classList.remove('active')">Fechar</button>
+    </div>
+    <script>
+    const btn = window.parent.document.getElementById('vox-float-btn');
+    const menu = window.parent.document.getElementById('vox-float-menu');
+    if(btn && menu){
+        btn.onclick = () => menu.classList.toggle('active');
+    }
+    </script>
+</html>

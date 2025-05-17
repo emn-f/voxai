@@ -24,67 +24,10 @@ st.set_page_config(
 st.title("Vox 🌈")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
-st.markdown(
-    """
-    <style>
-    #vox-float-btn {
-        position: fixed;
-        top: 24px;
-        left: 24px;
-        z-index: 9999;
-        background: #b5179e;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        font-size: 2em;
-        cursor: pointer;
-        box-shadow: 0 2px 8px #0002;
-    }
-    #vox-float-menu {
-        display: none;
-        position: fixed;
-        top: 80px;
-        left: 24px;
-        z-index: 9999;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
-        padding: 24px;
-        min-width: 220px;
-        max-width: 90vw;
-    }
-    #vox-float-menu.active {
-        display: block;
-    }
-    </style>
-    <div id="vox-float-menu">
-        <h4>Sobre o Vox 🌈</h4>
-        <p>O <b>Vox</b> é um assistente de apoio e informação <b>LGBTQIA+</b>.<br>
-        Aqui você encontra acolhimento, informações e recursos confiáveis.</p>
-        <h5>Equipe do Projeto</h5>
-        <ul>
-            <li><b>👑 Emanuel Arlan Sousa Silva Ferreira</b> — Engenharia de Software (Líder)</li>
-            <li>Alicia Santos Silva Batista — Direito</li>
-            <li>Brenda Moreira Lobo Pires — Direito</li>
-            <li>Fernanda Carvalho do Souza — Biomedicina</li>
-            <li>Kauã Araujo Santos — Engenharia de Software</li>
-            <li>Lucca Rievers Pertigas — Engenharia de Software</li>
-            <li>Marcio Claudio Ventura Ferreira — Engenharia de Software</li>
-        </ul>
-        <button onclick="document.getElementById('vox-float-menu').classList.remove('active')">Fechar</button>
-    </div>
-    <script>
-    const btn = window.parent.document.getElementById('vox-float-btn');
-    const menu = window.parent.document.getElementById('vox-float-menu');
-    if(btn && menu){
-        btn.onclick = () => menu.classList.toggle('active');
-    }
-    </script>
-    """,
-    unsafe_allow_html=True
-)
+
+# Menu
+with open("static/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 with st.sidebar:
     st.markdown(SOBRE, unsafe_allow_html=True)
@@ -132,18 +75,10 @@ if 'key_api' in st.session_state:
     prompt = st.chat_input('Digite aqui...')
 
     # Foco no campo de input do chat
+    with open("static/focus_input.js") as f:
+        js_code = f.read()
     st.components.v1.html(
-        """
-        <script>
-        // Aguarda o DOM carregar e tenta focar o campo de input do chat
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const chatInputs = window.parent.document.querySelectorAll('textarea');
-            if (chatInputs.length > 0) {
-                chatInputs[chatInputs.length-1].focus();
-            }
-        });
-        </script>
-        """,
+        f"<script>{js_code}</script>",
         height=0,
         scrolling=False,
     )

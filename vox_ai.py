@@ -14,6 +14,8 @@ st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
 # Configuração da API (secreta no deploy)
 st.session_state.key_api = 'GEMINI_API_KEY'
+genai.configure(api_key=st.session_state.key_api)
+
 
 
 # Histórico do modelo (com instruções) e histórico de exibição (sem)

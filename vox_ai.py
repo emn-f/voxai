@@ -1,12 +1,14 @@
 import time
 import random
+import json
 
 import streamlit as st
 import google.generativeai as genai
 import os
 
 
-from instrucoes import INSTRUCOES_VOX
+from base_dados.instrucoes import INSTRUCOES_VOX
+from base_dados.saudacao import SAUDACAO
 
 
 # Interface da página
@@ -38,15 +40,7 @@ for msg in st.session_state.historico_exibir:
 if 'key_api' in st.session_state:
     if 'primeira_vez' not in st.session_state:
         st.session_state.primeira_vez = True
-        mensagem_boas_vindas = """
-        Hey! Eu sou Vox - Assistente de Apoio e Informação LGBTQIA+.
-        Como posso ajudar você hoje?
-
-        Você pode me perguntar sobre:
-        - Informações sobre a comunidade LGBTQIA+
-        - Recursos de apoio
-        - Dúvidas gerais
-        """
+        mensagem_boas_vindas = SAUDACAO
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
         with st.chat_message("assistant", avatar="🤖"):
             st.markdown(mensagem_boas_vindas)

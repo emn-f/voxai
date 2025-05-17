@@ -31,3 +31,33 @@
 #vox-float-menu.active {
     display: block;
 }
+
+/* static/style.css */
+@media (max-width: 700px) {
+    section[data-testid="stChatInput"] {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0;
+        width: 100vw !important;
+        z-index: 10000;
+        background: #fff;
+        box-shadow: 0 -2px 12px #0001;
+        padding-bottom: env(safe-area-inset-bottom, 8px);
+        transition: top 0.2s, box-shadow 0.2s;
+    }
+    .block-container {
+        padding-bottom: 100px !important; /* Espaço extra para o input */
+    }
+    section[data-testid="stChatInput"]:focus-within {
+        top: 30vh !important;
+        left: 50% !important;
+        bottom: auto !important;
+        transform: translateX(-50%);
+        width: 90vw !important;
+        z-index: 10001;
+        background: #fff;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+        border-radius: 16px;
+        padding: 16px 8px;
+    }
+}

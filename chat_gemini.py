@@ -3,41 +3,21 @@ import random
 import streamlit as st
 import google.generativeai as genai
 
-# Config do site
+# Interface da página
 st.set_page_config(page_title='Vox', page_icon='🏳️‍🌈')
-
-# Título da página
 st.title("Vox")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
-# Chave API no site
-if 'key_api' not in st.session_state:
-    key_api = st.sidebar.text_input('Insira sua chave API', type='password')
-    if key_api.startswith('AI'):
-        st.session_state.key_api = key_api
-        genai.configure(api_key=st.session_state.key_api)
-        st.sidebar.success('Tudo certo!', icon='✅')
-        # KeyAPI: AIzaSyB3p67yshN1VsNaE5oZLXsd5M7mOCWILEA
-    else:
-        st.sidebar.warning('Informe a Chave API!', icon='⚠️')
+# Configurações do funcionamento básico do Vox
+st.session_state.key_api = 'AIzaSyB3p67yshN1VsNaE5oZLXsd5M7mOCWILEA'
 
-# Histórico do chat
 if 'historico' not in st.session_state:
     st.session_state.historico = []
 
-# Modelo
 modelo = genai.GenerativeModel('gemini-2.0-flash')
 
-# Criação do chat
 chat = modelo.start_chat(history=st.session_state.historico)
 
-# Limpeza do chat
-with st.sidebar:
-    if st.button('Limpar chat', type='primary', use_container_width=True):
-        st.session_state.historico = []
-        st.rerun()
-
-# Pegando mensagens do histórico
 for msg in chat.history:
     if msg.role == 'model':
         role = 'assistant'
@@ -46,18 +26,30 @@ for msg in chat.history:
     with st.chat_message(role):
         st.markdown(msg.parts[0].text)
 
-# Se tudo ok com a API...
 if 'key_api' in st.session_state:
-    prompt = st.chat_input('Hey!')
+    if 'primeira_vez' not in st.session_state:
+        st.session_state.primeira_vez = True
+        with st.chat_message('assistant', avatar="🤖"):
+            st.markdown("""
+            Hey! Eu sou Vox - Assistente de Apoio e Informação LGBTQIA+.
+            Como posso ajudar você hoje?
+
+            Você pode me perguntar sobre:
+            - Informações sobre a comunidade LGBTQIA+
+            - Recursos de apoio
+            - Dúvidas gerais
+            """)
+
+    prompt = st.chat_input('Digite aqui...')
     if prompt:
         prompt = prompt.replace('\n', '\n')
         # Entrada de dados
-        with st.chat_message('user'):
+        with st.chat_message('user', avatar="👤"):
             st.markdown(prompt)
         # Mensagem do Gemini
-        with st.chat_message('assistant'):
+        with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
-            msg_placeholder.markdown('Thinking about this')
+            msg_placeholder.markdown('💭 Thinking about this')
             # Verificando erro de entrada
             try:
                 # Resposta do Gemini
@@ -79,3 +71,6 @@ if 'key_api' in st.session_state:
             except Exception as e:
                 st.exception(e)
             st.session_state.historico = chat.history
+
+# Personalidade do Vox
+

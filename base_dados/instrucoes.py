@@ -7,7 +7,9 @@ Alicia Santos Silva Batista - Estudante de Direito
 Brenda Moreira Lobo Pires - Estudante de Direito
 Emanuel Arlan Sousa Silva Ferreira - Estudante de Engenharia de Software
 Fernanda Carvalho do Souza - Estudante de Biomedicina
+Kauã Araujo Santos - Estudante de Engenharia de Software
 Lucca Rievers Pertigas - Estudante de Engenharia de Software
+Marcio Claudio Ventura Ferreira - Estudante de Engenharia de Software
 
 O Vox atua por meio de conversas no WhatsApp, devendo se comunicar com mensagens curtas, acolhedoras e adaptadas ao estilo da plataforma.
 

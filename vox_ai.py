@@ -8,14 +8,17 @@ import os
 
 from base_dados.instrucoes import INSTRUCOES_VOX
 from base_dados.saudacao import SAUDACAO
+from base_dados.info import SOBRE
 
 
 # Interface da página
-st.set_page_config(page_title='Vox', page_icon='🏳️‍🌈')
-
+st.set_page_config(page_title='Vox - Assistente de Apoio e Informação LGBTQIA+', page_icon='🗣️')
 st.title("Vox 🌈")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
+with st.sidebar:
+    st.markdown(SOBRE, unsafe_allow_html=True)
+       
 # Configuração da API (secreta no deploy)
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
 st.session_state.key_api = api_key
@@ -82,12 +85,6 @@ if 'key_api' in st.session_state:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
-
-
-
-
-
-    
     if prompt:
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})

@@ -12,7 +12,8 @@ from base_dados.saudacao import SAUDACAO
 
 # Interface da página
 st.set_page_config(page_title='Vox', page_icon='🏳️‍🌈')
-st.title("Vox")
+
+st.title("Vox 🌈")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
 # Configuração da API (secreta no deploy)
@@ -32,8 +33,12 @@ chat = modelo.start_chat(history=st.session_state.historico)
 
 # Só exibe o histórico real, sem o prompt do sistema
 for msg in st.session_state.historico_exibir:
-    with st.chat_message("assistant" if msg["role"] == "model" else "user"):
-        st.markdown(msg["parts"][0])
+    if msg["role"] == "model":
+        with st.chat_message("assistant", avatar="🤖"):
+            st.markdown(msg["parts"][0])
+    else:
+        with st.chat_message("user", avatar="🧑‍💻"):
+            st.markdown(msg["parts"][0])
 
 # Primeira mensagem do assistente
 if 'key_api' in st.session_state:
@@ -41,15 +46,53 @@ if 'key_api' in st.session_state:
         st.session_state.primeira_vez = True
         mensagem_boas_vindas = SAUDACAO
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
+        
         with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(mensagem_boas_vindas)
+            msg_placeholder = st.empty()
+            resposta = ""
+            for letra in mensagem_boas_vindas:
+                resposta += letra
+                msg_placeholder.markdown(resposta + "_")
+                time.sleep(0.01)
+            msg_placeholder.markdown(resposta)
 
     prompt = st.chat_input('Digite aqui...')
+
+    # Foco no campo de input do chat
+    st.components.v1.html(
+        """
+        <script>
+        // Aguarda o DOM carregar e tenta focar o campo de input do chat
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const chatInputs = window.parent.document.querySelectorAll('textarea');
+            if (chatInputs.length > 0) {
+                chatInputs[chatInputs.length-1].focus();
+            }
+        });
+        </script>
+        """,
+        height=0,
+        scrolling=False,
+    )
+
     if prompt:
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
 
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar="🧑‍💻"):
+            st.markdown(prompt)
+
+
+
+
+
+
+    
+    if prompt:
+        st.session_state.historico.append({"role": "user", "parts": [prompt]})
+        st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
+
+        with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
         chat = modelo.start_chat(history=st.session_state.historico)
 

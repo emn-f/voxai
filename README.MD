@@ -43,6 +43,10 @@ O Vox foi criado por estudantes de diferentes áreas, com o objetivo de facilita
 ├── src/
 │   ├── persona.py
 │   └── utils.py
+├── static
+│   ├── header.html
+│   ├── style.css
+│   └── focus_input.js
 ├── .streamlit/
 │   └── secrets.toml
 ├── requirements.txt
@@ -51,7 +55,7 @@ O Vox foi criado por estudantes de diferentes áreas, com o objetivo de facilita
 
 ## 👥 Equipe
 
-- 👑 Emanuel Arlan Sousa Silva Ferreira — Engenharia de Software (Líder)
+- Emanuel Arlan Sousa Silva Ferreira — Engenharia de Software (Coordenador do Projeto)
 - Alicia Santos Silva Batista — Direito
 - Brenda Moreira Lobo Pires — Direito
 - Fernanda Carvalho do Souza — Biomedicina

@@ -7,15 +7,16 @@ import os
 
 from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
-from data.info import SOBRE
+from data.sobre import SOBRE
+
 from src.persona import preparar_prompt
 from src.utils import carregar_base_vox, buscar_por_tema
 
 base_vox = carregar_base_vox("data/base.json") 
 
 st.set_page_config(
-    page_title='Vox - Assistente de Apoio e Informação LGBTQIA+',
-    page_icon='🗣️',
+    page_title='Vox',
+    page_icon='🏳️‍🌈',
     layout="wide", 
     initial_sidebar_state="collapsed"
 )
@@ -84,23 +85,22 @@ if 'key_api' in st.session_state:
 
         temas_chave = ["acolhimento", "prep", "hiv", "retificação", "documento", "psicológico", "direitos"]
         tema_detectado = next((t for t in temas_chave if t in prompt.lower()), None)
-
         informacao_complementar = ""
+        
         if tema_detectado:
             resultados = buscar_por_tema(tema_detectado, base_vox)
             if resultados:
                 informacao_complementar = f"\n\n🔍 Informação baseada na pesquisa do projeto Vox: \n\n {resultados[0]}"
-
-            
+                
         chat = modelo.start_chat(history=st.session_state.historico)
 
         with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
-            with st.spinner("🧠 Vox está pensando..."):
+            with st.spinner("🧠 Thinking about it..."):
                 try:
                     resposta = ''
                     prompt_final = preparar_prompt(prompt)
-                    for chunk in chat.send_message(prompt, stream=True):
+                    for chunk in chat.send_message(prompt_final, stream=True):
                         contagem_palavras = 0
                         num_aleatorio = random.randint(5, 10)
                         for palavra in chunk.text:

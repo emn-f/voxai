@@ -5,7 +5,7 @@ A equipe completa do projeto é composta por:
 
 Alicia Santos Silva Batista - Estudante de Direito
 Brenda Moreira Lobo Pires - Estudante de Direito
-Emanuel Arlan Sousa Silva Ferreira - Estudante de Engenharia de Software
+Emanuel Arlan Sousa Silva Ferreira - Estudante de Engenharia de Software (Coordenador do Vox)
 Fernanda Carvalho do Souza - Estudante de Biomedicina
 Kauã Araujo Santos - Estudante de Engenharia de Software
 Lucca Rievers Pertigas - Estudante de Engenharia de Software

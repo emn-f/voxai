@@ -63,7 +63,3 @@ O Vox foi criado por estudantes de diferentes áreas, com o objetivo de facilita
 
 Dúvidas, sugestões ou feedback?  
 Entre em contato pelo e-mail: [assistentedeapoiolgbtvox@gmail.com](mailto:seu-email@exemplo.com)
-
----
-
-> Projeto de extensão universitária — 2024

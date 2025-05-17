@@ -11,7 +11,6 @@ st.caption("Assistente de Apoio e Informação LGBTQIA+")
 # Configurações do funcionamento básico do Vox
 st.session_state.key_api = 'GEMINI_API_KEY'
 
-
 if 'historico' not in st.session_state:
     st.session_state.historico = []
 
@@ -50,28 +49,29 @@ if 'key_api' in st.session_state:
         # Mensagem do Gemini
         with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
-            msg_placeholder.markdown('💭 Thinking about this')
-            # Verificando erro de entrada
-            try:
-                # Resposta do Gemini
-                resposta = ''
-                for chunk in chat.send_message(prompt, stream=True):
-                    contagem_palavras = 0
-                    num_aleatorio = random.randint(5, 10)
-                    for palavra in chunk.text:
-                        resposta += palavra
-                        contagem_palavras += 1
-                        if contagem_palavras == num_aleatorio:
-                            time.sleep(0.05)
-                            msg_placeholder.markdown(resposta + '_')
-                            contagem_palavras = 0
-                            num_aleatorio = random.randint(5, 10)
-                msg_placeholder.markdown(resposta)
-            except genai.types.generation_types.BlockedPromptException as e:
-                st.exception(e)
-            except Exception as e:
-                st.exception(e)
-            st.session_state.historico = chat.history
-
-# Personalidade do Vox
-
+            with st.spinner("🧠 Vox está pensando..."):
+                # Verificando erro de entrada
+                try:
+                    # Resposta do Gemini
+                    resposta = ''
+                    for chunk in chat.send_message(prompt, stream=True):
+                        contagem_palavras = 0
+                        num_aleatorio = random.randint(5, 10)
+                        for palavra in chunk.text:
+                            resposta += palavra
+                            contagem_palavras += 1
+                            if contagem_palavras == num_aleatorio:
+                                time.sleep(0.05)
+                                msg_placeholder.markdown(resposta + '_')
+                                contagem_palavras = 0
+                                num_aleatorio = random.randint(5, 10)
+                    msg_placeholder.markdown(resposta)
+                except genai.types.generation_types.BlockedPromptException as e:
+                    msg_placeholder.empty()  # esconde o spinner
+                    st.error("⚠️ Essa pergunta não pode ser respondida pelo Vox.")
+                    st.exception(e)
+                except Exception as e:
+                    msg_placeholder.empty()
+                    st.error("❌ Ocorreu um erro inesperado.")
+                    st.exception(e)
+                st.session_state.historico = chat.history

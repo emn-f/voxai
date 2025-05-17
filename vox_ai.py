@@ -9,6 +9,7 @@ from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
 from data.sobre import SOBRE
 
+from src.semantica import detectar_tema_semantico
 from src.persona import preparar_prompt
 from src.utils import carregar_base_vox, buscar_por_tema
 
@@ -83,17 +84,14 @@ if 'key_api' in st.session_state:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
-        temas_chave = ["acolhimento", "prep", "hiv", "retificação", "documento", "psicológico", "direitos"]
-        tema_detectado = next((t for t in temas_chave if t in prompt.lower()), None)
         informacao_complementar = ""
-        
+        tema_detectado = detectar_tema_semantico(prompt, base_vox)
+
         if tema_detectado:
             resultados = buscar_por_tema(tema_detectado, base_vox)
             if resultados:
-                informacao_complementar = f"\n\n🔍 Informação baseada na pesquisa do projeto Vox: \n\n {resultados[0]}"
-                
-        chat = modelo.start_chat(history=st.session_state.historico)
-
+                informacao_complementar = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
+       
         with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
             with st.spinner("🧠 Thinking about it..."):
@@ -111,9 +109,8 @@ if 'key_api' in st.session_state:
                                 msg_placeholder.markdown(resposta + '_')
                                 contagem_palavras = 0
                                 num_aleatorio = random.randint(5, 10)
-                    msg_placeholder.markdown(resposta)
-                    resposta += informacao_complementar
-                    msg_placeholder.markdown(resposta)
+                    resposta_completa = resposta + informacao_complementar
+                    msg_placeholder.markdown(resposta_completa)
 
                 except genai.types.generation_types.BlockedPromptException as e:
                     msg_placeholder.empty()

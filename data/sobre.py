@@ -16,7 +16,7 @@ SOBRE = """
         margin-bottom: 0.3em;
     }   
     </style>
-    <div class="vox-sidebar-title">Sobre o Vox 🌈</div>
+    <div class="vox-sidebar-title">Sobre o Vox 🤖</div>
     <div class="vox-sidebar-section">
         O <b>Vox</b> é um assistente de apoio e informação <b>LGBTQIA+</b>.<br>
         Aqui você encontra acolhimento, informações e recursos confiáveis.

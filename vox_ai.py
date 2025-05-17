@@ -1,15 +1,18 @@
 import time
 import random
-import json
 
 import streamlit as st
 import google.generativeai as genai
 import os
 
-from base_dados.instrucoes import INSTRUCOES_VOX
-from base_dados.saudacao import SAUDACAO
-from base_dados.info import SOBRE
+from data.instrucoes import INSTRUCOES_VOX
+from data.saudacao import SAUDACAO
+from data.info import SOBRE
+from src.persona import preparar_prompt
+from src.utils import carregar_base_vox, buscar_por_tema
 
+# Utilizando base de dados local
+base_vox = carregar_base_vox("data/base.json") 
 
 # Interface da página
 st.set_page_config(page_title='Vox - Assistente de Apoio e Informação LGBTQIA+', page_icon='🗣️')
@@ -85,12 +88,18 @@ if 'key_api' in st.session_state:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
-    if prompt:
-        st.session_state.historico.append({"role": "user", "parts": [prompt]})
-        st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
+        # Detecta tema no prompt
+        temas_chave = ["acolhimento", "prep", "hiv", "retificação", "documento", "psicológico", "direitos"]
+        tema_detectado = next((t for t in temas_chave if t in prompt.lower()), None)
 
-        with st.chat_message("user", avatar="🧑‍💻"):
-            st.markdown(prompt)
+        # Busca por informação complementar
+        informacao_complementar = ""
+        if tema_detectado:
+            resultados = buscar_por_tema(tema_detectado, base_vox)
+            if resultados:
+                informacao_complementar = f"\n\n🔍 Informação baseada na pesquisa do projeto Vox: \n\n {resultados[0]}"
+
+            
         chat = modelo.start_chat(history=st.session_state.historico)
 
         with st.chat_message('assistant', avatar="🤖"):
@@ -98,6 +107,7 @@ if 'key_api' in st.session_state:
             with st.spinner("🧠 Vox está pensando..."):
                 try:
                     resposta = ''
+                    prompt_final = preparar_prompt(prompt)
                     for chunk in chat.send_message(prompt, stream=True):
                         contagem_palavras = 0
                         num_aleatorio = random.randint(5, 10)
@@ -110,6 +120,9 @@ if 'key_api' in st.session_state:
                                 contagem_palavras = 0
                                 num_aleatorio = random.randint(5, 10)
                     msg_placeholder.markdown(resposta)
+                    resposta += informacao_complementar
+                    msg_placeholder.markdown(resposta)
+
                 except genai.types.generation_types.BlockedPromptException as e:
                     msg_placeholder.empty()
                     st.error("⚠️ Essa pergunta não pode ser respondida pelo Vox.")

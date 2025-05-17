@@ -49,6 +49,8 @@ if 'key_api' in st.session_state:
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
 
+        with st.chat_message("user"):
+            st.markdown(prompt)
         chat = modelo.start_chat(history=st.session_state.historico)
 
         with st.chat_message('assistant', avatar="🤖"):

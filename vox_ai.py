@@ -15,9 +15,76 @@ from src.utils import carregar_base_vox, buscar_por_tema
 base_vox = carregar_base_vox("data/base.json") 
 
 # Interface da página
-st.set_page_config(page_title='Vox - Assistente de Apoio e Informação LGBTQIA+', page_icon='🗣️')
+st.set_page_config(
+    page_title='Vox - Assistente de Apoio e Informação LGBTQIA+',
+    page_icon='🗣️',
+    layout="wide",  # Melhora a responsividade em dispositivos móveis
+    initial_sidebar_state="collapsed"  # Sidebar começa fechada, útil para celular
+)
 st.title("Vox 🌈")
 st.caption("Assistente de Apoio e Informação LGBTQIA+")
+
+st.markdown(
+    """
+    <style>
+    #vox-float-btn {
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        z-index: 9999;
+        background: #b5179e;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 2em;
+        cursor: pointer;
+        box-shadow: 0 2px 8px #0002;
+    }
+    #vox-float-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 24px;
+        z-index: 9999;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+        padding: 24px;
+        min-width: 220px;
+        max-width: 90vw;
+    }
+    #vox-float-menu.active {
+        display: block;
+    }
+    </style>
+    <div id="vox-float-menu">
+        <h4>Sobre o Vox 🌈</h4>
+        <p>O <b>Vox</b> é um assistente de apoio e informação <b>LGBTQIA+</b>.<br>
+        Aqui você encontra acolhimento, informações e recursos confiáveis.</p>
+        <h5>Equipe do Projeto</h5>
+        <ul>
+            <li><b>👑 Emanuel Arlan Sousa Silva Ferreira</b> — Engenharia de Software (Líder)</li>
+            <li>Alicia Santos Silva Batista — Direito</li>
+            <li>Brenda Moreira Lobo Pires — Direito</li>
+            <li>Fernanda Carvalho do Souza — Biomedicina</li>
+            <li>Kauã Araujo Santos — Engenharia de Software</li>
+            <li>Lucca Rievers Pertigas — Engenharia de Software</li>
+            <li>Marcio Claudio Ventura Ferreira — Engenharia de Software</li>
+        </ul>
+        <button onclick="document.getElementById('vox-float-menu').classList.remove('active')">Fechar</button>
+    </div>
+    <script>
+    const btn = window.parent.document.getElementById('vox-float-btn');
+    const menu = window.parent.document.getElementById('vox-float-menu');
+    if(btn && menu){
+        btn.onclick = () => menu.classList.toggle('active');
+    }
+    </script>
+    """,
+    unsafe_allow_html=True
+)
 
 with st.sidebar:
     st.markdown(SOBRE, unsafe_allow_html=True)

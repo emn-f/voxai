@@ -43,8 +43,7 @@ O Vox foi criado por estudantes de diferentes áreas, com o objetivo de facilita
 ├── src/
 │   ├── persona.py
 │   └── utils.py
-├── static
-│   ├── header.html
+├── static/
 │   ├── style.css
 │   └── focus_input.js
 ├── .streamlit/

@@ -16,7 +16,16 @@ st.caption("Assistente de Apoio e Informação LGBTQIA+")
 st.session_state.key_api = 'GEMINI_API_KEY'
 genai.configure(api_key=st.session_state.key_api)
 
+# Checa se a chave da API está presente e válida
+api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
+api_online = api_key.startswith("AI")  # Gemini API keys geralmente começam com "AI"
 
+# Exibe status na barra lateral
+with st.sidebar:
+    if api_online:
+        st.success("🟢 Chave API do Gemini AI Online")
+    else:
+        st.error("🔴 Chave não localizada. Entre em contato com o administrador")
 
 # Histórico do modelo (com instruções) e histórico de exibição (sem)
 if 'historico' not in st.session_state:

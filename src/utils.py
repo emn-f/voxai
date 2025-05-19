@@ -14,20 +14,15 @@ def buscar_tema(tema, base):
 
 def git_version():
     try:
-        # pega a última tag da árvore (mais próxima)
         last_tag = subprocess.check_output(
             ["git", "describe", "--tags", "--abbrev=0"],
             stderr=subprocess.STDOUT
         ).decode("utf-8").strip()
     except subprocess.CalledProcessError:
-        last_tag = "sem tags"
-
-    try:
-        # pega o hash curto do commit atual
+        last_tag = "Nº da versão indisponível"
         commit = subprocess.check_output(
             ["git", "rev-parse", "--short", "HEAD"]
         ).decode("utf-8").strip()
     except subprocess.CalledProcessError:
-        commit = "hash indisponível"
-
+        commit = "Hash indisponível"
     return f"{last_tag} ({commit})"

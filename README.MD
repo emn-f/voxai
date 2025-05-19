@@ -31,36 +31,15 @@ O Vox foi criado por estudantes de diferentes áreas, com o objetivo de facilita
    streamlit run vox_ai.py
    ```
 
-## 🏗️ Estrutura do Projeto
-
-```
-.
-├── data/
-│   ├── base.json
-│   ├── info.py
-│   ├── instrucoes.py
-│   └── saudacao.py
-├── src/
-│   ├── persona.py
-│   └── utils.py
-├── static/
-│   ├── style.css
-│   └── focus_input.js
-├── .streamlit/
-│   └── secrets.toml
-├── requirements.txt
-└── vox_ai.py
-```
-
 ## 👥 Equipe
 
-- Emanuel Ferreira — Engenharia de Software (Coordenador do Projeto)
-- Alicia Batista — Direito
-- Brenda Pires — Direito
-- Fernanda Souza — Biomedicina
-- Kauã Araujo — Engenharia de Software
-- Lucca Pertigas — Engenharia de Software
-- Marcio Ventura — Engenharia de Software
+- Emanuel Ferreira (Diretor do Vox)
+- Alicia Batista
+- Brenda Pires
+- Fernanda Souza
+- Kauã Araujo
+- Lucca Pertigas
+- Marcio Ventura
 
 ## 📬 Contato
 

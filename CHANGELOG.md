@@ -5,17 +5,6 @@ Todas as mudanças importantes deste projeto serão documentadas aqui.
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
-## [Unreleased]
-### Adicionado
-- (Descreva aqui novas funcionalidades ainda não lançadas)
-
-### Corrigido
-- (Descreva aqui bugs corrigidos ainda não lançados)
-
-### Alterado
-- (Descreva aqui mudanças de comportamento ainda não lançadas)
-
----
 
 ## [1.0.8] - 2025-05-19
 ### Alterado

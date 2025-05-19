@@ -15,9 +15,9 @@ from src.chat import processar_prompt
 
 from src.semantica import semantica
 from src.persona import preparar_prompt
-from src.utils import data_vox, buscar_tema, git_version
+from src.utils import data_vox, BASE_PRINCIPAL_PATH, buscar_tema, git_version
 
-base_vox = data_vox("data/base.json") 
+base_vox = data_vox(BASE_PRINCIPAL_PATH)
 
 # Configuração da página e título
 configurar_pagina()
@@ -56,7 +56,7 @@ for msg in st.session_state.historico_exibir:
 if 'key_api' in st.session_state:
     if 'primeira_vez' not in st.session_state:
         st.session_state.primeira_vez = True
-        mensagem_boas_vindas = SAUDACAO
+        mensagem_boas_vindas = [SAUDACAO]
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
          
          # Animação de digitação para a mensagem de boas-vindas

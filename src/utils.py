@@ -2,7 +2,9 @@ import json
 import subprocess
 import os
 
-def data_vox(caminho="data/dados_vox.json"):
+BASE_PRINCIPAL_PATH = "data/base_validada.json"
+
+def data_vox(caminho=BASE_PRINCIPAL_PATH):
     with open(caminho, "r", encoding="utf-8") as f:
         return json.load(f)
 

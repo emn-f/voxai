@@ -1,22 +1,94 @@
 [
   {
-    "tema": "casas de acolhimento",
-    "descricao": "Muitas pessoas LGBTQIA+ não conhecem os espaços de acolhimento disponíveis em Salvador. Um dos principais é a Casa Marielle Franco, que oferece apoio emocional, alimentação, atividades culturais e uma rede de afeto e sobrevivência para pessoas em situação de vulnerabilidade. A casa é parceira oficial do Projeto Vox."
+    "tema": "projeto vox",
+    "descricao": "O projeto Vox é uma iniciativa que utiliza inteligência artificial para desenvolver um assistente virtual de apoio à população LGBTQIA+. Seu principal objetivo é fornecer informações, orientação e acolhimento, criando um ponto de apoio digital que conecta usuários a serviços e instituições comprometidas com a promoção da cidadania e do respeito às diversidades."
   },
   {
-    "tema": "PrEP como forma de prevenção ao HIV",
-    "descricao": "Há grande desinformação sobre a PrEP. Pessoas LGBTQIA+ relataram que ao procurar atendimento, muitos profissionais de saúde desconhecem o uso da PrEP como prevenção eficaz contra o HIV. Isso evidencia a necessidade de ampliar a conscientização."
+    "tema": "Parcerias Estratégicas para o Acolhimento LGBTQIA+",
+    "descricao": "A parceria com instituições como a Casa Marielle Franco fortalece a atuação do projeto Vox ao integrar a tecnologia desenvolvida com ações já existentes de acolhimento e suporte à comunidade LGBTQIA+. Esse vínculo potencializa o alcance das informações e amplia o impacto social do projeto, promovendo cidadania e respeito às diversidades."
   },
   {
-    "tema": "retificação de nome",
-    "descricao": "Pessoas trans e travestis relataram dificuldade em acessar informações sobre como retificar nome e gênero em documentos civis. Essa falta de informação contribui para a exclusão e desrespeito à identidade dessas pessoas."
+    "tema": "Assistente Virtual Gratuito para Direitos e Cidadania LGBTQIA+",
+    "descricao": "Um assistente virtual gratuito pode atuar como um canal acessível para fornecer informações atualizadas sobre direitos, saúde, acolhimento e políticas públicas voltadas à população LGBTQIA+. Ao centralizar essas informações de forma clara e confiável, o assistente contribui para a autonomia dos usuários, fortalecendo a cidadania e promovendo o acesso a serviços essenciais."
   },
   {
-    "tema": "direitos LGBTQIA+",
-    "descricao": "Muitas pessoas LGBTQIA+ desconhecem seus direitos legais, incluindo o uso do nome social, acesso à saúde pública sem discriminação, e proteção contra violência e preconceito institucional."
+    "tema": "Inclusão Digital e Acesso à Informação para Todos",
+    "descricao": "Embora o projeto Vox tenha sido pensado para atender prioritariamente a população LGBTQIA+, ele é acessível a qualquer pessoa interessada em informações sobre direitos, saúde, acolhimento e políticas públicas. Assim, o assistente virtual se posiciona como uma ferramenta inclusiva, promovendo o acesso ao conhecimento e à cidadania para todos."
   },
   {
-    "tema": "apoio psicológico",
-    "descricao": "A pesquisa apontou que há uma demanda importante por apoio psicológico gratuito e seguro para pessoas LGBTQIA+, especialmente jovens e pessoas em situação de vulnerabilidade. O Vox busca indicar redes e instituições que oferecem esse tipo de acolhimento."
+    "tema": "Fontes de Informação para o Desenvolvimento do Projeto Vox",
+    "descricao": "A base de conhecimento do projeto Vox é estruturada a partir de fontes acadêmicas, documentos oficiais de políticas públicas, plataformas digitais, organizações da sociedade civil e relatos da comunidade LGBTQIA+. Esse conjunto de referências garante que as informações oferecidas sejam atualizadas, confiáveis e alinhadas às necessidades específicas da população atendida."
+  },
+  {
+    "tema": "Áreas Prioritárias de Conteúdo no Projeto Vox",
+    "descricao": "Com base em pesquisas e consultas a fontes diversas, foram estabelecidas áreas prioritárias de conteúdo para o Vox, incluindo direitos LGBTQIA+, saúde preventiva, acolhimento psicológico, acesso a políticas públicas e orientação sobre serviços essenciais. Essas áreas foram definidas considerando as demandas mais recorrentes da comunidade LGBTQIA+ e os desafios enfrentados no acesso à informação."
+  },
+  {
+    "tema": "Direitos Relacionados à União Estável, Casamento Civil e Adoção LGBT",
+    "descricao": "O Vox esclarece que pessoas LGBTQIA+ têm direito à união estável, ao casamento civil e à adoção, conforme reconhecido pelo STF e regulamentado pelo CNJ. O assistente virtual fornece orientações sobre como formalizar esses procedimentos, além de indicar organizações que prestam suporte jurídico gratuito ou a baixo custo."
+  },
+  {
+    "tema": "Retificação de Nome e Gênero em Documentos Oficiais",
+    "descricao": "O Vox orienta sobre o processo de retificação de nome e gênero em documentos oficiais, explicando os procedimentos necessários, a documentação exigida e os direitos assegurados pela legislação brasileira. Além disso, o assistente virtual informa sobre serviços gratuitos de assistência jurídica que auxiliam na retificação sem a necessidade de ação judicial."
+  },
+  {
+    "tema": "Direito ao Uso do Nome Social no SUS",
+    "descricao": "No SUS, pessoas trans têm o direito de utilizar o nome social em prontuários, fichas e documentos de atendimento, independentemente da retificação do registro civil. O projeto Vox esclarece esses direitos, orienta sobre como solicitar o uso do nome social e informa sobre mecanismos de denúncia em caso de desrespeito."
+  },
+  {
+    "tema": "Criminalização da LGBTfobia e a Lei do Racismo",
+    "descricao": "A LGBTfobia foi equiparada ao crime de racismo pelo STF, sendo punível nos termos da Lei nº 7.716/1989. O projeto Vox explica as situações consideradas LGBTfobia, as penalidades aplicáveis e os canais disponíveis para denunciar práticas discriminatórias, garantindo que as vítimas possam buscar justiça de forma segura e informada."
+  },
+  {
+    "tema": "Direitos Trabalhistas e Medidas Contra Discriminação no Ambiente de Trabalho",
+    "descricao": "O Vox informa sobre os direitos trabalhistas das pessoas LGBTQIA+, incluindo o uso do nome social, a proteção contra assédio e discriminação e a igualdade de oportunidades. O assistente virtual também orienta sobre como registrar denúncias em caso de violação desses direitos, indicando os órgãos competentes e os procedimentos adequados."
+  },
+  {
+    "tema": "Saúde e Prevenção para a Comunidade LGBTQIA+",
+    "descricao": "O projeto Vox fornece informações claras e acessíveis sobre Infecções Sexualmente Transmissíveis (ISTs), incluindo HIV, sífilis e hepatites virais. Além de orientar sobre sintomas, prevenção e tratamento, o assistente virtual também indica locais onde é possível realizar testes gratuitos e acessar serviços especializados de saúde preventiva."
+  },
+  {
+    "tema": "PrEP e PEP: Diferenças e Acesso",
+    "descricao": "A PrEP (Profilaxia Pré-Exposição) é um método preventivo contra o HIV para pessoas em situação de risco, enquanto a PEP (Profilaxia Pós-Exposição) é indicada após uma possível exposição ao vírus. O projeto Vox informa sobre ambos os métodos, incluindo como e onde obtê-los gratuitamente no sistema público de saúde, além de orientar sobre a importância da adesão ao tratamento."
+  },
+  {
+    "tema": "Desinformação e Discriminação em Serviços de Saúde",
+    "descricao": "A desinformação sobre a PrEP (Profilaxia Pré-Exposição ao HIV) é um exemplo do impacto da falta de capacitação de profissionais de saúde em questões LGBTQIA+. Muitos pacientes LGBTQIA+ relatam consultas com médicos que desconhecem a eficácia da PrEP na prevenção do HIV, o que evidencia um obstáculo crítico no acesso à saúde preventiva e reforça o estigma associado à população LGBTQIA+."
+  },
+  {
+    "tema": "Saúde Mental e Acolhimento Emocional para Pessoas LGBTQIA+",
+    "descricao": "O Vox oferece informações sobre cuidados com a saúde mental, destacando serviços públicos e organizações que prestam acolhimento emocional gratuito ou a baixo custo. Além disso, o assistente virtual fornece contatos de redes de apoio LGBTQIA+ e orientações sobre como buscar ajuda em situações de crise emocional ou vulnerabilidade."
+  },
+  {
+    "tema": "Atendimento Especializado para a População LGBTQIA+ nos Serviços Públicos",
+    "descricao": "O projeto Vox mapeia locais especializados no atendimento à população LGBTQIA+, como centros de referência em saúde, assistência social e acolhimento psicológico. Essas unidades públicas são capacitadas para atender sem discriminação, respeitando a diversidade e garantindo acesso a serviços essenciais de forma inclusiva."
+  },
+  {
+    "tema": "Acesso Sem Discriminação a Serviços Públicos",
+    "descricao": "O Vox orienta sobre como acessar serviços públicos de saúde, educação e assistência social sem discriminação, destacando os direitos assegurados às pessoas LGBTQIA+. O assistente virtual também informa sobre procedimentos para garantir o uso do nome social, solicitar atendimento humanizado e relatar práticas discriminatórias."
+  },
+  {
+    "tema": "Denúncia de Discriminação em Instituições Públicas",
+    "descricao": "O Vox fornece orientações sobre como denunciar discriminação em instituições públicas, indicando os canais corretos para registrar queixas, como ouvidorias, Defensorias Públicas e órgãos de direitos humanos. Além disso, o assistente virtual oferece informações sobre como formalizar a denúncia e obter suporte jurídico especializado."
+  },
+  {
+    "tema": "ONGs, Coletivos e Espaços Seguros para a População LGBTQIA+",
+    "descricao": "O projeto Vox mapeia ONGs, coletivos e espaços seguros que oferecem apoio à população LGBTQIA+, incluindo assistência jurídica, suporte psicológico e atividades culturais. Esses locais atuam como redes de acolhimento, proporcionando um ambiente livre de discriminação e facilitando o acesso a serviços essenciais."
+  },
+  {
+    "tema": "Grupos de Escuta e Psicoterapia Gratuita ou de Baixo Custo",
+    "descricao": "O Vox fornece informações sobre grupos de escuta, rodas de conversa e serviços de psicoterapia gratuita ou a baixo custo destinados à população LGBTQIA+. Esses espaços acolhem pessoas LGBTQIA+ em situação de vulnerabilidade, promovendo o fortalecimento emocional e o apoio psicológico especializado."
+  },
+  {
+    "tema": "Canais de Emergência e Denúncia de Violência contra Pessoas LGBTQIA+",
+    "descricao": "Em casos de violência ou discriminação, o projeto Vox orienta sobre como acionar canais de emergência como o Disque 100 (violação de direitos humanos) e o Disque 180 (violência contra a mulher). O assistente virtual também informa sobre serviços locais de proteção e acolhimento para pessoas LGBTQIA+ em situação de risco."
+  },
+  {
+    "tema": "Desafios Sociais da População LGBTQIA+",
+    "descricao": "A população LGBTQIA+ enfrenta uma série de desafios sociais que vão desde a marginalização até o acesso limitado a serviços essenciais, como saúde, educação e apoio psicológico. A discriminação estrutural e a falta de políticas inclusivas agravam essas barreiras, contribuindo para um cenário de vulnerabilidade e exclusão social."
+  },
+  {
+    "tema": "Inclusão LGBTQIA+ e Tecnologia",
+    "descricao": "A inteligência artificial pode ser utilizada como uma ferramenta estratégica para promover a inclusão LGBTQIA+ ao criar espaços digitais seguros, oferecer orientações sobre direitos e conectar usuários a redes de apoio. Assistentes virtuais e plataformas de acolhimento tornam a informação mais acessível e ajudam a reduzir o isolamento social enfrentado por essa população."
   }
 ]

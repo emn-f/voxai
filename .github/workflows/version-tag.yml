@@ -5,7 +5,9 @@ on:
     branches:
       - master
       - dev
-
+permissions:
+  contents: write
+  
 jobs:
   tag_version:
     runs-on: ubuntu-latest

@@ -20,6 +20,7 @@ def git_version():
         ).decode("utf-8").strip()
     except subprocess.CalledProcessError:
         last_tag = "Nº da versão indisponível"
+    try:
         commit = subprocess.check_output(
             ["git", "rev-parse", "--short", "HEAD"]
         ).decode("utf-8").strip()

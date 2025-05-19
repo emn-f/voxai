@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 helps.md
+git_log.txt
+git_log_with_tags.txt
+data/base_dev.json

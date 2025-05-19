@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer, util
 
 modelo_semantico = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
-def detectar_tema_semantico(prompt, base):
+def semantica(prompt, base):
     temas = [item["tema"] for item in base]
     embeddings_base = modelo_semantico.encode(temas, convert_to_tensor=True)
     embedding_prompt = modelo_semantico.encode(prompt, convert_to_tensor=True)

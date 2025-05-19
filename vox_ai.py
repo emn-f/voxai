@@ -9,11 +9,11 @@ from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
 from data.sobre import SOBRE
 
-from src.semantica import detectar_tema_semantico
+from src.semantica import semantica
 from src.persona import preparar_prompt
-from src.utils import carregar_base_vox, buscar_por_tema
+from src.utils import data_vox, buscar_tema
 
-base_vox = carregar_base_vox("data/base.json") 
+base_vox = data_vox("data/base.json") 
 
 st.set_page_config(
     page_title='Vox',
@@ -85,10 +85,10 @@ if 'key_api' in st.session_state:
             st.markdown(prompt)
 
         informacao_complementar = ""
-        tema_detectado = detectar_tema_semantico(prompt, base_vox)
+        tema_detectado = semantica(prompt, base_vox)
 
         if tema_detectado:
-            resultados = buscar_por_tema(tema_detectado, base_vox)
+            resultados = buscar_tema(tema_detectado, base_vox)
             if resultados:
                 informacao_complementar = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
        

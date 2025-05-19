@@ -4,12 +4,10 @@ import time
 
 def configurar_pagina():
     st.set_page_config(
-        page_title='Vox',
+        page_title='VoxAI',
         page_icon='🏳️‍🌈',
-        layout="wide", 
-        initial_sidebar_state="collapsed"
     )
-    st.title("Vox 🌈")
+    st.title("Vox AI🌈")
     st.caption("Assistente de Apoio e Informação LGBTQIA+")
 
 def carregar_css(path="static/style.css"):

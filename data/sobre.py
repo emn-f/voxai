@@ -27,7 +27,7 @@ SOBRE = """
         <li><b>Alicia Batista</b></li>
         <li><b>Brenda Pires</b></li>
         <li><b>Fernanda Souza</b></li>
-        <li><b>Kauã Araujo </b></li>
+        <li><b>Kauã Araujo</b></li>
         <li><b>Lucca Pertigas</b></li>
         <li><b>Marcio Ventura</b></li>
     </ul>

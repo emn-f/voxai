@@ -25,7 +25,6 @@ jobs:
     - name: Get latest dev tag
       id: get_tag
       run: |
-        # Pega a última tag de dev, ou dev-v0.0.0 se não existir
         LAST_TAG=$(git tag --list "dev-v*" --sort=-v:refname | head -n 1)
         if [ -z "$LAST_TAG" ]; then
           LAST_TAG="dev-v0.0.0"
@@ -36,7 +35,7 @@ jobs:
     - name: Bump patch version and create new dev tag
       id: bump_version
       run: |
-        LAST_TAG=${{ steps.get_tag.outputs.tag }}
+        LAST_TAG="${{ steps.get_tag.outputs.tag }}"
         echo "Last tag: $LAST_TAG"
 
         VERSION=${LAST_TAG#dev-v}

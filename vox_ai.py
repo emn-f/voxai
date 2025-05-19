@@ -10,6 +10,8 @@ import os
 from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
 from data.sobre import SOBRE
+from src.ui import configurar_pagina, carregar_css, carregar_sidebar, animar_texto
+from src.chat import processar_prompt
 
 from src.semantica import semantica
 from src.persona import preparar_prompt
@@ -18,22 +20,9 @@ from src.utils import data_vox, buscar_tema, git_version
 base_vox = data_vox("data/base.json") 
 
 # Configuração da página e título
-st.set_page_config(
-    page_title='Vox',
-    page_icon='🏳️‍🌈',
-    layout="wide", 
-    initial_sidebar_state="collapsed"
-)
-st.title("Vox 🌈")
-st.caption("Assistente de Apoio e Informação LGBTQIA+")
-
-
-with open("static/style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-with st.sidebar:
-    st.markdown(SOBRE, unsafe_allow_html=True)
-    st.sidebar.markdown(f"<span style='color: #88888888;'>{git_version()}</span>", unsafe_allow_html=True)
+configurar_pagina()
+carregar_css()
+carregar_sidebar(SOBRE, git_version())
 
 # Obtém a chave da API Gemini de forma segura (primeiro dos segredos do Streamlit, depois das variáveis de ambiente)
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
@@ -73,13 +62,7 @@ if 'key_api' in st.session_state:
          # Animação de digitação para a mensagem de boas-vindas
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
-            resposta = ""
-            for letra in mensagem_boas_vindas:
-                resposta += letra
-                msg_placeholder.markdown(resposta + "_")
-                time.sleep(0.01)
-            msg_placeholder.markdown(resposta)
-
+            animar_texto(mensagem_boas_vindas, msg_placeholder)
     prompt = st.chat_input('Digite aqui...')
 
     with open("static/focus_input.js") as f:
@@ -111,31 +94,13 @@ if 'key_api' in st.session_state:
             msg_placeholder = st.empty()
             with st.spinner("🧠 Thinking about it..."):
                 try:
-                    resposta = ''
-                    prompt_final = preparar_prompt(prompt)
-                    # Recebe a resposta do modelo Gemini em streaming (chunk a chunk)
-                    for chunk in chat.send_message(prompt_final, stream=True):
-                        contagem_palavras = 0
-                        num_aleatorio = random.randint(5, 10)
-                        # Animação: exibe a resposta em blocos de palavras simulando digitação
-                        for palavra in chunk.text:
-                            resposta += palavra
-                            contagem_palavras += 1
-                            if contagem_palavras == num_aleatorio:
-                                time.sleep(0.05)
-                                msg_placeholder.markdown(resposta + '_')
-                                contagem_palavras = 0
-                                num_aleatorio = random.randint(5, 10)
-                    # Adiciona informação complementar (se houver) ao final da resposta
-                    resposta_completa = resposta + informacao_complementar
-                    msg_placeholder.markdown(resposta_completa)
-                # Trata prompts bloqueados pela API Gemini
+                    resposta = processar_prompt(prompt, chat, preparar_prompt, informacao_complementar)
+                    animar_texto(resposta, msg_placeholder)
                 except genai.types.generation_types.BlockedPromptException as e:
                     msg_placeholder.empty()
                     st.error("⚠️ Essa pergunta não pode ser respondida pelo Vox.")
                     st.exception(e)
                     resposta = "Desculpe, não posso responder isso."
-                # Trata outros erros inesperados durante a geração da resposta
                 except Exception as e:
                     msg_placeholder.empty()
                     st.error("❌ Ocorreu um erro inesperado.")

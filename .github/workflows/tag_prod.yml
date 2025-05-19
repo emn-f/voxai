@@ -1,4 +1,4 @@
-name: Tagueamento automático na versão de produção
+name: Tag Prod
 on:
   push:
     branches:

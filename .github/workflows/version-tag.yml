@@ -13,6 +13,14 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Garante que todas as tags serão buscadas
+
+    - name: Set up authentication for pushing tags
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
     - name: Get latest tag
       id: get_tag
@@ -38,9 +46,7 @@ jobs:
         NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
         echo "New tag: $NEW_TAG"
 
-        # Cria a tag
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
+        # Cria a tag e faz push
         git tag $NEW_TAG
         git push origin $NEW_TAG
 

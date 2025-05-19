@@ -23,9 +23,9 @@ SOBRE = """
     </div>
     <div class="vox-sidebar-title" style="font-size:1.1em;">Equipe do Projeto</div>
     <ul class="vox-sidebar-equipe">
+        <li><b>Emanuel Ferreira</b> — Engenharia de Software (Diretor do Vox)</li>
         <li><b>Alicia Batista</b> — Direito</li>
         <li><b>Brenda Pires</b> — Direito</li>
-        <li><b>Emanuel Ferreira</b> — Engenharia de Software (Líder do Vox)</li>
         <li><b>Fernanda Souza</b> — Biomedicina</li>
         <li><b>Kauã Araujo </b> — Engenharia de Software</li>
         <li><b>Lucca Pertigas</b> — Engenharia de Software</li>

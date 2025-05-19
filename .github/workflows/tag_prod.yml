@@ -1,10 +1,9 @@
-name: Tag new version automatically
-# This workflow automatically tags a new version when code is pushed to the main branch.
+name: Tagueamento automático na versão de produção
+
 on:
   push:
     branches:
       - master
-      - dev
 permissions:
   contents: write
   

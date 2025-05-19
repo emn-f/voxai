@@ -1,3 +1,4 @@
 streamlit
 google-generativeai
 sentence_transformers
+huggingface_hub[hf_xet]

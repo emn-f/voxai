@@ -14,6 +14,6 @@ def semantica(prompt, base):
     print(f"Tema detectado: {temas[indice_mais_proximo]}")
     print(f"Score: {maior_score}")
 
-    if maior_score > 0.5: 
+    if maior_score > 0.4: 
         return temas[indice_mais_proximo]
     return None

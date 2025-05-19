@@ -1,0 +1,46 @@
+name: Tag new version automatically
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tag_version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Get latest tag
+      id: get_tag
+      run: |
+        # Pega a última tag, ou v0.0.0 se não existir
+        LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+        echo "Last tag is $LAST_TAG"
+        echo "::set-output name=tag::$LAST_TAG"
+
+    - name: Bump patch version and create new tag
+      id: bump_version
+      run: |
+        LAST_TAG=${{ steps.get_tag.outputs.tag }}
+        echo "Last tag: $LAST_TAG"
+        
+        # Remove o "v" e quebra em partes
+        VERSION=${LAST_TAG#v}
+        IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+
+        # Incrementa o patch
+        PATCH=$((PATCH + 1))
+
+        NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
+        echo "New tag: $NEW_TAG"
+
+        # Cria a tag
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git tag $NEW_TAG
+        git push origin $NEW_TAG
+
+        echo "::set-output name=new_tag::$NEW_TAG"

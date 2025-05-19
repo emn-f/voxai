@@ -32,7 +32,6 @@
     display: block;
 }
 
-/* static/style.css */
 @media (max-width: 700px) {
     section[data-testid="stChatInput"] {
         position: fixed !important;
@@ -45,6 +44,4 @@
         padding-bottom: env(safe-area-inset-bottom, 8px);
         transition: top 0.2s, box-shadow 0.2s;
     }
-
-
 }

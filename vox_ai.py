@@ -1,4 +1,4 @@
-import startup_patch  # Aplica o patch do torch.classes
+import startup_patch
 
 import time
 import random

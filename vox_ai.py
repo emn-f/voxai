@@ -13,7 +13,7 @@ from data.sobre import SOBRE
 
 from src.semantica import semantica
 from src.persona import preparar_prompt
-from src.utils import data_vox, buscar_tema
+from src.utils import data_vox, buscar_tema, git_version
 
 base_vox = data_vox("data/base.json") 
 
@@ -32,6 +32,7 @@ with open("static/style.css") as f:
 
 with st.sidebar:
     st.markdown(SOBRE, unsafe_allow_html=True)
+    st.sidebar.markdown(f"**Versão:** {git_version()}")
        
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
 st.session_state.key_api = api_key

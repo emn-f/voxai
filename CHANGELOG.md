@@ -5,6 +5,22 @@ Todas as mudanças importantes deste projeto serão documentadas aqui.
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [Unreleased]
+### Adições
+- Integrar base de dados com resposta da IA para trazer dados mais concretos.
+- Página com redes sociais de parcerias do Vox AI.
+- Versionamento automático pelo GitHub Actions.
+- Guardar histórico entre sessões.
+- Rodapé na side bar.
+
+### Melhorias
+- Melhorias de interface.
+- Melhorar `README.md`.
+
+### Correções
+- Impedir que usuário envie novos prompts enquanto o Vox estiver pensando.
+- Melhorar retorno quando o Vox estiver indisponível ou não poder responder o usuário.
+
 
 ## [1.0.8] - 2025-05-19
 ### Alterado
@@ -36,7 +52,7 @@ e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/
 ### Corrigido
 - Remoção de comentários no `git_version`.
 
-## [1.0.0] - 2025-05-19
+## [1.0.0] - 2025-05-18
 ### Adicionado
 - Primeira versão estável
 - Integração com Gemini API
@@ -60,11 +76,8 @@ e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/
 - Melhorias de UI.
 - Ajustes relacionados à API.
 - Adição do arquivo de `requirements.txt` e melhorias de segurança.
-- MVP Vox AI.
 
----
-
-## [0.0.1] - 2025-05-18
+## [dev-v0.0.1] - 2025-05-17
 ### Adicionado
 - Estrutura inicial do projeto.
 - MVP funcional com interface.
@@ -72,8 +85,21 @@ e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/
 - Primeiras versões do README, temas e JSON.
 - Configuração inicial da API e chamadas.
 - Organização da base de dados e lógica de contexto.
-- Adição de instruções.
+- Adição de personalidade ao chatbot.
 - Saudação transferida para arquivo separado.
 - Iniciando preparação da base de dados.
 - Exibição da última interação do usuário.
 - Melhorias de interface.
+- Adição de informações relacionadas ao projeto.
+- Refatorações para "vox_ai".
+- Configuração da API no GenAI.
+- Exibição de status da API.
+- Alerta de status da API.
+
+### Alterado
+- Ajustes organizacionais.
+- Revisão do `.gitignore`.
+- Melhorias no contexto.
+- Melhorias de UI.
+- Mudança no nome do arquivo.
+- Merge branch 'master' of https://github.com/emn-f/voxai.

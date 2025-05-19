@@ -32,7 +32,7 @@ with open("static/style.css") as f:
 
 with st.sidebar:
     st.markdown(SOBRE, unsafe_allow_html=True)
-    st.sidebar.markdown(f"**Versão:** {git_version()}")
+    st.sidebar.markdown(f"<span style='color: #88888888;'>{git_version()}</span>", unsafe_allow_html=True)
        
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
 st.session_state.key_api = api_key

@@ -7,7 +7,7 @@ import os
 from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
 from data.sobre import SOBRE
-from src.ui import configurar_pagina, carregar_css, carregar_sidebar, animar_texto
+from src.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.chat import processar_prompt
 
 from src.semantica import semantica
@@ -35,6 +35,8 @@ if 'historico' not in st.session_state:
     st.session_state.historico = [{"role": "user", "parts": [INSTRUCOES_VOX]}]
 if 'historico_exibir' not in st.session_state:
     st.session_state.historico_exibir = []
+if 'respondendo' not in st.session_state:
+    st.session_state.respondendo = False
 
 # Inicializa o modelo Gemini e o chat, usando o histórico salvo na sessão
 modelo = genai.GenerativeModel('gemini-2.0-flash')
@@ -58,16 +60,15 @@ if 'key_api' in st.session_state:
         # Animação de digitação para a mensagem de boas-vindas
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
-            animar_texto(mensagem_boas_vindas, msg_placeholder)
-            
+            msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
     prompt = st.chat_input('Digite aqui...')
 
     with open("static/focus_input.js") as f:
         js_code = f.read()
         st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
     
-    if prompt:
-        
+    if prompt and not st.session_state.respondendo:
+        st.session_state.respondendo = True
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
 
@@ -89,7 +90,7 @@ if 'key_api' in st.session_state:
             with st.spinner("🧠 Thinking about it..."):
                 try:
                     resposta = processar_prompt(prompt, chat, preparar_prompt, informacao_complementar)
-                    animar_texto(resposta, msg_placeholder)
+                    msg_placeholder.write_stream(stream_resposta(resposta))
                 except genai.types.generation_types.BlockedPromptException as e:
                     msg_placeholder.empty()
                     st.error("⚠️ Essa pergunta não pode ser respondida pelo Vox.")
@@ -104,3 +105,4 @@ if 'key_api' in st.session_state:
         # Adiciona a resposta do assistente ao histórico
         st.session_state.historico.append({"role": "model", "parts": [resposta]})
         st.session_state.historico_exibir.append({"role": "model", "parts": [resposta]})
+        st.session_state.respondendo = False

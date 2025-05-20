@@ -19,10 +19,7 @@ def carregar_sidebar(sobre, git_version):
         st.markdown(sobre, unsafe_allow_html=True)
         st.sidebar.markdown(f"<span style='color: #88888888;'>{git_version}</span>", unsafe_allow_html=True)
 
-def animar_texto(texto, placeholder, delay=0.01):
-    resposta = ""
-    for letra in texto:
-        resposta += letra
-        placeholder.markdown(resposta + "_")
-        time.sleep(delay)
-    placeholder.markdown(resposta)
+def stream_resposta(resposta):
+    for letra in resposta:
+        yield letra
+        time.sleep(0.01)

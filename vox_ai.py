@@ -42,16 +42,18 @@ if 'respondendo' not in st.session_state:
 modelo = genai.GenerativeModel('gemini-2.0-flash')
 chat = modelo.start_chat(history=st.session_state.historico)
 
+# Exibe o histórico do chat
 for msg in st.session_state.historico_exibir:
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(msg["parts"][0])
+            st.markdown(msg["parts"][0], unsafe_allow_html=True)
     else:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(msg["parts"][0])
-            
+
 # Checa se a chave da API está disponível para continuar o fluxo do chat
 if 'key_api' in st.session_state:
+    # Mensagem de boas-vindas apenas na primeira vez
     if 'primeira_vez' not in st.session_state:
         st.session_state.primeira_vez = True
         mensagem_boas_vindas = SAUDACAO
@@ -61,17 +63,23 @@ if 'key_api' in st.session_state:
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
-    prompt = st.chat_input('Digite aqui...')
+        st.session_state.respondendo = False
 
+    # Foco no input
     with open("static/focus_input.js") as f:
         js_code = f.read()
         st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
-    
-    if prompt and not st.session_state.respondendo:
-        st.session_state.respondendo = True
+
+    prompt = None
+    if not st.session_state.respondendo:
+        prompt = st.chat_input("Digite aqui...")
+    else:
+        st.info("🤖 O Vox está pensando... Aguarde.")
+
+    # Processa o prompt do usuário
+    if prompt:
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
-
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
@@ -83,7 +91,7 @@ if 'key_api' in st.session_state:
             resultados = buscar_tema(tema_detectado, base_vox)
             if resultados:
                 informacao_complementar = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
-       
+
         # Exibe a resposta do assistente com animação de digitação e tratamento de exceções
         with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
@@ -101,8 +109,7 @@ if 'key_api' in st.session_state:
                     st.error("❌ Ocorreu um erro inesperado.")
                     st.exception(e)
                     resposta = "❌ Ocorreu um erro, tente novamente."
-                    
-        # Adiciona a resposta do assistente ao histórico
+
+        # Adiciona a resposta ao histórico
         st.session_state.historico.append({"role": "model", "parts": [resposta]})
         st.session_state.historico_exibir.append({"role": "model", "parts": [resposta]})
-        st.session_state.respondendo = False

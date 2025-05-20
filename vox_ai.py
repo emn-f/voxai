@@ -70,11 +70,8 @@ if 'key_api' in st.session_state:
         js_code = f.read()
         st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
 
-    prompt = None
-    if not st.session_state.respondendo:
-        prompt = st.chat_input("Digite aqui...")
-    else:
-        st.info("🤖 O Vox está pensando... Aguarde.")
+
+    prompt = st.chat_input("Digite aqui...")
 
     # Processa o prompt do usuário
     if prompt:

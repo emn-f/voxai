@@ -59,13 +59,15 @@ if 'key_api' in st.session_state:
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
             animar_texto(mensagem_boas_vindas, msg_placeholder)
+            
     prompt = st.chat_input('Digite aqui...')
 
     with open("static/focus_input.js") as f:
         js_code = f.read()
         st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
-
+    
     if prompt:
+        
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
 
@@ -102,4 +104,3 @@ if 'key_api' in st.session_state:
         # Adiciona a resposta do assistente ao histórico
         st.session_state.historico.append({"role": "model", "parts": [resposta]})
         st.session_state.historico_exibir.append({"role": "model", "parts": [resposta]})
-        

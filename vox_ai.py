@@ -1,8 +1,5 @@
 import startup_patch
 
-import time
-import random
-
 import streamlit as st
 import google.generativeai as genai
 import os
@@ -33,7 +30,6 @@ st.session_state.key_api = api_key
 # Configura o SDK do Gemini com a chave obtida
 genai.configure(api_key=st.session_state.key_api)
 
-
 # Inicializa o histórico se não existir na sessão
 if 'historico' not in st.session_state:
     st.session_state.historico = [{"role": "user", "parts": [INSTRUCOES_VOX]}]
@@ -59,7 +55,7 @@ if 'key_api' in st.session_state:
         mensagem_boas_vindas = SAUDACAO
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
          
-         # Animação de digitação para a mensagem de boas-vindas
+        # Animação de digitação para a mensagem de boas-vindas
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
             animar_texto(mensagem_boas_vindas, msg_placeholder)
@@ -67,11 +63,7 @@ if 'key_api' in st.session_state:
 
     with open("static/focus_input.js") as f:
         js_code = f.read()
-    st.components.v1.html(
-        f"<script>{js_code}</script>",
-        height=0,
-        scrolling=False,
-    )
+        st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
 
     if prompt:
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
@@ -105,8 +97,9 @@ if 'key_api' in st.session_state:
                     msg_placeholder.empty()
                     st.error("❌ Ocorreu um erro inesperado.")
                     st.exception(e)
-                    resposta = "Ocorreu um erro, tente novamente."
+                    resposta = "❌ Ocorreu um erro, tente novamente."
                     
         # Adiciona a resposta do assistente ao histórico
         st.session_state.historico.append({"role": "model", "parts": [resposta]})
         st.session_state.historico_exibir.append({"role": "model", "parts": [resposta]})
+        

@@ -7,7 +7,7 @@ import os
 from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
 from data.sobre import SOBRE
-from src.ui import configurar_pagina, carregar_css, carregar_sidebar, animar_texto
+from src.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.chat import processar_prompt
 
 from src.semantica import semantica
@@ -35,21 +35,25 @@ if 'historico' not in st.session_state:
     st.session_state.historico = [{"role": "user", "parts": [INSTRUCOES_VOX]}]
 if 'historico_exibir' not in st.session_state:
     st.session_state.historico_exibir = []
+if 'respondendo' not in st.session_state:
+    st.session_state.respondendo = False
 
 # Inicializa o modelo Gemini e o chat, usando o histórico salvo na sessão
 modelo = genai.GenerativeModel('gemini-2.0-flash')
 chat = modelo.start_chat(history=st.session_state.historico)
 
+# Exibe o histórico do chat
 for msg in st.session_state.historico_exibir:
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(msg["parts"][0])
+            st.markdown(msg["parts"][0], unsafe_allow_html=True)
     else:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(msg["parts"][0])
-            
+
 # Checa se a chave da API está disponível para continuar o fluxo do chat
 if 'key_api' in st.session_state:
+    # Mensagem de boas-vindas apenas na primeira vez
     if 'primeira_vez' not in st.session_state:
         st.session_state.primeira_vez = True
         mensagem_boas_vindas = SAUDACAO
@@ -58,19 +62,21 @@ if 'key_api' in st.session_state:
         # Animação de digitação para a mensagem de boas-vindas
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
-            animar_texto(mensagem_boas_vindas, msg_placeholder)
-            
-    prompt = st.chat_input('Digite aqui...')
+            msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
+        st.session_state.respondendo = False
 
+    # Foco no input
     with open("static/focus_input.js") as f:
         js_code = f.read()
         st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
-    
+
+
+    prompt = st.chat_input("Digite aqui...")
+
+    # Processa o prompt do usuário
     if prompt:
-        
         st.session_state.historico.append({"role": "user", "parts": [prompt]})
         st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
-
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
@@ -82,14 +88,14 @@ if 'key_api' in st.session_state:
             resultados = buscar_tema(tema_detectado, base_vox)
             if resultados:
                 informacao_complementar = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
-       
+
         # Exibe a resposta do assistente com animação de digitação e tratamento de exceções
         with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
             with st.spinner("🧠 Thinking about it..."):
                 try:
                     resposta = processar_prompt(prompt, chat, preparar_prompt, informacao_complementar)
-                    animar_texto(resposta, msg_placeholder)
+                    msg_placeholder.write_stream(stream_resposta(resposta))
                 except genai.types.generation_types.BlockedPromptException as e:
                     msg_placeholder.empty()
                     st.error("⚠️ Essa pergunta não pode ser respondida pelo Vox.")
@@ -100,7 +106,7 @@ if 'key_api' in st.session_state:
                     st.error("❌ Ocorreu um erro inesperado.")
                     st.exception(e)
                     resposta = "❌ Ocorreu um erro, tente novamente."
-                    
-        # Adiciona a resposta do assistente ao histórico
+
+        # Adiciona a resposta ao histórico
         st.session_state.historico.append({"role": "model", "parts": [resposta]})
         st.session_state.historico_exibir.append({"role": "model", "parts": [resposta]})

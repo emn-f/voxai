@@ -56,7 +56,7 @@ for msg in st.session_state.historico_exibir:
 if 'key_api' in st.session_state:
     if 'primeira_vez' not in st.session_state:
         st.session_state.primeira_vez = True
-        mensagem_boas_vindas = [SAUDACAO]
+        mensagem_boas_vindas = SAUDACAO
         st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
          
          # Animação de digitação para a mensagem de boas-vindas

@@ -77,6 +77,7 @@ e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/
 
 ## [dev-v0.0.1] - 2025-05-17
 ### Adicionado
+- Nascimento do VoxAI (16/05/2025 23:02 `6e6ce0a3`)
 - Estrutura inicial do projeto.
 - MVP funcional com interface.
 - Scripts e workflows para automação.

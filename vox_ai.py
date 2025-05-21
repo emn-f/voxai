@@ -24,26 +24,25 @@ carregar_sidebar(SOBRE, git_version())
 # Obtém a chave da API Gemini de forma segura (primeiro dos segredos do Streamlit, depois das variáveis de ambiente)
 api_key = st.secrets.get("GEMINI_API_KEY", "") or os.environ.get("GEMINI_API_KEY", "")
 
-# Salva a chave no estado da sessão para uso em outras partes do app
+# Salva a chave no estado da sessão para uso em outros lugares
 st.session_state.key_api = api_key
 
 # Configura o SDK do Gemini com a chave obtida
 genai.configure(api_key=st.session_state.key_api)
 
 # Inicializa o histórico se não existir na sessão
-if 'historico' not in st.session_state:
-    st.session_state.historico = [{"role": "user", "parts": [INSTRUCOES_VOX]}]
-if 'historico_exibir' not in st.session_state:
-    st.session_state.historico_exibir = []
-if 'respondendo' not in st.session_state:
-    st.session_state.respondendo = False
+if 'hist' not in st.session_state:
+    st.session_state.hist = [{"role": "user", "parts": [INSTRUCOES_VOX]}]
+if 'hist_exibir' not in st.session_state:
+    st.session_state.hist_exibir = []
+
 
 # Inicializa o modelo Gemini e o chat, usando o histórico salvo na sessão
 modelo = genai.GenerativeModel('gemini-2.0-flash')
-chat = modelo.start_chat(history=st.session_state.historico)
+chat = modelo.start_chat(history=st.session_state.hist)
 
 # Exibe o histórico do chat
-for msg in st.session_state.historico_exibir:
+for msg in st.session_state.hist_exibir:
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
             st.markdown(msg["parts"][0], unsafe_allow_html=True)
@@ -55,15 +54,13 @@ for msg in st.session_state.historico_exibir:
 if 'key_api' in st.session_state:
     # Mensagem de boas-vindas apenas na primeira vez
     if 'primeira_vez' not in st.session_state:
-        st.session_state.primeira_vez = True
         mensagem_boas_vindas = SAUDACAO
-        st.session_state.historico_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
+        st.session_state.hist_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
          
         # Animação de digitação para a mensagem de boas-vindas
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
-        st.session_state.respondendo = False
 
     # Foco no input
     with open("static/focus_input.js") as f:
@@ -75,26 +72,26 @@ if 'key_api' in st.session_state:
 
     # Processa o prompt do usuário
     if prompt:
-        st.session_state.historico.append({"role": "user", "parts": [prompt]})
-        st.session_state.historico_exibir.append({"role": "user", "parts": [prompt]})
+        st.session_state.hist.append({"role": "user", "parts": [prompt]})
+        st.session_state.hist_exibir.append({"role": "user", "parts": [prompt]})
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
 
-        informacao_complementar = ""
-        tema_detectado = semantica(prompt, base_vox)
+        info_adicional= ""
+        tema_match = semantica(prompt, base_vox)
         
-        # Busca informações complementares com base no tema detectado
-        if tema_detectado:
-            resultados = buscar_tema(tema_detectado, base_vox)
+        # Busca informações complementares com base no prompt
+        if tema_match:
+            resultados = buscar_tema(tema_match, base_vox)
             if resultados:
-                informacao_complementar = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
+                info_adicional = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
 
         # Exibe a resposta do assistente com animação de digitação e tratamento de exceções
         with st.chat_message('assistant', avatar="🤖"):
             msg_placeholder = st.empty()
             with st.spinner("🧠 Thinking about it..."):
                 try:
-                    resposta = processar_prompt(prompt, chat, preparar_prompt, informacao_complementar)
+                    resposta = processar_prompt(prompt, chat, preparar_prompt, info_adicional)
                     msg_placeholder.write_stream(stream_resposta(resposta))
                 except genai.types.generation_types.BlockedPromptException as e:
                     msg_placeholder.empty()
@@ -108,5 +105,5 @@ if 'key_api' in st.session_state:
                     resposta = "❌ Ocorreu um erro, tente novamente."
 
         # Adiciona a resposta ao histórico
-        st.session_state.historico.append({"role": "model", "parts": [resposta]})
-        st.session_state.historico_exibir.append({"role": "model", "parts": [resposta]})
+        st.session_state.hist.append({"role": "model", "parts": [resposta]})
+        st.session_state.hist_exibir.append({"role": "model", "parts": [resposta]})

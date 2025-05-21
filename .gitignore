@@ -1,9 +1,9 @@
 __pycache__/
 .devcontainer
-.idea
+.idea/
 .streamlit/secrets.toml
-.venv
-.vscode
+.venv/
+.vscode/
 data/fontes_dados
 /data/import.sql
 /data/import_data.py

@@ -8,6 +8,7 @@
 .venv/
 **/__pycache__/
 *.pyc
+data/__pycache__/sobre.cpython-313.pyc
 
 # Arquivos de Credenciais e Configurações Locais
 .streamlit/secrets.toml

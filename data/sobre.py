@@ -12,7 +12,6 @@ SOBRE = """
     <div style="text-align:center; margin-bottom:1em;">
         <a href="https://github.com/emn-f/voxai" target="_blank" style="text-decoration:none;">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle; margin-right:5px; filter: grayscale(1);" />
-            <span style="font-size:1em; color:#bad5ff;">Repositório no GitHub</span>
         </a>
         
     </div>

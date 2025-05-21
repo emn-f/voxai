@@ -6,7 +6,7 @@
 # Arquivos de Ambiente Python
 # Pastas de ambiente virtual
 .venv/
-__pycache__/
+**/__pycache__/
 *.pyc
 
 # Arquivos de Credenciais e Configurações Locais

@@ -56,6 +56,7 @@ if 'key_api' in st.session_state:
     if 'primeira_vez' not in st.session_state:
         mensagem_boas_vindas = SAUDACAO
         st.session_state.hist_exibir.append({"role": "model", "parts": [mensagem_boas_vindas]})
+        st.session_state.primeira_vez = True
          
         # Animação de digitação para a mensagem de boas-vindas
         with st.chat_message("assistant", avatar="🤖"):

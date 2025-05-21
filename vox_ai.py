@@ -80,7 +80,7 @@ if 'key_api' in st.session_state:
         info_adicional= ""
         tema_match = semantica(prompt, base_vox)
         
-        # Busca informações complementares com base no tema detectado
+        # Busca informações complementares com base no prompt
         if tema_match:
             resultados = buscar_tema(tema_match, base_vox)
             if resultados:

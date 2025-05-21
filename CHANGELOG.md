@@ -19,8 +19,6 @@ e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/
 
 ### Correções
 - Impedir que usuário envie novos prompts enquanto o Vox estiver pensando.
-- Melhorar retorno quando o Vox estiver indisponível ou não poder responder o usuário.
-
 
 ## [1.0.8] - 2025-05-19
 ### Alterado

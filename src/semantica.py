@@ -1,5 +1,4 @@
 from sentence_transformers import SentenceTransformer, util
-
 modelo_semantico = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
 def semantica(prompt, base):

@@ -6,8 +6,9 @@
 # Arquivos de Ambiente Python
 # Pastas de ambiente virtual
 .venv/
-__pycache__/
+**/__pycache__/
 *.pyc
+data/__pycache__/sobre.cpython-313.pyc
 
 # Arquivos de Credenciais e Configurações Locais
 .streamlit/secrets.toml

@@ -8,3 +8,5 @@ git_log_with_tags.txt
 data/fontes_dados
 /data/import.sql
 /data/import_data.py
+.idea
+.devcontainer

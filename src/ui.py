@@ -1,9 +1,8 @@
-# src/ui.py
 import streamlit as st
 import time
 
 def configurar_pagina():
-    st.set_page_config(page_title="VoxAI", page_icon="🌈")
+    st.set_page_config(page_title='VoxAI', page_icon='🌈')
     st.title("Vox AI")
     st.caption("Assistente de Apoio e Informação LGBTQIA+")
 

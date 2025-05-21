@@ -15,10 +15,11 @@ from src.persona import preparar_prompt
 from src.utils import data_vox, BASE_PRINCIPAL_PATH, buscar_tema, git_version
 from static.rodape import RODAPE
 
+configurar_pagina()
+
 base_vox = data_vox(BASE_PRINCIPAL_PATH)
 
 # Configuração da página e título
-configurar_pagina()
 carregar_css()
 carregar_sidebar(SOBRE, git_version(), RODAPE)
 

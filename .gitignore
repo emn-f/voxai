@@ -1,11 +1,21 @@
-__pycache__/
-.devcontainer
-.idea
-.streamlit/secrets.toml
+# Arquivos de IDEs e Ferramentas de Desenvolvimento
+.idea/
+.vscode/
+.devcontainer/
+
+# Arquivos de Ambiente Python
+# Pastas de ambiente virtual
 .venv/
-.vscode
-data/fontes_dados
+__pycache__/
+*.pyc
+
+# Arquivos de Credenciais e Configurações Locais
+.streamlit/secrets.toml
+
+# Outrs versões da base de dados do Vox
+data/fontes_dados/
 /data/import.sql
 /data/import_data.py
-*.pyc
+
+# Funções ainda em desenvolvimento
 changelog_generator.py

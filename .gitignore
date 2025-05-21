@@ -1,11 +1,11 @@
 __pycache__/
 .devcontainer
-.idea/
+.idea
 .streamlit/secrets.toml
 .venv/
-.vscode/
+.vscode
 data/fontes_dados
 /data/import.sql
 /data/import_data.py
 *.pyc
-helps.md
+changelog_generator.py

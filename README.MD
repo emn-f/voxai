@@ -10,7 +10,7 @@ Projeto de extensão universitária que une Inteligência Artificial e acolhimen
     * [Parceria com a Casa Marielle Franco](#parceria-com-a-casa-marielle-franco)
 * [✨ Funcionalidades](#-funcionalidades)
 * [🚀 Como Usar](#-como-usar)
-   * [⚠️ Alerta: Projeto em Desenvolvimento](#-alerta:-projeto-em-desenvolvimento)
+   * [⚠️ Alerta: Projeto em Desenvolvimento](#-alerta-projeto-em-desenvolvimento)
 * [👥 Equipe](#-equipe)
 * [📬 Contato](#-contato)
 * [📝 Changelog](#-changelog)
@@ -56,7 +56,7 @@ O VoxAI ainda está em **desenvolvimento ativo** e esta é uma **versão inicial
 ## 👥 Equipe
 O projeto VoxAI é desenvolvido por uma equipe multidisciplinar dedicada:
 
-* **👑 Emanuel Ferreira** (Diretor do Vox)
+* **Emanuel Ferreira** (Diretor do Vox)
 * **Brenda Pires** 
 * **Fernanda Souza**
 * **Alicia Batista**

@@ -30,4 +30,4 @@ def git_version():
         commit = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode("utf-8").strip()
     except subprocess.CalledProcessError:
         commit = "'-'"
-    return f"{last_tag} ({commit})"
+    return f"{last_tag}" #  ({commit})

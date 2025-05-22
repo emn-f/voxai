@@ -1,8 +1,11 @@
 SAUDACAO = """
-Hey! Eu sou Vox - Assistente de Apoio e Informação LGBTQIA+.
-Como posso ajudar você hoje?
+Oiê! Eu sou o Vox AI, seu assistente de apoio e informação LGBTQIA+.
+Tô aqui pra te ajudar com o que você precisar — de forma segura, confiável e acolhedora. 💖
+
 Você pode me perguntar sobre:
-- Informações sobre a comunidade LGBTQIA+
-- Recursos de apoio
-- Dúvidas gerais
+- Saúde e prevenção (como PrEP, PEP, ISTs ou saúde mental)
+- Locais de acolhimento e serviços para pessoas LGBTQIA+
+- Direitos, cultura e outras dúvidas sobre nossa comunidade
+
+Me conta: como posso te apoiar hoje?
 """

@@ -10,14 +10,13 @@ from src.chat import processar_prompt
 from src.semantica import semantica
 from src.persona import preparar_prompt
 from src.utils import data_vox, BASE_PRINCIPAL_PATH, buscar_tema, git_version
+from static.rodape import RODAPE
 
 base_vox = data_vox(BASE_PRINCIPAL_PATH)
 
 # Configuração da página e título
 configurar_pagina()
 carregar_css()
-
-from static.rodape import RODAPE
 carregar_sidebar(SOBRE, git_version(), RODAPE)
 
 # Obtém a chave da API Gemini de forma segura (primeiro dos segredos do Streamlit, depois das variáveis de ambiente)

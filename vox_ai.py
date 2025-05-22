@@ -1,15 +1,12 @@
 import startup_patch
-
 import streamlit as st
 import google.generativeai as genai
 import os
-
 from data.instrucoes import INSTRUCOES_VOX
 from data.saudacao import SAUDACAO
 from data.sobre import SOBRE
 from src.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.chat import processar_prompt
-
 from src.semantica import semantica
 from src.persona import preparar_prompt
 from src.utils import data_vox, BASE_PRINCIPAL_PATH, buscar_tema, git_version

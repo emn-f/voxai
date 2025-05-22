@@ -45,20 +45,3 @@
         transition: top 0.2s, box-shadow 0.2s;
     }
 }
-
-.vox-sidebar-title {
-        font-size: 1.4em;
-        font-weight: bold;
-        color: #b5179e;
-        margin-bottom: 0.5em;
-    }
-    .vox-sidebar-section {
-        margin-bottom: 1.2em;
-    }
-    .vox-sidebar-parcerias {
-        margin-top: 1em;
-        margin-bottom: 1.2em;
-    }
-    .vox-sidebar-parcerias li {
-        margin-bottom: 0.3em;
-    }

@@ -15,6 +15,7 @@ def configurar_api_gemini():
         return api_key
     except Exception as e:
         st.error(f"Erro ao configurar a API do Gemini: {e}")
+        st.stop()
         return None
 
 def inicializar_chat_modelo():

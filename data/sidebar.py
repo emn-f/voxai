@@ -1,4 +1,4 @@
-SOBRE = """
+SIDEBAR = """
     <style>
     .vox-sidebar-title {
         font-size: 1.4em;
@@ -23,11 +23,10 @@ SOBRE = """
     </style>
     <div class="vox-sidebar-title">Sobre o Vox</div>
     <div class="vox-sidebar-section">
-        O <b>Vox AI</b> é um assistente de apoio e informação <b>LGBTQIA+</b>.<br>
-        Aqui você encontra acolhimento, informações e recursos confiáveis.<br>
+        <b>Vox AI</b> é um assistente de apoio e informação <b>LGBTQIA+</b>. Aqui você encontra acolhimento, informações e recursos confiáveis.<br>
     </div>
     <br>
-    <div class="vox-sidebar-title" style="font-size:1.1em;">Parcerias</div>
+    <div class="vox-sidebar-title">Parcerias</div>
     <ul class="vox-sidebar-parcerias" style="list-style: none; padding-left: 0;">
         <li>
             <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank" style="text-decoration:none;">
@@ -35,16 +34,16 @@ SOBRE = """
             </a>
         </li>
     </ul>
-"""
+    <div style="color:#888; font-size:0.95em; margin-top:1em;">
+        O Vox AI está em constante desenvolvimento e pode cometer equívocos.
+    </div>
 
-RODAPE = """
-<div style="text-align:center; margin-top:5em;">
-    <a href="https://github.com/emn-f/voxai" target="_blank" style="text-decoration:none;">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle; margin-right:5px; filter: grayscale(1);" />
-    </a>
-</div>
-<div style="text-align:center; color:#888; font-size:0.95em; margin-top:1em;">
-    © 2025 Vox AI<br>
-    Todos os direitos reservados.
-</div
+    <div style="text-align:center; margin-top:2em;">
+        <a href="https://github.com/emn-f/voxai" target="_blank" style="text-decoration:none;">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle; margin-right:5px; filter: grayscale(1);" />
+        </a>
+    </div>
+    <div style="text-align:center; color:#888; font-size:0.95em; margin-top:1em;">
+        Copyright © 2025 Vox AI.
+    </div>      
 """

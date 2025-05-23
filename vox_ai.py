@@ -4,7 +4,7 @@ import google.generativeai as genai
 import os
 
 from data.saudacao import SAUDACAO
-from data.sidebar import SOBRE, RODAPE
+from data.sidebar import SIDEBAR
 
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
@@ -19,7 +19,7 @@ carregar_css()
 if 'git_version_str' not in st.session_state:
     st.session_state.git_version_str = git_version()
 
-carregar_sidebar(SOBRE, RODAPE)
+carregar_sidebar(SIDEBAR)
 
 st.session_state.key_api = configurar_api_gemini()
 

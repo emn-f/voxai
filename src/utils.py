@@ -25,9 +25,5 @@ def git_version():
         last_tag = subprocess.check_output(["git", "tag", "--list", tag_pattern, "--sort=-v:refname"]).decode("utf-8").splitlines()
         last_tag = last_tag[0] if last_tag else ""
     except subprocess.CalledProcessError:
-        last_tag = ""
-    try:
-        commit = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode("utf-8").strip()
-    except subprocess.CalledProcessError:
-        commit = "'-'"
-    return f"{last_tag} ({commit})"
+        last_tag = "'-'"
+    return f"{last_tag}"

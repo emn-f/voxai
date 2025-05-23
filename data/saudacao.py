@@ -7,5 +7,5 @@ Você pode me perguntar sobre:
 - Locais de acolhimento e serviços para pessoas LGBTQIA+
 - Direitos, cultura e outras dúvidas sobre nossa comunidade
 
-Me conta: como posso te apoiar hoje?
+Como posso te ajudar agora?
 """

@@ -4,8 +4,7 @@ import google.generativeai as genai
 import os
 import uuid
 
-from data.saudacao import SAUDACAO
-from data.sidebar import SIDEBAR
+from data.prompts.ui_content import SAUDACAO, SIDEBAR
 
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo

@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 import os
 from src.app.ui import stream_resposta
-from data.instrucoes import INSTRUCOES
+from data.prompts.system_prompt import INSTRUCOES
 
 def configurar_api_gemini():
     try:
@@ -24,8 +24,8 @@ def inicializar_chat_modelo():
     if 'hist_exibir' not in st.session_state:
         st.session_state.hist_exibir = []
         
-    modelo = genai.GenerativeModel('gemini-2.0-flash') #
-    chat = modelo.start_chat(history=st.session_state.hist) #
+    modelo = genai.GenerativeModel('gemini-2.0-flash')
+    chat = modelo.start_chat(history=st.session_state.hist)
     return chat
 
 def gerar_resposta(chat, prompt, info_adicional):

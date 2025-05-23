@@ -1,27 +1,6 @@
 # Changelog
-
 Todas as mudanças importantes deste projeto serão documentadas aqui.
 
-O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
-e este projeto utiliza [Versionamento Semântico](https://semver.org/lang/pt-BR/).
-
-## [Unreleased]
-### Adições
-- Integrar base de dados com resposta da IA para trazer dados mais concretos.
-- Página com redes sociais de parcerias do Vox AI.
-- Versionamento automático pelo GitHub Actions.
-- Guardar histórico entre sessões.
-- Rodapé na side bar.
-
-### Melhorias
-- Melhorias de interface.
-- Melhorar `README.md`.
-
-### Correções
-- Impedir que usuário envie novos prompts enquanto o Vox estiver pensando.
-- Melhorar retorno quando o Vox estiver indisponível ou não poder responder o usuário.
-
----
 
 ## [1.0.17] - 2025-05-20
 ### Adicionado

@@ -2,14 +2,18 @@ import streamlit as st
 import startup_patch
 import google.generativeai as genai
 import os
+import uuid
 
 from data.saudacao import SAUDACAO
-from data.sidebar import SOBRE, RODAPE
+from data.sidebar import SIDEBAR
 
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
 from src.utils import data_vox, BASE_PRINCIPAL_PATH, buscar_tema, git_version
+
+from src.core.sheets_integration import append_to_sheet
+
 
 base_vox = data_vox(BASE_PRINCIPAL_PATH)
 
@@ -19,7 +23,11 @@ carregar_css()
 if 'git_version_str' not in st.session_state:
     st.session_state.git_version_str = git_version()
 
-carregar_sidebar(SOBRE, RODAPE)
+if 'session_id' not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+    
+
+carregar_sidebar(SIDEBAR)
 
 st.session_state.key_api = configurar_api_gemini()
 
@@ -59,13 +67,18 @@ if 'key_api' in st.session_state:
         info_adicional= ""
         tema_match = semantica(prompt, base_vox)
 
-        # Busca informações complementares com base no prompt
         if tema_match:
             resultados = buscar_tema(tema_match, base_vox)
-            info_adicional = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
+        else:
+            resultados = None
 
         with st.chat_message("assistant", avatar="🤖"):
-            resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional)
-
+            resposta = gerar_resposta(inicializar_chat_modelo(), prompt, resultados)
+            
+        try:
+            append_to_sheet(st.session_state.session_id, prompt, resposta)
+        except Exception as e:
+            print(f"Falha ao registrar log na planilha: {e}")
+    
         st.session_state.hist.append({"role": "model", "parts": [resposta]})
         st.session_state.hist_exibir.append({"role": "model", "parts": [resposta]})

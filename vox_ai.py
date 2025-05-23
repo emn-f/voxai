@@ -62,10 +62,9 @@ if 'key_api' in st.session_state:
         # Busca informações complementares com base no prompt
         if tema_match:
             resultados = buscar_tema(tema_match, base_vox)
-            info_adicional = f"\n\n🔍 **Informação baseada na pesquisa do projeto Vox:**\n\n{resultados[0]}"
 
         with st.chat_message("assistant", avatar="🤖"):
-            resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional)
+            resposta = gerar_resposta(inicializar_chat_modelo(), prompt, resultados)
 
         st.session_state.hist.append({"role": "model", "parts": [resposta]})
         st.session_state.hist_exibir.append({"role": "model", "parts": [resposta]})

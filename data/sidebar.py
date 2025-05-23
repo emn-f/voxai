@@ -43,7 +43,14 @@ SIDEBAR = """
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle; margin-right:5px; filter: grayscale(1);" />
         </a>
     </div>
-    <div style="text-align:center; color:#888; font-size:0.95em; margin-top:1em;">
+    
+    <div style="text-align:center; margin-top:0.5em;">
+        <a href="https://docs.google.com/document/d/145YqnwVNg2QGyUnXVeZlPb5-6hrALmOXrboMUSesfDQ/edit?usp=sharing" target="_blank" style="color:#888; text-decoration:none; font-size:0.9em;">
+        Política de Privacidade
+        </a>
+    </div>
+    
+    <div style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
         Copyright © 2025 Vox AI.
     </div>      
 """

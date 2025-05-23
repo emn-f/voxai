@@ -13,11 +13,11 @@ def configurar_pagina():
         unsafe_allow_html=True
     )
 
-def carregar_css(path="static/style.css"):
+def carregar_css(path="static/css/style.css"):
     with open(path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-def carregar_sidebar(sobre, git_version, rodape):
+def carregar_sidebar(sobre, rodape):
     with st.sidebar:
         if st.button("🧹 Limpar chat"):
             st.session_state.pop("hist", None)
@@ -25,7 +25,7 @@ def carregar_sidebar(sobre, git_version, rodape):
         st.markdown(sobre, unsafe_allow_html=True)
         st.sidebar.markdown(f"<span style='color: #88888888;'>{st.session_state.git_version_str}</span>", unsafe_allow_html=True)
         st.markdown(rodape, unsafe_allow_html=True)
-        
+
 def stream_resposta(resposta):
     for letra in resposta:
         yield letra

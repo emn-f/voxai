@@ -23,7 +23,7 @@ def carregar_sidebar(sobre, git_version, rodape):
             st.session_state.pop("hist", None)
             st.session_state.pop("hist_exibir", None)
         st.markdown(sobre, unsafe_allow_html=True)
-        st.sidebar.markdown(f"<span style='color: #88888888;'>{git_version}</span>", unsafe_allow_html=True)
+        st.sidebar.markdown(f"<span style='color: #88888888;'>{st.session_state.git_version_str}</span>", unsafe_allow_html=True)
         st.markdown(rodape, unsafe_allow_html=True)
         
 def stream_resposta(resposta):

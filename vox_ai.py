@@ -62,6 +62,8 @@ if 'key_api' in st.session_state:
         # Busca informações complementares com base no prompt
         if tema_match:
             resultados = buscar_tema(tema_match, base_vox)
+        else:
+            resultados = None
 
         with st.chat_message("assistant", avatar="🤖"):
             resposta = gerar_resposta(inicializar_chat_modelo(), prompt, resultados)

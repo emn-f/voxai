@@ -1,18 +1,17 @@
 import streamlit as st
-import startup_patch
 import google.generativeai as genai
+
+import startup_patch
 import os
 import uuid
 
-from data.saudacao import SAUDACAO
-from data.sidebar import SIDEBAR
+from data.prompts.ui_content import SAUDACAO, SIDEBAR
 
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
-from src.utils import data_vox, BASE_PRINCIPAL_PATH, buscar_tema, git_version
-
 from src.core.sheets_integration import append_to_sheet
+from src.utils import BASE_PRINCIPAL_PATH, data_vox, buscar_tema, git_version
 
 
 base_vox = data_vox(BASE_PRINCIPAL_PATH)

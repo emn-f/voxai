@@ -2,7 +2,7 @@
 import os
 import streamlit as st
 import gspread
-from gspread.exceptions import APIError, SpreadsheetNotFound
+from gspread.exceptions import SpreadsheetNotFound
 from google.oauth2.service_account import Credentials
 from datetime import datetime
 import pytz

@@ -16,8 +16,6 @@ media
 
 # Outrs versões da base de dados do Vox
 data/fontes_dados/
-/data/import.sql
-/data/import_data.py
 
 # Funções ainda em desenvolvimento
 changelog_generator.py

@@ -1,3 +1,15 @@
+SAUDACAO = """
+Oiê! Eu sou o Vox AI, seu assistente de apoio e informação LGBTQIA+.
+Tô aqui pra te ajudar com o que você precisar — de forma segura, confiável e acolhedora. 💖
+
+Você pode me perguntar sobre:
+- Saúde e prevenção (como PrEP, PEP, ISTs ou saúde mental)
+- Locais de acolhimento e serviços para pessoas LGBTQIA+
+- Direitos, cultura e outras dúvidas sobre nossa comunidade
+
+Como posso te ajudar agora?
+"""
+
 SIDEBAR = """
     <style>
     .vox-sidebar-title {
@@ -45,7 +57,7 @@ SIDEBAR = """
     </div>
     
     <div style="text-align:center; margin-top:0.5em;">
-        <a href="https://docs.google.com/document/d/145YqnwVNg2QGyUnXVeZlPb5-6hrALmOXrboMUSesfDQ/edit?usp=sharing" target="_blank" style="color:#888; text-decoration:none; font-size:0.9em;">
+        <a href="https://docs.google.com/document/d/e/2PACX-1vRPPcl8Oh-ZDfY6BGSshonmmEtsr7JUX29MpFEvhNOM4-0rq9pj71lg-8tuWlBgQSX6kWFJgQ0mfv_5/pub" target="_blank" style="color:#888; text-decoration:none; font-size:0.9em;">
         Política de Privacidade
         </a>
     </div>

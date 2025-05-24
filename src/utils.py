@@ -2,7 +2,7 @@ import json
 import subprocess
 import os
 
-BASE_PRINCIPAL_PATH = "data/fonte.json"
+BASE_PRINCIPAL_PATH = "data/knowledge_base.json"
 
 def data_vox(caminho=BASE_PRINCIPAL_PATH):
     with open(caminho, "r", encoding="utf-8") as f:

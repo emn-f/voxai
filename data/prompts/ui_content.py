@@ -57,7 +57,7 @@ SIDEBAR = """
     </div>
     
     <div style="text-align:center; margin-top:0.5em;">
-        <a href="https://docs.google.com/document/d/e/2PACX-1vRPPcl8Oh-ZDfY6BGSshonmmEtsr7JUX29MpFEvhNOM4-0rq9pj71lg-8tuWlBgQSX6kWFJgQ0mfv_5/pub" target="_blank" style="color:#888; text-decoration:none; font-size:0.9em;">
+        <a href="https://github.com/emn-f/voxai/blob/master/PRIVACY_POLICY.md" target="_blank" style="color:#888; text-decoration:none; font-size:0.9em;">
         Política de Privacidade
         </a>
     </div>

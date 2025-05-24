@@ -63,6 +63,6 @@ SIDEBAR = """
     </div>
     
     <div style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
-        Copyright © 2025 Vox AI.
+        Copyright © 2025 Vox AI
     </div>      
 """

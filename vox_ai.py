@@ -4,6 +4,8 @@ import google.generativeai as genai
 import startup_patch
 import os
 import uuid
+import unicodedata
+import re
 
 from data.prompts.ui_content import SAUDACAO, SIDEBAR
 
@@ -87,22 +89,15 @@ if 'key_api' in st.session_state:
                 descricao_match_str = "N/A"
             else:
                 descricao_match_str = str(descricao_match)
-                import unicodedata
-                import re
 
-                # 1. Normaliza caracteres Unicode
                 descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
-                
-                # 2. Remove tags HTML/Markdown (se houver a chance de estarem presentes)
-                # Esta regex simples remove a maioria das tags HTML/Markdown básicas.
-                # Se houver formatação complexa, uma biblioteca como BeautifulSoup seria melhor.
+
                 descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
                 descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str) # Remove links Markdown
                 descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str) # Remove negrito Markdown
                 descricao_match_str = re.sub(r'__(.*?)__', r'\1', descricao_match_str) # Remove negrito Markdown
                 descricao_match_str = re.sub(r'\*(.*?)\*', r'\1', descricao_match_str) # Remove itálico Markdown
                 descricao_match_str = re.sub(r'_(.*?)_', r'\1', descricao_match_str) # Remove itálico Markdown
-                # --- Fim da seção de limpeza ---
             append_to_sheet(st.session_state.session_id, prompt, resposta, tema_match, descricao_match_str)
         
         except Exception as e:

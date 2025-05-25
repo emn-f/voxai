@@ -56,26 +56,55 @@ if 'key_api' in st.session_state:
 
     prompt = st.chat_input("Digite aqui...")
 
-    # Processa o prompt do usuário
     if prompt:
         st.session_state.prompt = prompt
         st.session_state.hist.append({"role": "user", "parts": [prompt]})
         st.session_state.hist_exibir.append({"role": "user", "parts": [prompt]})
+        
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
         info_adicional= ""
         tema_match = semantica(prompt, base_vox)
 
+        tema_match, descricao_match = semantica(prompt, base_vox) 
+        
         if tema_match:
             resultados = buscar_tema(tema_match, base_vox)
         else:
             resultados = None
+            descricao_match = "N/A" 
 
         with st.chat_message("assistant", avatar="🤖"):
             resposta = gerar_resposta(inicializar_chat_modelo(), prompt, resultados)
             
         try:
-            append_to_sheet(st.session_state.session_id, prompt, resposta)
+            if isinstance(resposta, list):
+                resposta = " ".join(resposta)
+            else:
+                resposta = str(resposta)
+            
+            if descricao_match is None:
+                descricao_match_str = "N/A"
+            else:
+                descricao_match_str = str(descricao_match)
+                import unicodedata
+                import re
+
+                # 1. Normaliza caracteres Unicode
+                descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
+                
+                # 2. Remove tags HTML/Markdown (se houver a chance de estarem presentes)
+                # Esta regex simples remove a maioria das tags HTML/Markdown básicas.
+                # Se houver formatação complexa, uma biblioteca como BeautifulSoup seria melhor.
+                descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
+                descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str) # Remove links Markdown
+                descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str) # Remove negrito Markdown
+                descricao_match_str = re.sub(r'__(.*?)__', r'\1', descricao_match_str) # Remove negrito Markdown
+                descricao_match_str = re.sub(r'\*(.*?)\*', r'\1', descricao_match_str) # Remove itálico Markdown
+                descricao_match_str = re.sub(r'_(.*?)_', r'\1', descricao_match_str) # Remove itálico Markdown
+                # --- Fim da seção de limpeza ---
+            append_to_sheet(st.session_state.session_id, prompt, resposta, tema_match, descricao_match_str)
+        
         except Exception as e:
             print(f"Falha ao registrar log na planilha: {e}")
     

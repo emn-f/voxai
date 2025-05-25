@@ -9,7 +9,7 @@ import pytz
 
 from src.utils import get_current_branch
 
-def append_to_sheet(session_id, prompt, response):
+def append_to_sheet(session_id, prompt, response, tema_match, desc_match):
     try:
         scopes = [
             "https://www.googleapis.com/auth/spreadsheets",
@@ -32,7 +32,7 @@ def append_to_sheet(session_id, prompt, response):
         worksheet = spreadsheet.worksheet(worksheet_name)
         local_tz = pytz.timezone('America/Bahia')
         timestamp = datetime.now(local_tz).strftime("%Y-%m-%d %H:%M:%S")
-        new_row = [session_id, timestamp, prompt, response]
+        new_row = [session_id, timestamp, prompt, response, tema_match, desc_match]
         worksheet.append_row(new_row)
         
     except SpreadsheetNotFound as e:

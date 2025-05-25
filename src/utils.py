@@ -23,7 +23,7 @@ def get_current_branch():
         else:
             return "Development"
     except (subprocess.CalledProcessError, FileNotFoundError):
-        return "dev"
+        return "Development"
 
 def git_version():
     try:

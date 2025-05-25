@@ -47,6 +47,7 @@ jobs:
         GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         KB_SHEET_ID: ${{ secrets.KB_SHEET_ID }}
       run: python scripts/sync_kb.py
+      working-directory: ./
 
     - name: Commit and push if there are changes
       run: |

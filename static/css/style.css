@@ -22,7 +22,7 @@
     z-index: 9999;
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 4px 24px 0 #00000026;
     padding: 24px;
     min-width: 220px;
     max-width: 90vw;
@@ -44,4 +44,54 @@
         padding-bottom: env(safe-area-inset-bottom, 8px);
         transition: top 0.2s, box-shadow 0.2s;
     }
+}
+
+.vox-sidebar-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, #e63946, #f1c40f, #43aa8b, #4361ee, #b5179e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5em;
+}
+
+.vox-sidebar-section, .vox-sidebar-equipe, .disclaimer, .copyright {
+    color: #fff;
+}
+
+.vox-sidebar-links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1em;
+}
+
+.vox-sidebar-links li {
+    margin-bottom: 0.3em;
+}
+
+.vox-sidebar-links a { 
+    color: #e75480; 
+    font-weight: bold;
+    text-decoration: none; 
+}
+
+
+.vox-sidebar-links .vox-contact-link { 
+    color: #4f4ff6 !important; 
+}
+
+
+.footer-links a, .footer-policy a {
+    text-decoration: none;
+    color: #888; 
+    font-size: 0.9em;
+}
+
+.footer-links img {
+    height: 1.5em;
+    vertical-align: middle;
+    margin-right: 5px;
+    filter: grayscale(1);
 }

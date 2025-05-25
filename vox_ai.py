@@ -93,12 +93,12 @@ if 'key_api' in st.session_state:
                 descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
 
                 descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
-                descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str) # Remove links Markdown
-                descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str) # Remove negrito Markdown
-                descricao_match_str = re.sub(r'__(.*?)__', r'\1', descricao_match_str) # Remove negrito Markdown
-                descricao_match_str = re.sub(r'\*(.*?)\*', r'\1', descricao_match_str) # Remove itálico Markdown
-                descricao_match_str = re.sub(r'_(.*?)_', r'\1', descricao_match_str) # Remove itálico Markdown
-            append_to_sheet(st.session_state.session_id, prompt, resposta, tema_match, descricao_match_str)
+                descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str)
+                descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str)
+                descricao_match_str = re.sub(r'__(.*?)__', r'\1', descricao_match_str)
+                descricao_match_str = re.sub(r'\*(.*?)\*', r'\1', descricao_match_str)
+                descricao_match_str = re.sub(r'_(.*?)_', r'\1', descricao_match_str)
+            append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt, resposta, tema_match, descricao_match_str)
         
         except Exception as e:
             print(f"Falha ao registrar log na planilha: {e}")

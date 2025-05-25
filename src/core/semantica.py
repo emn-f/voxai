@@ -12,10 +12,10 @@ def semantica(prompt, base):
     indice_mais_proximo = similaridades.argmax().item()
     maior_score = similaridades[indice_mais_proximo].item()
     
-    # print(f"Prompt: {prompt}")
-    # print(f"Tema detectado: {temas[indice_mais_proximo]}")
-    # print(f"Score: {maior_score}")
+    print(f"Prompt: {prompt}")
+    print(f"Tema detectado: {temas[indice_mais_proximo]}")
+    print(f"Score: {maior_score}")
 
     if maior_score > threshold: 
-        return temas[indice_mais_proximo]
-    return None
+        return temas[indice_mais_proximo], base[indice_mais_proximo]["descricao"] 
+    return None, None

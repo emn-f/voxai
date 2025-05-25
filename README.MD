@@ -1,63 +1,135 @@
-# VoxAI 🌈: Assistente de Apoio e Informação LGBTQIA+
+# 🌈 VoxAI: Assistente de Apoio e Informação LGBTQIA+
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=Streamlit&logoColor=white)](https://streamlit.io/)
+[![Gemini](https://img.shields.io/badge/Gemini-8E75B8?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Git](https://img.shields.io/badge/GIT-E44C30?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://docs.github.com/en/actions)
+
 
 Projeto de extensão universitária que une Inteligência Artificial e acolhimento para a comunidade LGBTQIA+.
 
+### 👉 [**Acesse aqui o VoxAI e comece a conversar!**](https://assistentevox.streamlit.app/) 👈
+
+---
 
 ## 📋 Sumário
 * [💡 Sobre o Projeto](#-sobre-o-projeto)
-    * [Missão e Propósito](#missão-e-propósito)
-    * [Objetivos](#objetivos)
-    * [Parceria com a Casa Marielle Franco](#parceria-com-a-casa-marielle-franco)
 * [✨ Funcionalidades](#-funcionalidades)
-* [🚀 Como Usar](#-como-usar)
-   * [⚠️ Alerta: Projeto em Desenvolvimento](#-alerta-projeto-em-desenvolvimento)
+* [⚙️ Como Funciona](#️-como-funciona)
+* [💻 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+* [🤝 Nossa Parceria: Casa Marielle Franco](#-nossa-parceria-casa-marielle-franco)
+* [🚀 Rodando o Projeto Localmente](#-rodando-o-projeto-localmente)
+* [🤖 Automação de Versionamento](#-automação-de-versionamento)
+* [🔒 Privacidade](#-privacidade)
 * [👥 Equipe](#-equipe)
 * [📬 Contato](#-contato)
 * [📝 Changelog](#-changelog)
 
 ## 💡 Sobre o Projeto
-O **VoxAI** é um assistente de apoio e informação **LGBTQIA+** desenvolvido como parte do projeto de extensão universitária **"Vox: Inteligência Artificial para Inclusão e Cidadania"** da Universidade Católica do Salvador (UCSal). Liderado por Emanuel Ferreira, estudante de Engenharia de Software, o projeto tem como principal público a comunidade LGBTQIA+ da cidade de Salvador, Bahia, Brasil.
+O **VoxAI** é um assistente de apoio e informação LGBTQIA+ desenvolvido como parte do projeto de extensão universitária **"Vox: Inteligência Artificial para Inclusão e Cidadania"** da Universidade Católica do Salvador (UCSal). Liderado por Emanuel Ferreira, estudante de Engenharia de Software, o projeto tem como principal público a comunidade LGBTQIA+ da cidade de Salvador, Bahia, Brasil.
 
 ### Missão e Propósito
-O VoxAI nasce com o propósito de ser um ponto de apoio digital para pessoas LGBTQIA+, oferecendo informações, orientação e acolhimento através de um assistente virtual inteligente. A iniciativa visa colaborar com instituições que já atuam diretamente com a comunidade, como a Casa Marielle Franco, criando pontes entre tecnologia e cuidado humano. Mais do que uma iniciativa acadêmica, o VoxAI representa um compromisso com a promoção da cidadania, do respeito às diferenças e da dignidade de todas as pessoas.
-
-Pessoas LGBTQIA+, especialmente jovens e pessoas em situação de vulnerabilidade social, enfrentam dificuldades para acessar informações confiáveis sobre seus direitos, serviços públicos seguros e apoio emocional, além de sofrerem discriminação em ambientes institucionais. O tabu presente dentro e fora da comunidade ainda é muito grande, dificultando o acesso a informações cruciais.
-
-### Objetivos
-
-Desenvolver um assistente virtual gratuito que forneça, de forma clara e acessível, informações atualizadas sobre direitos, saúde, acolhimento, políticas públicas e serviços essenciais, contribuindo para o fortalecimento da cidadania e da autonomia dessa população. O VoxAI também poderá ser útil a qualquer pessoa que busque conhecimento sobre esses temas, mesmo que não faça parte da comunidade LGBTQIA+.
-
-### Parceria com a Casa Marielle Franco
-
-O Projeto VoxAI firmou parceria oficial com a **Casa Marielle Franco**, uma instituição de acolhimento independente localizada em Salvador (BA), coordenada por Sandra Muñoz. A Casa é referenciada dentro do VoxAI como espaço seguro e parceiro de acolhimento, atuando como ponto de escuta, validação de conteúdos e apoio à comunidade atendida pelo projeto. Essa parceria reforça o compromisso do VoxAI com a realidade local, com a escuta da comunidade e com o apoio a quem, muitas vezes, foi negligenciado por instituições formais.
+Nossa missão é ser um ponto de apoio digital seguro para pessoas LGBTQIA+, oferecendo informações confiáveis, orientação e acolhimento. Pessoas LGBTQIA+, especialmente jovens e em situação de vulnerabilidade, frequentemente enfrentam barreiras para acessar informações sobre seus direitos, saúde e serviços de apoio, além de sofrerem com a discriminação. O VoxAI nasce para mitigar esse problema, usando a tecnologia para promover cidadania, respeito e dignidade.
 
 ## ✨ Funcionalidades
 
-O VoxAI oferece uma experiência de conversação intuitiva e informativa, com as seguintes funcionalidades:
+O VoxAI oferece uma experiência de conversação intuitiva, segura e informativa:
 
-* **Acolhimento e Informação Segura:** Fornece informações confiáveis sobre a comunidade LGBTQIA+, desde conceitos básicos até recursos especializados.
-* **Tópicos Abrangentes:** Aborda definições sobre identidade de gênero e orientação sexual, direitos legais (retificação de nome, nome social), saúde LGBTQIA+ e prevenção, casas e redes de acolhimento, e apoio psicológico.
-* **Base de Conhecimento Robusta:** Utiliza uma base de dados curada com fontes acadêmicas, documentos oficiais, plataformas digitais, organizações da sociedade civil e relatos da comunidade LGBTQIA+.
-* **Busca Semântica Inteligente:** Detecta o tema do seu prompt para buscar e complementar a resposta com informações relevantes da base de conhecimento.
-* **Personalidade Empática:** O assistente se comunica de maneira respeitosa, empática e acolhedora, adaptando-se ao estilo de conversação.
-* **Interface de Chat Intuitiva:** Desenvolvido com Streamlit para uma experiência de usuário amigável.
-* **Animação de Digitação:** Respostas animadas para uma interação mais dinâmica.
+* **Interface Amigável:** Desenvolvido com Streamlit, o chat é intuitivo e responsivo, com animação de digitação para uma interação mais dinâmica.
+* **Busca Semântica Inteligente:** Antes de responder, o VoxAI analisa sua pergunta e busca em nossa base de conhecimento curada por informações relevantes para complementar a resposta. Utilizamos um modelo `paraphrase-multilingual-MiniLM-L12-v2` para essa tarefa.
+* **IA Generativa com Gemini:** As respostas são geradas pelo modelo `gemini-2.0-flash` da Google, instruído para ser empático, acolhedor e jamais inventar dados sem fontes.
+* **Base de Conhecimento Confiável:** Nossa base de dados é curada com informações de fontes acadêmicas, documentos oficiais, e relatos da comunidade, cobrindo temas como saúde, direitos, cultura e locais de acolhimento.
+* **Registro Anônimo para Melhoria:** As conversas são salvas de forma anônima em uma planilha do Google Sheets para que nossa equipe possa identificar pontos de melhoria e corrigir imprecisões.
 
-## 🚀 Como Usar
+## ⚙️ Como Funciona
 
-O VoxAI está disponível e pronto para uso! Você pode interagir com ele diretamente em:
+O fluxo de uma interação com o VoxAI ocorre da seguinte maneira:
 
-### 👉 [**vox-ai.streamlit.app**](https://vox-ai.streamlit.app) 👈
+1.  **Interface (Frontend):** O usuário interage com o chat através da interface construída em **Streamlit**.
+2.  **Busca Semântica (Backend):** A pergunta do usuário (`prompt`) é enviada para um sistema de busca semântica, que a compara com os temas da nossa base de conhecimento (`knowledge_base.json`). Se a similaridade (score de cosseno) for maior que `0.4`, o conteúdo relevante é recuperado para enriquecer a resposta.
+3.  **Geração da Resposta (LLM):** O prompt original, junto com a informação complementar da busca semântica, é enviado para a **API do Google Gemini**.
+4.  **Exibição e Registro:** A resposta gerada pelo Gemini é exibida ao usuário em formato de *streaming* e, em seguida, a interação (pergunta, resposta e tema correspondente) é registrada de forma anônima no Google Sheets para análise da equipe.
 
-#### ⚠️ Alerta: Projeto em Desenvolvimento
+## 💻 Tecnologias Utilizadas
 
-O VoxAI ainda está em **desenvolvimento ativo** e esta é uma **versão inicial**. Como tal, podem ocorrer algumas instabilidades, interrupções no serviço ou a presença de conteúdo que ainda está sendo aprimorado. Agradecemos sua compreensão e paciência enquanto trabalhamos para melhorar o assistente :)
+Este projeto é construído com as seguintes tecnologias e bibliotecas principais, conforme nosso arquivo `requirements.txt`:
+
+* **Frontend:**
+    * [**Streamlit**](https://streamlit.io/): Para a criação da interface de chat interativa.
+* **IA e Machine Learning:**
+    * [**Google Generative AI (Gemini)**](https://ai.google.dev/): Modelo de linguagem para geração das respostas.
+    * [**Sentence-Transformers**](https://www.sbert.net/): Para a busca semântica e ranqueamento de similaridade.
+    * [**Hugging Face Hub**](https://huggingface.co/): Para download e cache de modelos de ML.
+* **Integração e Dados (API):**
+    * [**gspread**](https://docs.gspread.org/): Para integração e registro de logs no Google Sheets.
+    * [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/): Para autenticação com as APIs do Google.
+* **Automação (CI/CD):**
+    * [**GitHub Actions**](https://github.com/features/actions): Para automação do versionamento com tags nas branches `dev` e `master`.
+
+
+### Outras Ferramentas e Tecnologias de Apoio
+
+Além das bibliotecas principais, o projeto também depende de:
+
+* **Git:** Utilizado para o controle de versão e para exibir dinamicamente a versão do projeto na interface.
+* **JSON:** Formato de arquivo para a estruturação da nossa base de conhecimento (`knowledge_base.json`).
+* **HTML/CSS/JS:** Usados para estilização e melhorias pontuais de usabilidade na interface do Streamlit.
+* **YAML:** Linguagem para a definição dos workflows de automação no GitHub Actions.
+
+## 🤝 Nossa Parceria: Casa Marielle Franco
+
+O Projeto VoxAI tem uma parceria oficial com a **Casa Marielle Franco**, uma instituição de acolhimento independente em Salvador (BA), coordenada por Sandra Muñoz. A Casa é referenciada dentro do VoxAI como um espaço seguro e atua como ponto de escuta e validação de conteúdos, reforçando nosso compromisso com a realidade local e o cuidado humano.
+
+## 🚀 Rodando o Projeto Localmente
+
+Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/emn-f/voxai.git]
+    cd voxai
+    ```
+
+2.  **Crie um ambiente virtual e instale as dependências:**
+    ```bash
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
+
+3.  **Configure as variáveis de ambiente:**
+    Você precisará de uma chave de API do Google Gemini. Crie um arquivo `.streamlit/secrets.toml` na raiz do projeto com o seguinte conteúdo:
+    ```toml
+    GEMINI_API_KEY = "SUA_CHAVE_DE_API_AQUI"
+    ```
+4.  **Execute a aplicação:**
+    ```bash
+    streamlit run vox_ai.py
+    ```
+
+## 🤖 Automação de Versionamento
+
+O projeto utiliza **GitHub Actions** para automatizar o processo de criação de tags de versão.
+* **Branch `dev`**: A cada `push`, uma nova tag `dev-vX.X.X` é criada, incrementando o número do patch.
+* **Branch `master`**: A cada `push`, uma nova tag de produção `vX.X.X` é criada, também incrementando o patch.
+
+Isso garante um controle de versão consistente e automatizado para os ambientes de desenvolvimento e produção.
+
+## 🔒 Privacidade
+
+Sua privacidade é nossa prioridade. **Nós não coletamos dados pessoais** como nome, IP ou localização. A interação é 100% anônima. Para saber mais, leia nossa [**Política de Privacidade**](PRIVACY_POLICY.md).
 
 ## 👥 Equipe
-O projeto VoxAI é desenvolvido por uma equipe multidisciplinar dedicada:
+O projeto VoxAI é desenvolvido por uma equipe multidisciplinar e dedicada:
 
 * **Emanuel Ferreira** (Diretor do Vox)
-* **Brenda Pires** 
+* **Brenda Pires**
 * **Fernanda Souza**
 * **Alicia Batista**
 * **Lucca Pertigas**
@@ -69,8 +141,9 @@ O projeto VoxAI é desenvolvido por uma equipe multidisciplinar dedicada:
 Dúvidas, sugestões ou feedback? Fique à vontade para entrar em contato!
 
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
+* **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
+* **LinkedIn:** [VoxAI no LinkedIn](https://www.linkedin.com/company/assistentevox/)
 
 ## 📝 Changelog
 
-Para acompanhar todas as mudanças e atualizações do projeto, consulte o nosso [CHANGELOG.md](CHANGELOG.md).
-
+Para acompanhar todas as mudanças e atualizações do projeto, consulte o nosso [**CHANGELOG.md**](CHANGELOG.md).

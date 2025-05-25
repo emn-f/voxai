@@ -3,7 +3,9 @@ google-generativeai
 sentence_transformers
 huggingface_hub[hf_xet]
 
-# Adicionado no final do arquivo requirements.txt
+
 gspread
 google-auth-oauthlib
 google-api-python-client
+
+python-dotenv

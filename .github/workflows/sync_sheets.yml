@@ -1,0 +1,58 @@
+name: Sync Knowledge Base from Google Sheets
+
+on:
+  push:
+    branches:
+      - master  # Roda toda vez que houver um push na master
+      - dev
+  schedule:
+    - cron: '0 0 * * *' # Roda todo dia à meia-noite (UTC)
+  workflow_dispatch: # Permite rodar manualmente pela interface do GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11' # Ou a versão que você usa
+   
+    - name: Cache pip packages
+      uses: actions/cache@v4
+      with:
+        # Diretório onde o pip guarda os pacotes baixados
+        path: ~/.cache/pip 
+        # Chave única para o cache. Se requirements.txt mudar, a chave muda.
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        # Chave de fallback
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install python-dotenv
+
+    - name: Run sync script
+      env:
+        GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        KB_SHEET_ID: ${{ secrets.KB_SHEET_ID }}
+      run: python scripts/sync_kb.py
+
+    - name: Commit and push if there are changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add data/knowledge_base.json
+        # A linha a seguir só executa se houver arquivos para commitar
+        git diff --staged --quiet || (git commit -m "chore(data): Atualiza base de conhecimento via Sheets" && git push)
+        echo "Verificação de commit finalizada."

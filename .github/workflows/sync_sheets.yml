@@ -25,8 +25,13 @@ jobs:
       with:
         python-version: '3.11' # Ou a versão que você usa
     
-    - name: Debug - List files in workspace
-      run: ls -R
+    - name: Debug - Show directory structure and current path
+      run: |
+        echo "--- Current Directory ---"
+        pwd
+        echo "--- Recursive Directory Listing ---"
+        ls -R
+        echo "--- End of Debug ---"
 
     - name: Cache pip packages
       uses: actions/cache@v4

@@ -33,7 +33,9 @@ def sync_knowledge_base():
         spreadsheet = client.open_by_key(sheet_id)
         worksheet = spreadsheet.worksheet("origin")
         
-        records = worksheet.get_all_records()
+        records = worksheet.get_all_records(expected_headers=["id", "tema", "descricao", "referencias"])
+        print(f"Planilha '{worksheet.title}' carregada com sucesso.")
+        print(f"Total de registros encontrados: {len(records)}")
         
         if not records:
             print("Nenhum registro encontrado na planilha. O arquivo JSON não será alterado.")

@@ -31,7 +31,7 @@ def sync_knowledge_base():
             raise ValueError("A variável de ambiente KB_SHEET_ID não foi definida.")
             
         spreadsheet = client.open_by_key(sheet_id)
-        worksheet = spreadsheet.worksheet("base")
+        worksheet = spreadsheet.worksheet("origin")
         
         records = worksheet.get_all_records()
         

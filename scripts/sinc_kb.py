@@ -28,7 +28,7 @@ def sync_knowledge_base():
         client = gspread.authorize(creds)
 
         # --- Define caminhos e timezone ---
-        json_path = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'knowledge_base.json')
+        json_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'knowledge_base.json')
         local_tz = pytz.timezone('America/Bahia')
 
         # --- Carrega a base de conhecimento existente ---

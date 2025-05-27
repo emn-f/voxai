@@ -22,7 +22,7 @@
     "descricao": "A ausência de profissionais capacitados em clínicas públicas gera longas filas de espera; por exemplo, o CAPS Trans em São Paulo recebe pacientes após meses de agendamento, evidenciando lacunas no atendimento.",
     "referencias": [
       "Portaria GM/MS nº 2.803/2013 (SUS cria CAPS Trans)",
-      "FIORUCCI, Marcio et al. ‘Atendimento de pessoas trans no SUS’, Revista Saúde em Debate, 2022"
+      "FIORUCCI, Marcio et al. ‘Atendimento de pessoas trans no SUS’ Revista Saúde em Debate 2022"
     ]
   },
   {
@@ -37,7 +37,7 @@
     "descricao": "Estudos mostram que 45% das mulheres lésbicas já sofreram violência física doméstica; a Lei Maria da Penha (Lei 11.340/2006) é aplicada, mas carece de protocolos específicos para lésbicas.",
     "referencias": [
       "Lei 11.340/2006 (Maria da Penha)",
-      "Relatório Instituto Patrícia Galvão, ‘Violência contra mulheres lésbicas’, 2021"
+      "Relatório Instituto Patrícia Galvão, ‘Violência contra mulheres lésbicas’ 2021"
     ]
   },
   {
@@ -116,7 +116,7 @@
     "descricao": "Programas de educação sexual que incluem discussões sobre orientação sexual e identidade de gênero promovem ambiente escolar mais acolhedor e reduzem preconceitos.",
     "referencias": [
       "Lei 13.711/2018 (Escola sem Homofobia)",
-      "UNESCO, ‘International technical guidance on sexuality education’, 2018"
+      "UNESCO, ‘International technical guidance on sexuality education’ 2018"
     ]
   },
   {
@@ -211,7 +211,7 @@
   },
   {
     "id": "vox-kb-031",
-    "tema": "prevenção de ISTs (HIV, sífilis, hepatites)",
+    "tema": "prevenção de ISTs (HIV, sifilis, hepatite)",
     "descricao": "Campanhas como ‘Teste é Tudo’ orientam sobre uso de preservativos e locais de testagem gratuita; o Sistema Único de Saúde oferece exames sem custo em postos de saúde.",
     "referencias": []
   },
@@ -230,10 +230,8 @@
   {
     "id": "vox-kb-034",
     "tema": "direito ao uso do nome social no sus",
-    "descricao": "Portaria MS nº 2.227/2019 assegura uso do nome social em prontuários; em casos de recusa, o cidadão pode recorrer à Ouvidoria do SUS.",
-    "referencias": [
-      "Portaria MS nº 2.227/2019"
-    ]
+    "descricao": "Portaria MS nº 2.227/2019 assegura uso do nome social em prontuários; em casos de recusa, o cidadão pode recorrer à Ouvidoria do SUS. Portaria MS nº 2.227/2019",
+    "referencias": []
   },
   {
     "id": "vox-kb-035",
@@ -250,19 +248,14 @@
   {
     "id": "vox-kb-037",
     "tema": "processo de retificação de nome e gênero em documentos",
-    "descricao": "Lei 13.484/2017 estabelece retificação extrajudicial em cartórios; é necessário apresentar certidão de nascimento e declaração médica ou psicológica.",
-    "referencias": [
-      "Lei 13.484/2017"
-    ]
+    "descricao": "Lei 13.484/2017 estabelece retificação extrajudicial em cartórios; é necessário apresentar certidão de nascimento e declaração médica ou psicológica.Lei 13.484/2017",
+    "referencias": []
   },
   {
     "id": "vox-kb-038",
     "tema": "como denunciar lgbtfobia e achar a lei aplicável",
-    "descricao": "A Lei 7.716/1989 equipara LGBTfobia ao crime de racismo; denúncias podem ser feitas no Disque 100 ou na Delegacia de Crimes Raciais e Delitos de Intolerância.",
-    "referencias": [
-      "Lei 7.716/1989",
-      "Disque 100 (Ouvidoria Nacional dos Direitos Humanos)"
-    ]
+    "descricao": "A Lei 7.716/1989 equipara LGBTfobia ao crime de racismo; denúncias podem ser feitas no Disque 100 ou na Delegacia de Crimes Raciais e Delitos de Intolerância. Lei 7.716/1989;Disque 100 (Ouvidoria Nacional dos Direitos Humanos)",
+    "referencias": []
   },
   {
     "id": "vox-kb-039",
@@ -304,6 +297,12 @@
     "id": "vox-kb-045",
     "tema": "apagamento histórico da comunidade lgbtqia+",
     "descricao": "Exemplos como a omissão de Marsha P. Johnson nos registros oficiais dos Stonewall riots ilustram como a falta de registros compromete a memória coletiva.",
+    "referencias": []
+  },
+  {
+    "id": "vox-kb-046",
+    "tema": "referencia nova",
+    "descricao": "desce nova",
     "referencias": []
   }
 ]

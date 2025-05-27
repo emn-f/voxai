@@ -73,8 +73,15 @@ def sync_knowledge_base():
                     print(f"AVISO: Pulando linha {row_num} por falta de dados essenciais (id, tema ou descricao).")
                     continue
 
-                # Prepara a atualização do status para a planilha
-                cells_to_update_on_sheet.append(gspread.Cell(row_num, status_col_index, "Sincronizado"))
+                # Pega a data/hora atual uma vez
+                current_time = datetime.now(local_tz)
+
+                # Formata a data para o padrão brasileiro
+                formatted_timestamp_br = current_time.strftime("%d/%m/%Y às %H:%M:%S")
+                new_status_message = f"Sincronizado em {formatted_timestamp_br}"
+
+                # Prepara a atualização da célula de status com a nova mensagem
+                cells_to_update_on_sheet.append(gspread.Cell(row_num, status_col_index, new_status_message))
                 
                 # Prepara a atualização do JSON
                 current_time_iso = datetime.now(local_tz).isoformat()

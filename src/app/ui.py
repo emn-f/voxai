@@ -6,7 +6,7 @@ def configurar_pagina():
     st.markdown(
         """
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h1 style="text-align: center; padding-top: 0">Vox AI 🌈</h1>
+            <h1 style="text-align: center">Vox AI 🌈</h1>
             <p style="text-align: center; color: gray;">Assistente de Apoio e Informação LGBTQIA+</p>
         </div>
         """,

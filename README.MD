@@ -21,7 +21,6 @@ Projeto de extensão universitária que une Inteligência Artificial e acolhimen
 ## 📋 Sumário
 * [💡 Sobre o Projeto](#-sobre-o-projeto)
 * [✨ Funcionalidades](#-funcionalidades)
-* [⚙️ Como Funciona](#️-como-funciona)
 * [💻 Tecnologias Utilizadas](#-tecnologias-utilizadas)
 * [🤝 Nossa Parceria: Casa Marielle Franco](#-nossa-parceria-casa-marielle-franco)
 * [🚀 Rodando o Projeto Localmente](#-rodando-o-projeto-localmente)
@@ -46,15 +45,6 @@ O VoxAI oferece uma experiência de conversação intuitiva, segura e informativ
 * **IA Generativa com Gemini:** As respostas são geradas pelo modelo `gemini-2.0-flash` da Google, instruído para ser empático, acolhedor e jamais inventar dados sem fontes.
 * **Base de Conhecimento Confiável:** Nossa base de dados é curada com informações de fontes acadêmicas, documentos oficiais, e relatos da comunidade, cobrindo temas como saúde, direitos, cultura e locais de acolhimento.
 * **Registro Anônimo para Melhoria:** As conversas são salvas de forma anônima em uma planilha do Google Sheets para que nossa equipe possa identificar pontos de melhoria e corrigir imprecisões.
-
-## ⚙️ Como Funciona
-
-O fluxo de uma interação com o VoxAI ocorre da seguinte maneira:
-
-1.  **Interface (Frontend):** O usuário interage com o chat através da interface construída em **Streamlit**.
-2.  **Busca Semântica (Backend):** A pergunta do usuário (`prompt`) é enviada para um sistema de busca semântica, que a compara com os temas da nossa base de conhecimento (`knowledge_base.json`). Se a similaridade (score de cosseno) for maior que `0.4`, o conteúdo relevante é recuperado para enriquecer a resposta.
-3.  **Geração da Resposta (LLM):** O prompt original, junto com a informação complementar da busca semântica, é enviado para a **API do Google Gemini**.
-4.  **Exibição e Registro:** A resposta gerada pelo Gemini é exibida ao usuário em formato de *streaming* e, em seguida, a interação (pergunta, resposta e tema correspondente) é registrada de forma anônima no Google Sheets para análise da equipe.
 
 ## 💻 Tecnologias Utilizadas
 

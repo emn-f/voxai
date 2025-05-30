@@ -163,6 +163,7 @@ Dúvidas, sugestões ou feedback? Fique à vontade para entrar em contato!
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
 * **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
 * **LinkedIn:** [Projeto Vox](https://www.linkedin.com/company/assistentevox/)
+* **Linktree:** [linktr.ee/voxai](https://linktr.ee/voxai)
 
 ## 📝 Changelog
 

@@ -44,7 +44,7 @@ O VoxAI oferece uma experiência de conversação intuitiva, segura e informativ
 
 * **Interface Amigável:** Desenvolvido com Streamlit, o chat é intuitivo e responsivo, com animação de digitação para uma interação mais dinâmica.
 * **Busca Semântica Inteligente:** Antes de responder, o VoxAI analisa sua pergunta e busca em nossa base de conhecimento curada por informações relevantes para complementar a resposta. Utilizamos um modelo `paraphrase-multilingual-MiniLM-L12-v2` para essa tarefa.
-* **IA Generativa com Gemini:** As respostas são geradas pelo modelo `gemini-1.5-flash` (ou a versão que estiver utilizando, ex: `gemini-2.0-flash` conforme mencionado anteriormente) da Google, instruído para ser empático, acolhedor e jamais inventar dados sem fontes.
+* **IA Generativa com Gemini:** As respostas são geradas pelo modelo `gemini-2.0-flash` da Google, instruído para ser empático, acolhedor e jamais inventar dados sem fontes.
 * **Base de Conhecimento Confiável:** Nossa base de dados é curada com informações de fontes acadêmicas, documentos oficiais, e relatos da comunidade, cobrindo temas como saúde, direitos, cultura e locais de acolhimento.
 * **Registro Anônimo para Melhoria:** As conversas são salvas de forma anônima em uma planilha do Google Sheets para que nossa equipe possa identificar pontos de melhoria e corrigir imprecisões.
 
@@ -143,9 +143,7 @@ Sua privacidade é nossa prioridade. **Nós não coletamos dados pessoais** como
 
 ## 📝 Licença
 
-Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE) (ou `LICENSE.md`) para mais detalhes.
-
-*(Certifique-se de que você possui um arquivo chamado `LICENSE` ou `LICENSE.md` na raiz do seu projeto contendo o texto completo da Licença MIT. Se não tiver, você pode criar um facilmente. Existem muitos templates disponíveis online, como o do próprio GitHub ao criar um novo arquivo.)*
+Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👥 Equipe
 O projeto VoxAI é desenvolvido por uma equipe multidisciplinar e dedicada:
@@ -164,7 +162,7 @@ Dúvidas, sugestões ou feedback? Fique à vontade para entrar em contato!
 
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
 * **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
-* **LinkedIn:** [VoxAI no LinkedIn](https://www.linkedin.com/company/assistentevox/)
+* **LinkedIn:** [Projeto Vox](https://www.linkedin.com/company/assistentevox/)
 
 ## 📝 Changelog
 

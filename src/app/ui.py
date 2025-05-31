@@ -27,7 +27,7 @@ def carregar_sidebar(sidebar_content, git_version, kb_version): # Adicionada kb_
         # Exibe a versão do App e da Base de Conhecimento
         version_display = f"""
         <div style='color: #88888888; text-align: center; margin: auto; font-size: 0.9em;'>
-            VoxAI: {git_version}<br>Base de Dados: v{kb_version}
+            {git_version} | KB: v{kb_version}
         </div>
         """
         st.sidebar.markdown(version_display, unsafe_allow_html=True)

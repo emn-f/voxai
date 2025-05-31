@@ -1,392 +1,395 @@
-[
-  {
-    "id": "vox-kb-001",
-    "tema": "Políticas educacionais inclusivas para reduzir bullying em escolas",
-    "descricao": "Diretrizes como o Programa Escola Sem Homofobia (PEBH) incluem oficinas e debates em sala de aula; por exemplo, a Lei 13.185/2015 institui programas de prevenção à violência e contribui para diminuir casos de bullying contra estudantes LGBTQIA+.",
-    "referencias": [
-      "Lei 13.185/2015 (Programa Escola Segura do Ministério da Educação)",
-      "Relatório UNESCO ‘School Violence and Bullying’ (2017)"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:57:45.802118-03:00"
-  },
-  {
-    "id": "vox-kb-002",
-    "tema": "representação de pessoas não binárias na literatura brasileira contemporânea",
-    "descricao": "Romances como “Um Útero É Do Tamanho de Um Punho” apresentam protagonistas não binárias, ampliando a discussão sobre gêneros e promovendo maior visibilidade dessas identidades.",
-    "referencias": [
-      "VAZ, Alice. Um Útero É Do Tamanho de Um Punho. Editora Patuá, 2021"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727541-03:00"
-  },
-  {
-    "id": "vox-kb-003",
-    "tema": "barreiras no acesso a saúde mental para pessoas trans no Brasil",
-    "descricao": "A ausência de profissionais capacitados em clínicas públicas gera longas filas de espera; por exemplo, o CAPS Trans em São Paulo recebe pacientes após meses de agendamento, evidenciando lacunas no atendimento.",
-    "referencias": [
-      "Portaria GM/MS nº 2.803/2013 (SUS cria CAPS Trans)",
-      "FIORUCCI, Marcio et al. ‘Atendimento de pessoas trans no SUS’ Revista Saúde em Debate 2022"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727558-03:00"
-  },
-  {
-    "id": "vox-kb-004",
-    "tema": "influência das redes sociais na formação de identidade LGBTQIA+ em jovens",
-    "descricao": "Comunidades no Instagram e grupos no TikTok oferecem referências e acolhimento; canais como @lgbtqhistória estimulam o processo de autoaceitação.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727573-03:00"
-  },
-  {
-    "id": "vox-kb-005",
-    "tema": "violência de gênero contra mulheres lésbicas: desafios legais e sociais",
-    "descricao": "Estudos mostram que 45% das mulheres lésbicas já sofreram violência física doméstica; a Lei Maria da Penha (Lei 11.340/2006) é aplicada, mas carece de protocolos específicos para lésbicas.",
-    "referencias": [
-      "Lei 11.340/2006 (Maria da Penha)",
-      "Relatório Instituto Patrícia Galvão, ‘Violência contra mulheres lésbicas’ 2021"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727592-03:00"
-  },
-  {
-    "id": "vox-kb-006",
-    "tema": "uso de tecnologias digitais para ativismo político LGBTQIA+",
-    "descricao": "Ferramentas como petições online (Change.org) e hashtags (#LGBTQPride) mobilizam apoiadores e pressionam legisladores, aumentando o engajamento em pautas de direitos civis.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727606-03:00"
-  },
-  {
-    "id": "vox-kb-007",
-    "tema": "impactos da despatologização das identidades trans na medicina",
-    "descricao": "A retirada da transgeneridade da CID-11 reduziu barreiras para tratamentos de afirmação de gênero; por exemplo, portarias como a nº 2.803/2013 flexibilizam o acesso a hormonioterapia no SUS.",
-    "referencias": [
-      "Classificação ICD-11 da OMS (2019)",
-      "Portaria GM/MS nº 2.803/2013"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727620-03:00"
-  },
-  {
-    "id": "vox-kb-008",
-    "tema": "como leis trabalhistas protegem funcionários LGBTQIA+ no ambiente corporativo",
-    "descricao": "Artigos da CLT e normas ISO 30415 obrigam empresas a criar políticas antiassédio; algumas organizações adotam cartilhas internas e canais anônimos de denúncia.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727637-03:00"
-  },
-  {
-    "id": "vox-kb-009",
-    "tema": "história dos movimentos LGBTQIA+ no Brasil e principais conquistas legislativas",
-    "descricao": "Marcos como a revogação da Portaria 1.820/1999 e a decisão do STF em 2011 que reconheceu a união estável homoafetiva são marcos legais.",
-    "referencias": [
-      "STF, ADI 4277/2010 e ADPF 132/2011",
-      "Portaria 1.820/1999 (Forças Armadas)"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727651-03:00"
-  },
-  {
-    "id": "vox-kb-010",
-    "tema": "cultura pop e visibilidade LGBTQIA+",
-    "descricao": "Séries como “Sintonia” e filmes como “Hoje Eu Quero Voltar Sozinho” aumentam a aceitação social ao retratar relacionamentos LGBTQIA+ de forma natural.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727667-03:00"
-  },
-  {
-    "id": "vox-kb-011",
-    "tema": "desafios de inclusão de LGBTQIA+ no mercado informal",
-    "descricao": "Feiras populares e ambulantes LGBTQIA+ relatam conflitos com fiscalização; em Salvador, iniciativas de cooperativas criam redes de apoio para formalização de negócios.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727680-03:00"
-  },
-  {
-    "id": "vox-kb-012",
-    "tema": "como a mídia de massa representa pessoas LGBTQIA+",
-    "descricao": "Telejornais e programas exibem pautas de diversidade, mas ainda há ausência de pessoas trans como apresentadoras; pesquisas da Aberje indicam sub-representação no rádio e na TV.",
-    "referencias": [
-      "Pesquisa ABERJE, ‘Representação LGBTQIA+ na mídia’, 2023"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727693-03:00"
-  },
-  {
-    "id": "vox-kb-013",
-    "tema": "proteção de jovens LGBTQIA+ em situação de rua",
-    "descricao": "Abrigos como o Casa 1 (SP) oferecem acolhimento especializado; políticas municipais de juventude em BH iniciaram vacinação e acolhimento psicológico exclusivo para esse público.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727705-03:00"
-  },
-  {
-    "id": "vox-kb-014",
-    "tema": "movimentos sociais e avanços legais para LGBTQIA+",
-    "descricao": "Marchas como a Parada do Orgulho em São Paulo pressionam por leis antidiscriminação; em 2019, o PL 4.919/2001 avançou no Senado para endurecer penas contra LGBTfobia.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727717-03:00"
-  },
-  {
-    "id": "vox-kb-015",
-    "tema": "desafios judiciais na adoção por casais homoafetivos",
-    "descricao": "Apesar de decisões favoráveis do STF, juízes ainda solicitam relatórios sociais adicionais; estatísticas do CNJ mostram redução de 20% nos recursos negados em 2024.",
-    "referencias": [
-      "CNJ, ‘Relatório sobre adoção homoafetiva’, 2024"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727729-03:00"
-  },
-  {
-    "id": "vox-kb-016",
-    "tema": "implementação de educação sexual e diversidade de gênero nas escolas públicas",
-    "descricao": "Programas de educação sexual que incluem discussões sobre orientação sexual e identidade de gênero promovem ambiente escolar mais acolhedor e reduzem preconceitos.",
-    "referencias": [
-      "Lei 13.711/2018 (Escola sem Homofobia)",
-      "UNESCO, ‘International technical guidance on sexuality education’ 2018"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727742-03:00"
-  },
-  {
-    "id": "vox-kb-017",
-    "tema": "invisibilidade de pessoas intersex nas políticas públicas",
-    "descricao": "A ausência de protocolos de atendimento intersex no SUS e a falta de reconhecimento da anomalia DSD (Distúrbios de Desenvolvimento Sexual) criam lacunas em tratamentos médicos.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727755-03:00"
-  },
-  {
-    "id": "vox-kb-018",
-    "tema": "desafios de famílias monoparentais LGBTQIA+",
-    "descricao": "Pais ou mães solo LGBTQIA+ relatam dificuldade em conquistar benefícios do Bolsa Família; políticas de assistência social ainda não contemplam estruturas familiares diversas.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727767-03:00"
-  },
-  {
-    "id": "vox-kb-019",
-    "tema": "impacto do estigma social na saúde física de LGBTQIA+",
-    "descricao": "Estudos associam elevados níveis de cortisol em pessoas LGBT a maior incidência de hipertensão; pesquisa da Fiocruz de 2023 correlacionou estresse crônico a doenças cardiovasculares.",
-    "referencias": [
-      "FIORUCCI, Marcio et al. ‘Estresse e doenças cardiovasculares em LGBTQIA+’, Fiocruz, 2023"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727781-03:00"
-  },
-  {
-    "id": "vox-kb-020",
-    "tema": "programas de ação afirmativa para estudantes LGBTQIA+ no ensino superior",
-    "descricao": "Universidades como a UFRJ e a UFBA criaram cotas específicas e bolsas de apoio psicológico, reduzindo em 15% a evasão de estudantes LGBTQIA+ nos últimos três anos.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727794-03:00"
-  },
-  {
-    "id": "vox-kb-021",
-    "tema": "projeto vox: assistente AI para acolhimento LGBTQIA+",
-    "descricao": "O projeto Vox utiliza inteligência artificial para desenvolver um assistente virtual de apoio à população LGBTQIA+, conectando usuários a serviços e instituições comprometidos com cidadania e respeito às diversidades.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727806-03:00"
-  },
-  {
-    "id": "vox-kb-022",
-    "tema": "fontes de conhecimento usadas no projeto vox",
-    "descricao": "A base de conhecimento do Vox reúne fontes acadêmicas, documentos oficiais, plataformas digitais, organizações da sociedade civil e relatos da comunidade LGBTQIA+, assegurando informação confiável e atualizada.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727818-03:00"
-  },
-  {
-    "id": "vox-kb-023",
-    "tema": "quais são as áreas prioritárias de conteúdo no vox",
-    "descricao": "Foram definidas como prioritárias: direitos LGBTQIA+, saúde preventiva, acolhimento psicológico, acesso a políticas públicas e serviços essenciais, de acordo com as principais demandas da comunidade.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727830-03:00"
-  },
-  {
-    "id": "vox-kb-024",
-    "tema": "parcerias estratégicas de acolhimento no vox",
-    "descricao": "Colaborações com instituições como Casa Marielle Franco integram tecnologia e práticas de acolhimento, ampliando redes de suporte e fortalecendo o impacto social.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727842-03:00"
-  },
-  {
-    "id": "vox-kb-025",
-    "tema": "inclusão digital e acesso à informação no vox",
-    "descricao": "O assistente prioriza acessibilidade digital e disponibiliza conteúdos sobre direitos, saúde e políticas públicas para qualquer pessoa interessada.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727855-03:00"
-  },
-  {
-    "id": "vox-kb-026",
-    "tema": "quais barreiras existem para informações confiáveis",
-    "descricao": "Discriminação institucional, falta de capacitação profissional e tabus dificultam o acesso a serviços públicos inclusivos; pesquisa do IBGE de 2022 identificou 30% de negação de atendimento.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727867-03:00"
-  },
-  {
-    "id": "vox-kb-027",
-    "tema": "principais desafios sociais da população LGBTQIA+",
-    "descricao": "Marginalização e violência estruturais elevam riscos de exclusão; o Atlas da Violência 2023 apontou que pessoas trans têm taxa de homicídio 4,2 vezes maior que a média nacional.",
-    "referencias": [
-      "Atlas da Violência 2023 (IPEA/FBSP)"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727882-03:00"
-  },
-  {
-    "id": "vox-kb-028",
-    "tema": "exclusão e vulnerabilidade econômica de LGBTQIA+",
-    "descricao": "Rejeição familiar e discriminação no trabalho geram desemprego de até 25% na população trans; iniciativas de microcrédito tentam diminuir esse impacto.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727895-03:00"
-  },
-  {
-    "id": "vox-kb-029",
-    "tema": "violência e crimes de ódio contra pessoas LGBTQIA+",
-    "descricao": "Dados do Anuário Brasileiro de Segurança Pública mostram 3.400 ocorrências de crimes de ódio em 2023; a falta de delegacias especializadas agrava o atendimento.",
-    "referencias": [
-      "Anuário Brasileiro de Segurança Pública 2024"
-    ],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727917-03:00"
-  },
-  {
-    "id": "vox-kb-030",
-    "tema": "Desinformação e fake news sobre LGBTQIA+",
-    "descricao": "Verificar fontes como agências de checagem (Aos Fatos, Lupa) e consultar dados oficiais (Ministério da Saúde) ajuda a combater narrativas falsas que reforçam preconceitos.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T20:38:22.503605-03:00"
-  },
-  {
-    "id": "vox-kb-031",
-    "tema": "prevenção de ISTs (HIV, sifilis, hepatite)",
-    "descricao": "Campanhas como ‘Teste é Tudo’ orientam sobre uso de preservativos e locais de testagem gratuita; o Sistema Único de Saúde oferece exames sem custo em postos de saúde.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727942-03:00"
-  },
-  {
-    "id": "vox-kb-032",
-    "tema": "diferenças entre PrEP e PEP e acesso no SUS",
-    "descricao": "A PrEP previne o HIV antes de exposição e a PEP é tomada até 72h após risco; portaria nº 1.947/2019 regulamenta sua distribuição gratuita no SUS.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727954-03:00"
-  },
-  {
-    "id": "vox-kb-033",
-    "tema": "como obter suporte emocional e saúde mental gratuita",
-    "descricao": "Grupos de escuta em ONGs como Casa1 e serviços de psicoterapia social em universidades oferecem atendimento sem custo ou a baixo preço.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727967-03:00"
-  },
-  {
-    "id": "vox-kb-034",
-    "tema": "direito ao uso do nome social no sus",
-    "descricao": "Portaria MS nº 2.227/2019 assegura uso do nome social em prontuários; em casos de recusa, o cidadão pode recorrer à Ouvidoria do SUS. Portaria MS nº 2.227/2019",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727979-03:00"
-  },
-  {
-    "id": "vox-kb-035",
-    "tema": "atendimento especializado para lgbtqia+ em serviços públicos",
-    "descricao": "Unidades como os Centros de Referência LGBT+ contam com equipes treinadas para atendimento sem discriminação e apoio psicossocial.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.727992-03:00"
-  },
-  {
-    "id": "vox-kb-036",
-    "tema": "como acessar serviços públicos sem discriminação",
-    "descricao": "Procedimentos como a formalização de denúncia na Defensoria Pública e uso de formulário de atendimento humanizado garantem proteção dos direitos do cidadão.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728004-03:00"
-  },
-  {
-    "id": "vox-kb-037",
-    "tema": "processo de retificação de nome e gênero em documentos",
-    "descricao": "Lei 13.484/2017 estabelece retificação extrajudicial em cartórios; é necessário apresentar certidão de nascimento e declaração médica ou psicológica.Lei 13.484/2017",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728015-03:00"
-  },
-  {
-    "id": "vox-kb-038",
-    "tema": "denunciar lgbtfobia e achar a lei aplicável",
-    "descricao": "A Lei 7.716/1989 equipara LGBTfobia ao crime de racismo; denúncias podem ser feitas no Disque 100 ou na Delegacia de Crimes Raciais e Delitos de Intolerância. Lei 7.716/1989;Disque 100 (Ouvidoria Nacional dos Direitos Humanos)",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-29T20:02:24.867339-03:00"
-  },
-  {
-    "id": "vox-kb-039",
-    "tema": "canais para denunciar discriminação em órgãos públicos",
-    "descricao": "Ouvidorias do SUS, Defensorias Públicas e Ministério Público recebem denúncias; por exemplo, o Disque 180 acolhe casos de violação de direitos humanos.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728040-03:00"
-  },
-  {
-    "id": "vox-kb-040",
-    "tema": "união estável, casamento civil e adoção por lgbtqia+",
-    "descricao": "Decisões do STF (ADI 4277/2010) reconhecem igualdade no casamento e adoção; cartórios não podem recusar atos civis com base em orientação sexual.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728051-03:00"
-  },
-  {
-    "id": "vox-kb-041",
-    "tema": "direitos trabalhistas e ambiente de trabalho inclusivo",
-    "descricao": "Normas como a Convenção 111 da OIT orientam empresas; políticas de diversidade internas e canais confidenciais fortalecem a segurança do trabalhador.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728063-03:00"
-  },
-  {
-    "id": "vox-kb-042",
-    "tema": "assistente virtual gratuito para direitos e cidadania lgbtqia+",
-    "descricao": "Plataformas como apps e chatbots reúnem informações sobre direitos e serviços públicos, centralizando guias de orientações de forma gratuita.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728075-03:00"
-  },
-  {
-    "id": "vox-kb-043",
-    "tema": "mapa de ongs, coletivos e espaços seguros para lgbtqia+",
-    "descricao": "Diretórios online listam organizações como a Casa Nem em SP e o Grupo Gay da Bahia, oferecendo apoio jurídico, psicológico e cultural.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728087-03:00"
-  },
-  {
-    "id": "vox-kb-044",
-    "tema": "recursos e suporte para lgbtqia+ em situação de rua",
-    "descricao": "Abrigos como A Casa 1 em São Paulo e programas municipais de acolhimento garantem alimentação, banho e acolhimento psicológico.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728099-03:00"
-  },
-  {
-    "id": "vox-kb-045",
-    "tema": "apagamento histórico da comunidade lgbtqia+",
-    "descricao": "Exemplos como a omissão de Marsha P. Johnson nos registros oficiais dos Stonewall riots ilustram como a falta de registros compromete a memória coletiva.",
-    "referencias": [],
-    "criacao": "20/05/2025",
-    "modificado_em": "2025-05-27T12:38:00.728111-03:00"
-  }
-]
+{
+  "kb_version": "0.0.1",
+  "data": [
+    {
+      "id": "vox-kb-001",
+      "tema": "Políticas educacionais inclusivas para reduzir bullying em escolas",
+      "descricao": "Diretrizes como o Programa Escola Sem Homofobia (PEBH) incluem oficinas e debates em sala de aula; por exemplo, a Lei 13.185/2015 institui programas de prevenção à violência e contribui para diminuir casos de bullying contra estudantes LGBTQIA+.",
+      "referencias": [
+        "Lei 13.185/2015 (Programa Escola Segura do Ministério da Educação)",
+        "Relatório UNESCO ‘School Violence and Bullying’ (2017)"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:57:45.802118-03:00"
+    },
+    {
+      "id": "vox-kb-002",
+      "tema": "representação de pessoas não binárias na literatura brasileira contemporânea",
+      "descricao": "Romances como “Um Útero É Do Tamanho de Um Punho” apresentam protagonistas não binárias, ampliando a discussão sobre gêneros e promovendo maior visibilidade dessas identidades.",
+      "referencias": [
+        "VAZ, Alice. Um Útero É Do Tamanho de Um Punho. Editora Patuá, 2021"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727541-03:00"
+    },
+    {
+      "id": "vox-kb-003",
+      "tema": "barreiras no acesso a saúde mental para pessoas trans no Brasil",
+      "descricao": "A ausência de profissionais capacitados em clínicas públicas gera longas filas de espera; por exemplo, o CAPS Trans em São Paulo recebe pacientes após meses de agendamento, evidenciando lacunas no atendimento.",
+      "referencias": [
+        "Portaria GM/MS nº 2.803/2013 (SUS cria CAPS Trans)",
+        "FIORUCCI, Marcio et al. ‘Atendimento de pessoas trans no SUS’ Revista Saúde em Debate 2022"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727558-03:00"
+    },
+    {
+      "id": "vox-kb-004",
+      "tema": "influência das redes sociais na formação de identidade LGBTQIA+ em jovens",
+      "descricao": "Comunidades no Instagram e grupos no TikTok oferecem referências e acolhimento; canais como @lgbtqhistória estimulam o processo de autoaceitação.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727573-03:00"
+    },
+    {
+      "id": "vox-kb-005",
+      "tema": "violência de gênero contra mulheres lésbicas: desafios legais e sociais",
+      "descricao": "Estudos mostram que 45% das mulheres lésbicas já sofreram violência física doméstica; a Lei Maria da Penha (Lei 11.340/2006) é aplicada, mas carece de protocolos específicos para lésbicas.",
+      "referencias": [
+        "Lei 11.340/2006 (Maria da Penha)",
+        "Relatório Instituto Patrícia Galvão, ‘Violência contra mulheres lésbicas’ 2021"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727592-03:00"
+    },
+    {
+      "id": "vox-kb-006",
+      "tema": "uso de tecnologias digitais para ativismo político LGBTQIA+",
+      "descricao": "Ferramentas como petições online (Change.org) e hashtags (#LGBTQPride) mobilizam apoiadores e pressionam legisladores, aumentando o engajamento em pautas de direitos civis.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727606-03:00"
+    },
+    {
+      "id": "vox-kb-007",
+      "tema": "impactos da despatologização das identidades trans na medicina",
+      "descricao": "A retirada da transgeneridade da CID-11 reduziu barreiras para tratamentos de afirmação de gênero; por exemplo, portarias como a nº 2.803/2013 flexibilizam o acesso a hormonioterapia no SUS.",
+      "referencias": [
+        "Classificação ICD-11 da OMS (2019)",
+        "Portaria GM/MS nº 2.803/2013"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727620-03:00"
+    },
+    {
+      "id": "vox-kb-008",
+      "tema": "como leis trabalhistas protegem funcionários LGBTQIA+ no ambiente corporativo",
+      "descricao": "Artigos da CLT e normas ISO 30415 obrigam empresas a criar políticas antiassédio; algumas organizações adotam cartilhas internas e canais anônimos de denúncia.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727637-03:00"
+    },
+    {
+      "id": "vox-kb-009",
+      "tema": "história dos movimentos LGBTQIA+ no Brasil e principais conquistas legislativas",
+      "descricao": "Marcos como a revogação da Portaria 1.820/1999 e a decisão do STF em 2011 que reconheceu a união estável homoafetiva são marcos legais.",
+      "referencias": [
+        "STF, ADI 4277/2010 e ADPF 132/2011",
+        "Portaria 1.820/1999 (Forças Armadas)"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727651-03:00"
+    },
+    {
+      "id": "vox-kb-010",
+      "tema": "cultura pop e visibilidade LGBTQIA+",
+      "descricao": "Séries como “Sintonia” e filmes como “Hoje Eu Quero Voltar Sozinho” aumentam a aceitação social ao retratar relacionamentos LGBTQIA+ de forma natural.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727667-03:00"
+    },
+    {
+      "id": "vox-kb-011",
+      "tema": "desafios de inclusão de LGBTQIA+ no mercado informal",
+      "descricao": "Feiras populares e ambulantes LGBTQIA+ relatam conflitos com fiscalização; em Salvador, iniciativas de cooperativas criam redes de apoio para formalização de negócios.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727680-03:00"
+    },
+    {
+      "id": "vox-kb-012",
+      "tema": "como a mídia de massa representa pessoas LGBTQIA+",
+      "descricao": "Telejornais e programas exibem pautas de diversidade, mas ainda há ausência de pessoas trans como apresentadoras; pesquisas da Aberje indicam sub-representação no rádio e na TV.",
+      "referencias": [
+        "Pesquisa ABERJE, ‘Representação LGBTQIA+ na mídia’, 2023"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727693-03:00"
+    },
+    {
+      "id": "vox-kb-013",
+      "tema": "proteção de jovens LGBTQIA+ em situação de rua",
+      "descricao": "Abrigos como o Casa 1 (SP) oferecem acolhimento especializado; políticas municipais de juventude em BH iniciaram vacinação e acolhimento psicológico exclusivo para esse público.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727705-03:00"
+    },
+    {
+      "id": "vox-kb-014",
+      "tema": "movimentos sociais e avanços legais para LGBTQIA+",
+      "descricao": "Marchas como a Parada do Orgulho em São Paulo pressionam por leis antidiscriminação; em 2019, o PL 4.919/2001 avançou no Senado para endurecer penas contra LGBTfobia.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727717-03:00"
+    },
+    {
+      "id": "vox-kb-015",
+      "tema": "desafios judiciais na adoção por casais homoafetivos",
+      "descricao": "Apesar de decisões favoráveis do STF, juízes ainda solicitam relatórios sociais adicionais; estatísticas do CNJ mostram redução de 20% nos recursos negados em 2024.",
+      "referencias": [
+        "CNJ, ‘Relatório sobre adoção homoafetiva’, 2024"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727729-03:00"
+    },
+    {
+      "id": "vox-kb-016",
+      "tema": "implementação de educação sexual e diversidade de gênero nas escolas públicas",
+      "descricao": "Programas de educação sexual que incluem discussões sobre orientação sexual e identidade de gênero promovem ambiente escolar mais acolhedor e reduzem preconceitos.",
+      "referencias": [
+        "Lei 13.711/2018 (Escola sem Homofobia)",
+        "UNESCO, ‘International technical guidance on sexuality education’ 2018"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727742-03:00"
+    },
+    {
+      "id": "vox-kb-017",
+      "tema": "invisibilidade de pessoas intersex nas políticas públicas",
+      "descricao": "A ausência de protocolos de atendimento intersex no SUS e a falta de reconhecimento da anomalia DSD (Distúrbios de Desenvolvimento Sexual) criam lacunas em tratamentos médicos.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727755-03:00"
+    },
+    {
+      "id": "vox-kb-018",
+      "tema": "desafios de famílias monoparentais LGBTQIA+",
+      "descricao": "Pais ou mães solo LGBTQIA+ relatam dificuldade em conquistar benefícios do Bolsa Família; políticas de assistência social ainda não contemplam estruturas familiares diversas.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727767-03:00"
+    },
+    {
+      "id": "vox-kb-019",
+      "tema": "impacto do estigma social na saúde física de LGBTQIA+",
+      "descricao": "Estudos associam elevados níveis de cortisol em pessoas LGBT a maior incidência de hipertensão; pesquisa da Fiocruz de 2023 correlacionou estresse crônico a doenças cardiovasculares.",
+      "referencias": [
+        "FIORUCCI, Marcio et al. ‘Estresse e doenças cardiovasculares em LGBTQIA+’, Fiocruz, 2023"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727781-03:00"
+    },
+    {
+      "id": "vox-kb-020",
+      "tema": "programas de ação afirmativa para estudantes LGBTQIA+ no ensino superior",
+      "descricao": "Universidades como a UFRJ e a UFBA criaram cotas específicas e bolsas de apoio psicológico, reduzindo em 15% a evasão de estudantes LGBTQIA+ nos últimos três anos.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727794-03:00"
+    },
+    {
+      "id": "vox-kb-021",
+      "tema": "projeto vox: assistente AI para acolhimento LGBTQIA+",
+      "descricao": "O projeto Vox utiliza inteligência artificial para desenvolver um assistente virtual de apoio à população LGBTQIA+, conectando usuários a serviços e instituições comprometidos com cidadania e respeito às diversidades.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727806-03:00"
+    },
+    {
+      "id": "vox-kb-022",
+      "tema": "fontes de conhecimento usadas no projeto vox",
+      "descricao": "A base de conhecimento do Vox reúne fontes acadêmicas, documentos oficiais, plataformas digitais, organizações da sociedade civil e relatos da comunidade LGBTQIA+, assegurando informação confiável e atualizada.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727818-03:00"
+    },
+    {
+      "id": "vox-kb-023",
+      "tema": "quais são as áreas prioritárias de conteúdo no vox",
+      "descricao": "Foram definidas como prioritárias: direitos LGBTQIA+, saúde preventiva, acolhimento psicológico, acesso a políticas públicas e serviços essenciais, de acordo com as principais demandas da comunidade.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727830-03:00"
+    },
+    {
+      "id": "vox-kb-024",
+      "tema": "parcerias estratégicas de acolhimento no vox",
+      "descricao": "Colaborações com instituições como Casa Marielle Franco integram tecnologia e práticas de acolhimento, ampliando redes de suporte e fortalecendo o impacto social.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727842-03:00"
+    },
+    {
+      "id": "vox-kb-025",
+      "tema": "inclusão digital e acesso à informação no vox",
+      "descricao": "O assistente prioriza acessibilidade digital e disponibiliza conteúdos sobre direitos, saúde e políticas públicas para qualquer pessoa interessada.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727855-03:00"
+    },
+    {
+      "id": "vox-kb-026",
+      "tema": "quais barreiras existem para informações confiáveis",
+      "descricao": "Discriminação institucional, falta de capacitação profissional e tabus dificultam o acesso a serviços públicos inclusivos; pesquisa do IBGE de 2022 identificou 30% de negação de atendimento.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727867-03:00"
+    },
+    {
+      "id": "vox-kb-027",
+      "tema": "principais desafios sociais da população LGBTQIA+",
+      "descricao": "Marginalização e violência estruturais elevam riscos de exclusão; o Atlas da Violência 2023 apontou que pessoas trans têm taxa de homicídio 4,2 vezes maior que a média nacional.",
+      "referencias": [
+        "Atlas da Violência 2023 (IPEA/FBSP)"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727882-03:00"
+    },
+    {
+      "id": "vox-kb-028",
+      "tema": "exclusão e vulnerabilidade econômica de LGBTQIA+",
+      "descricao": "Rejeição familiar e discriminação no trabalho geram desemprego de até 25% na população trans; iniciativas de microcrédito tentam diminuir esse impacto.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727895-03:00"
+    },
+    {
+      "id": "vox-kb-029",
+      "tema": "violência e crimes de ódio contra pessoas LGBTQIA+",
+      "descricao": "Dados do Anuário Brasileiro de Segurança Pública mostram 3.400 ocorrências de crimes de ódio em 2023; a falta de delegacias especializadas agrava o atendimento.",
+      "referencias": [
+        "Anuário Brasileiro de Segurança Pública 2024"
+      ],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727917-03:00"
+    },
+    {
+      "id": "vox-kb-030",
+      "tema": "Desinformação e fake news sobre LGBTQIA+",
+      "descricao": "Verificar fontes como agências de checagem (Aos Fatos, Lupa) e consultar dados oficiais (Ministério da Saúde) ajuda a combater narrativas falsas que reforçam preconceitos.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T20:38:22.503605-03:00"
+    },
+    {
+      "id": "vox-kb-031",
+      "tema": "prevenção de ISTs (HIV, sifilis, hepatite)",
+      "descricao": "Campanhas como ‘Teste é Tudo’ orientam sobre uso de preservativos e locais de testagem gratuita; o Sistema Único de Saúde oferece exames sem custo em postos de saúde.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727942-03:00"
+    },
+    {
+      "id": "vox-kb-032",
+      "tema": "diferenças entre PrEP e PEP e acesso no SUS",
+      "descricao": "A PrEP previne o HIV antes de exposição e a PEP é tomada até 72h após risco; portaria nº 1.947/2019 regulamenta sua distribuição gratuita no SUS.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727954-03:00"
+    },
+    {
+      "id": "vox-kb-033",
+      "tema": "como obter suporte emocional e saúde mental gratuita",
+      "descricao": "Grupos de escuta em ONGs como Casa1 e serviços de psicoterapia social em universidades oferecem atendimento sem custo ou a baixo preço.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727967-03:00"
+    },
+    {
+      "id": "vox-kb-034",
+      "tema": "direito ao uso do nome social no sus",
+      "descricao": "Portaria MS nº 2.227/2019 assegura uso do nome social em prontuários; em casos de recusa, o cidadão pode recorrer à Ouvidoria do SUS. Portaria MS nº 2.227/2019",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727979-03:00"
+    },
+    {
+      "id": "vox-kb-035",
+      "tema": "atendimento especializado para lgbtqia+ em serviços públicos",
+      "descricao": "Unidades como os Centros de Referência LGBT+ contam com equipes treinadas para atendimento sem discriminação e apoio psicossocial.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.727992-03:00"
+    },
+    {
+      "id": "vox-kb-036",
+      "tema": "como acessar serviços públicos sem discriminação",
+      "descricao": "Procedimentos como a formalização de denúncia na Defensoria Pública e uso de formulário de atendimento humanizado garantem proteção dos direitos do cidadão.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728004-03:00"
+    },
+    {
+      "id": "vox-kb-037",
+      "tema": "processo de retificação de nome e gênero em documentos",
+      "descricao": "Lei 13.484/2017 estabelece retificação extrajudicial em cartórios; é necessário apresentar certidão de nascimento e declaração médica ou psicológica.Lei 13.484/2017",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728015-03:00"
+    },
+    {
+      "id": "vox-kb-038",
+      "tema": "denunciar lgbtfobia e achar a lei aplicável",
+      "descricao": "A Lei 7.716/1989 equipara LGBTfobia ao crime de racismo; denúncias podem ser feitas no Disque 100 ou na Delegacia de Crimes Raciais e Delitos de Intolerância. Lei 7.716/1989;Disque 100 (Ouvidoria Nacional dos Direitos Humanos)",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-29T20:02:24.867339-03:00"
+    },
+    {
+      "id": "vox-kb-039",
+      "tema": "canais para denunciar discriminação em órgãos públicos",
+      "descricao": "Ouvidorias do SUS, Defensorias Públicas e Ministério Público recebem denúncias; por exemplo, o Disque 180 acolhe casos de violação de direitos humanos.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728040-03:00"
+    },
+    {
+      "id": "vox-kb-040",
+      "tema": "união estável, casamento civil e adoção por lgbtqia+",
+      "descricao": "Decisões do STF (ADI 4277/2010) reconhecem igualdade no casamento e adoção; cartórios não podem recusar atos civis com base em orientação sexual.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728051-03:00"
+    },
+    {
+      "id": "vox-kb-041",
+      "tema": "direitos trabalhistas e ambiente de trabalho inclusivo",
+      "descricao": "Normas como a Convenção 111 da OIT orientam empresas; políticas de diversidade internas e canais confidenciais fortalecem a segurança do trabalhador.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728063-03:00"
+    },
+    {
+      "id": "vox-kb-042",
+      "tema": "assistente virtual gratuito para direitos e cidadania lgbtqia+",
+      "descricao": "Plataformas como apps e chatbots reúnem informações sobre direitos e serviços públicos, centralizando guias de orientações de forma gratuita.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728075-03:00"
+    },
+    {
+      "id": "vox-kb-043",
+      "tema": "mapa de ongs, coletivos e espaços seguros para lgbtqia+",
+      "descricao": "Diretórios online listam organizações como a Casa Nem em SP e o Grupo Gay da Bahia, oferecendo apoio jurídico, psicológico e cultural.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728087-03:00"
+    },
+    {
+      "id": "vox-kb-044",
+      "tema": "recursos e suporte para lgbtqia+ em situação de rua",
+      "descricao": "Abrigos como A Casa 1 em São Paulo e programas municipais de acolhimento garantem alimentação, banho e acolhimento psicológico.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728099-03:00"
+    },
+    {
+      "id": "vox-kb-045",
+      "tema": "apagamento histórico da comunidade lgbtqia+",
+      "descricao": "Exemplos como a omissão de Marsha P. Johnson nos registros oficiais dos Stonewall riots ilustram como a falta de registros compromete a memória coletiva.",
+      "referencias": [],
+      "criacao": "20/05/2025",
+      "modificado_em": "2025-05-27T12:38:00.728111-03:00"
+    }
+  ]
+}

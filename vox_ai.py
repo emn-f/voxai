@@ -15,11 +15,13 @@ from src.core.semantica import semantica
 from src.core.sheets_integration import append_to_sheet
 from src.utils import BASE_PRINCIPAL_PATH, data_vox, buscar_tema, git_version
 
-
-base_vox = data_vox(BASE_PRINCIPAL_PATH)
-
+base_vox_items, kb_version_str = data_vox(BASE_PRINCIPAL_PATH)
+    
 configurar_pagina()
 carregar_css()
+
+if 'kb_version_str' not in st.session_state:
+    st.session_state.kb_version_str = kb_version_str
 
 if 'git_version_str' not in st.session_state:
     st.session_state.git_version_str = git_version()
@@ -28,7 +30,7 @@ if 'session_id' not in st.session_state:
     st.session_state.session_id = str(uuid.uuid4())
     
 
-carregar_sidebar(SIDEBAR)
+carregar_sidebar(SIDEBAR, st.session_state.git_version_str, st.session_state.kb_version_str)
 
 st.session_state.key_api = configurar_api_gemini()
 
@@ -66,12 +68,12 @@ if 'key_api' in st.session_state:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
         info_adicional= ""
-        tema_match = semantica(prompt, base_vox)
+        tema_match = semantica(prompt, base_vox_items)
 
-        tema_match, descricao_match = semantica(prompt, base_vox) 
+        tema_match, descricao_match = semantica(prompt, base_vox_items) 
         
         if tema_match:
-            resultados = buscar_tema(tema_match, base_vox)
+            resultados = buscar_tema(tema_match, base_vox_items)
         else:
             resultados = None
             descricao_match = "N/A" 

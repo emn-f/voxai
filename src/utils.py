@@ -5,13 +5,22 @@ import os
 BASE_PRINCIPAL_PATH = "data/knowledge_base.json"
 
 def data_vox(caminho=BASE_PRINCIPAL_PATH):
-    with open(caminho, "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(caminho, "r", encoding="utf-8") as f:
+            full_data = json.load(f)
+            # Retorna os itens da base e a versão da KB
+            return full_data.get("data", []), full_data.get("kb_version", "N/A")
+    except FileNotFoundError:
+        print(f"Arquivo da base de conhecimento não encontrado em: {caminho}")
+        return [], "N/A"
+    except json.JSONDecodeError:
+        print(f"Erro ao decodificar JSON da base de conhecimento em: {caminho}")
+        return [], "N/A"
 
-def buscar_tema(tema, base):
+def buscar_tema(tema, base_items): # Renomeado 'base' para 'base_items' para clareza
     return [
         item["descricao"]
-        for item in base
+        for item in base_items # Agora 'base_items' é a lista de dados
         if tema.lower() in item["tema"].lower()
     ]
     

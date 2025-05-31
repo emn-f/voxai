@@ -1,16 +1,16 @@
-name: Sync Knowledge Base from Google Sheets
+name: Sincronização da Base de Conhecimento
 
 on:
   push:
     branches:
-      - master  # Roda toda vez que houver um push na master
+      - master 
       - dev
   schedule:
-    - cron: '0 0 * * *' # Roda todo dia à meia-noite (UTC)
-  workflow_dispatch: # Permite rodar manualmente pela interface do GitHub
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write # Necessário para commitar e fazer push
 
 jobs:
   sync:
@@ -23,7 +23,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11' # Ou a versão que você usa
+        python-version: '3.11'
     
     - name: Debug - Show directory structure and current path
       run: |
@@ -36,11 +36,8 @@ jobs:
     - name: Cache pip packages
       uses: actions/cache@v4
       with:
-        # Diretório onde o pip guarda os pacotes baixados
         path: ~/.cache/pip 
-        # Chave única para o cache. Se requirements.txt mudar, a chave muda.
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        # Chave de fallback
         restore-keys: |
           ${{ runner.os }}-pip-
 
@@ -49,19 +46,36 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install python-dotenv 
+        sudo apt-get update && sudo apt-get install -y jq
 
     - name: Run sync script
       env:
         GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         KB_SHEET_ID: ${{ secrets.KB_SHEET_ID }}
       run: python scripts/sinc_kb.py
-      working-directory: ./
+      working-directory: ./ # [cite: emn-f/voxai/voxai-dev/.github/workflows/sync_sheets.yml]
 
     - name: Commit and push if there are changes
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add data/knowledge_base.json
-        # A linha a seguir só executa se houver arquivos para commitar
-        git diff --staged --quiet || (git commit -m "Atualização na base de conhecimento do Vox" && git push)
+        
+        # Verifica se há alterações no knowledge_base.json
+        if ! git diff --quiet data/knowledge_base.json; then
+          # Adiciona apenas o knowledge_base.json para o stage
+          git add data/knowledge_base.json
+          
+          # Extrai a kb_version do JSON
+          # Certifique-se que o caminho para knowledge_base.json está correto
+          KB_VERSION=$(jq -r .kb_version data/knowledge_base.json)
+          
+          # Cria a mensagem de commit com a versão da KB
+          COMMIT_MESSAGE="Action: Base de conhecimento atualizada para v${KB_VERSION} (via sync sheets)"
+          
+          echo "Mudanças detectadas no knowledge_base.json. Commitando com a mensagem: ${COMMIT_MESSAGE}"
+          git commit -m "${COMMIT_MESSAGE}"
+          git push
+        else
+          echo "Nenhuma mudança detectada no knowledge_base.json. Nenhum commit será feito."
+        fi
         echo "Verificação de commit finalizada."

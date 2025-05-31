@@ -10,7 +10,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Git](https://img.shields.io/badge/GIT-E44C30?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://docs.github.com/en/actions)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 Projeto de extensão universitária que une Inteligência Artificial e acolhimento para a comunidade LGBTQIA+.
 
@@ -21,12 +21,13 @@ Projeto de extensão universitária que une Inteligência Artificial e acolhimen
 ## 📋 Sumário
 * [💡 Sobre o Projeto](#-sobre-o-projeto)
 * [✨ Funcionalidades](#-funcionalidades)
-* [⚙️ Como Funciona](#️-como-funciona)
 * [💻 Tecnologias Utilizadas](#-tecnologias-utilizadas)
 * [🤝 Nossa Parceria: Casa Marielle Franco](#-nossa-parceria-casa-marielle-franco)
 * [🚀 Rodando o Projeto Localmente](#-rodando-o-projeto-localmente)
+* [🤝 Como Contribuir](#-como-contribuir)
 * [🤖 Automação de Versionamento](#-automação-de-versionamento)
 * [🔒 Privacidade](#-privacidade)
+* [📝 Licença](#-licença)
 * [👥 Equipe](#-equipe)
 * [📬 Contato](#-contato)
 * [📝 Changelog](#-changelog)
@@ -47,15 +48,6 @@ O VoxAI oferece uma experiência de conversação intuitiva, segura e informativ
 * **Base de Conhecimento Confiável:** Nossa base de dados é curada com informações de fontes acadêmicas, documentos oficiais, e relatos da comunidade, cobrindo temas como saúde, direitos, cultura e locais de acolhimento.
 * **Registro Anônimo para Melhoria:** As conversas são salvas de forma anônima em uma planilha do Google Sheets para que nossa equipe possa identificar pontos de melhoria e corrigir imprecisões.
 
-## ⚙️ Como Funciona
-
-O fluxo de uma interação com o VoxAI ocorre da seguinte maneira:
-
-1.  **Interface (Frontend):** O usuário interage com o chat através da interface construída em **Streamlit**.
-2.  **Busca Semântica (Backend):** A pergunta do usuário (`prompt`) é enviada para um sistema de busca semântica, que a compara com os temas da nossa base de conhecimento (`knowledge_base.json`). Se a similaridade (score de cosseno) for maior que `0.4`, o conteúdo relevante é recuperado para enriquecer a resposta.
-3.  **Geração da Resposta (LLM):** O prompt original, junto com a informação complementar da busca semântica, é enviado para a **API do Google Gemini**.
-4.  **Exibição e Registro:** A resposta gerada pelo Gemini é exibida ao usuário em formato de *streaming* e, em seguida, a interação (pergunta, resposta e tema correspondente) é registrada de forma anônima no Google Sheets para análise da equipe.
-
 ## 💻 Tecnologias Utilizadas
 
 Este projeto é construído com as seguintes tecnologias e bibliotecas principais, conforme nosso arquivo `requirements.txt`:
@@ -71,7 +63,6 @@ Este projeto é construído com as seguintes tecnologias e bibliotecas principai
     * [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/): Para autenticação com as APIs do Google.
 * **Automação (CI/CD):**
     * [**GitHub Actions**](https://github.com/features/actions): Para automação do versionamento com tags nas branches `dev` e `master`.
-
 
 ### Outras Ferramentas e Tecnologias de Apoio
 
@@ -92,14 +83,24 @@ Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/emn-f/voxai.git]
+    git clone [https://github.com/emn-f/voxai.git](https://github.com/emn-f/voxai.git)
     cd voxai
     ```
 
 2.  **Crie um ambiente virtual e instale as dependências:**
     ```bash
     python -m venv .venv
-    .venv\Scripts\activate
+    ```
+    * No Windows:
+      ```bash
+      .venv\Scripts\activate
+      ```
+    * No macOS/Linux:
+      ```bash
+      source .venv/bin/activate
+      ```
+    Em seguida, instale as dependências:
+    ```bash
     pip install -r requirements.txt
     ```
 
@@ -113,6 +114,21 @@ Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
     streamlit run vox_ai.py
     ```
 
+## 🤝 Como Contribuir
+
+Suas contribuições são muito bem-vindas e nos ajudam a tornar o VoxAI ainda melhor! Existem várias formas de colaborar:
+
+* **Reportando Bugs:** Encontrou algum problema? Abra uma [issue](https://github.com/emn-f/voxai/issues) detalhando o erro.
+* **Sugerindo Melhorias:** Tem ideias para novas funcionalidades ou aperfeiçoamentos? Abra uma [issue](https://github.com/emn-f/voxai/issues) para discussão.
+* **Enviando Pull Requests:**
+    1.  Faça um Fork do projeto.
+    2.  Crie uma branch para sua modificação (`git checkout -b feature/MinhaNovaFeature`).
+    3.  Faça o commit das suas alterações (`git commit -m 'Adiciona MinhaNovaFeature'`).
+    4.  Faça o push para a sua branch (`git push origin feature/MinhaNovaFeature`).
+    5.  Abra um [Pull Request](https://github.com/emn-f/voxai/pulls).
+
+Considere também dar uma ⭐ ao projeto se você gostou da iniciativa!
+
 ## 🤖 Automação de Versionamento
 
 O projeto utiliza **GitHub Actions** para automatizar o processo de criação de tags de versão.
@@ -124,6 +140,10 @@ Isso garante um controle de versão consistente e automatizado para os ambientes
 ## 🔒 Privacidade
 
 Sua privacidade é nossa prioridade. **Nós não coletamos dados pessoais** como nome, IP ou localização. A interação é 100% anônima. Para saber mais, leia nossa [**Política de Privacidade**](PRIVACY_POLICY.md).
+
+## 📝 Licença
+
+Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👥 Equipe
 O projeto VoxAI é desenvolvido por uma equipe multidisciplinar e dedicada:
@@ -142,7 +162,8 @@ Dúvidas, sugestões ou feedback? Fique à vontade para entrar em contato!
 
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
 * **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
-* **LinkedIn:** [VoxAI no LinkedIn](https://www.linkedin.com/company/assistentevox/)
+* **LinkedIn:** [Projeto Vox](https://www.linkedin.com/company/assistentevox/)
+* **Linktree:** [linktr.ee/voxai](https://linktr.ee/voxai)
 
 ## 📝 Changelog
 

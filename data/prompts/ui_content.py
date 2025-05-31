@@ -1,12 +1,10 @@
 SAUDACAO = """
-Oiê! Eu sou o Vox AI, seu assistente de apoio e informação LGBTQIA+.
-Tô aqui pra te ajudar com o que você precisar — de forma segura, confiável e acolhedora. 💖
-
+Olá! Sou o VoxAI, seu assistente de apoio e informação sobre a comunidade LGBTQIA+.
 Você pode me perguntar sobre:
 - Saúde e prevenção (como PrEP, PEP, ISTs ou saúde mental)
 - Locais de acolhimento e serviços para pessoas LGBTQIA+
 - Direitos, cultura e outras dúvidas sobre nossa comunidade
-
+ 
 Como posso te ajudar agora?
 """
 
@@ -47,13 +45,13 @@ SIDEBAR = """
         </a>
     </div>
     
+    
+    <div class="copyright" style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
     <div class="footer-policy" style="text-align:center; margin-top:0.5em;">
         <a href="https://github.com/emn-f/voxai/blob/master/PRIVACY_POLICY.md" target="_blank">
         Política de Privacidade
         </a>
     </div>
-    
-    <div class="copyright" style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
         Copyright © 2025 Vox AI
     </div>      
 """

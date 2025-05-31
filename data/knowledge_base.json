@@ -1,5 +1,5 @@
 {
-  "kb_version": "0.0.1",
+  "kb_version": "0.0.2",
   "data": [
     {
       "id": "vox-kb-001",
@@ -387,9 +387,11 @@
       "id": "vox-kb-045",
       "tema": "apagamento histórico da comunidade lgbtqia+",
       "descricao": "Exemplos como a omissão de Marsha P. Johnson nos registros oficiais dos Stonewall riots ilustram como a falta de registros compromete a memória coletiva.",
-      "referencias": [],
+      "referencias": [
+        "Teste"
+      ],
       "criacao": "20/05/2025",
-      "modificado_em": "2025-05-27T12:38:00.728111-03:00"
+      "modificado_em": "2025-05-31T12:23:08.763985-03:00"
     }
   ]
 }

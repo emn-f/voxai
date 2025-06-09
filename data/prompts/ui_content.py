@@ -14,18 +14,19 @@ SIDEBAR = """
         <b>Vox AI</b> é um assistente de apoio e informação <b>LGBTQIA+</b>. Aqui você encontra acolhimento, informações e recursos confiáveis.<br>
     </div>
     <br>
-    <div class="vox-sidebar-title">Links úteis</div> <ul class="vox-sidebar-links"> <li>
-            <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank">
+    <ul class="vox-sidebar-links">
+        <li>
+            <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank" class="link-casa-marielle">
                 Casa Marielle Franco
             </a>
         </li>
         <li>
-            <a href="https://www.instagram.com/projetovoxai/" target="_blank">
+            <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="link-insta">
                 Insta do Vox
             </a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/company/assistentevox/" target="_blank">
+            <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="link-linkedin">
                 Vox no LinkedIn
             </a>
         </li>

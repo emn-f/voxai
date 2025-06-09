@@ -72,16 +72,30 @@
 }
 
 .vox-sidebar-links a { 
-    color: #e75480; 
     font-weight: bold;
-    text-decoration: none; 
+    text-decoration: none;
+    transition: filter 0.2s ease-in-out;
 }
 
+.vox-sidebar-links a:hover {
+    filter: brightness(85%);
+}
+
+.vox-sidebar-links .link-casa-marielle { 
+    color: #F4A261;
+}
+
+.vox-sidebar-links .link-insta { 
+    color: #E76F51;
+}
+
+.vox-sidebar-links .link-linkedin { 
+    color: #2A9D8F;
+}
 
 .vox-sidebar-links .vox-contact-link { 
-    color: #4f4ff6 !important; 
+    color: #c2c2c2 !important;
 }
-
 
 .footer-links a, .footer-policy a {
     text-decoration: none;

@@ -17,12 +17,12 @@ def carregar_css(path="static/css/style.css"):
     with open(path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-def carregar_sidebar(sidebar_content, git_version, kb_version): # Adicionada kb_version
+def carregar_sidebar(sidebar_content, git_version, kb_version):
     with st.sidebar:
-        if st.button("🧹 Limpar chat"): #
-            st.session_state.pop("hist", None) #
-            st.session_state.pop("hist_exibir", None) #
-        st.markdown(sidebar_content, unsafe_allow_html=True) #
+        if st.button("🧹 Limpar chat"):
+            st.session_state.pop("hist", None)
+            st.session_state.pop("hist_exibir", None)
+        st.markdown(sidebar_content, unsafe_allow_html=True)
         
         # Exibe a versão do App e da Base de Conhecimento
         version_display = f"""

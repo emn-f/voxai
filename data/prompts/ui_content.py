@@ -1,12 +1,10 @@
 SAUDACAO = """
-Oiê! Eu sou o Vox AI, seu assistente de apoio e informação LGBTQIA+.
-Tô aqui pra te ajudar com o que você precisar — de forma segura, confiável e acolhedora. 💖
-
+Olá! Sou o VoxAI, seu assistente de apoio e informação sobre a comunidade LGBTQIA+.
 Você pode me perguntar sobre:
 - Saúde e prevenção (como PrEP, PEP, ISTs ou saúde mental)
 - Locais de acolhimento e serviços para pessoas LGBTQIA+
 - Direitos, cultura e outras dúvidas sobre nossa comunidade
-
+ 
 Como posso te ajudar agora?
 """
 
@@ -16,18 +14,19 @@ SIDEBAR = """
         <b>Vox AI</b> é um assistente de apoio e informação <b>LGBTQIA+</b>. Aqui você encontra acolhimento, informações e recursos confiáveis.<br>
     </div>
     <br>
-    <div class="vox-sidebar-title">Links úteis</div> <ul class="vox-sidebar-links"> <li>
-            <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank">
+    <ul class="vox-sidebar-links">
+        <li>
+            <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank" class="link-casa-marielle">
                 Casa Marielle Franco
             </a>
         </li>
         <li>
-            <a href="https://www.instagram.com/projetovoxai/" target="_blank">
+            <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="link-insta">
                 Insta do Vox
             </a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/company/assistentevox/" target="_blank">
+            <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="link-linkedin">
                 Vox no LinkedIn
             </a>
         </li>
@@ -47,13 +46,13 @@ SIDEBAR = """
         </a>
     </div>
     
+    
+    <div class="copyright" style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
     <div class="footer-policy" style="text-align:center; margin-top:0.5em;">
         <a href="https://github.com/emn-f/voxai/blob/master/PRIVACY_POLICY.md" target="_blank">
         Política de Privacidade
         </a>
     </div>
-    
-    <div class="copyright" style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
         Copyright © 2025 Vox AI
     </div>      
 """

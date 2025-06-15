@@ -86,10 +86,6 @@ if st.session_state.key_api and st.session_state.primeira_vez:
 
 # --- Chat Input and Processing ---
 if st.session_state.key_api:
-    with open("static/js/focus_input.js") as f: # JS for input focus
-        js_code = f.read()
-        st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False)
-
     prompt = st.chat_input("Digite aqui...")
 
     if prompt:

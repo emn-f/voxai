@@ -4,129 +4,148 @@ import unicodedata
 import re
 import io
 import base64
-
 from gtts import gTTS
 
-# Assuming these paths are correct relative to where the script is run
 from data.prompts.ui_content import SAUDACAO, SIDEBAR
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
-from src.core.genai import configurar_api_gemini, inicializar_chat_modelo, gerar_resposta
+from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
 from src.core.sheets_integration import append_to_sheet
 from src.utils import BASE_PRINCIPAL_PATH, data_vox, buscar_tema, git_version
 
-# --- Initializations ---
 base_vox_items, kb_version_str = data_vox(BASE_PRINCIPAL_PATH)
-    
 configurar_pagina()
 carregar_css()
 
-# --- Session State Management ---
-if 'kb_version_str' not in st.session_state:
-    st.session_state.kb_version_str = kb_version_str
-if 'git_version_str' not in st.session_state:
-    st.session_state.git_version_str = git_version()
-if 'session_id' not in st.session_state:
-    st.session_state.session_id = str(uuid.uuid4())
-
-# hist_exibir is for UI display. `st.session_state.hist` (for GenAI model context) is managed by genai.py
-if "hist_exibir" not in st.session_state:
-    st.session_state.hist_exibir = []
+# --- Session State Initialization ---
+default_session_values = {
+    'kb_version_str': kb_version_str,
+    'git_version_str': git_version(),
+    'session_id': str(uuid.uuid4()),
+    'hist': [],
+    'hist_exibir': [],
+    'primeira_vez': True # To control welcome message
+}
+for key, value in default_session_values.items():
+    if key not in st.session_state:
+        st.session_state[key] = value
 
 carregar_sidebar(SIDEBAR, st.session_state.git_version_str, st.session_state.kb_version_str)
+st.session_state.key_api = configurar_api_gemini()
 
-# --- API and Chat Model Initialization ---
-if 'gemini_api_configured' not in st.session_state or not st.session_state.gemini_api_configured:
-    configurar_api_gemini() # Sets st.session_state.gemini_api_configured
+# --- Function to generate TTS and return HTML audio player ---
+def get_tts_audio_html(text, unique_id):
+    try:
+        tts = gTTS(text=text, lang='pt-br')
+        audio_fp = io.BytesIO()
+        tts.write_to_fp(audio_fp)
+        audio_fp.seek(0)
+        audio_b64 = base64.b64encode(audio_fp.read()).decode()
+        return f'<audio id="audio_{unique_id}" autoplay="true"><source src="data:audio/mp3;base64,{audio_b64}" type="audio/mpeg">Seu navegador não suporta o elemento de áudio.</audio>'
+    except Exception as e:
+        st.error(f"Erro ao gerar áudio: {e}")
+        st.warning("Verifique sua conexão com a internet ou se a mensagem não é muito longa.")
+        return ""
 
-if st.session_state.get('gemini_api_configured', False):
-    inicializar_chat_modelo() # Ensures chat_session and hist are set up in st.session_state
-else:
-    st.error("API Key do Gemini não configurada ou inválida. Verifique as configurações e recarregue a página.")
-    st.stop()
+# --- Display Past Chat History ---
+# This loop iterates through messages already processed and added to hist_exibir.
+# It should not handle the live streaming of a new response.
+if st.session_state.hist_exibir:
+    for msg_index, msg_data in enumerate(st.session_state.hist_exibir):
+        role = msg_data["role"]
+        text = msg_data["parts"][0]
+        avatar = "🤖" if role == "model" else "🧑‍💻"
+        with st.chat_message(role, avatar=avatar):
+            st.markdown(text, unsafe_allow_html=True)
+            if role == "model":
+                # Use a unique key for each button in the history
+                tts_hist_key = f"tts_hist_{msg_data.get('id', msg_index)}_{st.session_state.session_id}"
+                if st.button("🔊", key=tts_hist_key, help="Ouvir esta resposta"):
+                    audio_html = get_tts_audio_html(text, f"hist_{msg_data.get('id', msg_index)}")
+                    if audio_html:
+                        st.markdown(audio_html, unsafe_allow_html=True)
 
-# --- Handle Welcome Message (SAUDACAO) for UI ---
-if 'primeira_vez_exibida' not in st.session_state:
-    # SAUDACAO is the first message shown to the user in the UI
-    # It's not added to st.session_state.hist (model's direct history) unless desired
-    # The model's history (st.session_state.hist) starts with INSTRUCOES and its own opening via genai.py
-    if not any(m["role"] == "model" and m["parts"][0] == SAUDACAO for m in st.session_state.hist_exibir):
-        st.session_state.hist_exibir.append({"role": "model", "parts": [SAUDACAO]})
-    st.session_state.primeira_vez_exibida = True
+# --- Handle Welcome Message ---
+if st.session_state.key_api and st.session_state.primeira_vez:
+    mensagem_boas_vindas = SAUDACAO
+    # Add to display history and main history (if model needs to be aware of it)
+    welcome_msg_id = f"welcome_{st.session_state.session_id}"
+    st.session_state.hist_exibir.append({"role": "model", "parts": [mensagem_boas_vindas], "id": welcome_msg_id})
+    st.session_state.hist.append({"role": "assistant", "parts": [mensagem_boas_vindas]}) # Or "model" if genai expects that
 
-# --- Display Chat History (from hist_exibir) ---
-for msg_index, msg in enumerate(st.session_state.hist_exibir):
-    avatar = "🤖" if msg["role"] == "model" else "🧑‍💻"
-    with st.chat_message(msg["role"], avatar=avatar):
-        message_text = msg["parts"][0]
-        
-        is_welcome_message_first_stream = (
-            msg["role"] == "model"
-            and message_text == SAUDACAO
-            and f"welcome_SAUDACAO_streamed_{st.session_state.session_id}" not in st.session_state
-        )
+    with st.chat_message("assistant", avatar="🤖"):
+        # Stream the welcome message directly
+        st.write_stream(stream_resposta(mensagem_boas_vindas))
+        # Add TTS button for this welcome message
+        if st.button("🔊", key=f"tts_{welcome_msg_id}", help="Ouvir esta saudação"):
+            audio_html = get_tts_audio_html(mensagem_boas_vindas, welcome_msg_id)
+            if audio_html:
+                st.markdown(audio_html, unsafe_allow_html=True)
+    st.session_state.primeira_vez = False # Ensure it only runs once per session
 
-        if is_welcome_message_first_stream:
-            msg_placeholder = st.empty()
-            msg_placeholder.write_stream(stream_resposta(message_text))
-            st.session_state[f"welcome_SAUDACAO_streamed_{st.session_state.session_id}"] = True
-        else:
-            st.markdown(message_text, unsafe_allow_html=True)
-
-        if msg["role"] == "model":
-            tts_button_key = f"tts_hist_{msg_index}_{st.session_state.session_id}"
-            # Add help text for accessibility, aria-label will be reviewed in next step
-            if st.button("🔊", key=tts_button_key, help="Ouvir esta resposta da assistente"):
-                try:
-                    tts = gTTS(text=message_text, lang='pt-br')
-                    audio_fp = io.BytesIO()
-                    tts.write_to_fp(audio_fp)
-                    audio_fp.seek(0)
-                    audio_b64 = base64.b64encode(audio_fp.read()).decode()
-                    audio_player_id = f"audio_player_{msg_index}_{st.session_state.session_id}"
-                    audio_html = f'<audio id="{audio_player_id}" autoplay="true"><source src="data:audio/mp3;base64,{audio_b64}" type="audio/mpeg">Seu navegador não suporta o elemento de áudio.</audio>'
-                    st.markdown(audio_html, unsafe_allow_html=True)
-                except Exception as e:
-                    st.error(f"Erro ao gerar áudio: {e}")
-                    st.warning("Verifique sua conexão com a internet (TTS) e se a mensagem não é muito longa.")
 
 # --- Chat Input and Processing ---
-with open("static/js/focus_input.js") as f: # JS for input focus
-    js_code = f.read()
-    st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False)
+if st.session_state.key_api:
+    with open("static/js/focus_input.js") as f: # JS for input focus
+        js_code = f.read()
+        st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False)
 
-prompt = st.chat_input("Digite aqui...")
+    prompt = st.chat_input("Digite aqui...")
 
-if prompt:
-    # Add user's prompt to UI history and model's history
-    st.session_state.hist_exibir.append({"role": "user", "parts": [prompt]})
-    st.session_state.hist.append({"role": "user", "parts": [prompt]}) # Add to model's history via session_state.hist
+    if prompt:
+        # Add user message to histories and display it immediately
+        user_msg_id = f"user_{len(st.session_state.hist_exibir)}_{st.session_state.session_id}"
+        st.session_state.hist.append({"role": "user", "parts": [prompt]})
+        st.session_state.hist_exibir.append({"role": "user", "parts": [prompt], "id": user_msg_id})
+        
+        with st.chat_message("user", avatar="🧑‍💻"):
+            st.markdown(prompt)
 
-    # Semantic search (if any)
-    tema_match, descricao_match = semantica(prompt, base_vox_items)
-    resultados = buscar_tema(tema_match, base_vox_items) if tema_match else None
-    if not tema_match: descricao_match = "N/A"
+        # Semantic search
+        info_adicional_str = ""
+        tema_match, descricao_match = semantica(prompt, base_vox_items)
+        if tema_match:
+            resultados = buscar_tema(tema_match, base_vox_items)
+            if resultados:
+                 if isinstance(resultados, list): info_adicional_str = " ".join(map(str, resultados))
+                 elif isinstance(resultados, dict): info_adicional_str = str(resultados)
+                 else: info_adicional_str = str(resultados)
+        else:
+            descricao_match = "N/A"
 
-    # Generate model's response using the refactored genai.py function
-    if 'chat_session' in st.session_state: # Ensure chat session is ready
-        resposta_gerada = gerar_resposta(prompt, resultados) # No chat_model passed!
+        # Generate and display model's response (live)
+        with st.chat_message("assistant", avatar="🤖"):
+            # `gerar_resposta` from `genai.py` handles its own st.empty() and write_stream for the text
+            resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional_str)
 
-        # Add model's response to UI history and model's history
-        st.session_state.hist_exibir.append({"role": "model", "parts": [resposta_gerada]})
-        st.session_state.hist.append({"role": "model", "parts": [resposta_gerada]}) # Add to model's history
+            # After text is streamed and `resposta` contains the full string, add TTS button
+            if resposta and not resposta.startswith("Desculpe") and not resposta.startswith("Ocorreu um erro"):
+                model_msg_id = f"model_live_{len(st.session_state.hist_exibir)}_{st.session_state.session_id}"
+                if st.button("🔊", key=f"tts_{model_msg_id}", help="Ouvir esta resposta"):
+                    audio_html = get_tts_audio_html(resposta, model_msg_id)
+                    if audio_html:
+                        st.markdown(audio_html, unsafe_allow_html=True)
 
-        # Log the interaction
+        # Add model's response to histories for future display by the history loop
+        # The 'id' helps ensure keys are unique if we were to differentiate live vs historic display more.
+        st.session_state.hist.append({"role": "model", "parts": [resposta]})
+        st.session_state.hist_exibir.append({"role": "model", "parts": [resposta], "id": f"model_hist_{len(st.session_state.hist_exibir)}_{st.session_state.session_id}"})
+
+        # Logging
         try:
-            resposta_log = " ".join(resposta_gerada) if isinstance(resposta_gerada, list) else str(resposta_gerada)
+            resposta_log = str(resposta)
             descricao_match_str = "N/A"
             if descricao_match and descricao_match != "N/A":
-                # Basic normalization, ensure it's robust for various inputs
-                descricao_match_str = unicodedata.normalize('NFKD', str(descricao_match)).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+                descricao_match_str = str(descricao_match)
+                descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
                 descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
             append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt, resposta_log, tema_match, descricao_match_str)
         except Exception as e:
-            st.warning(f"Falha ao registrar log na planilha: {e}")
-    
-        st.rerun() # Rerun to display new messages and TTS buttons correctly
-    else:
-        st.error("Sessão de chat não está ativa. Não foi possível gerar resposta. Por favor, recarregue.")
+            print(f"Falha ao registrar log na planilha: {e}")
+
+        # No st.rerun() here. Streamlit's natural flow after button click (for TTS) or
+        # when a new chat_input is submitted should handle rerenders.
+        # The new messages are added to hist_exibir, so on the next natural rerun,
+        # the history loop will display them. The live message is already displayed.
+else:
+    st.error("API Key não configurada corretamente. Verifique as configurações.")

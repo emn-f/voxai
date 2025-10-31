@@ -53,10 +53,6 @@ if 'key_api' in st.session_state:
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
 
-    with open("static/js/focus_input.js") as f:
-        js_code = f.read()
-        st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
-
     prompt = st.chat_input("Digite aqui...")
 
     if prompt:

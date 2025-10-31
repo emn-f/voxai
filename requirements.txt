@@ -3,7 +3,6 @@ google-generativeai
 sentence_transformers
 huggingface_hub[hf_xet]
 
-
 gspread
 google-auth-oauthlib
 google-api-python-client

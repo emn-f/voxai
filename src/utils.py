@@ -17,13 +17,7 @@ def data_vox(caminho=BASE_PRINCIPAL_PATH):
         print(f"Erro ao decodificar JSON da base de conhecimento em: {caminho}")
         return [], "N/A"
 
-def buscar_tema(tema, base_items): # Renomeado 'base' para 'base_items' para clareza
-    return [
-        item["descricao"]
-        for item in base_items # Agora 'base_items' é a lista de dados
-        if tema.lower() in item["tema"].lower()
-    ]
-    
+
 def get_current_branch():
     try:
         branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).decode("utf-8").strip()

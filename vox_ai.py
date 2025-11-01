@@ -62,9 +62,9 @@ if 'key_api' in st.session_state:
         
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
-        info_adicional= ""
         tema_match, descricao_match = semantica(prompt, base_vox_items) 
         
+        info_adicional_contexto = ""
         if tema_match:
             info_adicional_contexto = descricao_match
         else:

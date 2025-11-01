@@ -17,22 +17,26 @@ SIDEBAR = """
     <ul class="vox-sidebar-links">
         <li>
             <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank" class="link-casa-marielle">
+                <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
                 Casa Marielle Franco
             </a>
         </li>
         <li>
             <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="link-insta">
-                Insta do Vox
+                <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
+                Projeto Vox AI
             </a>
         </li>
         <li>
             <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="link-linkedin">
+                <img src="https://img.icons8.com/fluency/24/linkedin.png" alt="LinkedIn" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
                 Vox no LinkedIn
             </a>
         </li>
         <li>
             <a href="mailto:assistentedeapoiolgbtvox@gmail.com" target="_blank" class="vox-contact-link">
-                Fale com a gente
+                <img src="https://img.icons8.com/fluency/24/gmail-new.png" alt="Email" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
+                Contato
             </a>
         </li>    
     </ul>

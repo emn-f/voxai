@@ -34,7 +34,7 @@ def gerar_resposta(chat, prompt, info_adicional):
         try:
             full_prompt_for_model = prompt
             if info_adicional:
-                full_prompt_for_model = f"{prompt}\n\nConsidere a seguinte informação complementar para sua resposta: {info_adicional}"
+                full_prompt_for_model = f"Prompt do Usuário: {prompt}\n\nContexto interno da sua base de conhecimento, que o usuário NÃO forneceu (use para embasar sua resposta): {info_adicional}\n\nResponda à pergunta do usuário com base no contexto fornecido."
             resposta = ''
             for chunk in chat.send_message(full_prompt_for_model, stream=True):
                 resposta += chunk.text

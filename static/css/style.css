@@ -57,7 +57,10 @@
     margin-bottom: 0.5em;
 }
 
-.vox-sidebar-section, .vox-sidebar-equipe, .disclaimer, .copyright {
+.vox-sidebar-section,
+.vox-sidebar-equipe,
+.disclaimer,
+.copyright {
     color: #fff;
 }
 
@@ -71,7 +74,7 @@
     margin-bottom: 0.3em;
 }
 
-.vox-sidebar-links a { 
+.vox-sidebar-links a {
     font-weight: bold;
     text-decoration: none;
     transition: filter 0.2s ease-in-out;
@@ -81,25 +84,10 @@
     filter: brightness(85%);
 }
 
-.vox-sidebar-links .link-casa-marielle { 
-    color: #F4A261;
-}
-
-.vox-sidebar-links .link-insta { 
-    color: #E76F51;
-}
-
-.vox-sidebar-links .link-linkedin { 
-    color: #2A9D8F;
-}
-
-.vox-sidebar-links .vox-contact-link { 
-    color: #c2c2c2 !important;
-}
-
-.footer-links a, .footer-policy a {
+.footer-links a,
+.footer-policy a {
     text-decoration: none;
-    color: #888; 
+    color: #888;
     font-size: 0.9em;
 }
 

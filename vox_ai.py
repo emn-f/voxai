@@ -53,10 +53,6 @@ if 'key_api' in st.session_state:
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
 
-    with open("static/js/focus_input.js") as f:
-        js_code = f.read()
-        st.components.v1.html(f"<script>{js_code}</script>", height=0, scrolling=False,)
-
     prompt = st.chat_input("Digite aqui...")
 
     if prompt:
@@ -67,18 +63,16 @@ if 'key_api' in st.session_state:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
         info_adicional= ""
-        tema_match = semantica(prompt, base_vox_items)
-
         tema_match, descricao_match = semantica(prompt, base_vox_items) 
         
         if tema_match:
-            resultados = buscar_tema(tema_match, base_vox_items)
+            info_adicional_contexto = descricao_match
         else:
             resultados = None
             descricao_match = "N/A" 
 
         with st.chat_message("assistant", avatar="🤖"):
-            resposta = gerar_resposta(inicializar_chat_modelo(), prompt, resultados)
+           resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional_contexto)
             
         try:
             if isinstance(resposta, list):

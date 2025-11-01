@@ -12,7 +12,7 @@ from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
 from src.core.sheets_integration import append_to_sheet
-from src.utils import BASE_PRINCIPAL_PATH, data_vox, buscar_tema, git_version
+from src.utils import BASE_PRINCIPAL_PATH, data_vox, git_version
 
 base_vox_items, kb_version_str = data_vox(BASE_PRINCIPAL_PATH)
     

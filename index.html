@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoxAI</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+            display: grid; 
+            place-items: center; 
+            min-height: 90vh; 
+            background-color: #121212; 
+            color: #ffffff;
+            margin: 0;
+        }
+        .container { 
+            text-align: center; 
+            background: #1e1e1e; 
+            padding: 2.5rem 3rem; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            border: 1px solid #333;
+        }
+        h1 { 
+            /* Cor roxa do seu CSS */
+            color: #b5179e; 
+            margin-top: 0;
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            padding: 0.75rem 1.5rem; 
+            border-radius: 8px; 
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+        /* Botão roxo principal */
+        a.primary {
+            background-color: #b5179e;
+            border: 2px solid #b5179e;
+        }
+        a.primary:hover {
+            background-color: #c62aae;
+            border-color: #c62aae;
+            box-shadow: 0 0 10px rgba(181, 23, 158, 0.5);
+        }
+        /* Botão secundário (cinza) */
+        a.secondary {
+            background-color: #333;
+            border: 2px solid #444;
+        }
+        a.secondary:hover {
+            background-color: #444;
+            border-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌈 VoxAI</h1>
+        <p>Assistente de Apoio e Informação LGBTQIA+</p>
+        <div class="links">
+            <a href="https://assistentevox.streamlit.app/" class="primary">Acessar o Assistente</a>
+            <a href="https://github.com/emn-f/voxai" class="secondary">Ver o Código</a>
+        </div>
+    </div>
+</body>
+</html>

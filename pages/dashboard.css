@@ -1,0 +1,170 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Ajuda na responsividade */
+    gap: 16px;
+}
+
+header h1 {
+    color: #b5179e;
+    /* Cor do seu projeto */
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header a.button {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c9d1d9;
+    text-decoration: none;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    padding: 5px 16px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+header a.button:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+}
+
+/* Seção do Dashboard */
+.dashboard {
+    max-width: 896px;
+    margin: 32px auto 0;
+    padding: 0 24px;
+    display: grid;
+    /* Ajustado para 4 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.stat-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.stat-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #8b949e;
+    font-weight: 400;
+}
+
+.stat-card .value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c9d1d9;
+}
+
+.stat-card .loading {
+    font-size: 1.5rem;
+    color: #8b949e;
+}
+
+/* NOVO: Estilo para links/botões dentro dos cards */
+.stat-card a.card-link {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    /* Espaço do título */
+    padding: 10px 16px;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.stat-card a.card-link:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+}
+
+/* Seção do README */
+main {
+    max-width: 896px;
+    margin: 32px auto;
+    padding: 24px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+
+/* Estilos do Markdown */
+main h1,
+main h2,
+main h3 {
+    border-bottom: 1px solid #30363d;
+    padding-bottom: .3em;
+}
+
+main code {
+    background-color: #2a2a2a;
+    padding: .2em .4em;
+    font-size: 85%;
+    border-radius: 6px;
+}
+
+main pre {
+    background-color: #0d1117;
+    padding: 16px;
+    overflow: auto;
+    border-radius: 6px;
+}
+
+main a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+main ul,
+main ol {
+    line-height: 1.6;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 16px;
+        justify-content: center;
+    }
+
+    .dashboard {
+        margin: 16px auto 0;
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    main {
+        margin: 16px auto;
+        padding: 16px;
+    }
+}

@@ -6,16 +6,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // 1. Carrega o README.MD
+    // 1. Carrega o README.MD (Se você removeu, pode apagar este bloco)
+    // Se você substituiu o README pela seção "Sobre", este fetch não é mais necessário
+    // e o elemento 'readme-content' não existe mais.
+    
+    // ATENÇÃO: Eu removi a busca pelo README.MD, já que substituímos
+    //          aquela seção por HTML fixo.
+    /*
     fetch('README.MD', options)
         .then(response => response.ok ? response.text() : Promise.reject('Erro ao buscar README.MD.'))
         .then(markdown => {
-            document.getElementById('readme-content').innerHTML = marked.parse(markdown);
+            // Este ID não existe mais no HTML novo
+            // document.getElementById('readme-content').innerHTML = marked.parse(markdown);
         })
         .catch(error => {
             console.error(error);
-            document.getElementById('readme-content').innerHTML = '<p style="color: #f85149;">Erro: Não foi possível carregar o README.MD.</p>';
+            // document.getElementById('readme-content').innerHTML = '<p style="color: #f85149;">Erro: Não foi possível carregar o README.MD.</p>';
         });
+    */
 
     // 2. Carrega a Base de Conhecimento (KB)
     fetch('data/knowledge_base.json', options)

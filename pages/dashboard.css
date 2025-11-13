@@ -61,8 +61,6 @@ header h1 {
 .social-link img {
     width: 24px;
     height: 24px;
-    /* OTIMIZAÇÃO: 'vertical-align' removido pois era redundante
-       graças ao 'inline-flex' e 'align-items' no pai .social-link */
 }
 
 .social-link:hover {
@@ -98,13 +96,8 @@ header h1 {
         0 0 15px rgba(67, 97, 238, 0.6);
 }
 
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
+/* * Removido o .dashboard-grid que não existe mais 
+ */
 
 .stat-card {
     background-color: var(--card-bg);
@@ -151,7 +144,7 @@ header h1 {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 1.5rem 2rem;
+    padding: 0rem 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-bottom: 2rem;
 }
@@ -299,6 +292,41 @@ header h1 {
     margin-bottom: 8px;
 }
 
+/* =======================================
+  CSS CORRIGIDO:
+  - Removidos os estilos .stat-card-combined, .stat-group, .stat-label
+  - .info-grid agora é 2fr 1fr 1fr
+  =======================================
+*/
+
+/* Novo Grid (Changelog + 2 Colunas de Cards) */
+.info-grid {
+    display: grid;
+    /* Coluna do Changelog (2fr) + 2 colunas de cards (1fr cada) */
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Garante que o changelog não tenha margem extra */
+#changelog-card {
+    margin-bottom: 0;
+    height: 100%;
+    /* Faz ele ocupar a altura total da célula do grid */
+}
+
+/* Wrapper dos cards empilhados (Stats e Links) */
+.stacked-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Faz os cards empilhados dividirem a altura igualmente */
+.stacked-cards .stat-card {
+    flex-grow: 1;
+}
+
 /* ======================================= */
 /* OTIMIZAÇÃO: Bloco de Responsividade ÚNICO */
 /* ======================================= */
@@ -322,5 +350,11 @@ header h1 {
 
     .header-links {
         justify-content: center;
+    }
+
+    /* Regra do Info-Grid (empilha as 3 colunas) */
+    .info-grid {
+        grid-template-columns: 1fr;
+        /* Faz as colunas empilharem */
     }
 }

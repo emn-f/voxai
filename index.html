@@ -4,74 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoxAI - Dashboard</title>
+    <title>Projeto Vox</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="pages/dashboard.css">
 </head>
+
 <body>
     <header>
-        <h1>🌈 VoxAI Dashboard</h1>
-        <a href="https://github.com/emn-f/voxai" target="_blank" class="button">Ver Código no GitHub</a>
+        <h1>Projeto Vox</h1>
+
+        <div class="header-links">
+            <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="social-link" title="Instagram">
+                <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="social-link"
+                title="LinkedIn">
+                <img src="https://img.icons8.com/fluency/24/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="mailto:assistentedeapoiolgbtvox@gmail.com" target="_blank" class="social-link"
+                title="Contato por E-mail">
+                <img src="https://img.icons8.com/fluency/24/gmail-new.png" alt="Email">
+            </a>
+
+            <a href="https://github.com/emn-f/voxai" target="_blank" class="button">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+                Ver Código no GitHub
+            </a>
+        </div>
     </header>
 
-    <div class="dashboard">
+    <section class="hero-section">
+        <a href="https://assistentevox.streamlit.app/" target="_blank" class="cta-button">
+            Acessar o Vox AI
+        </a>
+    </section>
+
+    <div class="dashboard-grid">
         <div class="stat-card">
             <h3>Temas na Base de Conhecimento</h3>
-            <div class="value" id="kb-count"><span class="loading">Carregando...</span></div>
+            <div class="value" id="kb-count"><span class="loading">...</span></div>
         </div>
 
         <div class="stat-card">
-            <h3>Changelog</h3>
-            <a href="https://github.com/emn-f/voxai/blob/master/CHANGELOG.md" target="_blank" class="card-link">Ver
-                Histórico</a>
+            <h3>Versão da Base de Conhecimento</h3>
+            <div class="value" id="kb-version"><span class="loading">...</span></div>
         </div>
 
         <div class="stat-card">
             <h3>Política de Privacidade</h3>
+            <p>Veja como lidamos com os dados.</p>
             <a href="https://github.com/emn-f/voxai/blob/master/PRIVACY_POLICY.md" target="_blank" class="card-link">Ler
-                Política</a>
+                Política &rarr;</a>
         </div>
 
         <div class="stat-card">
             <h3>Licença (MIT)</h3>
+            <p>Entenda o que você pode fazer com o projeto.</p>
             <a href="https://github.com/emn-f/voxai/blob/master/LICENSE" target="_blank" class="card-link">Ver
-                Licença</a>
+                Licença &rarr;</a>
         </div>
     </div>
 
-    <main id="readme-content">
-        <p>Carregando README...</p>
-    </main>
+    <div class="card-fullwidth">
+        <h2>Última Atualização (Changelog)</h2>
+        <div id="latest-changelog" class="content-md">
+            <p class="loading">Carregando Changelog...</p>
+        </div>
+        <a href="https://github.com/emn-f/voxai/blob/master/CHANGELOG.md" target="_blank" class="card-link"
+            style="margin-top: 1rem; display: inline-block;">Ver Histórico Completo &rarr;</a>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
+    <div class="card-fullwidth about-section">
+        <h2>Sobre o Projeto Vox</h2>
 
-            // 1. Carrega o README.MD
-            fetch('README.MD')
-                .then(response => response.ok ? response.text() : Promise.reject('Erro ao buscar README.MD.'))
-                .then(markdown => {
-                    document.getElementById('readme-content').innerHTML = marked.parse(markdown);
-                })
-                .catch(error => {
-                    console.error(error);
-                    document.getElementById('readme-content').innerHTML = '<p style="color: #f85149;">Erro: Não foi possível carregar o README.MD.</p>';
-                });
+        <div class="about-grid">
+            <div class="about-column">
+                <h3>Nossa Missão</h3>
+                <p>
+                    O VoxAI é um assistente de apoio e informação LGBTQIA+ desenvolvido como parte do projeto de
+                    extensão "Vox: Inteligência Artificial para Inclusão e Cidadania" da <strong>Universidade Católica
+                        do Salvador (UCSal)</strong>.
+                </p>
+                <p>
+                    Nossa missão é ser um ponto de apoio digital seguro para a comunidade, especialmente em Salvador
+                    (BA), combatendo a desinformação e facilitando o acesso a informações confiáveis sobre saúde,
+                    direitos e acolhimento.
+                </p>
 
-            // 2. Carrega a contagem da Base de Conhecimento (KB)
-            fetch('data/knowledge_base.json')
-                .then(response => response.ok ? response.json() : Promise.reject('Erro ao buscar knowledge_base.json.'))
-                .then(kb_data => {
-                    // Conta os itens dentro do array "data"
-                    const count = kb_data.data ? kb_data.data.length : 0;
-                    document.getElementById('kb-count').textContent = count;
-                })
-                .catch(error => {
-                    console.error(error);
-                    document.getElementById('kb-count').textContent = 'Erro';
-                });
+                <h3>O que você encontra?</h3>
+                <ul class="feature-list">
+                    <li>
+                        <strong>Saúde e Prevenção:</strong> Informações sobre PrEP, PEP, ISTs e saúde mental.
+                    </li>
+                    <li>
+                        <strong>Direitos e Cidadania:</strong> Dúvidas sobre retificação de nome, uso do nome social e
+                        como denunciar LGBTfobia.
+                    </li>
+                    <li>
+                        <strong>Acolhimento e Cultura:</strong> Locais de apoio, serviços e informações sobre a
+                        comunidade.
+                    </li>
+                </ul>
+            </div>
 
-        });
-    </script>
+            <div class="about-column">
+                <h3>Parceria: Casa Marielle Franco</h3>
+                <p>
+                    Temos uma parceria oficial com a <strong>Casa Marielle Franco</strong>, uma instituição de
+                    acolhimento independente em Salvador (BA), coordenada por Sandra Muñoz.
+                </p>
+                <p>
+                    A Casa atua como um espaço seguro, ponto de escuta e validação de conteúdos, criando uma ponte
+                    essencial entre a tecnologia e o cuidado humano.
+                </p>
+
+                <h3>Nossa Equipe</h3>
+                <ul class="team-list">
+                    <li>Emanuel Ferreira (Diretor do Vox)</li>
+                    <li>Alicia Batista</li>
+                    <li>Brenda Pires</li>
+                    <li>Fernanda Souza</li>
+                    <li>Kauã Araujo</li>
+                    <li>Lucca Pertigas</li>
+                    <li>Marcio Ventura</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="pages/dashboard.js" defer></script>
 </body>
 
 </html>

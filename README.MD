@@ -144,16 +144,8 @@ Sua privacidade é nossa prioridade. **Nós não coletamos dados pessoais** como
 
 Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Equipe
-O projeto VoxAI é desenvolvido por uma equipe multidisciplinar e dedicada:
-
-* **Emanuel Ferreira** (Diretor do Vox)
-* **Brenda Pires**
-* **Fernanda Souza**
-* **Alicia Batista**
-* **Lucca Pertigas**
-* **Kauã Araujo**
-* **Marcio Ventura**
+## 👥 Equipe atual do Vox
+* **Emanuel Ferreira**: Diretor e Idealizador do Vox
 
 ## 📬 Contato
 

@@ -1,0 +1,41 @@
+# cliff.toml
+# Configuração para gerar o Changelog baseado em Conventional Commits
+
+[changelog]
+# O cabeçalho do arquivo
+header = """
+# Changelog
+Todas as mudanças importantes deste projeto serão documentadas aqui.
+"""
+# O template de cada versão
+body = """
+## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group }}
+{% for commit in commits %}
+* {{ commit.message | upper_first }}
+{% endfor %}
+{% endfor %}
+"""
+trim = true
+
+[git]
+conventional_commits = true
+filter_unconventional = false
+split_commits = false
+# Mapeamento: Commit -> Seção do Changelog (em Português)
+commit_parsers = [
+    { message = "^feat", group = "✨ Funcionalidades" },
+    { message = "^fix", group = "🐛 Correções" },
+    { message = "^doc", group = "📚 Documentação" },
+    { message = "^perf", group = "⚡ Performance" },
+    { message = "^refactor", group = "♻️ Refatoração & Melhorias" },
+    { message = "^style", group = "🎨 Estilo e Formatação" },
+    { message = "^ci", group = "🤖 CI/CD & Automação" },
+    { message = "^build", group = "📦 Build & Dependências" },
+    { message = "^chore", group = "🔧 Tarefas Internas" },
+]
+# Filtra commits que você não quer no changelog (opcional)
+filter_commits = false
+# Padrão de tag (para encontrar a versão anterior)
+tag_pattern = "v[0-9].*"

@@ -3,7 +3,6 @@ on:
   push:
     branches: [dev]
   workflow_dispatch:
-
 jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
@@ -16,4 +15,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://emn-f:$HF_TOKEN@huggingface.co/spaces/emn-f/vox-ai dev:main --force
+        run: git push https://emn-f:$HF_TOKEN@huggingface.co/spaces/emn-f/vox-ai dev:main

@@ -1,4 +1,4 @@
-name: Tag Prod
+name: tag-prod-update
 on:
   push:
     branches:

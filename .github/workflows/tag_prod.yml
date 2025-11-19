@@ -1,4 +1,4 @@
-name: tag-prod-update
+name: 🚀 Tag & Release (Prod)
 on:
   push:
     branches:

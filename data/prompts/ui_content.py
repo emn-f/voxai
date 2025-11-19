@@ -45,7 +45,7 @@ SIDEBAR = """
     </div>
 
     <div class="footer-links" style="text-align:center; margin-top:2em;">
-        <a href="https://github.com/emn-f/voxai" target="_blank">
+        <a href="https://github.com/emn-f/vox-ai" target="_blank">
             <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle; margin-right:5px; filter: grayscale(1);" />
         </a>
     </div>
@@ -53,7 +53,7 @@ SIDEBAR = """
     
     <div class="copyright" style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
     <div class="footer-policy" style="text-align:center; margin-top:0.5em;">
-        <a href="https://github.com/emn-f/voxai/blob/master/PRIVACY_POLICY.md" target="_blank">
+        <a href="https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md" target="_blank">
         Política de Privacidade
         </a>
     </div>

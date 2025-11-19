@@ -1,0 +1,20 @@
+name: Sync to Hugging Face Hub
+on:
+  push:
+    branches: [dev]
+
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Push to hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        # Substitua 'SEU_USUARIO/NOME_DO_SPACE' pelo nome exato do seu Space no Hugging Face
+        run: git push https://emn-f:$HF_TOKEN@huggingface.co/spaces/emn-f/vox-ai main

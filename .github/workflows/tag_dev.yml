@@ -1,4 +1,4 @@
-name: 🚧 Tag & Changelog (Dev)
+name: tag-dev-update
 on:
   push:
     branches:
@@ -7,69 +7,44 @@ permissions:
   contents: write
 
 jobs:
-  tag_and_release_dev:
+  tag_version_dev:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Importante para ler o histórico de commits
+        fetch-depth: 0
 
-    - name: Configurar Git User
+    - name: Set up authentication for pushing tags
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    - name: Calcular Próxima Versão Dev
-      id: calc_version
+    - name: Get latest dev tag
+      id: get_tag
       run: |
-        # Busca a última tag de dev (ex: dev-v0.0.1)
         LAST_TAG=$(git tag --list "dev-v*" --sort=-v:refname | head -n 1)
-        
         if [ -z "$LAST_TAG" ]; then
           LAST_TAG="dev-v0.0.0"
         fi
-        
-        # Remove o prefixo 'dev-v' para fazer a matemática
+        echo "Last dev tag is $LAST_TAG"
+        echo "tag=$LAST_TAG" >> $GITHUB_OUTPUT
+
+    - name: Bump patch version and create new dev tag
+      id: bump_version
+      run: |
+        LAST_TAG="${{ steps.get_tag.outputs.tag }}"
+        echo "Last tag: $LAST_TAG"
+
         VERSION=${LAST_TAG#dev-v}
         IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-        
-        # Incrementa o Patch (+1) - Aqui é onde ele define que é sempre PATCH
         PATCH=$((PATCH + 1))
-        
-        # Remonta a tag com o prefixo
         NEW_TAG="dev-v${MAJOR}.${MINOR}.${PATCH}"
-        
-        echo "Versão anterior: $LAST_TAG"
-        echo "Nova versão: $NEW_TAG"
-        echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+        echo "New tag: $NEW_TAG"
 
-    - name: Gerar Changelog (Git Cliff)
-      uses: orhun/git-cliff-action@v3
-      with:
-        config: cliff.toml
-        # Gera o changelog considerando a nova tag que estamos criando
-        args: --tag ${{ steps.calc_version.outputs.new_tag }} --output CHANGELOG.md
-      env:
-        OUTPUT: CHANGELOG.md
-
-    - name: Commitar e Push
-      run: |
-        NEW_TAG="${{ steps.calc_version.outputs.new_tag }}"
-        
-        git add CHANGELOG.md
-        
-        # Só commita se tiver mudança no changelog
-        if git diff --staged --quiet; then
-          echo "Nada mudou no changelog."
-        else
-          # [skip ci] evita que esse commit dispare o workflow de novo (loop infinito)
-          git commit -m "chore(release): atualiza changelog dev para ${NEW_TAG} [skip ci]"
-        fi
-        
         git tag $NEW_TAG
-        
-        # Push para a branch dev e a nova tag
-        git push origin dev
         git push origin $NEW_TAG
+
+        echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT

@@ -1,4 +1,4 @@
-name: 📚 Sincronizar Knowledge Base
+name: knowledge-base-sync
 on:
   push:
     branches:

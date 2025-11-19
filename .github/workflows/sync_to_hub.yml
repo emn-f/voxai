@@ -1,4 +1,4 @@
-name: sync-hugging-face-hub
+name: 🤗 Deploy no Hugging Face
 on:
   push:
     branches: [dev]

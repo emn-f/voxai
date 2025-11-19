@@ -1,16 +1,15 @@
-name: Sincronização da Base de Conhecimento
-
+name: knowledge-base-sync
 on:
   push:
     branches:
-      - master 
+      - master
       - dev
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write # Necessário para commitar e fazer push
+  contents: write
 
 jobs:
   sync:
@@ -53,7 +52,7 @@ jobs:
         GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
         KB_SHEET_ID: ${{ secrets.KB_SHEET_ID }}
       run: python scripts/sinc_kb.py
-      working-directory: ./ # [cite: emn-f/voxai/voxai-dev/.github/workflows/sync_sheets.yml]
+      working-directory: ./
 
     - name: Commit and push if there are changes
       run: |

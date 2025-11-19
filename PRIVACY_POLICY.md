@@ -50,6 +50,6 @@ Como a coleta é anônima, não é possível identificar os dados de um indivíd
 Se você tiver qualquer dúvida sobre esta Política de Privacidade ou sobre o projeto, entre em contato conosco.
 
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
-* **GitHub do Projeto:** [https://github.com/emn-f/voxai](https://github.com/emn-f/voxai)
+* **GitHub do Projeto:** [github.com/emn-f/vox-ai](https://github.com/emn-f/vox-ai)
 
 Agradecemos pela sua confiança e por nos ajudar a construir uma ferramenta cada vez melhor. :)

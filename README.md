@@ -1,3 +1,15 @@
+---
+title: VoxAI
+emoji: 🌈
+colorFrom: purple
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.35.0
+app_file: vox_ai.py
+pinned: false
+license: mit
+---
+
 # 🌈 VoxAI: Assistente de Apoio e Informação LGBTQIA+
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
@@ -82,8 +94,8 @@ Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/emn-f/voxai.git](https://github.com/emn-f/voxai.git)
-    cd voxai
+    git clone [https://github.com/emn-f/vox-ai.git](https://github.com/emn-f/vox-ai.git)
+    cd vox-ai
     ```
 
 2.  **Crie um ambiente virtual e instale as dependências:**
@@ -117,14 +129,14 @@ Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
 
 Suas contribuições são muito bem-vindas e nos ajudam a tornar o VoxAI ainda melhor! Existem várias formas de colaborar:
 
-* **Reportando Bugs:** Encontrou algum problema? Abra uma [issue](https://github.com/emn-f/voxai/issues) detalhando o erro.
-* **Sugerindo Melhorias:** Tem ideias para novas funcionalidades ou aperfeiçoamentos? Abra uma [issue](https://github.com/emn-f/voxai/issues) para discussão.
+* **Reportando Bugs:** Encontrou algum problema? Abra uma [issue](https://github.com/emn-f/vox-ai/issues) detalhando o erro.
+* **Sugerindo Melhorias:** Tem ideias para novas funcionalidades ou aperfeiçoamentos? Abra uma [issue](https://github.com/emn-f/vox-ai/issues) para discussão.
 * **Enviando Pull Requests:**
     1.  Faça um Fork do projeto.
     2.  Crie uma branch para sua modificação (`git checkout -b feature/MinhaNovaFeature`).
     3.  Faça o commit das suas alterações (`git commit -m 'Adiciona MinhaNovaFeature'`).
     4.  Faça o push para a sua branch (`git push origin feature/MinhaNovaFeature`).
-    5.  Abra um [Pull Request](https://github.com/emn-f/voxai/pulls).
+    5.  Abra um [Pull Request](https://github.com/emn-f/vox-ai/pulls).
 
 Considere também dar uma ⭐ ao projeto se você gostou da iniciativa!
 
@@ -154,7 +166,7 @@ Dúvidas, sugestões ou feedback? Fique à vontade para entrar em contato!
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
 * **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
 * **LinkedIn:** [Projeto Vox](https://www.linkedin.com/company/assistentevox/)
-* **Linktree:** [linktr.ee/voxai](https://linktr.ee/voxai)
+* **Linktree:** [linktr.ee/voxai](https://linktr.ee/vox-ai)
 
 ## 📝 Changelog
 

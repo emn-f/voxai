@@ -1,4 +1,4 @@
-name: Tag Dev
+name: tag-dev-update
 on:
   push:
     branches:

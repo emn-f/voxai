@@ -1,5 +1,4 @@
 name: knowledge-base-sync
-
 on:
   push:
     branches:

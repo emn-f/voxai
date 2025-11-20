@@ -1,3 +1,8 @@
+## [dev-v1.0.59] - 2025-11-20
+
+### 🔧 Tarefas Internas
+
+- *(release)* Atualiza changelog dev para dev-v1.0.59 [skip ci]
 ## [dev-v1.0.58] - 2025-11-20
 
 ### 🔧 Tarefas Internas

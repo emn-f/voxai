@@ -1,18 +1,3 @@
-## [dev-v1.0.62] - 2025-11-20
-
-### 🔧 Tarefas Internas
-
-- *(release)* Atualiza changelog dev para dev-v1.0.62 [skip ci]
-## [2.5.28] - 2025-11-20
-## [2.5.27] - 2025-11-20
-## [2.5.26] - 2025-11-19
-## [2.5.27] - 2025-11-20
-## [2.5.26] - 2025-11-19
-## [dev-v1.0.59] - 2025-11-20
-
-### 🔧 Tarefas Internas
-
-- *(release)* Atualiza changelog dev para dev-v1.0.59 [skip ci]
 ## [dev-v1.0.58] - 2025-11-20
 
 ### 🔧 Tarefas Internas

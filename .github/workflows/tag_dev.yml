@@ -49,11 +49,9 @@ jobs:
       uses: orhun/git-cliff-action@v4
       with:
         config: cliff.toml
-        # --prepend: Adiciona ao topo do arquivo
-        # --latest: Processa apenas os commits novos
-        args: --verbose --latest --tag ${{ steps.calc_version.outputs.new_tag }} --prepend CHANGELOG.md
-      env:
-        OUTPUT: CHANGELOG.md
+        # Removemos o --verbose e deixamos apenas o comando de escrita
+        args: --latest --tag ${{ steps.calc_version.outputs.new_tag }} --prepend CHANGELOG.md
+      # IMPORTANTE: Removemos a seção 'env: OUTPUT: ...' que causava o erro EOF
 
     - name: Commitar e Push (Se houver mudanças)
       run: |

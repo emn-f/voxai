@@ -1,3 +1,12 @@
+## [dev-v1.0.57] - 2025-11-20
+
+### 📚 Documentação
+
+- Ajustes de formatação no CHANGELOG.md
+
+### 🔧 Tarefas Internas
+
+- *(release)* Atualiza changelog dev para dev-v1.0.57 [skip ci]
 ## [1.0.25] - 2025-11-14
 ### Adicionado
 * Adiciona dashboard (Git Pages).

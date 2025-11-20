@@ -1,11 +1,8 @@
 name: 📚 Sincronizar Knowledge Base
 on:
-  push:
-    branches:
-      - master
-      - dev
+
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 1'
   workflow_dispatch:
 
 permissions:

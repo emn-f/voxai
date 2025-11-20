@@ -1,12 +1,8 @@
-# cliff.toml
-# Configuração para gerar o Changelog baseado em Conventional Commits
-
-[changelog]
-# O cabeçalho do arquivo
-header = """
-# Changelog
-Todas as mudanças importantes deste projeto serão documentadas aqui.
-"""
+# [changelog]
+# header = """
+# # Changelog
+# Todas as mudanças importantes deste projeto serão documentadas aqui.
+# """
 # O template de cada versão
 body = """
 ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}

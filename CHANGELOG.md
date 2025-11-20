@@ -1,278 +1,137 @@
 # Changelog
 Todas as mudanças importantes deste projeto serão documentadas aqui.
-## [dev-v1.0.55] - 2025-11-20
-## [dev-v1.0.54] - 2025-11-19
 
-### ♻️ Refatoração & Melhorias
+## [1.0.25] - 2025-11-14
+### Adicionado
+* Adiciona dashboard (Git Pages).
 
-* Actions renomeadas para melhor entendimento
+## [1.0.23] - 2025-11-13
+### Melhorias
+* Ajustes no CSS principal.
 
+## [1.0.22] - 2025-11-12
+### Adicionado
+* Adiciona cache.
 
-### ✨ Funcionalidades
+## [1.0.19] - 2025-11-08
+### Melhorias
+* Melhora o sinc_kb.py.
 
-* Teste de changelog automatico
+## [1.0.18] - 2025-11-07
+### Melhorias
+* Melhora o design da UI (sidebar).
 
-
-### 🔧 Tarefas Internas
-
-* Atualiza changelog dev para dev-v1.0.54 [skip ci]
-
-## [dev-v1.0.53] - 2025-11-19
-
-### cli
-
-* Alteração do git cliff
-
-
-### refatctor
-
-* Actions renomeadas para melhor entendimento
-
-
-### ♻️ Refatoração & Melhorias
-
-* Actions renomeadas para melhor entendimento
-
-
-### ✨ Funcionalidades
-
-* Criação do cliff.toml com regras para changelog automático
-
-## [dev-v1.0.52] - 2025-11-19
-
-### ♻️ Refatoração & Melhorias
-
-* Correção do nome do repositório em PRIVACY_POLICY.md
-
-## [dev-v1.0.51] - 2025-11-19
-
-### ♻️ Refatoração & Melhorias
-
-* Correção do nome do repositório em ui_content.py
-
-## [dev-v1.0.50] - 2025-11-19
-
-### ♻️ Refatoração & Melhorias
-
-* Correção no nome do repositório em index.html
-
-## [dev-v1.0.49] - 2025-11-19
-
-### 📚 Documentação
-
-* Nome do repositório ajustado no README.md
-
-## [dev-v1.0.48] - 2025-11-19
-
-### 🤖 CI/CD & Automação
-
-* Yml de sinc com planilha renomeado
-
-## [dev-v1.0.47] - 2025-11-19
-
-### 🤖 CI/CD & Automação
-
-* Action de atualização da tag prod renomeada
-
-## [dev-v1.0.46] - 2025-11-19
-
-### 🤖 CI/CD & Automação
-
-* Action de atualização da tag dev renomeada
-
-## [dev-v1.0.45] - 2025-11-19
-
-### 🤖 CI/CD & Automação
-
-* Action de sinc do hugging face renomeada
-
-## [dev-v1.0.44] - 2025-11-19
-
-### 🤖 CI/CD & Automação
-
-* Action de sinc da kb renomeada
-
-## [dev-v1.0.43] - 2025-11-19
-
-### 📚 Documentação
-
-* Update conventional_commits.md
-
-## [dev-v1.0.42] - 2025-11-19
-
-### 🤖 CI/CD & Automação
-
-* Action de sincronização da KB renomeada
-
-## [dev-v1.0.41] - 2025-11-19
-
-### ✨ Funcionalidades
-
-* Adição de action para deploy no hugging face
-
-## [dev-v1.0.40] - 2025-11-19
-
-### ✨ Funcionalidades
-
-* Rename README.MD to README.md
-
-## [dev-v1.0.39] - 2025-11-19
-## [dev-v1.0.38] - 2025-11-19
-## [dev-v1.0.37] - 2025-11-19
-## [dev-v1.0.36] - 2025-11-18
-
-### 📚 Documentação
-
-* Docs: Atualizar CHANGELOG
-Fixes #60
-
-* Criação de arquivo detalhando Conventional Commits
-
-## [dev-v1.0.35] - 2025-11-17
-## [2.5.25] - 2025-11-17
-## [2.5.24] - 2025-11-13
-## [dev-v1.0.34] - 2025-11-13
-## [2.5.23] - 2025-11-13
-## [dev-v1.0.33] - 2025-11-13
-## [2.5.22] - 2025-11-10
-## [dev-v1.0.32] - 2025-11-10
-## [2.5.21] - 2025-11-10
-## [dev-v1.0.31] - 2025-11-10
-## [2.5.20] - 2025-11-10
-## [dev-v1.0.30] - 2025-11-10
-## [2.5.19] - 2025-11-10
-## [dev-v1.0.29] - 2025-11-10
-## [2.5.18] - 2025-11-10
-## [dev-v1.0.28] - 2025-11-10
-## [2.5.17] - 2025-11-02
-## [2.5.16] - 2025-11-01
-## [2.5.15] - 2025-11-01
-## [2.5.14] - 2025-11-01
-## [dev-v1.0.26] - 2025-11-01
-## [2.5.13] - 2025-11-01
-## [dev-v1.0.25] - 2025-11-01
-## [2.5.12] - 2025-11-01
-## [dev-v1.0.24] - 2025-11-01
-## [2.5.11] - 2025-11-01
-## [dev-v1.0.23] - 2025-11-01
-## [2.5.10] - 2025-11-01
-## [dev-v1.0.22] - 2025-11-01
-## [dev-v1.0.21] - 2025-10-31
-## [2.5.9] - 2025-06-09
-## [dev-v1.0.20] - 2025-06-09
-## [dev-v1.0.19] - 2025-05-31
-
-### Action
-
-* Base de conhecimento atualizada para v0.0.3 (via sync sheets)
-
-## [2.5.8] - 2025-06-01
-## [2.5.7] - 2025-05-31
-## [2.5.6] - 2025-05-31
-## [dev-v1.0.17] - 2025-05-31
-## [dev-v1.0.15] - 2025-05-31
-## [dev-v1.0.14] - 2025-05-31
-## [2.5.5] - 2025-05-30
-## [2.5.4] - 2025-05-30
-## [2.5.3] - 2025-05-30
-## [2.5.2] - 2025-05-30
-## [2.5.1] - 2025-05-27
-## [2.5.0] - 2025-05-25
-## [2.0.1] - 2025-05-25
-## [1.0.34] - 2025-05-25
-## [dev-v1.0.13] - 2025-05-27
-## [dev-v1.0.12] - 2025-05-27
-## [dev-v1.0.11] - 2025-05-27
-## [dev-v1.0.10] - 2025-05-27
-## [dev-v1.0.9] - 2025-05-27
-
-### 🔧 Tarefas Internas
-
-* Atualiza base de conhecimento via Sheets
-
-## [dev-v1.0.8] - 2025-05-27
-## [dev-v1.0.7] - 2025-05-27
-## [dev-v1.0.6] - 2025-05-26
-## [dev-v1.0.5] - 2025-05-25
-## [dev-v1.0.4] - 2025-05-25
-## [dev-v1.0.3] - 2025-05-25
-## [dev-v1.0.2] - 2025-05-25
-## [dev-v1.0.1] - 2025-05-25
-## [dev-v1.0.0] - 2025-05-25
-## [dev-v0.0.49] - 2025-05-25
-## [dev-v0.0.48] - 2025-05-25
-## [2.0.0] - 2025-05-24
-## [1.0.32] - 2025-05-24
-## [dev-v0.0.46] - 2025-05-24
-## [dev-v0.0.45] - 2025-05-24
-## [1.0.31] - 2025-05-24
-## [dev-v0.0.44] - 2025-05-24
-## [1.0.30] - 2025-05-23
-## [dev-v0.0.43] - 2025-05-23
-## [dev-v0.0.42] - 2025-05-23
-## [dev-v0.0.41] - 2025-05-23
-## [dev-v0.0.40] - 2025-05-23
-## [dev-v0.0.39] - 2025-05-23
-## [dev-v0.0.38] - 2025-05-23
-## [1.0.29] - 2025-05-23
-## [dev-v0.0.37] - 2025-05-23
-## [dev-v0.0.36] - 2025-05-23
-## [dev-v0.0.35] - 2025-05-22
-## [1.0.28] - 2025-05-22
-## [dev-v0.0.34] - 2025-05-22
-## [dev-v0.0.33] - 2025-05-21
-## [dev-v0.0.32] - 2025-05-21
-## [dev-v0.0.31] - 2025-05-21
-## [dev-v0.0.30] - 2025-05-21
-## [1.0.27] - 2025-05-22
-## [1.0.26] - 2025-05-22
-## [1.0.25] - 2025-05-21
-## [1.0.24] - 2025-05-21
-## [dev-v0.0.29] - 2025-05-21
-## [dev-v0.0.28] - 2025-05-21
-## [dev-v0.0.27] - 2025-05-21
-## [1.0.23] - 2025-05-21
-## [1.0.22] - 2025-05-21
-## [dev-v0.0.26] - 2025-05-21
-## [1.0.21] - 2025-05-21
-## [dev-v0.0.25] - 2025-05-21
-## [1.0.20] - 2025-05-21
-## [1.0.19] - 2025-05-21
-## [1.0.18] - 2025-05-21
 ## [1.0.17] - 2025-05-20
+### Adicionado
+* Nova fonte de dados.
+* Adoção da função nativa do Streamlit para exibição de texto em streaming.
+
 ## [1.0.16] - 2025-05-20
-## [dev-v0.0.24] - 2025-05-21
-## [dev-v0.0.23] - 2025-05-21
-## [dev-v0.0.22] - 2025-05-21
-## [dev-v0.0.21] - 2025-05-21
-## [dev-v0.0.20] - 2025-05-21
-## [dev-v0.0.19] - 2025-05-21
-## [dev-v0.0.18] - 2025-05-21
-## [dev-v0.0.17] - 2025-05-20
-## [dev-v0.0.16] - 2025-05-20
-## [dev-v0.0.15] - 2025-05-20
-## [dev-v0.0.14] - 2025-05-20
+### Melhorias
+* Melhorias na personalidade do Vox (v3).
+
+### Corrigido
+* Correção da quebra do Markdown da mensagem de boas-vindas.
+* Remoção de importações e comentários desnecessários.
+* Adição de arquivos internos do Python.
+
 ## [1.0.15] - 2025-05-19
-## [1.0.14] - 2025-05-19
-## [1.0.13] - 2025-05-19
-## [1.0.12] - 2025-05-19
+### Alterado
+* Atualização do `.gitignore`.
+* Atualização do `sobre.py`.
+
+### Melhorias
+* Melhorias na sidebar.
+
 ## [1.0.11] - 2025-05-19
+### Melhorias
+* Atualização na personalidade do Vox.
+
 ## [1.0.10] - 2025-05-19
+### Alterado
+* Atualização do `README.MD`.
+
 ## [1.0.9] - 2025-05-19
-## [dev-v0.0.12] - 2025-05-19
-## [dev-v0.0.11] - 2025-05-19
-## [dev-v0.0.10] - 2025-05-19
-## [dev-v0.0.9] - 2025-05-19
-## [dev-v0.0.8] - 2025-05-19
+### Melhorias
+* Modularização de funções e melhorias na UI do VoxAI (PR #4).
+
 ## [1.0.8] - 2025-05-19
+### Alterado
+* Ajusta o padrão da tag na função `git_version`.
+
 ## [1.0.7] - 2025-05-19
+### Corrigido
+* Exibição correta da versão em produção.
+
 ## [1.0.6] - 2025-05-19
-## [dev-v0.0.4] - 2025-05-19
+### Alterado
+* Melhora na estrutura do código e adição de comentários explicativos para facilitar a compreensão do fluxo do chat e do tratamento de erros.
+
 ## [1.0.5] - 2025-05-19
-## [dev-v0.0.3] - 2025-05-19
-## [dev-v0.0.2] - 2025-05-19
-## [dev-v0.0.1] - 2025-05-19
+### Corrigido
+* Merge da branch dev na master.
+
 ## [1.0.4] - 2025-05-19
+### Corrigido
+* Testes e correções no workflow de tagueamento automático.
+* Mudança na cor da versão.
+* Tema dark definido como padrão.
+
 ## [1.0.2] - 2025-05-19
+### Corrigido
+* Adiciona tratamento de exceção para a obtenção do hash do commit na função `git_version`.
+
 ## [1.0.1] - 2025-05-19
-## [1.0.0] - 2025-05-19
+### Corrigido
+* Remoção de comentários no `git_version`.
+
+## [1.0.0] - 2025-05-18
+### Adicionado
+* Primeira versão estável
+* Integração com Gemini API
+* Interface de chat com Streamlit
+* Animação de digitação nas respostas do assistente
+* Workflow de versionamento automático (tags dev/prod)
+* Customização visual com CSS e spinner personalizado
+* Inclusão do `huggingface_hub` para melhorias de desempenho.
+* Exibe versão e hash do commit na sidebar.
+
+### Alterado
+* Limiar de similaridade reduzido para 0.4 na função semântica.
+* Diversas melhorias de interface e organização do código.
+* Adição de instruções de contexto.
+* Revisão do `.gitignore`.
+* Refatorações para "vox_ai".
+* Adição de informações relacionadas ao projeto.
+* Ajustes organizacionais.
+* Novo arquivo de instruções.
+* Melhorias no contexto.
+* Melhorias de UI.
+* Ajustes relacionados à API.
+* Adição do arquivo de `requirements.txt` e melhorias de segurança.
+
+## [dev-v0.0.1] - 2025-05-17
+### Adicionado
+* Nascimento do VoxAI (16/05/2025 23:02 `6e6ce0a3`)
+* Estrutura inicial do projeto.
+* MVP funcional com interface.
+* Scripts e workflows para automação.
+* Primeiras versões do README, temas e JSON.
+* Configuração inicial da API e chamadas.
+* Organização da base de dados e lógica de contexto.
+* Adição de personalidade ao chatbot.
+* Saudação transferida para arquivo separado.
+* Iniciando preparação da base de dados.
+* Exibição da última interação do usuário.
+* Melhorias de interface.
+* Adição de informações relacionadas ao projeto.
+* Refatorações para "vox_ai".
+* Configuração da API no GenAI.
+* Exibição e alerta de status da API.
+
+
+### Alterado
+* Ajustes organizacionais.
+* Revisão do `.gitignore`.
+* Melhorias no contexto.
+* Melhorias de UI.

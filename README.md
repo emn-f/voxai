@@ -13,10 +13,10 @@ license: mit
 # 🌈 VoxAI: Assistente de Apoio e Informação LGBTQIA+
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=Streamlit&logoColor=white)](https://streamlit.io/)
 [![Gemini](https://img.shields.io/badge/Gemini-8E75B8?style=flat-square&logo=google&logoColor=white)](https://ai.google.dev/)
 [![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Git](https://img.shields.io/badge/GIT-E44C30?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
@@ -36,7 +36,7 @@ Projeto de extensão universitária que une Inteligência Artificial e acolhimen
 * [🤝 Nossa Parceria: Casa Marielle Franco](#-nossa-parceria-casa-marielle-franco)
 * [🚀 Rodando o Projeto Localmente](#-rodando-o-projeto-localmente)
 * [🤝 Como Contribuir](#-como-contribuir)
-* [🤖 Automação de Versionamento](#-automação-de-versionamento)
+* [🤖 Automação e CI/CD](#-automação-e-cicd)
 * [🔒 Privacidade](#-privacidade)
 * [📝 Licença](#-licença)
 * [👥 Equipe](#-equipe)
@@ -57,32 +57,26 @@ O VoxAI oferece uma experiência de conversação intuitiva, segura e informativ
 * **Busca Semântica Inteligente:** Antes de responder, o VoxAI analisa sua pergunta e busca em nossa base de conhecimento curada por informações relevantes para complementar a resposta. Utilizamos um modelo `paraphrase-multilingual-MiniLM-L12-v2` para essa tarefa.
 * **IA Generativa com Gemini:** As respostas são geradas pelo modelo `gemini-2.0-flash` da Google, instruído para ser empático, acolhedor e jamais inventar dados sem fontes.
 * **Base de Conhecimento Confiável:** Nossa base de dados é curada com informações de fontes acadêmicas, documentos oficiais, e relatos da comunidade, cobrindo temas como saúde, direitos, cultura e locais de acolhimento.
+* **Dashboard de Transparência:** Um portal dedicado para acompanhar o status da base de conhecimento, changelogs e informações institucionais em tempo real.
 * **Registro Anônimo para Melhoria:** As conversas são salvas de forma anônima em uma planilha do Google Sheets para que nossa equipe possa identificar pontos de melhoria e corrigir imprecisões.
 
 ## 💻 Tecnologias Utilizadas
 
-Este projeto é construído com as seguintes tecnologias e bibliotecas principais, conforme nosso arquivo `requirements.txt`:
+Este projeto é construído com as seguintes tecnologias e bibliotecas principais:
 
 * **Frontend:**
     * [**Streamlit**](https://streamlit.io/): Para a criação da interface de chat interativa.
+    * **HTML5/CSS3/JS**: Para o Dashboard e customizações visuais.
 * **IA e Machine Learning:**
     * [**Google Generative AI (Gemini)**](https://ai.google.dev/): Modelo de linguagem para geração das respostas.
     * [**Sentence-Transformers**](https://www.sbert.net/): Para a busca semântica e ranqueamento de similaridade.
-    * [**Hugging Face Hub**](https://huggingface.co/): Para download e cache de modelos de ML.
-* **Integração e Dados (API):**
+    * [**Hugging Face Hub**](https://huggingface.co/): Para hospedagem de modelos e deploy secundário.
+* **Integração e Dados:**
     * [**gspread**](https://docs.gspread.org/): Para integração e registro de logs no Google Sheets.
-    * [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/): Para autenticação com as APIs do Google.
-* **Automação (CI/CD):**
-    * [**GitHub Actions**](https://github.com/features/actions): Para automação do versionamento com tags nas branches `dev` e `master`.
-
-### Outras Ferramentas e Tecnologias de Apoio
-
-Além das bibliotecas principais, o projeto também depende de:
-
-* **Git:** Utilizado para o controle de versão e para exibir dinamicamente a versão do projeto na interface.
-* **JSON:** Formato de arquivo para a estruturação da nossa base de conhecimento (`knowledge_base.json`).
-* **HTML/CSS/JS:** Usados para estilização e melhorias pontuais de usabilidade na interface do Streamlit.
-* **YAML:** Linguagem para a definição dos workflows de automação no GitHub Actions.
+    * **JSON**: Estrutura local da base de conhecimento.
+* **Automação e Ferramentas:**
+    * [**GitHub Actions**](https://github.com/features/actions): Pipelines de CI/CD.
+    * [**Git Cliff**](https://git-cliff.org/): Geração automática de changelogs.
 
 ## 🤝 Nossa Parceria: Casa Marielle Franco
 
@@ -119,6 +113,7 @@ Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
     Você precisará de uma chave de API do Google Gemini. Crie um arquivo `.streamlit/secrets.toml` na raiz do projeto com o seguinte conteúdo:
     ```toml
     GEMINI_API_KEY = "SUA_CHAVE_DE_API_AQUI"
+    # Opcional: Credenciais do GCP para logs (se for utilizar integração com Sheets)
     ```
 4.  **Execute a aplicação:**
     ```bash
@@ -127,26 +122,24 @@ Quer contribuir ou testar o VoxAI na sua máquina? Siga os passos:
 
 ## 🤝 Como Contribuir
 
-Suas contribuições são muito bem-vindas e nos ajudam a tornar o VoxAI ainda melhor! Existem várias formas de colaborar:
+Suas contribuições são muito bem-vindas! Adotamos o padrão **Conventional Commits** para manter nosso histórico organizado.
 
-* **Reportando Bugs:** Encontrou algum problema? Abra uma [issue](https://github.com/emn-f/vox-ai/issues) detalhando o erro.
-* **Sugerindo Melhorias:** Tem ideias para novas funcionalidades ou aperfeiçoamentos? Abra uma [issue](https://github.com/emn-f/vox-ai/issues) para discussão.
+* **Reportando Bugs:** Encontrou algum problema? Abra uma [issue](https://github.com/emn-f/vox-ai/issues).
 * **Enviando Pull Requests:**
     1.  Faça um Fork do projeto.
-    2.  Crie uma branch para sua modificação (`git checkout -b feature/MinhaNovaFeature`).
-    3.  Faça o commit das suas alterações (`git commit -m 'Adiciona MinhaNovaFeature'`).
-    4.  Faça o push para a sua branch (`git push origin feature/MinhaNovaFeature`).
-    5.  Abra um [Pull Request](https://github.com/emn-f/vox-ai/pulls).
+    2.  Crie uma branch (`git checkout -b feature/MinhaNovaFeature`).
+    3.  Faça o commit (`git commit -m 'feat: adiciona nova funcionalidade X'`). Confira nosso [guia de commits](conventional_commits.md).
+    4.  Faça o push (`git push origin feature/MinhaNovaFeature`).
+    5.  Abra um PR.
 
-Considere também dar uma ⭐ ao projeto se você gostou da iniciativa!
+## 🤖 Automação e CI/CD
 
-## 🤖 Automação de Versionamento
+O projeto utiliza **GitHub Actions** para manter tudo sincronizado e versionado:
 
-O projeto utiliza **GitHub Actions** para automatizar o processo de criação de tags de versão.
-* **Branch `dev`**: A cada `push`, uma nova tag `dev-vX.X.X` é criada, incrementando o número do patch.
-* **Branch `master`**: A cada `push`, uma nova tag de produção `vX.X.X` é criada, também incrementando o patch.
-
-Isso garante um controle de versão consistente e automatizado para os ambientes de desenvolvimento e produção.
+* **Versionamento Automático:** Tags são geradas automaticamente (`dev-v*` e `v*`) ao realizar push nas branches principais.
+* **Changelog Dinâmico:** Utilizamos **Git Cliff** para gerar o arquivo `CHANGELOG.md` automaticamente com base nos commits.
+* **Sincronização de KB:** Um workflow diário sincroniza novos dados cadastrados na planilha do Google Sheets diretamente para o `knowledge_base.json` do repositório.
+* **Deploy Hugging Face:** Push automático para o Space no Hugging Face em atualizações de desenvolvimento.
 
 ## 🔒 Privacidade
 
@@ -156,8 +149,19 @@ Sua privacidade é nossa prioridade. **Nós não coletamos dados pessoais** como
 
 Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Equipe atual do Vox
-* **Emanuel Ferreira**: Diretor e Idealizador do Vox
+## 👥 Equipe
+
+**Coordenação e Desenvolvimento:**
+* **Emanuel Ferreira** (Líder Técnico / Diretor do Vox)
+
+**Colaboradores (Base de Dados Inicial):**
+Agradecemos aos estudantes que contribuíram na curadoria da primeira versão da nossa base de conhecimento:
+* Alicia Batista
+* Brenda Pires
+* Fernanda Souza
+* Kauã Araujo
+* Lucca Pertigas
+* Marcio Ventura
 
 ## 📬 Contato
 
@@ -166,7 +170,6 @@ Dúvidas, sugestões ou feedback? Fique à vontade para entrar em contato!
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
 * **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
 * **LinkedIn:** [Projeto Vox](https://www.linkedin.com/company/assistentevox/)
-* **Linktree:** [linktr.ee/voxai](https://linktr.ee/vox-ai)
 
 ## 📝 Changelog
 

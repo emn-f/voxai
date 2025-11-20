@@ -1,13 +1,3 @@
-## [dev-v1.0.56] - 2025-11-20
-
-### ✨ Funcionalidades
-
-- Teste de changelog automatico
-- Teste de changelog automatico
-
-### 🔧 Tarefas Internas
-
-- *(release)* Atualiza changelog dev para dev-v1.0.56 [skip ci]
 ## [1.0.25] - 2025-11-14
 ### Adicionado
 * Adiciona dashboard (Git Pages).

@@ -1,10 +1,21 @@
 # Changelog
 Todas as mudanças importantes deste projeto serão documentadas aqui.
+## [dev-v1.0.55] - 2025-11-20
 ## [dev-v1.0.54] - 2025-11-19
 
 ### ♻️ Refatoração & Melhorias
 
 * Actions renomeadas para melhor entendimento
+
+
+### ✨ Funcionalidades
+
+* Teste de changelog automatico
+
+
+### 🔧 Tarefas Internas
+
+* Atualiza changelog dev para dev-v1.0.54 [skip ci]
 
 ## [dev-v1.0.53] - 2025-11-19
 

@@ -1,9 +1,5 @@
 ## [2.7.1] - 2025-11-21
 
-### Revert
-
-- Feat: remove botão de limpar chat na sidebar
-
 ### ♻️ Refatoração & Melhorias
 
 - Ajustes de formatação
@@ -15,12 +11,9 @@
 
 ### 🎨 Estilo e Formatação
 
-- Melhorias no css da sidebar
 - Melhorias no visual da sidebar
 - Remoção de comentários
 - Redesign completo do GitPages com efeito glassmorphism e responsividade
-- Reoganização de links na sidebar
-- Redesign completo com efeito glassmorphism e responsividade
 
 ### 🐛 Correções
 
@@ -43,7 +36,6 @@
 ### 🤖 CI/CD & Automação
 
 - O deploy no Hugging Face olha para a branch master
-## [2.6.2] - 2025-11-21
 ## [2.6.1] - 2025-11-21
 
 ### ♻️ Refatoração & Melhorias

@@ -1,3 +1,16 @@
+## [2.6.4] - 2025-11-21
+
+### ✨ Funcionalidades
+
+- Erros no Vox serão salvos em planilha para análise posterior
+
+### 🎨 Estilo e Formatação
+
+- Remoção de emoji no título
+
+### 📚 Documentação
+
+- Criação de código de conduta do Vox
 ## [2.6.3] - 2025-11-21
 
 ### 🤖 CI/CD & Automação

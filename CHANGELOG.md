@@ -1,3 +1,30 @@
+## [2.7.1] - 2025-11-21
+
+### Revert
+
+- Feat: remove botão de limpar chat na sidebar
+
+### ♻️ Refatoração & Melhorias
+
+- Ajustes de formatação
+
+### ✨ Funcionalidades
+
+- Vox leva em consideração o código de conduta interno
+- Adição de form de avaliação na sidebar
+
+### 🎨 Estilo e Formatação
+
+- Melhorias no css da sidebar
+- Melhorias no visual da sidebar
+- Remoção de comentários
+- Redesign completo do GitPages com efeito glassmorphism e responsividade
+- Reoganização de links na sidebar
+- Redesign completo com efeito glassmorphism e responsividade
+
+### 🐛 Correções
+
+- Versão do Vox agora é exibida corretamente no Hugging Face
 ## [2.6.4] - 2025-11-21
 
 ### ✨ Funcionalidades

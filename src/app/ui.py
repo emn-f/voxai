@@ -19,12 +19,12 @@ def carregar_css(path="static/css/style.css"):
 
 def carregar_sidebar(sidebar_content, git_version, kb_version):
     with st.sidebar:
-        if st.button("🧹 Limpar chat"):
-            st.session_state.pop("hist", None)
-            st.session_state.pop("hist_exibir", None)
+        # if st.button("🧹 Limpar chat"):
+        #     st.session_state.pop("hist", None)
+        #     st.session_state.pop("hist_exibir", None)
+            
         st.markdown(sidebar_content, unsafe_allow_html=True)
         
-        # Exibe a versão do App e da Base de Conhecimento
         version_display = f"""
         <div style='color: #88888888; text-align: center; margin: auto; font-size: 0.9em;'>
             {git_version} | KB: v{kb_version}

@@ -13,6 +13,7 @@ from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_ch
 from src.core.semantica import semantica
 from src.core.sheets_integration import append_to_sheet
 from src.utils import BASE_PRINCIPAL_PATH, data_vox, git_version
+from src.core.sheets_integration import append_to_sheet, log_exception
 
 base_vox_items, kb_version_str = data_vox(BASE_PRINCIPAL_PATH)
     
@@ -53,50 +54,65 @@ if 'key_api' in st.session_state:
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
 
+   # ... (código anterior permanece igual)
+
     prompt = st.chat_input("Digite aqui...")
 
     if prompt:
+        # Atualiza históricos
         st.session_state.prompt = prompt
         st.session_state.hist.append({"role": "user", "parts": [prompt]})
         st.session_state.hist_exibir.append({"role": "user", "parts": [prompt]})
         
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(prompt)
-        tema_match, descricao_match = semantica(prompt, base_vox_items) 
-        
-        info_adicional_contexto = ""
-        if tema_match:
-            info_adicional_contexto = descricao_match
-        else:
-            resultados = None
-            descricao_match = "N/A" 
-
-        with st.chat_message("assistant", avatar="🤖"):
-           resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional_contexto)
             
         try:
-            if isinstance(resposta, list):
-                resposta = " ".join(resposta)
-            else:
-                resposta = str(resposta)
+            if "teste erro" in prompt.lower():
+                raise Exception("Simulação de falha crítica para teste de LOG!")
+
+            tema_match, descricao_match = semantica(prompt, base_vox_items) 
             
-            if descricao_match is None:
-                descricao_match_str = "N/A"
+            info_adicional_contexto = ""
+            if tema_match:
+                info_adicional_contexto = descricao_match
             else:
-                descricao_match_str = str(descricao_match)
+                resultados = None
+                descricao_match = "N/A" 
 
-                descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
+            with st.chat_message("assistant", avatar="🤖"):
+                resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional_contexto)
+                
+            st.session_state.hist.append({"role": "model", "parts": [resposta]})
+            st.session_state.hist_exibir.append({"role": "model", "parts": [resposta]})
 
-                descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
-                descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str)
-                descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str)
-                descricao_match_str = re.sub(r'__(.*?)__', r'\1', descricao_match_str)
-                descricao_match_str = re.sub(r'\*(.*?)\*', r'\1', descricao_match_str)
-                descricao_match_str = re.sub(r'_(.*?)_', r'\1', descricao_match_str)
-            append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt, resposta, tema_match, descricao_match_str)
-        
+            try:
+                if isinstance(resposta, list):
+                    resposta_log = " ".join(resposta)
+                else:
+                    resposta_log = str(resposta)
+                
+                if descricao_match is None:
+                    descricao_match_str = "N/A"
+                else:
+                    descricao_match_str = str(descricao_match)
+                    descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
+                    descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
+                    descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str)
+                    descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str)
+                
+                append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt, resposta_log, tema_match, descricao_match_str)
+            
+            except Exception as e_log:
+                print(f"⚠️ Falha silenciosa ao registrar log de conversa: {e_log}")
+
         except Exception as e:
-            print(f"Falha ao registrar log na planilha: {e}")
-    
-        st.session_state.hist.append({"role": "model", "parts": [resposta]})
-        st.session_state.hist_exibir.append({"role": "model", "parts": [resposta]})
+            error_id = log_exception(st.session_state.git_version_str, st.session_state.session_id, e)
+            
+            st.error(f"""
+            Putz, algo deu errado por aqui :/
+            
+            Por favor, reporte este erro para nossa equipe informando o código: **{error_id}**
+            """, icon="🚫")
+            
+            print(f"❌ ERRO CRÍTICO (ID {error_id}): {e}")

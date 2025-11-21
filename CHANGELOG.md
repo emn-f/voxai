@@ -1,3 +1,22 @@
+## [dev-v1.0.66] - 2025-11-20
+
+### 📚 Documentação
+
+- Update SECURITY.md
+
+### 🔧 Tarefas Internas
+
+- *(release)* Atualiza changelog dev para dev-v1.0.66 [skip ci]
+## [dev-v1.0.65] - 2025-11-20
+
+### 🔧 Tarefas Internas
+
+- *(release)* Atualiza changelog dev para dev-v1.0.65 [skip ci]
+## [dev-v1.0.64] - 2025-11-20
+
+### 🔧 Tarefas Internas
+
+- *(release)* Atualiza changelog dev para dev-v1.0.64 [skip ci]
 ## [2.5.31] - 2025-11-20
 ## [2.5.30] - 2025-11-20
 ## [2.5.29] - 2025-11-20

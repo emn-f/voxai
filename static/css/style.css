@@ -84,11 +84,13 @@
     filter: brightness(85%);
 }
 
-.footer-links a,
-.footer-policy a {
+.footer-links a {
     text-decoration: none;
     color: #888;
-    font-size: 0.9em;
+    font-size:0.85em;
+    color:#888;
+    margin-bottom:0.5em;
+    font-weight:bold;
 }
 
 .footer-links img {
@@ -96,4 +98,17 @@
     vertical-align: middle;
     margin-right: 5px;
     filter: grayscale(1);
+}
+
+
+.legal-link {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.85em;
+    transition: color 0.2s;
+}
+
+.legal-link:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
 }

@@ -1,7 +1,7 @@
 name: 🤗 Deploy no Hugging Face
 on:
   push:
-    branches: [dev]
+    branches: [master]
   workflow_dispatch:
 jobs:
   sync-to-hub:

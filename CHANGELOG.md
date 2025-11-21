@@ -1,3 +1,8 @@
+## [2.6.3] - 2025-11-21
+
+### 🤖 CI/CD & Automação
+
+- O deploy no Hugging Face olha para a branch master
 ## [2.6.2] - 2025-11-21
 ## [2.6.1] - 2025-11-21
 

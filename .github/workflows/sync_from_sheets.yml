@@ -1,8 +1,7 @@
 name: 📚 Sincronizar Knowledge Base
 on:
-
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: "0 0 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -13,65 +12,65 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-    
-    - name: Debug - Show directory structure and current path
-      run: |
-        echo "--- Current Directory ---"
-        pwd
-        echo "--- Recursive Directory Listing ---"
-        ls -R
-        echo "--- End of Debug ---"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
 
-    - name: Cache pip packages
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/pip 
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
+      - name: Debug - Show directory structure and current path
+        run: |
+          echo "--- Current Directory ---"
+          pwd
+          echo "--- Recursive Directory Listing ---"
+          ls -R
+          echo "--- End of Debug ---"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install python-dotenv 
-        sudo apt-get update && sudo apt-get install -y jq
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-    - name: Run sync script
-      env:
-        GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
-        KB_SHEET_ID: ${{ secrets.KB_SHEET_ID }}
-      run: python scripts/sinc_kb.py
-      working-directory: ./
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install python-dotenv 
+          sudo apt-get update && sudo apt-get install -y jq
 
-    - name: Commit and push if there are changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        
-        # Verifica se há alterações no knowledge_base.json
-        if ! git diff --quiet data/knowledge_base.json; then
-          # Adiciona apenas o knowledge_base.json para o stage
-          git add data/knowledge_base.json
-          
-          # Extrai a kb_version do JSON
-          # Certifique-se que o caminho para knowledge_base.json está correto
-          KB_VERSION=$(jq -r .kb_version data/knowledge_base.json)
-          
-          # Cria a mensagem de commit com a versão da KB
-          COMMIT_MESSAGE="Action: Base de conhecimento atualizada para v${KB_VERSION} (via sync sheets)"
-          
-          echo "Mudanças detectadas no knowledge_base.json. Commitando com a mensagem: ${COMMIT_MESSAGE}"
-          git commit -m "${COMMIT_MESSAGE}"
-          git push
-        else
-          echo "Nenhuma mudança detectada no knowledge_base.json. Nenhum commit será feito."
-        fi
-        echo "Verificação de commit finalizada."
+      - name: Run sync script
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          KB_SHEET_ID: ${{ secrets.KB_SHEET_ID }}
+        run: python scripts/sinc_kb.py
+        working-directory: ./
+
+      - name: Commit and push if there are changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Verifica se há alterações no knowledge_base.json
+          if ! git diff --quiet data/knowledge_base.json; then
+            # Adiciona apenas o knowledge_base.json para o stage
+            git add data/knowledge_base.json
+            
+            # Extrai a kb_version do JSON
+            # Certifique-se que o caminho para knowledge_base.json está correto
+            KB_VERSION=$(jq -r .kb_version data/knowledge_base.json)
+            
+            # Cria a mensagem de commit com a versão da KB
+            COMMIT_MESSAGE="Action: Base de conhecimento atualizada para v${KB_VERSION} (via sync sheets)"
+            
+            echo "Mudanças detectadas no knowledge_base.json. Commitando com a mensagem: ${COMMIT_MESSAGE}"
+            git commit -m "${COMMIT_MESSAGE}"
+            git push
+          else
+            echo "Nenhuma mudança detectada no knowledge_base.json. Nenhum commit será feito."
+          fi
+          echo "Verificação de commit finalizada."

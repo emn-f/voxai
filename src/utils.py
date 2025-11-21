@@ -8,7 +8,6 @@ def data_vox(caminho=BASE_PRINCIPAL_PATH):
     try:
         with open(caminho, "r", encoding="utf-8") as f:
             full_data = json.load(f)
-            # Retorna os itens da base e a versão da KB
             return full_data.get("data", []), full_data.get("kb_version", "N/A")
     except FileNotFoundError:
         print(f"Arquivo da base de conhecimento não encontrado em: {caminho}")

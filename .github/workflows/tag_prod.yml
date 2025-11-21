@@ -1,69 +1,70 @@
 name: 🚀 Release & Changelog (Prod)
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+    paths-ignore:
+      - "CHANGELOG.md"
 permissions:
   contents: write
-  
+
 jobs:
   release_prod:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Configurar Git User
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Configurar Git User
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-    - name: Calcular Próxima Versão Prod
-      id: get_tag
-      run: |
-        # Pega a última tag de produção (vX.X.X)
-        LAST_TAG=$(git tag --list "v*" --sort=-v:refname | head -n 1)
-        if [ -z "$LAST_TAG" ]; then
-          LAST_TAG="v0.0.0"
-        fi
-        
-        VERSION=${LAST_TAG#v}
-        IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
-        PATCH=$((PATCH + 1))
-        NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
-        
-        echo "Nova versão Prod: $NEW_TAG"
-        echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+      - name: Calcular Próxima Versão Prod
+        id: get_tag
+        run: |
+          # Pega a última tag de produção (vX.X.X)
+          LAST_TAG=$(git tag --list "v*" --sort=-v:refname | head -n 1)
+          if [ -z "$LAST_TAG" ]; then
+            LAST_TAG="v0.0.0"
+          fi
 
-    - name: Gerar Changelog (Git Cliff)
-      uses: orhun/git-cliff-action@v4
-      with:
-        config: cliff.toml
-        args: --unreleased --tag ${{ steps.get_tag.outputs.new_tag }} --prepend CHANGELOG.md
+          VERSION=${LAST_TAG#v}
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          PATCH=$((PATCH + 1))
+          NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
 
-    - name: Commitar Changelog, Taggear e Push
-      run: |
-        NEW_TAG="${{ steps.get_tag.outputs.new_tag }}"
-        
-        # Adiciona o Changelog atualizado
-        git add CHANGELOG.md
-        
-        # Verifica se houve mudança e faz o commit
-        if git diff --staged --quiet; then
-          echo "🚫 Changelog não mudou."
-        else
-          # Usa a mensagem padronizada que configuramos para ser ignorada no cliff.toml
-          git commit -m "chore(release): atualiza changelog para ${NEW_TAG} [skip ci]"
-        fi
-        
-        # Cria a tag APÓS o commit do changelog (para o changelog fazer parte da tag)
-        git tag $NEW_TAG
-        
-        # Envia commit e tag para a master
-        git push origin master
-        git push origin $NEW_TAG
-        
-        echo "✅ Versão Oficial ${NEW_TAG} lançada!"
+          echo "Nova versão Prod: $NEW_TAG"
+          echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+
+      - name: Gerar Changelog (Git Cliff)
+        uses: orhun/git-cliff-action@v4
+        with:
+          config: cliff.toml
+          args: --unreleased --tag ${{ steps.get_tag.outputs.new_tag }} --prepend CHANGELOG.md
+
+      - name: Commitar Changelog, Taggear e Push
+        run: |
+          NEW_TAG="${{ steps.get_tag.outputs.new_tag }}"
+
+          # Adiciona o Changelog atualizado
+          git add CHANGELOG.md
+
+          # Verifica se houve mudança e faz o commit
+          if git diff --staged --quiet; then
+            echo "🚫 Changelog não mudou."
+          else
+            # Usa a mensagem padronizada que configuramos para ser ignorada no cliff.toml
+            git commit -m "chore(release): atualiza changelog para ${NEW_TAG} [skip ci]"
+          fi
+
+          # Cria a tag APÓS o commit do changelog (para o changelog fazer parte da tag)
+          git tag $NEW_TAG
+
+          # Envia commit e tag para a master
+          git push origin master
+          git push origin $NEW_TAG
+
+          echo "✅ Versão Oficial ${NEW_TAG} lançada!"

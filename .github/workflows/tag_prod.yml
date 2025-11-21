@@ -42,8 +42,7 @@ jobs:
       uses: orhun/git-cliff-action@v4
       with:
         config: cliff.toml
-        # Gera o changelog para a nova tag calculada
-        args: --tag ${{ steps.get_tag.outputs.new_tag }} --prepend CHANGELOG.md
+        args: --unreleased --tag ${{ steps.get_tag.outputs.new_tag }} --prepend CHANGELOG.md
 
     - name: Commitar Changelog, Taggear e Push
       run: |

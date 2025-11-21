@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Vox</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏳️‍🌈</text></svg>">
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="pages/dashboard.css">
 </head>
@@ -17,32 +19,48 @@
 <body>
     <header>
         <div class="logo-title">
-            <span class="header-logo">🏳️‍🌈</span>
             <h1>Projeto Vox</h1>
         </div>
 
+        <div class="nav-center">
+            <a href="https://assistentevox.streamlit.app/" target="_blank" class="cta-button-header">
+                Acessar Vox AI
+            </a>
+        </div>
+
         <div class="header-links">
-            <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="social-link" title="Instagram">
-                <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram">
+            <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="social-link"
+                title="Instagram">
+                <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png" alt="Instagram">
             </a>
             <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="social-link"
                 title="LinkedIn">
-                <img src="https://img.icons8.com/fluency/24/linkedin.png" alt="LinkedIn">
+                <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" alt="LinkedIn">
             </a>
-            <a href="mailto:assistentedeapoiolgbtvox@gmail.com" target="_blank" class="social-link"
-                title="Contato por E-mail">
-                <img src="https://img.icons8.com/fluency/24/gmail-new.png" alt="Email">
+            <a href="https://forms.gle/GpG9ESkUpBTA7HoV9" target="_blank" class="social-link"
+                title="Avaliar o Vox (Feedback)">
+                <img src="https://img.icons8.com/?size=100&id=19417&format=png&color=000000" alt="Feedback">
+            </a>
+            <a href="https://linktr.ee/vox_ai" target="_blank" class="social-link"
+                title="Linktree">
+                <img src="https://img.icons8.com/?size=100&id=x03G5TG9OoEO&format=png&color=000000" alt="Linktree">
             </a>
 
-            <a href="https://github.com/emn-f/vox-ai" target="_blank" class="button">
+            <a href="https://huggingface.co/spaces/emn-f/vox-ai" target="_blank" class="button-hf"
+                title="Hugging Face">
+                <img src="https://img.icons8.com/?size=100&id=sop9ROXku5bb&format=png" alt="Hugging Face" height="21px">
+                Hugging Face
+            </a>
+            <a href="https://github.com/emn-f/vox-ai" target="_blank" class="button"
+                title="GitHub">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
-                Ver Código no GitHub
+                GitHub
             </a>
         </div>
     </header>
 
-    <section class="hero-section">
-        <a href="https://assistentevox.streamlit.app/" target="_blank" class="cta-button">
+    <section class="hero-mobile">
+        <a href="https://assistentevox.streamlit.app/" target="_blank" class="cta-button-mobile">
             Acessar o Vox AI
         </a>
     </section>
@@ -50,12 +68,12 @@
     <div class="info-grid">
 
         <div class="card-fullwidth" id="changelog-card">
-            <h2>Última Atualização (Changelog)</h2>
+            <h2>Última Atualização</h2>
             <div id="latest-changelog" class="content-md">
                 <p class="loading">Carregando Changelog...</p>
             </div>
-            <a href="https://github.com/emn-f/vox-ai/blob/master/CHANGELOG.md" target="_blank" class="card-link">Ver
-                Histórico Completo &rarr;</a>
+            <a href="https://github.com/emn-f/vox-ai/blob/master/CHANGELOG.md" target="_blank"
+                class="card-link">Histórico Completo &rarr;</a>
         </div>
 
         <div class="stacked-cards">
@@ -67,81 +85,87 @@
                 <h3>Versão da KB</h3>
                 <div class="value" id="kb-version"><span class="loading">...</span></div>
             </div>
+            <div class="stat-card">
+                <h3>Licença (MIT)</h3>
+                <p>Projeto de código aberto.</p>
+                <a href="https://github.com/emn-f/vox-ai/blob/master/LICENSE" target="_blank" class="card-link">Ver
+                    Licença &rarr;</a>
+            </div>
         </div>
 
         <div class="stacked-cards">
             <div class="stat-card">
-                <h3>Política de Privacidade</h3>
-                <p>Veja como lidamos com os dados.</p>
+                <h3>Privacidade</h3>
+                <p>Coleta de dados anônima.</p>
                 <a href="https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md" target="_blank"
-                    class="card-link">Ler
-                    Política &rarr;</a>
+                    class="card-link">Ler Política &rarr;</a>
             </div>
 
             <div class="stat-card">
-                <h3>Licença (MIT)</h3>
-                <p>Entenda o que você pode fazer com o projeto.</p>
-                <a href="https://github.com/emn-f/vox-ai/blob/master/LICENSE" target="_blank" class="card-link">Ver
-                    Licença &rarr;</a>
+                <h3>Código de Conduta</h3>
+                <p>Nossos pactos de respeito.</p>
+                <a href="https://github.com/emn-f/vox-ai/blob/master/CODE_OF_CONDUCT.md" target="_blank"
+                    class="card-link">Ler Código &rarr;</a>
+            </div>
+
+            <div class="stat-card">
+                <h3>Segurança</h3>
+                <p>Como reportar vulnerabilidades.</p>
+                <a href="https://github.com/emn-f/vox-ai/blob/master/SECURITY.md" target="_blank" class="card-link">Ver
+                    Política &rarr;</a>
             </div>
         </div>
 
     </div>
 
     <div class="card-fullwidth about-section">
-        <h2>Sobre o nosso projeto</h2>
+        <h2>Sobre o Vox AI</h2>
 
         <div class="about-grid">
             <div class="about-column">
-                <h3>Nossa Missão</h3>
+                <h3>Missão e Propósito</h3>
                 <p>
-                    O VoxAI é um assistente de apoio e informação LGBTQIA+ desenvolvido como parte do projeto de
-                    extensão "Vox: Inteligência Artificial para Inclusão e Cidadania" da <strong>Universidade Católica
-                        do Salvador (UCSal)</strong>.
+                    O VoxAI é um assistente de apoio e informação LGBTQIA+ desenvolvido como projeto de extensão da
+                    <strong>Universidade Católica do Salvador (UCSal)</strong>.
                 </p>
                 <p>
-                    Nossa missão é ser um ponto de apoio digital seguro para a comunidade, especialmente em Salvador
-                    (BA), combatendo a desinformação e facilitando o acesso a informações confiáveis sobre saúde,
-                    direitos e acolhimento.
+                    Nossa missão é ser um ponto de apoio digital seguro para a comunidade, combatendo a desinformação e
+                    facilitando o acesso a informações confiáveis sobre saúde, direitos e acolhimento em Salvador (BA).
                 </p>
 
-                <h3>O que você encontra?</h3>
+                <h3>Funcionalidades</h3>
                 <ul class="feature-list">
-                    <li>
-                        <strong>Saúde e Prevenção:</strong> Informações sobre PrEP, PEP, ISTs e saúde mental.
-                    </li>
-                    <li>
-                        <strong>Direitos e Cidadania:</strong> Dúvidas sobre retificação de nome, uso do nome social e
-                        como denunciar LGBTfobia.
-                    </li>
-                    <li>
-                        <strong>Acolhimento e Cultura:</strong> Locais de apoio, serviços e informações sobre a
-                        comunidade.
-                    </li>
+                    <li><strong>Busca Semântica (RAG):</strong> Respostas embasadas em fontes verificadas.</li>
+                    <li><strong>Saúde:</strong> Informações sobre PrEP, PEP e Saúde Mental.</li>
+                    <li><strong>Cidadania:</strong> Guia para retificação de nome e denúncias.</li>
                 </ul>
             </div>
 
             <div class="about-column">
                 <h3>Parceria: Casa Marielle Franco</h3>
                 <p>
-                    Temos uma parceria oficial com a <strong>Casa Marielle Franco</strong>, uma instituição de
-                    acolhimento independente em Salvador (BA), coordenada por Sandra Muñoz.
-                </p>
-                <p>
-                    A Casa atua como um espaço seguro, ponto de escuta e validação de conteúdos, criando uma ponte
-                    essencial entre a tecnologia e o cuidado humano.
+                    Temos orgulho de nossa parceria oficial com a <strong>Casa Marielle Franco</strong>, instituição de
+                    acolhimento independente em Salvador, coordenada por Sandra Muñoz. A Casa atua como ponto de escuta
+                    e validação de nossos conteúdos.
                 </p>
 
                 <h3>Nossa Equipe</h3>
-                <ul class="team-list">
-                    <li>Emanuel Ferreira (Diretor do Vox)</li>
-                    <li>Alicia Batista</li>
-                    <li>Brenda Pires</li>
-                    <li>Fernanda Souza</li>
-                    <li>Kauã Araujo</li>
-                    <li>Lucca Pertigas</li>
-                    <li>Marcio Ventura</li>
-                </ul>
+                <div class="team-wrapper">
+                    <p class="team-role">Liderança Técnica</p>
+                    <ul class="team-list single-col">
+                        <li><strong>Emanuel Ferreira</strong> (Engenharia de Software)</li>
+                    </ul>
+
+                    <p class="team-role">Colaboradores (Curadoria)</p>
+                    <ul class="team-list">
+                        <li>Alicia Batista</li>
+                        <li>Brenda Pires</li>
+                        <li>Fernanda Souza</li>
+                        <li>Kauã Araujo</li>
+                        <li>Lucca Pertigas</li>
+                        <li>Marcio Ventura</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

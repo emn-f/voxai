@@ -1,3 +1,12 @@
+## [2.7.3] - 2025-11-21
+
+### 🎨 Estilo e Formatação
+
+- Identação no sync_from_sheets.yml
+
+### 🤖 CI/CD & Automação
+
+- Impede loop de execução ao atualizar apenas o CHANGELOG.md
 ## [2.7.2] - 2025-11-21
 ## [2.7.1] - 2025-11-21
 

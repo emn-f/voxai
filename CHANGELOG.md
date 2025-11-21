@@ -1,3 +1,19 @@
+## [2.6.1] - 2025-11-21
+
+### ♻️ Refatoração & Melhorias
+
+- Emoji principal do Vox alterado #69
+- Emoji principal do Vox alterado
+
+### 📚 Documentação
+
+- Update SECURITY.md
+
+### 🤖 CI/CD & Automação
+
+- Correções na action geradora do CHANGELOG.md
+- O deploy no Hugging Face olha para a branch master
+- Correção no CHANGELOG automatico
 ## [1.0.25] - 2025-11-14
 
 ### ✨ Funcionalidades

@@ -1,6 +1,6 @@
 ---
 title: VoxAI
-emoji: 🌈
+emoji: 🏳️‍🌈
 colorFrom: purple
 colorTo: blue
 sdk: streamlit
@@ -10,7 +10,7 @@ pinned: false
 license: mit
 ---
 
-# 🌈 VoxAI: Assistente de Apoio e Informação LGBTQIA+
+# 🏳️‍🌈 VoxAI: Assistente de Apoio e Informação LGBTQIA+
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=Streamlit&logoColor=white)](https://streamlit.io/)

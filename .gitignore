@@ -17,5 +17,4 @@ media
 # Outrs versões da base de dados do Vox
 data/fontes_dados/
 
-# Funções ainda em desenvolvimento
-changelog_generator.py
+CONVENTIONAL_COMMITS.md

@@ -1,4 +1,4 @@
-name: 🚧 Tag & Changelog (Dev)
+name: 🚧 Tag (Dev)
 on:
   push:
     branches:
@@ -7,72 +7,42 @@ permissions:
   contents: write
 
 jobs:
-  tag_and_release_dev:
+  tag_dev_only:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 # Importante para ler o histórico de commits
+        fetch-depth: 0
 
     - name: Configurar Git User
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        # Garante permissão para empurrar a tag e o commit de volta
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
     - name: Calcular Próxima Versão Dev
       id: calc_version
       run: |
-        # Busca a última tag de dev existente
         LAST_TAG=$(git tag --list "dev-v*" --sort=-v:refname | head -n 1)
         
         if [ -z "$LAST_TAG" ]; then
           LAST_TAG="dev-v0.0.0"
         fi
         
-        # Remove o prefixo 'dev-v' para fazer o cálculo
         VERSION=${LAST_TAG#dev-v}
         IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
         
-        # Incrementa o Patch
         PATCH=$((PATCH + 1))
         NEW_TAG="dev-v${MAJOR}.${MINOR}.${PATCH}"
         
-        echo "Versão anterior: $LAST_TAG"
-        echo "Nova versão: $NEW_TAG"
+        echo "Nova versão Dev: $NEW_TAG"
         echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
 
-    - name: Gerar Changelog (Git Cliff)
-      uses: orhun/git-cliff-action@v4
-      with:
-        config: cliff.toml
-        # Removemos o --verbose e deixamos apenas o comando de escrita
-        args: --latest --tag ${{ steps.calc_version.outputs.new_tag }} --prepend CHANGELOG.md
-      # IMPORTANTE: Removemos a seção 'env: OUTPUT: ...' que causava o erro EOF
-
-    - name: Commitar e Push (Se houver mudanças)
+    - name: Criar Tag e Push (Sem Changelog)
       run: |
         NEW_TAG="${{ steps.calc_version.outputs.new_tag }}"
         
-        # Tenta adicionar o Changelog modificado
-        git add CHANGELOG.md
-        
-        # Verifica se houve mudança real no arquivo
-        if git diff --staged --quiet; then
-          echo "🚫 Nenhuma mudança no Changelog (nenhum commit novo relevante). Pulei a criação da tag."
-        else
-          # Se o arquivo mudou, faz o commit e cria a tag
-          git commit -m "chore(release): atualiza changelog dev para ${NEW_TAG} [skip ci]"
-          
-          # Cria a tag no commit novo
-          git tag $NEW_TAG
-          
-          # Envia para o GitHub
-          git push origin dev
-          git push origin $NEW_TAG
-          
-          echo "✅ Versão ${NEW_TAG} lançada com sucesso!"
-        fi
+        # Apenas cria a tag no commit atual e sobe
+        git tag $NEW_TAG
+        git push origin $NEW_TAG

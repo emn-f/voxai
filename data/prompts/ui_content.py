@@ -9,54 +9,72 @@ Como posso te ajudar agora?
 """
 
 SIDEBAR = """
-    <div class="vox-sidebar-title">Sobre o Vox</div>
-    <div class="vox-sidebar-section">
-        <b>Vox AI</b> é um assistente de apoio e informação <b>LGBTQIA+</b>. Aqui você encontra acolhimento, informações e recursos confiáveis.<br>
+<div style="display: flex; flex-direction: column; min-height: 70vh; justify-content: space-between;">
+    <div>
+        <div class="vox-sidebar-title">Sobre o Vox</div>
+        <div class="vox-sidebar-section">
+            <b>Vox AI</b> é um assistente de apoio e informação <b>LGBTQIA+</b>. Aqui você encontra acolhimento,
+            informações e recursos confiáveis.<br>
+        </div>
+        <br>
+        <ul class="vox-sidebar-links">
+            <li>
+                <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank" class="link-casa-marielle">
+                    <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram"
+                        style="height:1.3em; vertical-align:middle; margin-right:5px;" />
+                    Casa Marielle Franco
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="link-insta">
+                    <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram"
+                        style="height:1.3em; vertical-align:middle; margin-right:5px;" />
+                    Projeto Vox AI
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="link-linkedin">
+                    <img src="https://img.icons8.com/fluency/24/linkedin.png" alt="LinkedIn"
+                        style="height:1.3em; vertical-align:middle; margin-right:5px;" />
+                    Vox no LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="mailto:assistentedeapoiolgbtvox@gmail.com" target="_blank" class="vox-contact-link">
+                    <img src="https://img.icons8.com/fluency/24/gmail-new.png" alt="Email"
+                        style="height:1.3em; vertical-align:middle; margin-right:5px;" />
+                    Contato & Suporte
+                </a>
+            </li>
+            <li style="margin-top: 5px;">
+                <a href="https://forms.gle/GpG9ESkUpBTA7HoV9" target="_blank" class="vox-contact-link"
+                    style="display: flex; align-items: center;">
+                    <img src="https://img.icons8.com/fluency/24/star.png" alt="Feedback"
+                        style="height:1.3em; margin-right:8px;" />
+                    Avalie o Vox
+                </a>
+            </li>
+        </ul>
     </div>
-    <br>
-    <ul class="vox-sidebar-links">
-        <li>
-            <a href="https://www.instagram.com/casamariellefrancobr/" target="_blank" class="link-casa-marielle">
-                <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
-                Casa Marielle Franco
+    <div>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 1em 0;">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <a href="https://github.com/emn-f/vox-ai" target="_blank" title="Ver código fonte">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"
+                    style="height: 2em; filter: invert(1) opacity(0.6); transition: opacity 0.2s;" />
             </a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/projetovoxai/" target="_blank" class="link-insta">
-                <img src="https://img.icons8.com/fluency/24/instagram-new.png" alt="Instagram" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
-                Projeto Vox AI
-            </a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/company/assistentevox/" target="_blank" class="link-linkedin">
-                <img src="https://img.icons8.com/fluency/24/linkedin.png" alt="LinkedIn" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
-                Vox no LinkedIn
-            </a>
-        </li>
-        <li>
-            <a href="mailto:assistentedeapoiolgbtvox@gmail.com" target="_blank" class="vox-contact-link">
-                <img src="https://img.icons8.com/fluency/24/gmail-new.png" alt="Email" style="height:1.3em; vertical-align:middle; margin-right:5px;" />
-                Contato
-            </a>
-        </li>    
-    </ul>
-    <div class="disclaimer" style="color:#888; font-size:0.95em; margin-top:1em;">
-        O Vox AI está em constante desenvolvimento e pode cometer equívocos.
+        </div>
+        <div class="footer-section" style="text-align:center;">
+            <a href="https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md" target="_blank"
+                class="legal-link">Política de Privacidade</a><br>
+            <a href="https://github.com/emn-f/vox-ai/blob/master/CODE_OF_CONDUCT.md" target="_blank"
+                class="legal-link">Código de Conduta</a><br>
+            <a href="https://github.com/emn-f/vox-ai/blob/master/SECURITY.md" target="_blank"
+                class="legal-link">Segurança</a>
+        </div>
+        <div class="copyright" style="text-align:center; color:#666; font-size:0.8em; margin-top:1.5em;">
+            Copyright © 2025 Vox AI
+        </div>
     </div>
-
-    <div class="footer-links" style="text-align:center; margin-top:2em;">
-        <a href="https://github.com/emn-f/vox-ai" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="height:1.5em; vertical-align:middle; margin-right:5px; filter: grayscale(1);" />
-        </a>
-    </div>
-    
-    
-    <div class="copyright" style="text-align:center; color:#888; font-size:0.95em; margin-top:0.5em;">
-    <div class="footer-policy" style="text-align:center; margin-top:0.5em;">
-        <a href="https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md" target="_blank">
-        Política de Privacidade
-        </a>
-    </div>
-        Copyright © 2025 Vox AI
-    </div>      
+</div>
 """

@@ -1,7 +1,5 @@
 # Política de Privacidade do Vox AI
 
-**Última atualização:** 23 de maio de 2025
-
 ### 1. Apresentação
 
 O Vox AI é um projeto de extensão da Universidade Católica do Salvador (UCSal) criado para ser um assistente de apoio e informação para a comunidade LGBTQIA+. Sua privacidade, segurança e confiança são fundamentais para nós. Esta política explica de forma transparente quais dados coletamos, por que coletamos e como eles são utilizados, sempre de forma anônima e segura.

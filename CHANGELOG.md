@@ -1,3 +1,8 @@
+## [2.7.4] - 2025-11-23
+
+### ⚡ Performance
+
+- Add caching and create config.py
 ## [2.7.3] - 2025-11-21
 
 ### 🎨 Estilo e Formatação

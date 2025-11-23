@@ -11,14 +11,13 @@ from data.prompts.ui_content import SAUDACAO, SIDEBAR
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
-from src.core.sheets_integration import append_to_sheet
-from src.utils import BASE_PRINCIPAL_PATH, data_vox, git_version
 from src.core.sheets_integration import append_to_sheet, log_exception
+from src.utils import data_vox, git_version
 
-base_vox_items, kb_version_str = data_vox(BASE_PRINCIPAL_PATH)
-    
 configurar_pagina()
 carregar_css()
+
+base_vox_items, kb_version_str = data_vox()
 
 if 'kb_version_str' not in st.session_state:
     st.session_state.kb_version_str = kb_version_str
@@ -53,8 +52,6 @@ if 'key_api' in st.session_state:
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
-
-   # ... (código anterior permanece igual)
 
     prompt = st.chat_input("Digite aqui...")
 

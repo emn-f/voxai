@@ -69,7 +69,7 @@ Para contribuir ou testar:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/emn-f/vox-ai.git](https://github.com/emn-f/vox-ai.git)
+    git clone https://github.com/emn-f/vox-ai.git
     cd vox-ai
     ```
 2.  **Instale as dependências:**

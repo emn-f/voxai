@@ -56,7 +56,6 @@ if 'key_api' in st.session_state:
     prompt = st.chat_input("Digite aqui...")
 
     if prompt:
-        # Atualiza históricos
         st.session_state.prompt = prompt
         st.session_state.hist.append({"role": "user", "parts": [prompt]})
         st.session_state.hist_exibir.append({"role": "user", "parts": [prompt]})

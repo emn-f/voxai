@@ -1,3 +1,21 @@
+## [2.7.5] - 2025-11-23
+
+### ♻️ Refatoração & Melhorias
+
+- Remoção de comentários
+
+### ✨ Funcionalidades
+
+- Links externos centralizados em `src/external_links.py`,
+
+### 📚 Documentação
+
+- Criação de ASSETS.md com todos os links e ativos digitais do Vox
+- Criação de ASSETS.md com todos os links e ativos digitais do Vox
+- Criação de Guia de Contribuição para o Vox
+- Atualização do README.md
+- Atualização do PRIVACY_POLICY.md
+- Atualização do README.md
 ## [2.7.4] - 2025-11-23
 
 ### ⚡ Performance

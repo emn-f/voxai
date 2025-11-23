@@ -66,9 +66,3 @@ Fontes dos ícones utilizados na interface (Icons8 - Biblioteca Fluency e Color)
 * **LinkedIn (Fluency):** `https://img.icons8.com/fluency/48/linkedin.png`
 * **Estrela/Avaliar (Fluency):** `https://img.icons8.com/fluency/48/star.png`
 * **Gmail (Fluency):** `https://img.icons8.com/fluency/48/gmail-new.png`
-
----
-
-### 📝 Notas de Manutenção
-* Ao atualizar o link do **Google Forms**, lembrar de alterar em: `data/prompts/ui_content.py` e `index.html`.
-* O **Linktree** deve conter SEMPRE os links atualizados para: App Streamlit, LinkedIn e Forms.

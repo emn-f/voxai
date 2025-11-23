@@ -1,9 +1,10 @@
 import json
 import subprocess
 import os
+import streamlit as st
+from src.config import BASE_PRINCIPAL_PATH
 
-BASE_PRINCIPAL_PATH = "data/knowledge_base.json"
-
+@st.cache_data
 def data_vox(caminho=BASE_PRINCIPAL_PATH):
     try:
         with open(caminho, "r", encoding="utf-8") as f:

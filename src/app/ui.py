@@ -1,3 +1,5 @@
+from src.config import CSS_PATH
+
 import streamlit as st
 import time
 
@@ -13,7 +15,7 @@ def configurar_pagina():
         unsafe_allow_html=True
     )
 
-def carregar_css(path="static/css/style.css"):
+def carregar_css(path=CSS_PATH):
     with open(path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 

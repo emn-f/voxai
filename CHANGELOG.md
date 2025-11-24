@@ -1,3 +1,8 @@
+## [2.7.6] - 2025-11-24
+
+### ✨ Funcionalidades
+
+- Correção do link de deploy no GitPages
 ## [2.7.5] - 2025-11-23
 
 ### ♻️ Refatoração & Melhorias

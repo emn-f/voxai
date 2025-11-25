@@ -4,6 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VoxAI: Assistente de apoio e informação LGBTQIA+ com Inteligência Artificial. Um projeto de extensão da UCSal em parceria com a Casa Marielle Franco.">
+    <meta name="keywords"
+        content="VoxAI, LGBTQIA+, Inteligência Artificial, Assistente Virtual, UCSal, Casa Marielle Franco, Inclusão, Cidadania">
+    <meta name="author" content="Emanuel Ferreira">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emn-f.github.io/vox-ai/">
+    <meta property="og:title" content="Projeto Vox AI">
+    <meta property="og:description"
+        content="Assistente de apoio e informação LGBTQIA+ com Inteligência Artificial. Tecnologia social para inclusão e cidadania.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/emn-f/vox-ai/master/static/og-image.png">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emn-f.github.io/vox-ai/">
+    <meta property="twitter:title" content="Projeto Vox AI">
+    <meta property="twitter:description"
+        content="Assistente de apoio e informação LGBTQIA+ com Inteligência Artificial. Tecnologia social para inclusão e cidadania.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/emn-f/vox-ai/master/static/og-image.png">
+
     <title>Projeto Vox</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏳️‍🌈</text></svg>">
@@ -55,116 +75,232 @@
         </div>
     </header>
 
-    <section class="hero-mobile">
-        <a href="https://assistentevox.streamlit.app/" target="_blank" class="cta-button-mobile">
-            Acessar o Vox AI
-        </a>
-    </section>
+    <main>
+        <section class="hero-mobile">
+            <a href="https://assistentevox.streamlit.app/" target="_blank" class="cta-button-mobile">
+                Acessar o Vox AI
+            </a>
+        </section>
 
-    <div class="info-grid">
+        <div class="info-grid">
 
-        <div class="card-fullwidth" id="changelog-card">
-            <h2>Última Atualização</h2>
-            <div id="latest-changelog" class="content-md">
-                <p class="loading">Carregando Changelog...</p>
-            </div>
-            <a href="https://github.com/emn-f/vox-ai/blob/master/CHANGELOG.md" target="_blank"
-                class="card-link">Histórico Completo &rarr;</a>
-        </div>
-
-        <div class="stacked-cards">
-            <div class="stat-card">
-                <h3>Temas na KB</h3>
-                <div class="value" id="kb-count"><span class="loading">...</span></div>
-            </div>
-            <div class="stat-card">
-                <h3>Versão da KB</h3>
-                <div class="value" id="kb-version"><span class="loading">...</span></div>
-            </div>
-            <div class="stat-card">
-                <h3>Licença (MIT)</h3>
-                <p>Projeto de código aberto.</p>
-                <a href="https://github.com/emn-f/vox-ai/blob/master/LICENSE" target="_blank" class="card-link">Ver
-                    Licença &rarr;</a>
-            </div>
-        </div>
-
-        <div class="stacked-cards">
-            <div class="stat-card">
-                <h3>Privacidade</h3>
-                <p>Coleta de dados anônima.</p>
-                <a href="https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md" target="_blank"
-                    class="card-link">Ler Política &rarr;</a>
+            <div class="card-fullwidth" id="changelog-card">
+                <h2>Última Atualização</h2>
+                <div id="latest-changelog" class="content-md">
+                    <p class="loading">Carregando Changelog...</p>
+                </div>
+                <a href="https://github.com/emn-f/vox-ai/blob/master/CHANGELOG.md" target="_blank"
+                    class="card-link">Histórico
+                    Completo &rarr;</a>
             </div>
 
-            <div class="stat-card">
-                <h3>Código de Conduta</h3>
-                <p>Nossos pactos de respeito.</p>
-                <a href="https://github.com/emn-f/vox-ai/blob/master/CODE_OF_CONDUCT.md" target="_blank"
-                    class="card-link">Ler Código &rarr;</a>
-            </div>
+            <div class="stacked-cards">
+                <div class="stat-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s 9-1.34 9-3V5"></path>
+                        </svg>
+                        Temas na KB
+                    </h3>
+                    <div class="value" id="kb-count"><span class="loading">...</span></div>
+                    </div>
+                    <div class="stat-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        Versão da KB
+                    </h3>
+                    <div class="value" id="kb-version"><span class="loading">...</span></div>
+                    </div>
+                    <div class="stat-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Licença (MIT)
+                    </h3>
+                    <p>Projeto de código aberto.</p>
+                    <a href="https://github.com/emn-f/vox-ai/blob/master/LICENSE" target="_blank" class="card-link">Ver
+                        Licença &rarr;</a>
+                    </div>
+                    </div>
 
-            <div class="stat-card">
-                <h3>Segurança</h3>
-                <p>Como reportar vulnerabilidades.</p>
-                <a href="https://github.com/emn-f/vox-ai/blob/master/SECURITY.md" target="_blank" class="card-link">Ver
-                    Política &rarr;</a>
-            </div>
-        </div>
+            <div class="stacked-cards">
+                <div class="stat-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Privacidade
+                    </h3>
+                    <p>Coleta de dados anônima.</p>
+                    <a href="https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md" target="_blank"
+                        class="card-link">Ler
+                        Política &rarr;</a>
+                </div>
 
-    </div>
+                <div class="stat-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        Código de Conduta
+                    </h3>
+                    <p>Nossos pactos de respeito.</p>
+                    <a href="https://github.com/emn-f/vox-ai/blob/master/CODE_OF_CONDUCT.md" target="_blank"
+                        class="card-link">Ler
+                        Código &rarr;</a>
+                </div>
 
-    <div class="card-fullwidth about-section">
-        <h2>Sobre o Vox AI</h2>
-
-        <div class="about-grid">
-            <div class="about-column">
-                <h3>Missão e Propósito</h3>
-                <p>
-                    O VoxAI é um assistente de apoio e informação LGBTQIA+ desenvolvido como projeto de extensão da
-                    <strong>Universidade Católica do Salvador (UCSal)</strong>.
-                </p>
-                <p>
-                    Nossa missão é ser um ponto de apoio digital seguro para a comunidade, combatendo a desinformação e
-                    facilitando o acesso a informações confiáveis sobre saúde, direitos e acolhimento em Salvador (BA).
-                </p>
-
-                <h3>Funcionalidades</h3>
-                <ul class="feature-list">
-                    <li><strong>Busca Semântica (RAG):</strong> Respostas embasadas em fontes verificadas.</li>
-                    <li><strong>Saúde:</strong> Informações sobre PrEP, PEP e Saúde Mental.</li>
-                    <li><strong>Cidadania:</strong> Guia para retificação de nome e denúncias.</li>
-                </ul>
-            </div>
-
-            <div class="about-column">
-                <h3>Parceria: Casa Marielle Franco</h3>
-                <p>
-                    Temos orgulho de nossa parceria oficial com a <strong>Casa Marielle Franco</strong>, instituição de
-                    acolhimento independente em Salvador, coordenada por Sandra Muñoz. A Casa atua como ponto de escuta
-                    e validação de nossos conteúdos.
-                </p>
-
-                <h3>Nossa Equipe</h3>
-                <div class="team-wrapper">
-                    <p class="team-role">Liderança Técnica</p>
-                    <ul class="team-list single-col">
-                        <li><strong>Emanuel Ferreira</strong> (Engenharia de Software)</li>
-                    </ul>
-
-                    <p class="team-role">Colaboradores (Curadoria)</p>
-                    <ul class="team-list">
-                        <li>Alicia Batista</li>
-                        <li>Brenda Pires</li>
-                        <li>Fernanda Souza</li>
-                        <li>Kauã Araujo</li>
-                        <li>Lucca Pertigas</li>
-                        <li>Marcio Ventura</li>
-                    </ul>
+                <div class="stat-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Segurança
+                    </h3>
+                    <p>Como reportar vulnerabilidades.</p>
+                    <a href="https://github.com/emn-f/vox-ai/blob/master/SECURITY.md" target="_blank" class="card-link">Ver
+                        Política &rarr;</a>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="card-fullwidth tech-stack-section">
+            <h2>Tecnologias Utilizadas</h2>
+            <div class="tech-badges">
+                <a href="https://www.python.org/" target="_blank">
+                    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                        alt="Python">
+                </a>
+                <a href="https://streamlit.io/" target="_blank">
+                    <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white"
+                        alt="Streamlit">
+                </a>
+                <a href="https://ai.google.dev/" target="_blank">
+                    <img src="https://img.shields.io/badge/Gemini-8E75B8?style=for-the-badge&logo=google&logoColor=white"
+                        alt="Gemini">
+                </a>
+                <a href="https://huggingface.co/" target="_blank">
+                    <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black"
+                        alt="Hugging Face">
+                </a>
+                <a href="https://docs.github.com/en/actions" target="_blank">
+                    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"
+                        alt="GitHub Actions">
+                </a>
+            </div>
+        </div>
+        
+        <div class="card-fullwidth contributing-section">
+            <h2>Como Contribuir</h2>
+            <p>O Vox AI é um projeto Open Source e sua ajuda é essencial! Seja corrigindo bugs, melhorando a
+                documentação ou
+                sugerindo novos temas.</p>
+            <a href="https://github.com/emn-f/vox-ai/blob/master/CONTRIBUTING.md" target="_blank" class="cta-button-secondary">
+                Ver Guia de Contribuição &rarr;
+            </a>
+        </div>
+
+        <div class="card-fullwidth about-section">
+            <h2>Sobre o Vox AI</h2>
+
+            <div class="about-grid">
+                <div class="about-column">
+                    <h3>Missão e Propósito</h3>
+                    <p>
+                        O VoxAI é um assistente de apoio e informação LGBTQIA+ desenvolvido como projeto de extensão da
+                        <strong>Universidade Católica do Salvador (UCSal)</strong>.
+                    </p>
+                    <p>
+                        Nossa missão é ser um ponto de apoio digital seguro para a comunidade, combatendo a
+                        desinformação e facilitando o acesso a informações confiáveis sobre saúde, direitos e
+                        acolhimento em Salvador (BA).
+                        </p>
+
+                    <h3>Funcionalidades</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="check-icon">✅</span>
+                            <div><strong>Busca Semântica (RAG):</strong> Respostas precisas baseadas em leis e dados
+                                oficiais.</div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✅</span>
+                            <div><strong>Saúde Integral:</strong> PrEP/PEP, saúde mental e atendimento humanizado no
+                                SUS.</div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✅</span>
+                            <div><strong>Cidadania e Direitos:</strong> Retificação de nome, casamento civil e combate à
+                                LGBTfobia.</div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✅</span>
+                            <div><strong>Educação e Cultura:</strong> Combate ao bullying, história do movimento e
+                                representatividade.</div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✅</span>
+                            <div><strong>Rede de Apoio:</strong> Conexão com ONGs, casas de acolhimento e serviços
+                                jurídicos.</div>
+                        </li>
+                        </ul>
+                        </div>
+
+                <div class="about-column">
+                    <h3>Parceria: Casa Marielle Franco</h3>
+                    <p>
+                        Temos orgulho de nossa parceria oficial com a <strong>Casa Marielle Franco</strong>, instituição
+                        de
+                        acolhimento independente em Salvador, coordenada por Sandra Muñoz. A Casa atua como ponto de
+                        escuta
+                        e validação de nossos conteúdos.
+                        </p>
+
+                    <h3>Nossa Equipe</h3>
+                    <div class="team-wrapper">
+                        <p class="team-role">Liderança Técnica</p>
+                        <div class="team-tags">
+                            <span class="team-tag leader">Emanuel Ferreira</span>
+                        </div>
+
+                        <p class="team-role">Colaboradores (Curadoria)</p>
+                        <div class="team-tags">
+                            <span class="team-tag">Alicia Batista</span>
+                            <span class="team-tag">Brenda Pires</span>
+                            <span class="team-tag">Fernanda Souza</span>
+                            <span class="team-tag">Kauã Araujo</span>
+                            <span class="team-tag">Lucca Pertigas</span>
+                            <span class="team-tag">Marcio Ventura</span>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+        </div>
+        </main>
+        
+        <footer>
+            <p>🤖 Desenvolvido para a comunidade 🏳️‍🌈</p>
+            <p>&copy; 2025 Projeto Vox AI<br>Todos os direitos reservados.</p>
+        </footer>
+
     <script src="pages/dashboard.js" defer></script>
 </body>
+
 </html>

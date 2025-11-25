@@ -61,16 +61,16 @@ header h1 {
 .nav-center {
     z-index: 1;
     justify-self: center;
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
         justify-content: center;
         height: 100%;
 }
 
 .cta-button-header {
     display: flex;
-        align-items: center;
-        justify-content: center;
+    align-items: center;
+    justify-content: center;
     padding: 0.8rem 2rem;
     font-size: 1rem;
     font-weight: 700;
@@ -158,8 +158,8 @@ header h1 {
 }
 
 .button img {
-    width: 20px;
-        height: 20px;
+    width: 18px;
+        height: 18px;
     filter: invert(1);
 }
 
@@ -233,8 +233,15 @@ header h1 {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.8rem;
     margin-bottom: 1rem;
+    display: flex;
+        align-items: center;
+        gap: 0.5rem;
 }
 
+.card-icon {
+    color: var(--accent-color);
+    opacity: 0.8;
+}
 
 .content-md {
     flex-grow: 1;
@@ -315,29 +322,51 @@ header h1 {
     font-weight: bold;
 }
 
-.team-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+/* Team Tags Style */
+.team-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-.team-list.single-col {
-    grid-template-columns: 1fr;
+.team-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #fff;
+    transition: all 0.2s;
 }
 
-.team-list li {
-    color: #fff;
-    font-size: 0.95rem;
+.team-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+}
+
+.team-tag.leader {
+    background: rgba(67, 97, 238, 0.15);
+    border-color: rgba(67, 97, 238, 0.4);
+    font-weight: 600;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
 }
 
 .feature-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: #ccc;
+    display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
 }
 
+.check-icon {
+    font-size: 1.1rem;
+}
 
 @keyframes gradient-flow {
     0% {
@@ -358,6 +387,62 @@ header h1 {
     font-style: italic;
 }
 
+/* New Sections */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.tech-badges img {
+    height: 35px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.tech-badges img:hover {
+    transform: translateY(-3px);
+}
+
+.contributing-section {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.tech-stack-section {
+    margin-bottom: 3rem;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background: var(--accent-color);
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.3);
+}
+
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
 @media (max-width: 1024px) {
     .nav-center {
         display: none;

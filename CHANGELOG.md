@@ -1,3 +1,44 @@
+## [2.7.7] - 2025-11-26
+
+### 🎨 Estilo e Formatação
+
+- Correções na estilização do botão de acesso ao Vox #90
+- Melhorias gerais no GitPages #90
+
+### 🐛 Correções
+
+- Versão do vox não era exibida no Hugging Face
+
+### 🤖 CI/CD & Automação
+
+- Alteração do nome da action do HF
+- Criada Action para controle de deploy do Git Pages.
+## [2.7.6] - 2025-11-24
+
+### ✨ Funcionalidades
+
+- Correção do link de deploy no GitPages
+## [2.7.5] - 2025-11-23
+
+### ♻️ Refatoração & Melhorias
+
+- Remoção de comentários
+
+### ✨ Funcionalidades
+
+- Links externos centralizados em `src/external_links.py`,
+
+### 📚 Documentação
+
+- Criação de ASSETS.md com todos os links e ativos digitais do Vox
+- Criação de Guia de Contribuição para o Vox
+- Atualização do PRIVACY_POLICY.md
+- Atualização do README.md
+## [2.7.4] - 2025-11-23
+
+### ⚡ Performance
+
+- Add caching and create config.py
 ## [2.7.3] - 2025-11-21
 
 ### 🎨 Estilo e Formatação

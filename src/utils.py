@@ -1,6 +1,7 @@
 import json
 import subprocess
 import os
+import re
 import streamlit as st
 from src.config import BASE_PRINCIPAL_PATH
 
@@ -29,6 +30,19 @@ def get_current_branch():
     except (subprocess.CalledProcessError, FileNotFoundError):
         return "Development"
 
+def get_version_from_changelog():
+    """Lê a versão mais recente do arquivo CHANGELOG.md."""
+    try:
+        changelog_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "CHANGELOG.md")
+        with open(changelog_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            match = re.search(r"## \[([\d\.]+)\]", content)
+            if match:
+                return f"v{match.group(1)}"
+    except Exception as e:
+        print(f"Erro ao ler CHANGELOG.md: {e}")
+    return ""
+
 def git_version():
     try:
         if get_current_branch() == "Production":
@@ -40,5 +54,8 @@ def git_version():
         last_tag = last_tag[0] if last_tag else ""
     except subprocess.CalledProcessError:
         last_tag = ""
+    
+    if not last_tag:
+        last_tag = get_version_from_changelog()
     
     return f"{last_tag}"

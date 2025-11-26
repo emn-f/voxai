@@ -1,3 +1,17 @@
+## [2.8.1] - 2025-11-26
+
+### ✨ Funcionalidades
+
+- Add issue templates for bug reports, feature requests, and general tasks.
+
+### 📚 Documentação
+
+- Update CHANGELOG.md
+- Ajustes no CONTRIBUTING.md
+
+### 🤖 CI/CD & Automação
+
+- Adição de action para sinc do CHANGELOG.md da branch master para a dev
 ## [2.7.7] - 2025-11-26
 
 ### 🎨 Estilo e Formatação

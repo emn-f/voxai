@@ -123,6 +123,11 @@ Nossa base de conhecimento é sincronizada automaticamente a partir de uma plani
 4.  Na descrição do PR, explique o que foi feito e vincule a Issue relacionada (se houver).
 5.  Aguarde a revisão da equipe! 💜
 
----
 
-Dúvidas? Entre em contato através das Issues ou pelo [e-mail oficial](mailto:assistentedeapoiolgbtvox@gmail.com).
+## 💬 Dúvidas e Discussões
+
+Antes de abrir uma Issue, verifique se sua dúvida já não foi respondida.
+
+* **Tem uma pergunta geral ou ideia?** Use o nosso [GitHub Discussions](https://github.com/emn-f/vox-ai/discussions). É o melhor lugar para sugerir melhorias que ainda não são features concretas ou tirar dúvidas de setup.
+* **Encontrou um bug ou quer uma feature específica?** Abra uma [Issue](https://github.com/emn-f/vox-ai/issues/new/choose) utilizando os templates oficiais.
+* **Assuntos sensíveis/segurança?** Envie um e-mail para `assistentedeapoiolgbtvox@gmail.com` (veja nossa [Política de Segurança](SECURITY.md)).

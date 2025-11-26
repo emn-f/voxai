@@ -2,7 +2,6 @@
 
 ### 🎨 Estilo e Formatação
 
-- Correções na estilização do botão de acesso ao Vox #90
 - Melhorias gerais no GitPages #90
 
 ### 🐛 Correções

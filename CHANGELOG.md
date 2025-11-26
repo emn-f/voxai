@@ -1,3 +1,18 @@
+## [2.7.7] - 2025-11-26
+
+### 🎨 Estilo e Formatação
+
+- Correções na estilização do botão de acesso ao Vox #90
+- Melhorias gerais no GitPages #90
+
+### 🐛 Correções
+
+- Versão do vox não era exibida no Hugging Face
+
+### 🤖 CI/CD & Automação
+
+- Alteração do nome da action do HF
+- Criada Action para controle de deploy do Git Pages.
 ## [2.7.6] - 2025-11-24
 
 ### ✨ Funcionalidades

@@ -1,0 +1,42 @@
+name: 🔄 Sync Changelog from Master to Dev
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'CHANGELOG.md'
+
+jobs:
+  sync-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for 10 minutes
+        run: sleep 600
+
+      - name: Checkout Dev Branch
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Fetch Master
+        run: git fetch origin master
+
+      - name: Checkout Changelog from Master
+        run: git checkout origin/master -- CHANGELOG.md
+
+      - name: Commit and Push Changes
+        run: |
+          if [[ -n $(git status -s CHANGELOG.md) ]]; then
+            git add CHANGELOG.md
+            git commit -m "chore: sync CHANGELOG.md from master"
+            git push origin dev
+          else
+            echo "No changes to sync."
+          fi

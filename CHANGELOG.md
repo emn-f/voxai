@@ -1,3 +1,13 @@
+## [2.8.2] - 2025-12-03
+
+### ✨ Funcionalidades
+
+- Adição de função "texto pra voz" que permite escutar a resposta do Vox em voz alta. #66
+- Implementação de função que permite que usuário converse com o Vox por áudio
+
+### 🔧 Tarefas Internas
+
+- Add GIT_COMANDOS.md to .gitignore
 ## [2.8.1] - 2025-11-26
 
 ### ✨ Funcionalidades

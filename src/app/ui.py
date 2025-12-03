@@ -21,9 +21,10 @@ def carregar_css(path=CSS_PATH):
 
 def carregar_sidebar(sidebar_content, git_version, kb_version):
     with st.sidebar:
-        # if st.button("🧹 Limpar chat"):
-        #     st.session_state.pop("hist", None)
-        #     st.session_state.pop("hist_exibir", None)
+            
+        if st.button("🧹 Limpar chat"):
+            st.session_state.pop("hist", None)
+            st.session_state.pop("hist_exibir", None)
             
         st.markdown(sidebar_content, unsafe_allow_html=True)
         

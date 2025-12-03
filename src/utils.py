@@ -1,8 +1,10 @@
+import io
 import json
 import subprocess
 import os
 import re
 import streamlit as st
+from gtts import gTTS
 from src.config import BASE_PRINCIPAL_PATH
 
 @st.cache_data
@@ -59,3 +61,19 @@ def git_version():
         last_tag = get_version_from_changelog()
     
     return f"{last_tag}"
+
+def limpeza_texto(texto):
+    texto_limpo = re.sub(r'[^\w\s,.:;!?áéíóúàèìòùâêîôûãõçÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÃÕÇ]', '', texto)
+    return texto_limpo
+
+def texto_para_audio(texto):
+    texto_tratado = limpeza_texto(texto)
+
+    if not texto_tratado.strip():
+        texto_tratado = "Não foi possível ler a resposta."
+    
+    tts = gTTS(text=texto_tratado, lang='pt-br')
+    audio_buffer = io.BytesIO()
+    tts.write_to_fp(audio_buffer)
+    audio_buffer.seek(0)
+    return audio_buffer 

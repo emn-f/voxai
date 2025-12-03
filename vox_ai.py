@@ -1,5 +1,6 @@
 import streamlit as st
 
+import io
 import startup_patch
 import os
 import uuid
@@ -12,7 +13,7 @@ from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
 from src.core.sheets_integration import append_to_sheet, log_exception
-from src.utils import data_vox, git_version
+from src.utils import data_vox, git_version, texto_para_audio
 
 configurar_pagina()
 carregar_css()
@@ -35,10 +36,16 @@ st.session_state.key_api = configurar_api_gemini()
 
 inicializar_chat_modelo()
 
-for msg in st.session_state.hist_exibir:
+for i, msg in enumerate(st.session_state.hist_exibir):
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
             st.markdown(msg["parts"][0], unsafe_allow_html=True)
+            
+            chave_botao = f"btn_audio_{i}"
+            if st.button("🔊 Ouvir", key=chave_botao):
+                audio_data = texto_para_audio(msg["parts"][0])
+                st.audio(audio_data, format="audio/mp3")
+                
     else:
         with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(msg["parts"][0])
@@ -52,6 +59,7 @@ if 'key_api' in st.session_state:
         with st.chat_message("assistant", avatar="🤖"):
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
+            st.rerun()
 
     prompt = st.chat_input("Digite aqui...")
 
@@ -101,6 +109,8 @@ if 'key_api' in st.session_state:
             
             except Exception as e_log:
                 print(f"⚠️ Falha silenciosa ao registrar log de conversa: {e_log}")
+
+            st.rerun()
 
         except Exception as e:
             error_id = log_exception(st.session_state.git_version_str, st.session_state.session_id, e)

@@ -51,3 +51,19 @@ def gerar_resposta(chat, prompt, info_adicional):
             st.error("❌ Ocorreu um erro inesperado na comunicação com a IA.")
             st.exception(e)
             return "❌ Ocorreu um erro, tente novamente."
+
+def transcrever_audio(audio_file):
+    """
+    Envia o áudio para o Gemini e pede a transcrição em texto.
+    """
+    try:
+        model = genai.GenerativeModel(GEMINI_MODEL_NAME)
+        response = model.generate_content([
+            "Transcreva este áudio para português do Brasil. Retorne apenas o texto transcrito, sem comentários adicionais.",
+            {"mime_type": "audio/mp3", "data": audio_file.read()}
+        ])
+        
+        return response.text
+    except Exception as e:
+        st.error(f"Erro na transcrição: {e}")
+        return None

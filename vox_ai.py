@@ -1,5 +1,4 @@
 import streamlit as st
-
 import io
 import startup_patch
 import os
@@ -35,12 +34,12 @@ carregar_sidebar(SIDEBAR, st.session_state.git_version_str, st.session_state.kb_
 st.session_state.key_api = configurar_api_gemini()
 
 inicializar_chat_modelo()
-
 for i, msg in enumerate(st.session_state.hist_exibir):
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
             st.markdown(msg["parts"][0], unsafe_allow_html=True)
             
+    
             chave_botao = f"btn_audio_{i}"
             if st.button("🔊 Ouvir", key=chave_botao):
                 audio_data = texto_para_audio(msg["parts"][0])
@@ -62,20 +61,37 @@ if 'key_api' in st.session_state:
             st.rerun()
 
     prompt = st.chat_input("Digite aqui...")
+    
+    with st.popover("🎙️", use_container_width=False):
+        audio_val = st.audio_input("Fale sua pergunta")
+
+    prompt_final = None
 
     if prompt:
-        st.session_state.prompt = prompt
-        st.session_state.hist.append({"role": "user", "parts": [prompt]})
-        st.session_state.hist_exibir.append({"role": "user", "parts": [prompt]})
+        prompt_final = prompt
+    elif audio_val:
+
+        if 'ultimo_audio_id' not in st.session_state or st.session_state.ultimo_audio_id != audio_val.name:
+            with st.spinner("Ouvindo e transcrevendo... 🎧"):
+                from src.core.genai import transcrever_audio
+                texto_transcrito = transcrever_audio(audio_val)
+                if texto_transcrito:
+                    prompt_final = texto_transcrito
+                    st.session_state.ultimo_audio_id = audio_val.name
+
+    if prompt_final:
+        st.session_state.prompt = prompt_final
+        st.session_state.hist.append({"role": "user", "parts": [prompt_final]})
+        st.session_state.hist_exibir.append({"role": "user", "parts": [prompt_final]})
         
         with st.chat_message("user", avatar="🧑‍💻"):
-            st.markdown(prompt)
+            st.markdown(prompt_final)
             
         try:
-            if "teste erro" in prompt.lower():
+            if "teste erro" in prompt_final.lower():
                 raise Exception("Simulação de falha crítica para teste de LOG!")
 
-            tema_match, descricao_match = semantica(prompt, base_vox_items) 
+            tema_match, descricao_match = semantica(prompt_final, base_vox_items) 
             
             info_adicional_contexto = ""
             if tema_match:
@@ -85,7 +101,7 @@ if 'key_api' in st.session_state:
                 descricao_match = "N/A" 
 
             with st.chat_message("assistant", avatar="🤖"):
-                resposta = gerar_resposta(inicializar_chat_modelo(), prompt, info_adicional_contexto)
+                resposta = gerar_resposta(inicializar_chat_modelo(), prompt_final, info_adicional_contexto)
                 
             st.session_state.hist.append({"role": "model", "parts": [resposta]})
             st.session_state.hist_exibir.append({"role": "model", "parts": [resposta]})
@@ -105,7 +121,7 @@ if 'key_api' in st.session_state:
                     descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str)
                     descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str)
                 
-                append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt, resposta_log, tema_match, descricao_match_str)
+                append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt_final, resposta_log, tema_match, descricao_match_str)
             
             except Exception as e_log:
                 print(f"⚠️ Falha silenciosa ao registrar log de conversa: {e_log}")

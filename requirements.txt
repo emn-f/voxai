@@ -3,7 +3,7 @@ torch==2.9.0
 transformers==4.57.1
 sentence_transformers==5.1.2
 
-streamlit
+streamlit>=1.45.0
 google-generativeai
 sentence_transformers
 huggingface_hub[hf_xet]

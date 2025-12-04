@@ -1,3 +1,8 @@
+## [2.8.4] - 2025-12-04
+
+### 📦 Build & Dependências
+
+- Versão mínima do streamlit especificada para funcionamento do Vox
 ## [2.8.3] - 2025-12-04
 
 ### 📦 Build & Dependências

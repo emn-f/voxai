@@ -1,3 +1,8 @@
+## [2.8.3] - 2025-12-04
+
+### 📦 Build & Dependências
+
+- Atualiza config do Hugging Face Space para Python 3.11 (resolve FutureWarning de google.api_core)
 ## [2.8.2] - 2025-12-03
 
 ### ✨ Funcionalidades

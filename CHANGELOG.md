@@ -1,3 +1,13 @@
+## [2.8.5] - 2025-12-05
+
+### 🐛 Correções
+
+- Correção de erro de versão do Streamlit no Hugging Face
+
+### 🤖 CI/CD & Automação
+
+- Corrige script de deploy para o Hugging Face
+- Ajuste no comando de push para master
 ## [2.8.4] - 2025-12-04
 
 ### 📦 Build & Dependências

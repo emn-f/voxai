@@ -4,7 +4,7 @@ emoji: 🏳️‍🌈
 colorFrom: purple
 colorTo: blue
 sdk: streamlit
-sdk_version: 1.35.0
+sdk_version: 1.52.1
 python_version: 3.11
 app_file: vox_ai.py
 pinned: false

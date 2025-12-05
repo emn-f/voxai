@@ -1,3 +1,12 @@
+## [2.8.17] - 2025-12-05
+
+### ⚡ Performance
+
+- Vox agora utiliza Gemini 2.5 Flash
+
+### 🤖 CI/CD & Automação
+
+- Criada action que para incremento manual de tags
 ## [2.8.16] - 2025-12-05
 
 ### 📚 Documentação

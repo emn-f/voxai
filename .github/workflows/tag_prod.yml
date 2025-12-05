@@ -49,6 +49,10 @@ jobs:
         run: |
           NEW_TAG="${{ steps.get_tag.outputs.new_tag }}"
 
+          # Configura o git user (apenas para o log do commit)
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
           # Adiciona o Changelog atualizado
           git add CHANGELOG.md
 
@@ -64,6 +68,6 @@ jobs:
           git tag $NEW_TAG
 
           # Envia commit e tag para a master
-          git push "https://${{ github.actor }}:${{ secrets.GH_RELEASE_TOKEN }}@github.com/${{ github.repository }}.git" master --tags
+          git push "https://emn-f:${{ secrets.GH_RELEASE_TOKEN }}@github.com/${{ github.repository }}.git" master --tags
 
           echo "✅ Versão Oficial ${NEW_TAG} lançada!"

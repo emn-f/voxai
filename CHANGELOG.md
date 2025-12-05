@@ -1,3 +1,8 @@
+## [2.8.18] - 2025-12-05
+
+### ✨ Funcionalidades
+
+- Adição de botão que permite reportar comportamento inadequado do vox
 ## [2.8.17] - 2025-12-05
 
 ### ⚡ Performance

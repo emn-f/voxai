@@ -1,11 +1,10 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.9.0
-transformers==4.57.1
-sentence_transformers==5.1.2
+torch>=2.0.0
+transformers>=4.40.0
+sentence_transformers>=3.0.0
 
-streamlit>=1.45.0
+streamlit>=1.40.0
 google-generativeai
-sentence_transformers
 huggingface_hub[hf_xet]
 
 gspread

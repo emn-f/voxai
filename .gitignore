@@ -1,7 +1,6 @@
 # Arquivos de IDEs e Ferramentas de Desenvolvimento
 .idea/
 .vscode/
-.devcontainer/
 
 # Arquivos de Ambiente Python
 # Pastas de ambiente virtual
@@ -14,7 +13,7 @@ media
 # Arquivos de Credenciais e Configurações Locais
 .streamlit/secrets.toml
 
-# Outrs versões da base de dados do Vox
+# Outras versões da base de dados do Vox
 data/fontes_dados/
 
 CONVENTIONAL_COMMITS.md

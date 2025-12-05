@@ -1,0 +1,66 @@
+name: 🚀 Manual Release (Major/Minor/Patch)
+
+on:
+  workflow_dispatch:
+    inputs:
+      increment_type:
+        description: 'Tipo de incremento de versão'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  manual_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.TOKEN_DEPLOY_VOX }}
+
+      - name: Configurar Git User
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Calcular Próxima Versão
+        id: get_tag
+        run: |
+          LAST_TAG=$(git tag --list "v*" --sort=-v:refname | head -n 1)
+          if [ -z "$LAST_TAG" ]; then
+            LAST_TAG="v0.0.0"
+          fi
+
+          echo "Última versão: $LAST_TAG"
+          
+          VERSION=${LAST_TAG#v}
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          
+          INCREMENT_TYPE="${{ github.event.inputs.increment_type }}"
+          echo "Tipo de incremento selecionado: $INCREMENT_TYPE"
+
+          if [ "$INCREMENT_TYPE" == "major" ]; then
+            MAJOR=$((MAJOR + 1))
+            MINOR=0
+            PATCH=0
+          elif [ "$INCREMENT_TYPE" == "minor" ]; then
+            MINOR=$((MINOR + 1))
+            PATCH=0
+          else
+            # Default to patch
+            PATCH=$((PATCH + 1))
+          fi
+
+          NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
+
+          echo "Nova versão calculada: $NEW_TAG"
+          echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT

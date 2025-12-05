@@ -1,3 +1,8 @@
+## [2.8.16] - 2025-12-05
+
+### 📚 Documentação
+
+- Update Streamlit SDK version in README.
 ## [2.8.15] - 2025-12-05
 
 ### 🤖 CI/CD & Automação

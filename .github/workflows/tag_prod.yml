@@ -64,7 +64,6 @@ jobs:
           git tag $NEW_TAG
 
           # Envia commit e tag para a master
-          git push origin master
-          git push origin $NEW_TAG
+          git push "https://${{ github.actor }}:${{ secrets.GH_RELEASE_TOKEN }}@github.com/${{ github.repository }}.git" master --tags
 
           echo "✅ Versão Oficial ${NEW_TAG} lançada!"

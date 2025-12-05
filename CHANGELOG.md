@@ -1,3 +1,8 @@
+## [2.8.14] - 2025-12-05
+
+### 🤖 CI/CD & Automação
+
+- Ajuste no comando de push para master
 ## [2.8.13] - 2025-12-05
 ## [2.8.4] - 2025-12-04
 

@@ -2,13 +2,12 @@
 
 ### 🤖 CI/CD & Automação
 
-- Ajuste no comando de push para master
-## [2.8.13] - 2025-12-05
+- Ajuste no comando de push para master na action tag_prod.yml
 ## [2.8.4] - 2025-12-04
 
 ### 📦 Build & Dependências
 
-- Versão mínima do streamlit especificada para funcionamento do Vox
+- Versão mínima do streamlit especificada para funcionamento do Vox no Hugging Face
 ## [2.8.3] - 2025-12-04
 
 ### 📦 Build & Dependências

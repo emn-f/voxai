@@ -73,3 +73,48 @@ def log_exception(git_version, session_id, error_detail):
     except Exception as e:
         print(f"CRITICAL: Falha ao registrar erro na planilha. ID: {error_id} - Erro original: {error_detail} - Erro do Log: {e}")
         return error_id
+
+def log_report(git_version, session_id, history_data):
+    """
+    Registra uma denúncia de comportamento inadequado na aba 'reports'.
+    Salva o histórico da conversa formatado.
+    """
+    try:
+        scopes = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive.file",
+        ]
+        
+        creds = Credentials.from_service_account_info(
+            st.secrets["gcp_service_account"], scopes=scopes
+        )
+        client = gspread.authorize(creds)
+        sheet_id = st.secrets.get("LOG", "") or os.environ.get("LOG", "")
+        
+        spreadsheet = client.open_by_key(sheet_id)
+        
+        try:
+             worksheet = spreadsheet.worksheet('reports')
+        except gspread.exceptions.WorksheetNotFound:
+             worksheet = spreadsheet.add_worksheet(title="reports", rows="1000", cols="4")
+             worksheet.append_row(["Timestamp", "Session ID", "Git Version", "Chat History"])
+        
+        local_tz = pytz.timezone('America/Bahia')
+        timestamp = datetime.now(local_tz).strftime("%Y-%m-%d %H:%M:%S")
+        
+        full_history_text = ""
+        for msg in history_data:
+            role_display = "👤 Usuário" if msg['role'] == 'user' else "🤖 Vox"
+            content = msg.get('parts', [''])[0] if isinstance(msg.get('parts'), list) else str(msg.get('parts', ''))
+            full_history_text += f"{role_display}: {content}\n{'-'*20}\n"
+            
+        new_row = [timestamp, session_id, git_version, full_history_text]
+        worksheet.append_row(new_row)
+        
+        return True
+
+    except Exception as e:
+        error_msg = f"Erro ao salvar denúncia: {str(e)}"
+        print(error_msg)
+        st.error(error_msg)
+        return False

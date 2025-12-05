@@ -39,7 +39,6 @@ for i, msg in enumerate(st.session_state.hist_exibir):
         with st.chat_message("assistant", avatar="🤖"):
             st.markdown(msg["parts"][0], unsafe_allow_html=True)
             
-    
             chave_botao = f"btn_audio_{i}"
             if st.button("🔊 Ouvir", key=chave_botao):
                 audio_data = texto_para_audio(msg["parts"][0])

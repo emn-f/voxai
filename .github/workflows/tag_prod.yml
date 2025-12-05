@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # Usa o token para baixar o código autenticado como você
+          token: ${{ secrets.TOKEN_DEPLOY_VOX }}
 
       - name: Configurar Git User
         run: |
@@ -25,7 +27,6 @@ jobs:
       - name: Calcular Próxima Versão Prod
         id: get_tag
         run: |
-          # Pega a última tag de produção (vX.X.X)
           LAST_TAG=$(git tag --list "v*" --sort=-v:refname | head -n 1)
           if [ -z "$LAST_TAG" ]; then
             LAST_TAG="v0.0.0"
@@ -45,30 +46,22 @@ jobs:
           config: cliff.toml
           args: --unreleased --tag ${{ steps.get_tag.outputs.new_tag }} --prepend CHANGELOG.md
 
-      - name: Commitar Changelog, Taggear e Push
+      - name: Commitar, Taggear e Push
         run: |
           NEW_TAG="${{ steps.get_tag.outputs.new_tag }}"
 
-          # Configura o git user (apenas para o log do commit)
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Adiciona o Changelog atualizado
           git add CHANGELOG.md
 
-          # Verifica se houve mudança e faz o commit
           if git diff --staged --quiet; then
             echo "🚫 Changelog não mudou."
           else
-            # Usa a mensagem padronizada que configuramos para ser ignorada no cliff.toml
             git commit -m "chore(release): atualiza changelog para ${NEW_TAG} [skip ci]"
           fi
 
-          # Cria a tag APÓS o commit do changelog (para o changelog fazer parte da tag)
           git tag $NEW_TAG
 
-          # Envia commit e tag para a master
-          git remote set-url origin https://emn-f:${{ secrets.GH_RELEASE_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://emn-f:${{ secrets.TOKEN_DEPLOY_VOX }}@github.com/${{ github.repository }}.git
+          
           git push origin master --tags
 
           echo "✅ Versão Oficial ${NEW_TAG} lançada!"

@@ -1,54 +1,70 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const options = {
-        headers: {
-            'Cache-Control': 'max-age=300' 
-        }
+    const SUPABASE_URL = "__SUPABASE_URL__"; 
+    const SUPABASE_KEY = "__SUPABASE_KEY__";
+
+    const headers = {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json'
     };
 
-    fetch('data/knowledge_base.json', options)
-        .then(response => response.ok ? response.json() : Promise.reject('Erro ao buscar knowledge_base.json.'))
-        .then(kb_data => {
-            const count = kb_data.data ? kb_data.data.length : 0;
-            document.getElementById('kb-count').textContent = count;
-            const version = kb_data.kb_version || 'N/A';
-            document.getElementById('kb-version').textContent = `v${version}`;
+    fetch(`${SUPABASE_URL}/rest/v1/knowledge_base?select=id`, {
+        method: 'GET',
+        headers: { ...headers, 'Prefer': 'count=exact, head=true' }
+    })
+        .then(response => {
+            if (!response.ok) throw new Error('Erro ao conectar com Supabase');
+
+            const contentRange = response.headers.get('Content-Range');
+            if (contentRange) {
+                const total = contentRange.split('/')[1];
+                document.getElementById('kb-count').textContent = total;
+            } else {
+                document.getElementById('kb-count').textContent = "0";
+            }
         })
         .catch(error => {
-            console.error(error);
-            document.getElementById('kb-count').textContent = 'Erro';
-            document.getElementById('kb-version').textContent = 'Erro';
+            console.error("Erro KB Count:", error);
+            document.getElementById('kb-count').textContent = '-';
+    });
+    fetch(`${SUPABASE_URL}/rest/v1/knowledge_base?select=modificado_em&order=modificado_em.desc&limit=1`, {
+        method: 'GET',
+        headers: headers
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.length > 0) {
+
+                const lastDate = new Date(data[0].modificado_em);
+            const versionString = `v${lastDate.getFullYear()}.${(lastDate.getMonth() + 1).toString().padStart(2, '0')}.${lastDate.getDate().toString().padStart(2, '0')}`;
+            document.getElementById('kb-version').textContent = versionString;
+        } else {
+            document.getElementById('kb-version').textContent = "v3.1";
+        }
+    })
+        .catch(error => {
+            console.error("Erro KB Version:", error);
+            document.getElementById('kb-version').textContent = 'Online';
         });
 
-    fetch('CHANGELOG.md', options)
+
+    fetch('CHANGELOG.md', { headers: { 'Cache-Control': 'max-age=300' } })
         .then(response => response.ok ? response.text() : Promise.reject('Erro ao buscar CHANGELOG.md.'))
         .then(markdown => {
             const start = markdown.indexOf('## [');
             if (start !== -1) {
-                let currentStart = start;
-                let combinedMarkdown = '';
-                const maxEntries = 10;
 
-                for (let i = 0; i < maxEntries; i++) {
-                    const nextStart = markdown.indexOf('\n## [', currentStart + 1);
+                const nextStart = markdown.indexOf('\n## [', start + 1);
+                let entryMarkdown = (nextStart !== -1)
+                    ? markdown.substring(start, nextStart) 
+                    : markdown.substring(start);
 
-                    if (nextStart !== -1) {
-                        combinedMarkdown += markdown.substring(currentStart, nextStart) + '\n';
-                        currentStart = nextStart;
-                    } else {
-                        combinedMarkdown += markdown.substring(currentStart);
-                        break;
-                    }
-                }
-
-                document.getElementById('latest-changelog').innerHTML = marked.parse(combinedMarkdown);
-            } else {
-                throw new Error('Formato do CHANGELOG não reconhecido.');
+                document.getElementById('latest-changelog').innerHTML = marked.parse(entryMarkdown);
             }
         })
         .catch(error => {
             console.error(error);
-            document.getElementById('latest-changelog').innerHTML = '<p style="color: #f85149;">Erro: Não foi possível carregar o CHANGELOG.md.</p>';
+            document.getElementById('latest-changelog').innerHTML = '<p style="color: #f85149;">Erro ao carregar histórico.</p>';
         });
-
 });

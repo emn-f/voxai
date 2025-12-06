@@ -16,5 +16,4 @@ def semantica(prompt):
         print(f"Prompt: {prompt}")
         print(f"Tema encontrado no DB: {tema}")
         return tema, descricao
-        
     return None, None

@@ -11,16 +11,15 @@ from data.prompts.ui_content import SAUDACAO, SIDEBAR
 from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream_resposta
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
-from src.core.sheets_integration import append_to_sheet, log_exception
-from src.utils import data_vox, git_version, texto_para_audio
+
+from src.core.database import salvar_log_conversa, salvar_erro
+from src.utils import git_version, texto_para_audio
 
 configurar_pagina()
 carregar_css()
 
-base_vox_items, kb_version_str = data_vox()
-
 if 'kb_version_str' not in st.session_state:
-    st.session_state.kb_version_str = kb_version_str
+    st.session_state.kb_version_str = "Supabase v3.1"
 
 if 'git_version_str' not in st.session_state:
     st.session_state.git_version_str = git_version()
@@ -28,12 +27,12 @@ if 'git_version_str' not in st.session_state:
 if 'session_id' not in st.session_state:
     st.session_state.session_id = str(uuid.uuid4())
     
-
 carregar_sidebar(SIDEBAR, st.session_state.git_version_str, st.session_state.kb_version_str)
 
 st.session_state.key_api = configurar_api_gemini()
 
 inicializar_chat_modelo()
+
 for i, msg in enumerate(st.session_state.hist_exibir):
     if msg["role"] == "model":
         with st.chat_message("assistant", avatar="🤖"):
@@ -69,7 +68,6 @@ if 'key_api' in st.session_state:
     if prompt:
         prompt_final = prompt
     elif audio_val:
-
         if 'ultimo_audio_id' not in st.session_state or st.session_state.ultimo_audio_id != audio_val.name:
             with st.spinner("Ouvindo e transcrevendo... 🎧"):
                 from src.core.genai import transcrever_audio
@@ -90,15 +88,15 @@ if 'key_api' in st.session_state:
             if "teste erro" in prompt_final.lower():
                 raise Exception("Simulação de falha crítica para teste de LOG!")
 
-            tema_match, descricao_match = semantica(prompt_final, base_vox_items) 
+            tema_match, descricao_match = semantica(prompt_final) 
             
             info_adicional_contexto = ""
             if tema_match:
                 info_adicional_contexto = descricao_match
             else:
-                resultados = None
                 descricao_match = "N/A" 
 
+            # Geração da Resposta
             with st.chat_message("assistant", avatar="🤖"):
                 resposta = gerar_resposta(inicializar_chat_modelo(), prompt_final, info_adicional_contexto)
                 
@@ -111,16 +109,16 @@ if 'key_api' in st.session_state:
                 else:
                     resposta_log = str(resposta)
                 
-                if descricao_match is None:
-                    descricao_match_str = "N/A"
-                else:
-                    descricao_match_str = str(descricao_match)
-                    descricao_match_str = unicodedata.normalize('NFKD', descricao_match_str).encode('ascii', 'ignore').decode('utf-8')
-                    descricao_match_str = re.sub(r'<[^>]+>', '', descricao_match_str)
-                    descricao_match_str = re.sub(r'\[.*?\]\(.*?\)', '', descricao_match_str)
-                    descricao_match_str = re.sub(r'\*\*(.*?)\*\*', r'\1', descricao_match_str)
+                desc_log = str(descricao_match) if descricao_match else "N/A"
                 
-                append_to_sheet(st.session_state.git_version_str, st.session_state.session_id, prompt_final, resposta_log, tema_match, descricao_match_str)
+                salvar_log_conversa(
+                    st.session_state.session_id, 
+                    st.session_state.git_version_str, 
+                    prompt_final, 
+                    resposta_log, 
+                    tema_match, 
+                    desc_log
+                )
             
             except Exception as e_log:
                 print(f"⚠️ Falha silenciosa ao registrar log de conversa: {e_log}")
@@ -128,7 +126,7 @@ if 'key_api' in st.session_state:
             st.rerun()
 
         except Exception as e:
-            error_id = log_exception(st.session_state.git_version_str, st.session_state.session_id, e)
+            error_id = salvar_erro(st.session_state.session_id, st.session_state.git_version_str, e)
             
             st.error(f"""
             Putz, algo deu errado por aqui :/

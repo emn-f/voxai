@@ -63,7 +63,7 @@ header h1 {
     justify-self: center;
     display: flex;
     align-items: center;
-        justify-content: center;
+    justify-content: center;
         height: 100%;
 }
 
@@ -159,7 +159,7 @@ header h1 {
 
 .button img {
     width: 18px;
-        height: 18px;
+    height: 18px;
     filter: invert(1);
 }
 
@@ -212,6 +212,9 @@ header h1 {
     flex-direction: column;
 }
 
+#changelog-card {
+    max-height: 680px;
+}
 
 .stacked-cards .stat-card {
     flex: 1;
@@ -234,7 +237,7 @@ header h1 {
     padding-bottom: 0.8rem;
     margin-bottom: 1rem;
     display: flex;
-        align-items: center;
+    align-items: center;
         gap: 0.5rem;
 }
 
@@ -247,7 +250,27 @@ header h1 {
     flex-grow: 1;
     font-size: 0.9rem;
     color: #d0d0d0;
-    overflow-y: hidden;
+    overflow-y: auto;
+        /* max-height removed to fill container */
+        padding-right: 10px;
+    }
+    
+    .content-md::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .content-md::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+    
+    .content-md::-webkit-scrollbar-thumb {
+        background: var(--accent-color);
+        border-radius: 4px;
+    }
+    
+    .content-md::-webkit-scrollbar-thumb:hover {
+        background: #5e7cf7;
 }
 
 .content-md li {
@@ -360,7 +383,7 @@ header h1 {
     margin-bottom: 0.8rem;
     color: #ccc;
     display: flex;
-        align-items: flex-start;
+    align-items: flex-start;
         gap: 0.5rem;
 }
 
@@ -443,6 +466,7 @@ footer {
     color: var(--text-secondary);
     font-size: 0.9rem;
 }
+
 @media (max-width: 1024px) {
     .nav-center {
         display: none;

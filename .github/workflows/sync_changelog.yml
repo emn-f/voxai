@@ -19,6 +19,7 @@ jobs:
         with:
           ref: dev
           fetch-depth: 0
+          token: ${{ secrets.TOKEN_DEPLOY_VOX }}
 
       - name: Configure Git
         run: |

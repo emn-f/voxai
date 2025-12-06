@@ -25,14 +25,23 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(markdown => {
             const start = markdown.indexOf('## [');
             if (start !== -1) {
-                const nextStart = markdown.indexOf('\n## [', start + 1);
-                let entryMarkdown;
-                if (nextStart !== -1) {
-                    entryMarkdown = markdown.substring(start, nextStart);
-                } else {
-                    entryMarkdown = markdown.substring(start);
+                let currentStart = start;
+                let combinedMarkdown = '';
+                const maxEntries = 10;
+
+                for (let i = 0; i < maxEntries; i++) {
+                    const nextStart = markdown.indexOf('\n## [', currentStart + 1);
+
+                    if (nextStart !== -1) {
+                        combinedMarkdown += markdown.substring(currentStart, nextStart) + '\n';
+                        currentStart = nextStart;
+                    } else {
+                        combinedMarkdown += markdown.substring(currentStart);
+                        break;
+                    }
                 }
-                document.getElementById('latest-changelog').innerHTML = marked.parse(entryMarkdown);
+
+                document.getElementById('latest-changelog').innerHTML = marked.parse(combinedMarkdown);
             } else {
                 throw new Error('Formato do CHANGELOG não reconhecido.');
             }

@@ -1,3 +1,70 @@
+## [3.0.1] - 2025-12-06
+
+### 📚 Documentação
+
+- Revise CHANGELOG for version 3.0.0
+
+### 🤖 CI/CD & Automação
+
+- Correção na `Sync Changelog from Master to Dev`
+## [3.0.0] - 2025-12-06
+
+### ✨ Funcionalidades
+
+- Adição de botão que permite reportar comportamento inadequado do Vox
+
+### 🎨 Estilo e Formatação
+
+- Dashboard do GitPages exibe mais atualizações.
+
+### 🤖 CI/CD & Automação
+
+- Ajuste no comando de push para `master` na action `tag_prod.yml`
+- Criada action para incremento manual de tags
+- Correção de bug da `sync_changelog`
+
+### ⚡ Performance
+
+- Vox agora utiliza Gemini 2.5 Flash
+
+### 📚 Documentação
+
+- Update Streamlit SDK version in `README`
+
+## [2.8.4] - 2025-12-04
+
+### 📦 Build & Dependências
+
+- Versão mínima do streamlit especificada para funcionamento do Vox no Hugging Face
+## [2.8.3] - 2025-12-04
+
+### 📦 Build & Dependências
+
+- Atualiza config do Hugging Face Space para Python 3.11 (resolve FutureWarning de google.api_core)
+## [2.8.2] - 2025-12-03
+
+### ✨ Funcionalidades
+
+- Adição de função "texto pra voz" que permite escutar a resposta do Vox em voz alta. #66
+- Implementação de função que permite que usuário converse com o Vox por áudio
+
+### 🔧 Tarefas Internas
+
+- Add GIT_COMANDOS.md to .gitignore
+## [2.8.1] - 2025-11-26
+
+### ✨ Funcionalidades
+
+- Add issue templates for bug reports, feature requests, and general tasks.
+
+### 📚 Documentação
+
+- Update CHANGELOG.md
+- Ajustes no CONTRIBUTING.md
+
+### 🤖 CI/CD & Automação
+
+- Adição de action para sinc do CHANGELOG.md da branch master para a dev
 ## [2.7.7] - 2025-11-26
 
 ### 🎨 Estilo e Formatação

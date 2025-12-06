@@ -64,3 +64,10 @@ jobs:
 
           echo "Nova versão calculada: $NEW_TAG"
           echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+          git tag $NEW_TAG
+
+          git remote set-url origin https://emn-f:${{ secrets.TOKEN_DEPLOY_VOX }}@github.com/${{ github.repository }}.git
+          
+          git push origin master --tags
+
+          echo "✅ Versão Manual ${NEW_TAG} lançada!"

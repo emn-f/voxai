@@ -1,4 +1,4 @@
-name: 🚀 Manual Release (Major/Minor/Patch)
+name: 🫴🏽 Manual Release (Major/Minor/Patch)
 
 on:
   workflow_dispatch:

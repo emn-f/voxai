@@ -1,3 +1,13 @@
+## [2.8.19] - 2025-12-06
+
+### 🎨 Estilo e Formatação
+
+- Dashboard do GitPages exibe mais atualizações.
+
+### 🤖 CI/CD & Automação
+
+- Correção no nome da Action manual_release
+- Correção de bug da sync_changelog
 ## [2.8.18] - 2025-12-05
 
 ### ✨ Funcionalidades

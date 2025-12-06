@@ -1,9 +1,8 @@
-## [2.8.20] - 2025-12-06
+## [3.0.0] - 2025-12-06
 
-### 🤖 CI/CD & Automação
+### ✨ Funcionalidades
 
-- Criada action para incremento manual de tags
-## [2.8.19] - 2025-12-06
+- Adição de botão que permite reportar comportamento inadequado do Vox
 
 ### 🎨 Estilo e Formatação
 
@@ -11,32 +10,18 @@
 
 ### 🤖 CI/CD & Automação
 
-- Correção no nome da Action manual_release
-- Correção de bug da sync_changelog
-## [2.8.18] - 2025-12-05
-
-### ✨ Funcionalidades
-
-- Adição de botão que permite reportar comportamento inadequado do vox
-## [2.8.17] - 2025-12-05
+- Ajuste no comando de push para `master` na action `tag_prod.yml`
+- Criada action para incremento manual de tags
+- Correção de bug da `sync_changelog`
 
 ### ⚡ Performance
 
 - Vox agora utiliza Gemini 2.5 Flash
 
-### 🤖 CI/CD & Automação
-
-- Criada action que para incremento manual de tags
-## [2.8.16] - 2025-12-05
-
 ### 📚 Documentação
 
-- Update Streamlit SDK version in README.
-## [2.8.15] - 2025-12-05
+- Update Streamlit SDK version in `README`
 
-### 🤖 CI/CD & Automação
-
-- Ajuste no comando de push para master na action tag_prod.yml
 ## [2.8.4] - 2025-12-04
 
 ### 📦 Build & Dependências

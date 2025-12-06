@@ -1,3 +1,8 @@
+## [2.8.20] - 2025-12-06
+
+### 🤖 CI/CD & Automação
+
+- Criada action para incremento manual de tags
 ## [2.8.19] - 2025-12-06
 
 ### 🎨 Estilo e Formatação

@@ -1,3 +1,12 @@
+## [3.0.1] - 2025-12-06
+
+### 📚 Documentação
+
+- Revise CHANGELOG for version 3.0.0
+
+### 🤖 CI/CD & Automação
+
+- Correção na `Sync Changelog from Master to Dev`
 ## [3.0.0] - 2025-12-06
 
 ### ✨ Funcionalidades

@@ -12,3 +12,8 @@ GEMINI_MODEL_NAME = 'gemini-2.5-flash'
 # Configurações de UI
 PAGE_TITLE = 'VoxAI'
 PAGE_ICON = '🏳️‍🌈'
+
+class StatusConhecimento:
+    PENDENTE = -1
+    REJEITADO = 0
+    APROVADO = 1

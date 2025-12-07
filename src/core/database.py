@@ -51,7 +51,9 @@ def salvar_erro(session_id, git_version, error_msg):
 
 def salvar_report(session_id, git_version, history_text):
     client = get_db_client()
-    if not client: return False
+    
+    if not client:
+        return False
 
     try:
         data = {
@@ -68,7 +70,8 @@ def salvar_report(session_id, git_version, history_text):
 
 def buscar_referencias_db(vector_embedding, threshold=0.4, limit=1):
     client = get_db_client()
-    if not client: return None, None
+    if not client:
+        return None, None
     try:
         response = client.rpc(
             "match_knowledge_base",
@@ -82,7 +85,6 @@ def buscar_referencias_db(vector_embedding, threshold=0.4, limit=1):
         if response.data and len(response.data) > 0:
             melhor_match = response.data[0]
             return melhor_match['tema'], melhor_match['descricao']
-        
         return None, None
 
     except Exception as e:

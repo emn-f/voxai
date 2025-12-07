@@ -67,10 +67,8 @@ def salvar_report(session_id, git_version, history_text):
 
 
 def buscar_referencias_db(vector_embedding, threshold=0.4, limit=1):
-
     client = get_db_client()
     if not client: return None, None
-
     try:
         response = client.rpc(
             "match_knowledge_base",

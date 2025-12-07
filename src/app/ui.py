@@ -23,31 +23,35 @@ def carregar_css(path=CSS_PATH):
 def carregar_sidebar(sidebar_content, git_version, kb_version):
     
     with st.sidebar:
-        col_clear, col_report, _ = st.columns([0.35, 0.35, 0.01])
+        col_clear, col_report= st.columns([0.3, 0.3])
         
-        with col_clear:
-            if st.button("🧹 Limpar", help="Limpar histórico do chat"):
-                st.session_state.pop("hist", None)
-                st.session_state.pop("hist_exibir", None)
-                st.rerun()
+        if st.button("🧹 Limpar", help="Limpar histórico do chat"):
+            st.session_state.pop("hist", None)
+            st.session_state.pop("hist_exibir", None)
+            st.rerun()
 
-        with col_report:
-            if st.button("⚠️ Reportar", help="Reportar conversa inadequada"):
-                 with st.spinner("Enviando..."):
-                     historico_conversa = st.session_state.get('hist_exibir', [])
-                     if not historico_conversa:
-                         st.warning("Nada para reportar.")
-                     else:
-                         version = st.session_state.get('git_version_str', 'Unknown')
-                         sess_id = st.session_state.get('session_id', 'Unknown')
+        if st.button("🚩 Reportar", help="Reportar conversa inadequada"):
+            with st.spinner("Enviando..."):
+                historico_conversa = st.session_state.get('hist_exibir', [])
+                if not historico_conversa:
+                    st.warning("Nada para reportar.")
+                else:
+                    version = st.session_state.get('git_version_str', 'Unknown')
+                    sess_id = st.session_state.get('session_id', 'Unknown')
 
-                         sucesso = salvar_report(sess_id, version, str(historico_conversa))
-                         
-                         if sucesso:
-                             st.toast("Denúncia enviada!", icon="✅")
-                         else:
-                             st.toast("Erro ao reportar.", icon="❌")
-            
+                    sucesso = salvar_report(sess_id, version, str(historico_conversa))
+                    
+                    if sucesso:
+                        st.toast("Denúncia enviada!", icon="✅")
+                    else:
+                        st.toast("Erro ao reportar.", icon="❌")
+        st.link_button(
+            label="💛 Ajude o Vox a crescer!", 
+            url="https://forms.gle/fw8CNXaFme3FnNxn6",
+            help="Ajude a expandir o conhecimento da IA respondendo um formulário rápido."
+        )
+
+        st.markdown("---")
         st.markdown(sidebar_content, unsafe_allow_html=True)
         
         version_display = f"""

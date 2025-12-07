@@ -2,8 +2,6 @@ import streamlit as st
 from supabase import create_client, Client
 import os
 
-from core import genai
-
 @st.cache_resource
 def get_db_client() -> Client:
     try:

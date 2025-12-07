@@ -2,6 +2,8 @@ import streamlit as st
 from supabase import create_client, Client
 import os
 
+from core import genai
+
 @st.cache_resource
 def get_db_client() -> Client:
     try:
@@ -14,7 +16,8 @@ def get_db_client() -> Client:
 
 def salvar_log_conversa(session_id, git_version, prompt, response, tema_match, desc_match):
     client = get_db_client()
-    if not client: return
+    if not client:
+        return
 
     try:
         data = {
@@ -90,3 +93,29 @@ def buscar_referencias_db(vector_embedding, threshold=0.4, limit=1):
     except Exception as e:
         print(f"⚠️ Erro na busca vetorial: {e}")
         return None, None
+    
+def add_conhecimento_db(tema, descricao, referencias, autor):
+    client = get_db_client()
+    if not client:
+        return False
+    try:
+        result = genai.embed_content(
+            model="models/text-embedding-004",
+            content=f"{tema}: {descricao}",
+            task_type="retrieval_document"
+        )
+        vector_embedding = result['embedding']
+        
+        data = {
+            "tema": tema,
+            "descricao": descricao,
+            "embedding": vector_embedding,
+            "referencias": referencias,
+            "autor": autor
+        }
+        client.table("knowledge_base").insert(data).execute()
+        return True
+
+    except Exception as e:
+        print(f"⚠️ Erro ao adicionar na base de conhecimento: {e}")
+        return False

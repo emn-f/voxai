@@ -57,7 +57,7 @@ Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orie
 
 * **Core:** Python 3.11+, Streamlit.
 * **IA:** Google Gemini 1.5 Flash (via `gemini-flash-latest`), Sentence-Transformers (RAG).
-* **Dados:** Supabase (Banco Vetorial e Logs), Google Sheets (Curadoria).
+* **Dados:** Supabase (Banco Vetorial e Logs).
 * **DevOps:** GitHub Actions (CI/CD), Git Cliff (Changelog), Hugging Face (Deploy).
 
 ## 🤝 Nossa Parceria: Casa Marielle Franco
@@ -89,7 +89,6 @@ Para contribuir ou testar:
     > As credenciais do Supabase são internas da equipe Vox AI.
     > * **Para rodar:** O projeto funciona **sem** elas (apenas sem histórico e busca na base de conhecimento). Basta configurar a `GEMINI_API_KEY`.
     > * **Para desenvolver:** Se sua nova feature **exige** integração com o banco de dados, entre em contato com a equipe (`assistentedeapoiolgbtvox@gmail.com`) explicando sua proposta para avaliarmos o fornecimento de credenciais de teste.
-    ```
 4.  **Execute:**
     ```bash
     streamlit run vox_ai.py
@@ -103,7 +102,6 @@ Contribuições são bem-vindas! Consulte nosso [**Guia de Contribuição**](CON
 
 * **Versionamento Semântico:** Tags geradas automaticamente em releases.
 * **Changelog Automático:** Gerado via Git Cliff a cada atualização.
-* **Sync de Dados:** Sincronização automática entre Google Sheets e JSON.
 * **Deploy Contínuo:** Espelhamento automático para o Hugging Face Spaces.
 
 ## ⚖️ Governança e Ética

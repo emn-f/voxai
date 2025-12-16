@@ -1,4 +1,4 @@
-## [3.0.2] - 2025-12-16
+## [3.1.0] - 2025-12-16
 ### ♻️ Refatoração & Melhorias
 
 - Dashboard puxa métricas direto do Supabase

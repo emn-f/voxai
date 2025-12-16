@@ -1,29 +1,19 @@
 ---
-name: 🚀 Solicitação de Funcionalidade (Feature Request)
-about: Sugira uma ideia para melhorar o Projeto Vox
-title: "[FEAT] <Dê um título curto e descritivo>"
-labels: enhancement, discussion
+name: � Sugerir Funcionalidade
+about: Sugira uma ideia para melhorar o projeto Vox AI
+title: "[FEAT] "
+labels: enhancement
 assignees: ''
 ---
 
-## 💡 Resumo da Funcionalidade
-## etapa: 😫 Qual problema isso resolve?
-## 🛠️ Solução Proposta
-## 🎨 Mockups ou Exemplos (Opcional)
-## 🤖 Comportamento da IA (Específico para o Vox)
-- **Input esperado:** (Ex: O usuário pergunta sobre legislação X)
-- **Output esperado:** (Ex: O bot cita a lei e oferece fontes confiáveis)
-- **Tom de voz:** (Ex: Empático, informativo, direto)
+## � Qual é a sua ideia?
+Descreva a funcionalidade que você gostaria de ver no Vox AI.
 
-## 🛡️ Segurança e Ética
-- [ ] Esta funcionalidade requer tratamento de dados sensíveis?
-- [ ] Existe risco de alucinação da IA que possa prejudicar o usuário?
-- [ ] Esta feature respeita as diretrizes de inclusão do projeto?
+## 🤔 Por que isso é útil?
+Explique como isso ajudaria os usuários ou a comunidade LGBTQIA+.
 
-## ✅ Critérios de Aceite (Definition of Done)
-- [ ] Funcionalidade implementada no código.
-- [ ] Testes unitários/integração criados.
-- [ ] Validado contra viés (se aplicável).
-- [ ] Documentação atualizada.
+## 🛠️ Como você imagina isso funcionando?
+Se tiver exemplos, desenhos ou descrições de como seria a interação, coloque aqui.
 
-## ℹ️ Contexto Adicional
+## ℹ️ Informações Adicionais
+Algum outro contexto ou links de referência?

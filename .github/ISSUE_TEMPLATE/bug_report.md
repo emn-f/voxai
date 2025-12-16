@@ -1,34 +1,22 @@
 ---
-name: 🐛 Reportar um Bug
-about: Crie um report para nos ajudar a corrigir problemas técnicos ou de comportamento da IA
-title: "[BUG] <Descreva o erro de forma resumida>"
+name: 🐛 Reportar Bug
+about: Crie um report para nos ajudar a corrigir problemas técnicos ou erros da IA
+title: "[BUG] "
 labels: bug
 assignees: ''
 ---
 
-## 🐛 Descrição do Problema
-## 🔁 Passos para Reproduzir
-**Se for erro de interface/sistema:**
-1. Vá para '...'
-2. Clique em '...'
-3. Role para baixo até '...'
-4. Veja o erro
+## 🛑 Descrição do Problema
+Descreva de forma clara o que aconteceu de errado.
 
-**Se for uma resposta ruim da IA (Alucinação/Viés):**
-1. Envie o prompt: "..."
-2. Contexto da conversa anterior (se houver): "..."
+## 👣 Passos para Reproduzir
+1. O que você fez? (Ex: Enviei a mensagem X)
+2. O que aconteceu? (Ex: O Vox respondeu Y)
+3. O que deveria ter acontecido?
 
-## 😯 Comportamento Esperado
-## 😱 Comportamento Real
 ## 📸 Screenshots ou Logs
-## 🌍 Ambiente
-- **OS:** [ex: Windows, iOS]
-- **Browser/App:** [ex: Chrome, App Mobile]
-- **Versão do Vox:** [ex: v1.0.2]
+Cole aqui imagens ou logs do erro (apenas se não contiverem dados sensíveis).
 
-## 🚨 Segurança e Severidade (Crítico para o Vox)
-- [ ] O bug expõe dados sensíveis de usuários?
-- [ ] A IA gerou conteúdo ofensivo, preconceituoso ou perigoso?
-- [ ] O sistema está fora do ar?
-
-## 📋 Informações Adicionais
+## 🌍 Ambiente (Opcional)
+- Dispositivo: [ex: Android, PC]
+- Navegador: [ex: Chrome, Edge]

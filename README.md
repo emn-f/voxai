@@ -102,6 +102,7 @@ Contribuições são bem-vindas! Consulte nosso [**Guia de Contribuição**](CON
 
 * **Versionamento Semântico:** Tags geradas automaticamente em releases.
 * **Changelog Automático:** Gerado via Git Cliff a cada atualização.
+* **Sync de Dados:** Sincronização automática entre Google Sheets e JSON.
 * **Deploy Contínuo:** Espelhamento automático para o Hugging Face Spaces.
 
 ## ⚖️ Governança e Ética

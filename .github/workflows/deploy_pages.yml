@@ -26,6 +26,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Inject Supabase Credentials
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          # Usa o sed para substituir o placeholder pelo valor real do secret
+          sed -i "s|__SUPABASE_URL__|$SUPABASE_URL|g" pages/dashboard.js
+          sed -i "s|__SUPABASE_KEY__|$SUPABASE_KEY|g" pages/dashboard.js
+          
+          echo "✅ Credenciais injetadas no dashboard.js"
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

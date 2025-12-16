@@ -5,32 +5,17 @@ import os
 import re
 import streamlit as st
 from gtts import gTTS
-from src.config import BASE_PRINCIPAL_PATH
-
-@st.cache_data
-def data_vox(caminho=BASE_PRINCIPAL_PATH):
-    try:
-        with open(caminho, "r", encoding="utf-8") as f:
-            full_data = json.load(f)
-            return full_data.get("data", []), full_data.get("kb_version", "N/A")
-    except FileNotFoundError:
-        print(f"Arquivo da base de conhecimento não encontrado em: {caminho}")
-        return [], "N/A"
-    except json.JSONDecodeError:
-        print(f"Erro ao decodificar JSON da base de conhecimento em: {caminho}")
-        return [], "N/A"
-
 
 def get_current_branch():
     try:
         branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).decode("utf-8").strip()
         
         if branch in ["master", "main"]:
-            return "Production"
+            return 1
         else:
-            return "Development"
+            return 0
     except (subprocess.CalledProcessError, FileNotFoundError):
-        return "Development"
+        return 0
 
 def get_version_from_changelog():
     """Lê a versão mais recente do arquivo CHANGELOG.md."""
@@ -47,7 +32,7 @@ def get_version_from_changelog():
 
 def git_version():
     try:
-        if get_current_branch() == "Production":
+        if get_current_branch() == 1:
             tag_pattern = "v*"
         else:
             tag_pattern = "dev-v*"

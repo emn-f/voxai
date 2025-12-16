@@ -9,11 +9,11 @@ Este documento é um guia para ajudá-lo a contribuir da melhor forma possível.
 ## 📚 Índice
 
 1.  [Código de Conduta](#-código-de-conduta)
-2.  [Como Começar](#-como-começar)
-3.  [Fluxo de Desenvolvimento](#-fluxo-de-desenvolvimento)
-4.  [Padrões de Commit (Importante!)](#-padrões-de-commit)
-5.  [Base de Conhecimento (RAG)](#-base-de-conhecimento-rag)
-6.  [Abrindo um Pull Request](#-abrindo-um-pull-request)
+2.  [Como começar](#-como-começar)
+3.  [Fluxo de desenvolvimento](#-fluxo-de-desenvolvimento)
+4.  [Padrões de commit (Importante!)](#-padrões-de-commit)
+5.  [Base de conhecimento (RAG)](#-base-de-conhecimento-rag)
+6.  [Abrindo um pull request](#-abrindo-um-pull-request)
 
 ---
 
@@ -50,7 +50,6 @@ Se você quer rodar o projeto localmente para testar mudanças:
     O arquivo deve seguir este formato:
 
     ```toml
-    ```toml
     GEMINI_API_KEY = "SUA_CHAVE_AQUI"
     
     [supabase]
@@ -62,7 +61,7 @@ Se você quer rodar o projeto localmente para testar mudanças:
     > O Vox utiliza o **Supabase** para RAG e Logs. Essas credenciais não são públicas.
     > 
     > * **Sem credenciais:** O projeto rodará normalmente, mas usando apenas o conhecimento geral da IA (sem a base de dados do projeto). Você verá avisos de conexão no terminal, o que é esperado.
-    > * **Precisa desenvolver algo no banco?** Se a feature que você deseja implementar depende estritamente do acesso ao banco de dados, envie um e-mail para a equipe ou abra uma issue descrevendo a necessidade. Podemos fornecer credenciais temporárias ou um ambiente de sandbox.
+    > * **Precisa desenvolver algo no banco?** Se a feature que você deseja implementar depende estritamente do acesso ao banco de dados, envie um e-mail para a equipe ou abra uma ssue descrevendo a necessidade. Podemos fornecer credenciais temporárias ou um ambiente de sandbox.
 6.  **Execute o projeto:**
     ```bash
     streamlit run vox_ai.py
@@ -112,14 +111,11 @@ A estrutura da mensagem deve ser:
 
 O Vox utiliza uma arquitetura RAG (Retrieval-Augmented Generation). Os dados são armazenados e consultados via **Supabase** (PostgreSQL com `pgvector`).
     
-    ⚠️ **Atenção:**
-    A base de conhecimento é gerida externamente e sincronizada.
-    * **Não há arquivos JSON locais** para editar manualmente com conteúdo novo.
-    * A curadoria é feita em planilha e processada para o banco vetorial.
-* **Não edite manualmente** o arquivo `data/knowledge_base.json` para adicionar conteúdo, pois suas alterações serão sobrescritas na próxima sincronização.
-* Se você encontrou um erro de informação ou quer sugerir um novo tema, por favor, **abra uma Issue** com a sugestão.
+⚠️ **Atenção:**
+A base de conhecimento é gerida internamente e atualizada diretamente no banco.
+* **Não há arquivos JSON locais** para editar manualmente com conteúdo novo.
+* Se você encontrou um erro de informação ou quer sugerir um novo tema, por favor, utilize nosso **[Formulário de Sugestão de Conteúdo](https://docs.google.com/forms/d/e/1FAIpQLSemqzlBCsI8LmKNtCRccoHcvP6R8QTvZ7WmbPweBqcpJzqrBQ/viewform)**. A equipe de curadoria analisará sua contribuição.
 
----
 
 ## 📥 Abrindo um Pull Request
 

@@ -12,10 +12,6 @@ jobs:
   sync-changelog:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for 10 minutes
-        if: github.event_name != 'workflow_dispatch'
-        run: sleep 600
-
       - name: Checkout Dev Branch
         uses: actions/checkout@v4
         with:

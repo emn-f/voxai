@@ -1,3 +1,9 @@
+## [3.1.2] - 2025-12-16
+
+### 📚 Documentação
+
+- Documentações atualizadas para refletir implementação do Supabase
+- Documentações atualizadas e criação de SUPPORT.md
 ## [3.1.1] - 2025-12-16
 
 ### 📚 Documentação

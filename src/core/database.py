@@ -7,6 +7,12 @@ def get_db_client() -> Client:
     try:
         url = st.secrets["supabase"]["url"]
         key = st.secrets["supabase"]["key"]
+        if not url or not key:
+            try:
+                url = st.secrets["supabase"]["url"]
+                key = st.secrets["supabase"]["key"]
+            except FileNotFoundError:
+                return None
         return create_client(url, key)
     except Exception as e:
         st.error(f"Erro ao conectar no Supabase: {e}")

@@ -1,3 +1,14 @@
+## [3.1.1] - 2025-12-16
+
+### 📚 Documentação
+
+- Documentações atualizadas para refletir implementação do Supabase
+
+### 🔧 Tarefas Internas
+
+- Sync CHANGELOG.md from master
+- Sincronização do Changelog entre branchs agora é feita de forma auomática e imediata.
+- Sync CHANGELOG.md from master
 ## [3.1.0] - 2025-12-16
 ### ♻️ Refatoração & Melhorias
 

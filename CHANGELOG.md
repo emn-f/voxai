@@ -1,3 +1,17 @@
+## [3.0.2] - 2025-12-16
+### ♻️ Refatoração & Melhorias
+
+- Dashboard puxa métricas direto do Supabase
+
+### ✨ Funcionalidades
+
+- *(database)* [**breaking**] Migra arquitetura de dados e rag para Supabase
+- Adição de botão para contribuir com a base de conhecimento
+- Vox agora utiliza o modelo mais recente disponível do Gemini Flash
+### 📦 Build & Dependências
+
+- Remoção de scripts que não são mais necessários pra comunicação com a base de conhecimento
+
 ## [3.0.1] - 2025-12-06
 
 ### 📚 Documentação

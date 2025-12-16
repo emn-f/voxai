@@ -56,8 +56,8 @@ Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orie
 ## 💻 Tecnologias Utilizadas
 
 * **Core:** Python 3.11+, Streamlit.
-* **IA:** Google Gemini 2.0 Flash, Sentence-Transformers (RAG).
-* **Dados:** JSON (Local), Google Sheets (Curadoria e Logs).
+* **IA:** Google Gemini 1.5 Flash (via `gemini-flash-latest`), Sentence-Transformers (RAG).
+* **Dados:** Supabase (Banco Vetorial e Logs), Google Sheets (Curadoria).
 * **DevOps:** GitHub Actions (CI/CD), Git Cliff (Changelog), Hugging Face (Deploy).
 
 ## 🤝 Nossa Parceria: Casa Marielle Franco
@@ -80,6 +80,15 @@ Para contribuir ou testar:
 3.  **Configure:** Crie um arquivo `.streamlit/secrets.toml` com sua chave da API do Gemini:
     ```toml
     GEMINI_API_KEY = "SUA_CHAVE_AQUI"
+    
+    [supabase]
+    url = "SUA_URL_SUPABASE"
+    key = "SUA_CHAVE_ANON_SUPABASE"
+    ```
+    > **🔒 Acesso ao Banco de Dados (Supabase):**
+    > As credenciais do Supabase são internas da equipe Vox AI.
+    > * **Para rodar:** O projeto funciona **sem** elas (apenas sem histórico e busca na base de conhecimento). Basta configurar a `GEMINI_API_KEY`.
+    > * **Para desenvolver:** Se sua nova feature **exige** integração com o banco de dados, entre em contato com a equipe (`assistentedeapoiolgbtvox@gmail.com`) explicando sua proposta para avaliarmos o fornecimento de credenciais de teste.
     ```
 4.  **Execute:**
     ```bash

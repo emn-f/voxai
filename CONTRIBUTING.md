@@ -50,15 +50,19 @@ Se você quer rodar o projeto localmente para testar mudanças:
     O arquivo deve seguir este formato:
 
     ```toml
+    ```toml
     GEMINI_API_KEY = "SUA_CHAVE_AQUI"
+    
+    [supabase]
+    url = "SUA_URL_SUPABASE"
+    key = "SUA_CHAVE_ANON_SUPABASE"
     ```
 
-    > **⚠️ Nota sobre Logs:**
-    > Ao rodar o projeto sem as credenciais administrativas do Google Cloud (que são de uso interno da equipe), você verá o seguinte aviso no terminal a cada mensagem:
-    >
-    > `⚠️ Falha silenciosa ao registrar log de conversa: ...`
-    >
-    > **Não se preocupe, isso é normal.** O assistente foi projetado para funcionar perfeitamente mesmo sem essa integração. O aviso apenas indica que a conversa não está sendo salva na planilha da equipe core. Saiba mais sobre o registro de logs em [PRIVACY_POLICY](PRIVACY_POLICY).
+    > **🔒 Credenciais do Supabase (Interno):**
+    > O Vox utiliza o **Supabase** para RAG e Logs. Essas credenciais não são públicas.
+    > 
+    > * **Sem credenciais:** O projeto rodará normalmente, mas usando apenas o conhecimento geral da IA (sem a base de dados do projeto). Você verá avisos de conexão no terminal, o que é esperado.
+    > * **Precisa desenvolver algo no banco?** Se a feature que você deseja implementar depende estritamente do acesso ao banco de dados, envie um e-mail para a equipe ou abra uma issue descrevendo a necessidade. Podemos fornecer credenciais temporárias ou um ambiente de sandbox.
 6.  **Execute o projeto:**
     ```bash
     streamlit run vox_ai.py
@@ -106,10 +110,12 @@ A estrutura da mensagem deve ser:
 
 ## 🧠 Base de Conhecimento (RAG)
 
-O Vox utiliza uma arquitetura RAG (Retrieval-Augmented Generation). Os dados ficam em `data/knowledge_base.json`.
-
-⚠️ **Atenção:**
-Nossa base de conhecimento é sincronizada automaticamente a partir de uma planilha do Google Sheets curada pela equipe do projeto.
+O Vox utiliza uma arquitetura RAG (Retrieval-Augmented Generation). Os dados são armazenados e consultados via **Supabase** (PostgreSQL com `pgvector`).
+    
+    ⚠️ **Atenção:**
+    A base de conhecimento é gerida externamente e sincronizada.
+    * **Não há arquivos JSON locais** para editar manualmente com conteúdo novo.
+    * A curadoria é feita em planilha e processada para o banco vetorial.
 * **Não edite manualmente** o arquivo `data/knowledge_base.json` para adicionar conteúdo, pois suas alterações serão sobrescritas na próxima sincronização.
 * Se você encontrou um erro de informação ou quer sugerir um novo tema, por favor, **abra uma Issue** com a sugestão.
 

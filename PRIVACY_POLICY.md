@@ -37,7 +37,7 @@ A coleta e o tratamento dos dados mencionados são realizados com base no **leg�
 
 ### 6. Compartilhamento e segurança dos dados
 
-As conversas anonimizadas são armazenadas de forma segura em planilhas do Google Sheets, acessíveis apenas à equipe de desenvolvimento do projeto Vox AI. Esses dados nunca serão vendidos ou compartilhados com terceiros para fins comerciais ou de publicidade.
+As conversas anonimizadas são armazenadas de forma segura em banco de dados criptografado (Supabase) e em planilhas do Google Sheets (para auditoria), acessíveis apenas à equipe de desenvolvimento e curadoria do projeto Vox AI. Esses dados nunca serão vendidos ou compartilhados com terceiros para fins comerciais ou de publicidade.
 
 ### 7. Seus direitos
 

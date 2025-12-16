@@ -1,3 +1,37 @@
+## [3.0.2] - 2025-12-16
+
+### Refacto
+
+- Ajustes gerais
+
+### ♻️ Refatoração & Melhorias
+
+- Dashboard puxa métricas direto do Supabase
+- Remoção de comentários
+- Remoção de comentários
+- Remoção de comentários
+- Pequenos ajustes
+
+### ✨ Funcionalidades
+
+- *(database)* [**breaking**] Migra arquitetura de dados e rag para Supabase
+- *(database)* [**breaking**] Migra arquitetura de dados e rag para Supabase
+- Implementa função que permite adição de dados na base de conhecimento
+- Adição de botão para contribuir com a base de conhecimento
+- Finalização da implementação do client Supabase
+
+### 📚 Documentação
+
+- Adição de descrição de status da base de conhecimento
+
+### 📦 Build & Dependências
+
+- Remoção de scripts que não são mais necessários pra comunicação com a base de conhecimento
+
+### 🔧 Tarefas Internas
+
+- Sync CHANGELOG.md from master
+- Expand .gitignore rule to ignore the entire `.streamlit/` directory.
 ## [3.0.1] - 2025-12-06
 
 ### 📚 Documentação

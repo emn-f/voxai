@@ -1,18 +1,13 @@
 import streamlit as st
 from supabase import create_client, Client
 import os
+import google.generativeai as genai
 
 @st.cache_resource
 def get_db_client() -> Client:
     try:
         url = st.secrets["supabase"]["url"]
         key = st.secrets["supabase"]["key"]
-        if not url or not key:
-            try:
-                url = st.secrets["supabase"]["url"]
-                key = st.secrets["supabase"]["key"]
-            except FileNotFoundError:
-                return None
         return create_client(url, key)
     except Exception as e:
         st.error(f"Erro ao conectar no Supabase: {e}")
@@ -22,7 +17,6 @@ def salvar_log_conversa(session_id, git_version, prompt, response, tema_match, d
     client = get_db_client()
     if not client:
         return
-
     try:
         data = {
             "session_id": session_id,
@@ -38,8 +32,8 @@ def salvar_log_conversa(session_id, git_version, prompt, response, tema_match, d
 
 def salvar_erro(session_id, git_version, error_msg):
     client = get_db_client()
-    if not client: return "ERRO-DB"
-
+    if not client:
+        return "ERRO-DB"
     try:
         import uuid
         error_id = str(uuid.uuid4())[:8]

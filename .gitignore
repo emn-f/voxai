@@ -11,7 +11,7 @@ data/__pycache__/sobre.cpython-313.pyc
 media
 
 # Arquivos de Credenciais e Configurações Locais
-.streamlit/secrets.toml
+.streamlit/
 
 # Outras versões da base de dados do Vox
 data/fontes_dados/

@@ -13,7 +13,7 @@ def semantica(prompt):
     tema, descricao = buscar_referencias_db(vetor_prompt, threshold=SEMANTICA_THRESHOLD)
     
     if tema:
-        print(f"Prompt: {prompt}")
-        print(f"Tema encontrado no DB: {tema}")
+        # print(f"Prompt: {prompt}")
+        # print(f"Tema encontrado no DB: {tema}")
         return tema, descricao
     return None, None

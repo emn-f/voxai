@@ -85,8 +85,6 @@ if 'key_api' in st.session_state:
             st.markdown(prompt_final)
             
         try:
-            if "teste erro" in prompt_final.lower():
-                raise Exception("Simulação de falha crítica para teste de LOG!")
 
             tema_match, descricao_match = semantica(prompt_final) 
             
@@ -96,7 +94,6 @@ if 'key_api' in st.session_state:
             else:
                 descricao_match = "N/A" 
 
-            # Geração da Resposta
             with st.chat_message("assistant", avatar="🤖"):
                 resposta = gerar_resposta(inicializar_chat_modelo(), prompt_final, info_adicional_contexto)
                 

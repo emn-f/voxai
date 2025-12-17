@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             if (data && data.length > 0) {
-
                 const lastDate = new Date(data[0].modificado_em);
             const versionString = `v${lastDate.getFullYear()}.${(lastDate.getMonth() + 1).toString().padStart(2, '0')}.${lastDate.getDate().toString().padStart(2, '0')}`;
             document.getElementById('kb-version').textContent = versionString;
@@ -54,11 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(markdown => {
             const start = markdown.indexOf('## [');
             if (start !== -1) {
-
-                const nextStart = markdown.indexOf('\n## [', start + 1);
-                let entryMarkdown = (nextStart !== -1)
-                    ? markdown.substring(start, nextStart) 
-                    : markdown.substring(start);
+                let end = start;
+                for (let i = 0; i < 5; i++) {
+                    const next = markdown.indexOf('\n## [', end + 1);
+                    if (next === -1) {
+                        end = markdown.length;
+                        break;
+                    }
+                    end = next;
+                }
+                const entryMarkdown = markdown.substring(start, end);
 
                 document.getElementById('latest-changelog').innerHTML = marked.parse(entryMarkdown);
             }

@@ -211,7 +211,7 @@
 ## [1.0.9] - 2025-05-19
 
 ### ♻️ Refatoração & Melhorias
-* Modularização de funções e melhorias na UI do VoxAI (PR #4).
+* Modularização de funções e melhorias na UI do Vox AI (PR #4).
 
 ## [1.0.8] - 2025-05-19
 
@@ -273,7 +273,7 @@
 * Adição do arquivo de `requirements.txt` e melhorias de segurança.
 
 ## 🚧 first commit | [dev-v0.0.1] - 2025-05-17
-* Nascimento do VoxAI.
+* Nascimento do Vox AI.
 * Estrutura inicial do projeto.
 * MVP funcional com interface.
 * Scripts e workflows para automação.

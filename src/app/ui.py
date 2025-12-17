@@ -5,7 +5,7 @@ from src.config import CSS_PATH
 from src.core.database import salvar_report
 
 def configurar_pagina():
-    st.set_page_config(page_title='VoxAI', page_icon='🏳️‍🌈')
+    st.set_page_config(page_title='Vox AI', page_icon='🏳️‍🌈')
     st.markdown(
         """
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">

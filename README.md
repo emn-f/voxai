@@ -1,5 +1,5 @@
 ---
-title: VoxAI
+title: Vox AI
 emoji: 🏳️‍🌈
 colorFrom: purple
 colorTo: blue
@@ -20,9 +20,9 @@ license: mit
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://docs.github.com/en/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-> **Projeto de extensão universitária que une Inteligência Artificial e acolhimento para a comunidade LGBTQIA+.**
+> **Tecnologia social open source que une Inteligência Artificial e acolhimento para a comunidade LGBTQIA+.**
 
-### 🚀 [Acesse o VoxAI](https://assistentevox.streamlit.app/) | 📊 [Ver Dashboard no GitPages](https://emn-f.github.io/vox-ai/)
+### 🚀 [Acesse o Vox AI](https://assistentevox.streamlit.app/) | 📊 [Ver Dashboard no GitPages](https://emn-f.github.io/vox-ai/)
 
 ---
 
@@ -40,10 +40,10 @@ license: mit
 * [📬 Contato](#-contato)
 
 ## 💡 Sobre o Projeto
-O **VoxAI** é um assistente de apoio e informação LGBTQIA+ desenvolvido como parte do projeto de extensão universitária **"Vox: Inteligência Artificial para Inclusão e Cidadania"** da Universidade Católica do Salvador (UCSal). Liderado por Emanuel Ferreira, estudante de Engenharia de Software, o projeto tem como principal público a comunidade LGBTQIA+ de Salvador, Bahia.
+O **Vox AI** é um assistente de apoio e informação LGBTQIA+. Iniciado como um projeto de extensão universitária na **Universidade Católica do Salvador (UCSal)**, o Vox evoluiu para uma iniciativa open source robusta de combate à desinformação e promoção da cidadania. Liderado por Emanuel Ferreira, o projeto foca na comunidade de Salvador, Bahia, mas serve como modelo replicável de IA Responsável. 
 
 ### Missão
-Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orientação e acolhimento. O VoxAI usa tecnologia para combater a desinformação e promover cidadania, respeito e dignidade.
+Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orientação e acolhimento. O Vox AI usa tecnologia para combater a desinformação e promover cidadania, respeito e dignidade.
 
 ## ✨ Funcionalidades
 
@@ -62,7 +62,7 @@ Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orie
 
 ## 🤝 Nossa Parceria: Casa Marielle Franco
 
-O Projeto VoxAI tem uma parceria oficial com a **Casa Marielle Franco**, instituição de acolhimento independente em Salvador (BA). A Casa atua como ponto de escuta e validação de nossos conteúdos, garantindo que a tecnologia esteja alinhada com as reais necessidades da comunidade.
+O Projeto Vox AI tem uma parceria oficial com a **Casa Marielle Franco**, instituição de acolhimento independente em Salvador (BA). A Casa atua como ponto de escuta e validação de nossos conteúdos, garantindo que a tecnologia esteja alinhada com as reais necessidades da comunidade.
 
 ## 🚀 Rodando o Projeto Localmente
 

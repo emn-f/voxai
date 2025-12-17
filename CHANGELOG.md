@@ -1,3 +1,17 @@
+## [3.1.3] - 2025-12-17
+
+### ✨ Funcionalidades
+
+- *(dashboard)* Expande visualização do changelog para 5 últimas versões.
+
+### 📚 Documentação
+
+- Atualiza branding de extensão para tecnologia social open source.
+- Padroniza escrita "Vox AI".
+
+### 🔧 Tarefas Internas
+
+- Sync CHANGELOG.md from master
 ## [3.1.2] - 2025-12-16
 
 ### 📚 Documentação

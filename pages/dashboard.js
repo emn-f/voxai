@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('CHANGELOG.md', { headers: { 'Cache-Control': 'max-age=300' } })
         .then(response => response.ok ? response.text() : Promise.reject('Erro ao buscar CHANGELOG.md.'))
         .then(markdown => {
-            const start = markdown.indexOf('## [');
+            const start = markdown.indexOf('## ');
             if (start !== -1) {
                 let end = start;
                 for (let i = 0; i < 5; i++) {
-                    const next = markdown.indexOf('\n## [', end + 1);
+                    const next = markdown.indexOf('\n## ', end + 1);
                     if (next === -1) {
                         end = markdown.length;
                         break;

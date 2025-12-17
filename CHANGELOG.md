@@ -1,26 +1,16 @@
-## [3.1.5] - 2025-12-17
+## [3.1.6] - 2025-12-17
 
 ### 🤖 CI/CD & Automação
-
-- Adiciona trigger workflow_run para o deploy no Hugging Face
-- Atualiza nome do workflow de deploy em produção
-- Action tag_dev.yml renomeada para  versioning_dev.yml
-- Workflow renomeado para 'Production Pipeline'
-- Workflow renomeado.
-- Workflow renomeado de release_changelog_prod.yml para production_pipeline.yml
-- Nome da action de deploys em produção ajustado.
-## [3.1.4] - 2025-12-17
+- **Padronização de Nomenclatura:** Renomeação estrutural dos workflows para maior clareza:
+  - `production_pipeline.yml` (antigo tag_prod)
+  - `versioning_dev.yml` (antigo tag_dev)
+  - `deploy_hugging_face.yml` (antigo sync_to_hugging_face)
+  - `changelog_dev.yml` (antigo sync_changelog_master_to_dev)
+- **Orquestração de Deploys:** Atualização dos gatilhos (`workflow_run`) no Deploy do GitPages e do Hugging Face para escutarem corretamente o novo `🚀 Production Pipeline`.
 
 ### 🔧 Tarefas Internas
+- Limpeza de comentários antigos e ajustes na mensagem de commit do changelog.
 
-- Sync CHANGELOG.md from master
-
-### 🤖 CI/CD & Automação
-
-- Remoção de comentários
-- Rename workflow and update changelog commit message
-- Rename sync_changelog.yml to changelog_master_to_dev.yml
-- Rename sync_to_hugging_face.yml to deploy_hugging_face.yml
 ## [3.1.3] - 2025-12-17
 
 ### ✨ Funcionalidades

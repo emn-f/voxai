@@ -1,18 +1,8 @@
-## [3.1.7] - 2025-12-17
-
-### 🔧 Tarefas Internas
-
-- Revisão do CHANGELOG.md
-- Sync CHANGELOG.md from master
+## v3.1.7 - 17/12/2025
 
 ### 🤖 CI/CD & Automação
-
-- Deploy do Git Pages será feito sempre que o CHANGELOG for alterado.
 - Deploy do Git Pages será feito sempre que o CHANGELOG for alterado.
 - Melhorias no formato do changelog
-## [3.1.6] - 2025-12-17
-
-### 🤖 CI/CD & Automação
 - **Padronização de Nomenclatura:** Renomeação estrutural dos workflows para maior clareza:
   - `production_pipeline.yml` (antigo tag_prod)
   - `versioning_dev.yml` (antigo tag_dev)
@@ -23,30 +13,27 @@
 ### 🔧 Tarefas Internas
 - Limpeza de comentários antigos e ajustes na mensagem de commit do changelog.
 
-## [3.1.3] - 2025-12-17
+## v3.1.3 - 17/12/2025
 
 ### ✨ Funcionalidades
-
 - *(dashboard)* Expande visualização do changelog para 5 últimas versões.
 
 ### 📚 Documentação
-
 - Atualiza branding de extensão para tecnologia social open source.
 - Padroniza escrita "Vox AI".
 
-
-## [3.1.2] - 2025-12-16
+## v3.1.2 - 16/12/2025
 
 ### 📚 Documentação
 - Documentações atualizadas para refletir implementação do Supabase.
 - Criação de `SUPPORT.md`.
 
-## [3.1.1] - 2025-12-16
+## v3.1.1 - 16/12/2025
 
 ### 🔧 Tarefas Internas
 - Sincronização do Changelog entre branchs agora é feita de forma automática e imediata.
 
-## [3.1.0] - 2025-12-16
+## v3.1.0 - 16/12/2025
 
 ### ♻️ Refatoração & Melhorias
 - Dashboard puxa métricas direto do Supabase.
@@ -61,12 +48,12 @@
 ### 📦 Build & Dependências
 - Remoção de scripts que não são mais necessários pra comunicação com a base de conhecimento.
 
-## [3.0.1] - 2025-12-06
+## v3.0.1 - 06/12/2025
 
 ### 🤖 CI/CD & Automação
 - Correção na `Sync Changelog from Master to Dev`.
 
-## [3.0.0] - 2025-12-06
+## v3.0.0 - 06/12/2025
 
 ### ✨ Funcionalidades
 - Adição de botão que permite reportar comportamento inadequado do Vox.
@@ -79,23 +66,23 @@
 - Criada action para incremento manual de tags.
 - Correção de bug da `sync_changelog`.
 
-## [2.8.4] - 2025-12-04
+## v2.8.4 - 04/12/2025
 
 ### 📦 Build & Dependências
 - Versão mínima do Streamlit especificada para funcionamento do Vox no Hugging Face.
 
-## [2.8.3] - 2025-12-04
+## v2.8.3 - 04/12/2025
 
 ### 🐛 Correções
 - Atualiza config do Hugging Face Space para Python 3.11 (resolve FutureWarning de google.api_core).
 
-## [2.8.2] - 2025-12-03
+## v2.8.2 - 03/12/2025
 
 ### ✨ Funcionalidades
 - Adição de função "texto pra voz" que permite escutar a resposta do Vox em voz alta. #66
 - Implementação de função que permite que usuário converse com o Vox por áudio.
 
-## [2.8.1] - 2025-11-26
+## v2.8.1 - 26/11/2025
 
 ### ✨ Funcionalidades
 - Adiciona Issue Templates para bug reports, feature requests e outras tarefas.
@@ -107,7 +94,7 @@
 ### 🤖 CI/CD & Automação
 - Adição de action para sinc do `CHANGELOG.md` da branch `master` para a `dev`.
 
-## [2.7.7] - 2025-11-26
+## v2.7.7 - 26/11/2025
 
 ### 🎨 Estilo e Formatação
 - Melhorias gerais no GitPages #90.
@@ -119,12 +106,12 @@
 - Alteração do nome da action do HF.
 - Criada Action para controle de deploy do Git Pages.
 
-## [2.7.6] - 2025-11-24
+## v2.7.6 - 24/11/2025
 
 ### ✨ Funcionalidades
 - Correção do link de deploy no GitPages.
 
-## [2.7.5] - 2025-11-23
+## v2.7.5 - 23/11/2025
 
 ### ♻️ Refatoração & Melhorias
 - Remoção de comentários.
@@ -138,12 +125,12 @@
 - Atualização do `PRIVACY_POLICY.md`.
 - Atualização do `README.md`.
 
-## [2.7.4] - 2025-11-23
+## v2.7.4 - 23/11/2025
 
 ### ⚡ Performance
 - Add caching and create `config.py`.
 
-## [2.7.3] - 2025-11-21
+## v2.7.3 - 21/11/2025
 
 ### 🎨 Estilo e Formatação
 - Identação no `sync_from_sheets.yml.
@@ -151,7 +138,7 @@
 ### 🤖 CI/CD & Automação
 - Impede loop de execução ao atualizar apenas o `CHANGELOG.md`.
 
-## [2.7.1] - 2025-11-21
+## v2.7.1 - 21/11/2025
 
 ### ✨ Funcionalidades
 - Vox leva em consideração o código de conduta interno.
@@ -165,7 +152,7 @@
 ### 🐛 Correções
 - Versão do Vox agora é exibida corretamente no Hugging Face.
 
-## [2.6.4] - 2025-11-21
+## v2.6.4 - 21/11/2025
 
 ### ✨ Funcionalidades
 - Erros no Vox serão salvos em planilha para análise posterior.
@@ -173,12 +160,12 @@
 ### 📚 Documentação
 - Criação de Código de Conduta do Projeto Vox (`CODE_OF_CONDUCT.md`).
 
-## [2.6.3] - 2025-11-21
+## v2.6.3 - 21/11/2025
 
 ### 🤖 CI/CD & Automação
 - O deploy no Hugging Face olha para a branch `master`.
 
-## [2.6.1] - 2025-11-21
+## v2.6.1 - 21/11/2025
 
 ### 📚 Documentação
 - Revisão da Política de Segurança (`SECURITY.md`).
@@ -187,38 +174,38 @@
 - Correções na action geradora do `CHANGELOG.md`.
 - O deploy no Hugging Face olha para a branch `master`.
 
-## [1.0.25] - 2025-11-14
+## v1.0.25 - 14/11/2025
 
 ### ✨ Funcionalidades
 * Adiciona dashboard no Git Pages.
 
-## [1.0.23] - 2025-11-13
+## v1.0.23 - 13/11/2025
 
 ### ♻️ Refatoração & Melhorias
 * Ajustes no CSS principal.
 
-## [1.0.22] - 2025-11-12
+## v1.0.22 - 12/11/2025
 
 ### ✨ Funcionalidades
 * Adiciona cache.
 
-## [1.0.19] - 2025-11-08
+## v1.0.19 - 08/11/2025
 
 ### ♻️ Refatoração & Melhorias
 * Melhora o `sinc_kb.py`.
 
-## [1.0.18] - 2025-11-07
+## v1.0.18 - 07/11/2025
 
 ### ♻️ Refatoração & Melhorias
 * Melhora o design da UI (sidebar).
 
-## [1.0.17] - 2025-05-20
+## v1.0.17 - 20/05/2025
 
 ### ✨ Funcionalidades
 * Nova fonte de dados.
 * Adoção da função nativa do Streamlit para exibição de texto em streaming.
 
-## [1.0.16] - 2025-05-20
+## v1.0.16 - 20/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Melhorias na personalidade do Vox.
@@ -228,44 +215,44 @@
 * Remoção de importações e comentários desnecessários.
 * Adição de arquivos internos do Python.
 
-## [1.0.15] - 2025-05-19
+## v1.0.15 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Atualização do `.gitignore`.
 * Atualização do `sobre.py`.
 * Melhorias na sidebar.
 
-## [1.0.11] - 2025-05-19
+## v1.0.11 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Atualização na personalidade do Vox.
 
-## [1.0.10] - 2025-05-19
+## v1.0.10 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Atualização do `README.MD`.
 
-## [1.0.9] - 2025-05-19
+## v1.0.9 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Modularização de funções e melhorias na UI do Vox AI (PR #4).
 
-## [1.0.8] - 2025-05-19
+## v1.0.8 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Ajusta o padrão da tag na função `git_version`.
 
-## [1.0.7] - 2025-05-19
+## v1.0.7 - 19/05/2025
 
 ### 🐛 Correções
 * Exibição correta da versão em produção.
 
-## [1.0.6] - 2025-05-19
+## v1.0.6 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Melhora na estrutura do código e adição de comentários explicativos para facilitar a compreensão do fluxo do chat e do tratamento de erros.
 
-## [1.0.4] - 2025-05-19
+## v1.0.4 - 19/05/2025
 
 ### 🐛 Correções
 * Testes e correções no workflow de tagueamento automático.
@@ -274,12 +261,12 @@
 ### ♻️ Refatoração & Melhorias
 * Tema dark definido como padrão no Streamlit.
 
-## [1.0.2] - 2025-05-19
+## v1.0.2 - 19/05/2025
 
 ### 🐛 Correções
 * Adiciona tratamento de exceção para a obtenção do hash do commit na função `git_version`.
 
-## [1.0.1] - 2025-05-19
+## v1.0.1 - 19/05/2025
 
 ### ♻️ Refatoração & Melhorias
 * Remoção de comentários no `git_version`.
@@ -309,7 +296,7 @@
 * Ajustes relacionados à API.
 * Adição do arquivo de `requirements.txt` e melhorias de segurança.
 
-## 🚧 first commit | [dev-v0.0.1] - 2025-05-17
+## 🚧 first commit | dev-v0.0.1 - 17/05/2025
 * Nascimento do Vox AI.
 * Estrutura inicial do projeto.
 * MVP funcional com interface.

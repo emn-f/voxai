@@ -1,3 +1,12 @@
+## [3.1.8] - 2025-12-17
+
+### 🐛 Correções
+
+- *(dashboard)* Ajusta parser do changelog para exibir versões corretamente.
+
+### 🔧 Tarefas Internas
+
+- Sync CHANGELOG.md from master
 ## v3.1.7 - 17/12/2025
 
 ### 🤖 CI/CD & Automação

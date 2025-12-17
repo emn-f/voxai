@@ -16,7 +16,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # Usa o token para baixar o código autenticado como você
           token: ${{ secrets.TOKEN_DEPLOY_VOX }}
 
       - name: Configurar Git User

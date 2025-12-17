@@ -2,6 +2,17 @@
 
 Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
+## v3.1.9 - 17/12/2025
+
+### ♻️ Refatoração & Melhorias
+
+* CHANGELOG.md ajustado para melhor clareza
+
+
+### 🔧 Tarefas Internas
+
+* Atualiza regras de formatação, data e filtros do git-cliff
+
 ## v3.1.8 - 17/12/2025
 
 ### 🐛 Correções

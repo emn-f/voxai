@@ -1,3 +1,9 @@
+## [3.1.6] - 2025-12-17
+
+### 🤖 CI/CD & Automação
+
+- Update workflow name in deploy_pages.yml
+- Update workflow to trigger on Production Pipeline
 ## [3.1.5] - 2025-12-17
 
 ### 🤖 CI/CD & Automação

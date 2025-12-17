@@ -1,9 +1,9 @@
 name: 🤗 Deploy no Hugging Face
 on:
-  push:
-    branches: [master]
-    paths-ignore:
-      - "CHANGELOG.md"
+  workflow_run:
+    workflows:  ["🚀 Deploy, CHANGELOG & Tag Prod"]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:

@@ -1,7 +1,12 @@
-# [changelog]
-# header = ... (mantém igual)
+[changelog]
+header = """
+# Changelog
+
+Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
+
+"""
 body = """
-## {{ version }} ({{ timestamp | date(format="%d-%m-%Y") }})
+## v{{ version | trim_start_matches(pat="v") | trim_start_matches(pat="V") }} - {{ timestamp | date(format="%d/%m/%Y") }}
 {% for group, commits in commits | group_by(attribute="group") %}
 ### {{ group }}
 {% for commit in commits %}
@@ -21,6 +26,7 @@ ignore_tags = "dev-*"
 
 commit_parsers = [
     { message = "^chore\\(release\\):", skip = true },
+    { message = "^chore: sync CHANGELOG", skip = true },
 
     { message = "^feat", group = "✨ Funcionalidades" },
     { message = "^fix", group = "🐛 Correções" },

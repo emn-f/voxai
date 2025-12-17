@@ -6,6 +6,11 @@ on:
     types:
       - completed
   workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'CHANGELOG.md'
 
 permissions:
   contents: read

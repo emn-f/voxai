@@ -1,14 +1,17 @@
-## v3.1.7 - 17/12/2025
+# Changelog do Vox AI
+
+Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
+
+## v3.1.8 - 17/12/2025
+
+### 🐛 Correções
+- *(dashboard)* Ajusta parser do changelog para exibir versões corretamente.
 
 ### 🤖 CI/CD & Automação
 - Deploy do Git Pages será feito sempre que o CHANGELOG for alterado.
 - Melhorias no formato do changelog
-- **Padronização de Nomenclatura:** Renomeação estrutural dos workflows para maior clareza:
-  - `production_pipeline.yml` (antigo tag_prod)
-  - `versioning_dev.yml` (antigo tag_dev)
-  - `deploy_hugging_face.yml` (antigo sync_to_hugging_face)
-  - `changelog_dev.yml` (antigo sync_changelog_master_to_dev)
-- **Orquestração de Deploys:** Atualização dos gatilhos (`workflow_run`) no Deploy do GitPages e do Hugging Face para escutarem corretamente o novo `🚀 Production Pipeline`.
+- Renomeação estrutural dos workflows para maior clareza.
+- Atualização dos gatilhos (`workflow_run`) no Deploy do GitPages e do Hugging Face para escutarem corretamente o `🚀 Production Pipeline`.
 
 ### 🔧 Tarefas Internas
 - Limpeza de comentários antigos e ajustes na mensagem de commit do changelog.

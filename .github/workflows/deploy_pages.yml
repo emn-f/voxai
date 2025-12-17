@@ -2,9 +2,10 @@ name: 🌐 Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["🚀 Release & Changelog (Prod)"]
+    workflows: ["🚀 Deploy, CHANGELOG & Tag Prod"]
     types:
       - completed
+  workflow_dispatch:
 
 permissions:
   contents: read

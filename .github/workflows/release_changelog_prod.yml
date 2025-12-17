@@ -1,4 +1,4 @@
-name: 🚀 Release & Changelog (Prod)
+name: 🚀 Deploy, CHANGELOG e Tag Prod
 on:
   push:
     branches: [master]
@@ -16,7 +16,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # Usa o token para baixar o código autenticado como você
           token: ${{ secrets.TOKEN_DEPLOY_VOX }}
 
       - name: Configurar Git User
@@ -55,7 +54,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "🚫 Changelog não mudou."
           else
-            git commit -m "chore(release): atualiza changelog para ${NEW_TAG} [skip ci]"
+            git commit -m "chore(release): changelog atualizado para versão ${NEW_TAG} [skip ci]"
           fi
 
           git tag $NEW_TAG

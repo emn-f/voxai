@@ -1,3 +1,14 @@
+## [3.1.5] - 2025-12-17
+
+### 🤖 CI/CD & Automação
+
+- Adiciona trigger workflow_run para o deploy no Hugging Face
+- Atualiza nome do workflow de deploy em produção
+- Action tag_dev.yml renomeada para  versioning_dev.yml
+- Workflow renomeado para 'Production Pipeline'
+- Workflow renomeado.
+- Workflow renomeado de release_changelog_prod.yml para production_pipeline.yml
+- Nome da action de deploys em produção ajustado.
 ## [3.1.4] - 2025-12-17
 
 ### 🔧 Tarefas Internas

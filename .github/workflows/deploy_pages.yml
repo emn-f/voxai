@@ -2,7 +2,7 @@ name: 🌐 Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["🚀 Deploy, CHANGELOG & Tag Prod"]
+    workflows: ["production_pipeline.yml"]
     types:
       - completed
   workflow_dispatch:

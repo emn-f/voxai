@@ -1,4 +1,4 @@
-name: 🚧 Tag (Dev)
+name: 🚧 Versioning the Dev branch
 on:
   push:
     branches:

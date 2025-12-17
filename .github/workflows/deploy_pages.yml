@@ -2,9 +2,10 @@ name: 🌐 Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["🚀 Release & Changelog (Prod)"]
+    workflows: ["production_pipeline.yml"]
     types:
       - completed
+  workflow_dispatch:
 
 permissions:
   contents: read

@@ -1,4 +1,4 @@
-name: 🚀 Deploy, CHANGELOG e Tag Prod
+name: 🚀 Production Pipeline
 on:
   push:
     branches: [master]

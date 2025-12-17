@@ -1,3 +1,15 @@
+## [3.1.4] - 2025-12-17
+
+### 🔧 Tarefas Internas
+
+- Sync CHANGELOG.md from master
+
+### 🤖 CI/CD & Automação
+
+- Remoção de comentários
+- Rename workflow and update changelog commit message
+- Rename sync_changelog.yml to changelog_master_to_dev.yml
+- Rename sync_to_hugging_face.yml to deploy_hugging_face.yml
 ## [3.1.3] - 2025-12-17
 
 ### ✨ Funcionalidades

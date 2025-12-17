@@ -1,3 +1,15 @@
+## [3.1.7] - 2025-12-17
+
+### 🔧 Tarefas Internas
+
+- Revisão do CHANGELOG.md
+- Sync CHANGELOG.md from master
+
+### 🤖 CI/CD & Automação
+
+- Deploy do Git Pages será feito sempre que o CHANGELOG for alterado.
+- Deploy do Git Pages será feito sempre que o CHANGELOG for alterado.
+- Melhorias no formato do changelog
 ## [3.1.6] - 2025-12-17
 
 ### 🤖 CI/CD & Automação

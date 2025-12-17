@@ -1,12 +1,12 @@
 [changelog]
 header = """
-# Changelog
+# Changelog do Vox AI
 
 Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
 """
 body = """
-## v{{ version | trim_start_matches(pat="v") | trim_start_matches(pat="V") }} - {{ timestamp | date(format="%d/%m/%Y") }}
+## {{ version }} - {{ timestamp | date(format="%d/%m/%Y") }}
 {% for group, commits in commits | group_by(attribute="group") %}
 ### {{ group }}
 {% for commit in commits %}

@@ -1,4 +1,4 @@
-name: 🔄 Sync Changelog from Master to Dev
+name: 🔄 Dev Changelog Update
 
 on:
   push:

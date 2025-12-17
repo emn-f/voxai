@@ -6,6 +6,11 @@ on:
     types:
       - completed
   workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'CHANGELOG.md'
 
 permissions:
   contents: read
@@ -18,7 +23,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name != 'workflow_run' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -32,7 +37,6 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          # Usa o sed para substituir o placeholder pelo valor real do secret
           sed -i "s|__SUPABASE_URL__|$SUPABASE_URL|g" pages/dashboard.js
           sed -i "s|__SUPABASE_KEY__|$SUPABASE_KEY|g" pages/dashboard.js
           

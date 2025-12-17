@@ -9,7 +9,7 @@ SEMANTICA_THRESHOLD = 0.4
 GEMINI_MODEL_NAME = 'gemini-flash-latest'
 
 # Configurações de UI
-PAGE_TITLE = 'VoxAI'
+PAGE_TITLE = 'Vox AI'
 PAGE_ICON = '🏳️‍🌈'
 
 class StatusConhecimento:

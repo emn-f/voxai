@@ -2,7 +2,7 @@ from src.external_links import *
 
 
 SAUDACAO = """
-Olá! Sou o VoxAI, seu assistente de apoio e informação sobre a comunidade LGBTQIA+.
+Olá! Sou o Vox AI, seu assistente de apoio e informação sobre a comunidade LGBTQIA+.
 Você pode me perguntar sobre:
 - Saúde e prevenção (como PrEP, PEP, ISTs ou saúde mental)
 - Locais de acolhimento e serviços para pessoas LGBTQIA+

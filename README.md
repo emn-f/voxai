@@ -1,5 +1,5 @@
 ---
-title: VoxAI
+title: Vox AI
 emoji: 🏳️‍🌈
 colorFrom: purple
 colorTo: blue
@@ -22,7 +22,7 @@ license: mit
 
 > **Tecnologia social open source que une Inteligência Artificial e acolhimento para a comunidade LGBTQIA+.**
 
-### 🚀 [Acesse o VoxAI](https://assistentevox.streamlit.app/) | 📊 [Ver Dashboard no GitPages](https://emn-f.github.io/vox-ai/)
+### 🚀 [Acesse o Vox AI](https://assistentevox.streamlit.app/) | 📊 [Ver Dashboard no GitPages](https://emn-f.github.io/vox-ai/)
 
 ---
 
@@ -62,7 +62,7 @@ Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orie
 
 ## 🤝 Nossa Parceria: Casa Marielle Franco
 
-O Projeto VoxAI tem uma parceria oficial com a **Casa Marielle Franco**, instituição de acolhimento independente em Salvador (BA). A Casa atua como ponto de escuta e validação de nossos conteúdos, garantindo que a tecnologia esteja alinhada com as reais necessidades da comunidade.
+O Projeto Vox AI tem uma parceria oficial com a **Casa Marielle Franco**, instituição de acolhimento independente em Salvador (BA). A Casa atua como ponto de escuta e validação de nossos conteúdos, garantindo que a tecnologia esteja alinhada com as reais necessidades da comunidade.
 
 ## 🚀 Rodando o Projeto Localmente
 

@@ -1,21 +1,19 @@
-# Arquivos de IDEs e Ferramentas de Desenvolvimento
 .idea/
 .vscode/
-
-# Arquivos de Ambiente Python
-# Pastas de ambiente virtual
 .venv/
+
 **/__pycache__/
 *.pyc
 data/__pycache__/sobre.cpython-313.pyc
+
 media
 
-# Arquivos de Credenciais e Configurações Locais
 .streamlit/
-
-# Outras versões da base de dados do Vox
+.streamlit/secrets.tomnl
 data/fontes_dados/
 .old
+vox
+
 CONVENTIONAL_COMMITS.md
 GIT_COMANDOS.md
 

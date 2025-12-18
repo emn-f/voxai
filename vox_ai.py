@@ -12,7 +12,7 @@ from src.app.ui import configurar_pagina, carregar_css, carregar_sidebar, stream
 from src.core.genai import configurar_api_gemini, gerar_resposta, inicializar_chat_modelo
 from src.core.semantica import semantica
 
-from src.core.database import salvar_log_conversa, salvar_erro
+from src.core.database import salvar_log_chat, salvar_erro, salvar_sessao
 from src.utils import git_version, texto_para_audio
 
 configurar_pagina()
@@ -26,6 +26,7 @@ if 'git_version_str' not in st.session_state:
 
 if 'session_id' not in st.session_state:
     st.session_state.session_id = str(uuid.uuid4())
+    salvar_sessao(st.session_state.session_id)
     
 carregar_sidebar(SIDEBAR, st.session_state.git_version_str, st.session_state.kb_version_str)
 
@@ -57,7 +58,6 @@ if 'key_api' in st.session_state:
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
             st.rerun()
-
     prompt = st.chat_input("Digite aqui...")
     
     with st.popover("🎙️", use_container_width=False):
@@ -108,13 +108,12 @@ if 'key_api' in st.session_state:
                 
                 desc_log = str(descricao_match) if descricao_match else "N/A"
                 
-                salvar_log_conversa(
+                salvar_log_chat(
                     st.session_state.session_id, 
                     st.session_state.git_version_str, 
                     prompt_final, 
                     resposta_log, 
-                    tema_match, 
-                    desc_log
+                    tema_match
                 )
             
             except Exception as e_log:

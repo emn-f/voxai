@@ -66,7 +66,7 @@ sys.modules["streamlit"] = mock_st
 # 5. Importa as funções que vamos testar
 from src.core.database import (
     get_db_client,
-    salvar_log_conversa,
+    salvar_log_chat,
     salvar_erro,
     salvar_report,
     add_conhecimento_db,
@@ -95,7 +95,7 @@ class TestSupabaseIntegration(unittest.TestCase):
         self.assertIsNotNone(self.client, "O cliente do Supabase é None.")
         print("   -> ✅ Cliente validado.")
 
-    def test_02_salvar_log_conversa(self):
+    def test_02_salvar_log_chat(self):
         """Teste: Inserção na tabela 'chat_logs'."""
         print("🔄 [Teste 02] Testando inserção de Log de Conversa...")
         session_id = f"TEST_SESSION_{uuid.uuid4()}"
@@ -103,11 +103,34 @@ class TestSupabaseIntegration(unittest.TestCase):
         prompt = "Teste automatizado de log"
         response = "Resposta de teste"
         
+        # Prepare dummy KB item for Foreign Key constraint if needed
+        try:
+             # Insert a dummy KB item to ensure log saving works if FK is strict
+             # We generate a unique theme to avoid "Duplicate Key" issues on theme if unique
+             unique_theme = f"TemaTeste_{uuid.uuid4()}"
+             
+             # We use embedding of size 768 for safety
+             dummy_embed = [0.0] * 768
+             
+             data_kb = {
+                 "tema": unique_theme,
+                 "descricao": "DescTeste",
+                 "embedding": dummy_embed,
+                 "referencias": "RefTeste",
+                 "autor": "Tester"
+             }
+             # We don't care about the return, just that it exists. 
+             # If DB generates ID, it handles it.
+             self.client.table("knowledge_base").insert(data_kb).execute()
+        except Exception as e:
+             print(f"   ⚠️ Aviso: Falha ao criar KB dummy para teste de log: {e}")
+             unique_theme = "TemaTeste" # Fallback
+
         # Executa a função
         try:
-            salvar_log_conversa(session_id, git_version, prompt, response, "TemaTeste", "DescTeste")
+            salvar_log_chat(session_id, git_version, prompt, response, unique_theme)
         except Exception as e:
-            self.fail(f"A função 'salvar_log_conversa' falhou com erro: {e}")
+            self.fail(f"A função 'salvar_log_chat' falhou com erro: {e}")
         
         # Verificação
         time.sleep(1) # Aguarda propagação
@@ -191,6 +214,12 @@ class TestSupabaseIntegration(unittest.TestCase):
         referencias = "Fonte Automática"
         autor = "Tester Bot"
 
+        # Passo Preliminar: Garantir que não existe resquício do teste anterior
+        try:
+             self.client.table("knowledge_base").delete().eq("tema", unique_topic).execute()
+        except:
+             pass
+
         # Passo A: Testar Geração de Embedding
         print("   -> [5.1] Gerando embedding com Gemini...")
         try:
@@ -261,9 +290,6 @@ class TestSupabaseIntegration(unittest.TestCase):
             print("   -> [5.4] Limpando dados de teste...")
             self.client.table("knowledge_base").delete().eq("tema", unique_topic).execute()
             print("      🧹 Limpeza concluída.")
-
-if __name__ == "__main__":
-    unittest.main()
 
 if __name__ == "__main__":
     unittest.main()

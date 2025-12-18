@@ -1,19 +1,33 @@
 import streamlit as st
-from sentence_transformers import SentenceTransformer
-from src.config import MODELO_SEMANTICO_NOME, SEMANTICA_THRESHOLD
+import google.generativeai as genai
+import os
+from src.config import SEMANTICA_THRESHOLD
 from src.core.database import buscar_referencias_db
 
-@st.cache_resource
-def carregar_modelo():
-    return SentenceTransformer(MODELO_SEMANTICO_NOME)
+def _configurar_api():
+    api_key = st.secrets.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
+    if api_key:
+        genai.configure(api_key=api_key)
+    else:
+        print("GEMINI_API_KEY não encontrada nas variáveis de ambiente.")
 
 def semantica(prompt):
-    modelo_semantico = carregar_modelo()
-    vetor_prompt = modelo_semantico.encode(prompt, convert_to_tensor=False).tolist()
-    tema, descricao = buscar_referencias_db(vetor_prompt, threshold=SEMANTICA_THRESHOLD)
-    
-    if tema:
-        # print(f"Prompt: {prompt}")
-        # print(f"Tema encontrado no DB: {tema}")
-        return tema, descricao
-    return None, None
+    _configurar_api()
+    try:
+        result = genai.embed_content(
+            model="models/text-embedding-004",
+            content=prompt,
+            task_type="retrieval_query" 
+        )
+        vetor_prompt = result['embedding']
+        
+        tema, descricao = buscar_referencias_db(vetor_prompt, threshold=SEMANTICA_THRESHOLD)
+        
+        if tema:
+            return tema, descricao
+            
+        return None, None
+
+    except Exception as e:
+        print(f"Erro na geração do embedding semântico: {e}")
+        return None, None

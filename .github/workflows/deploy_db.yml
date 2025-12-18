@@ -1,0 +1,25 @@
+name: 🗄️ Deploy Database Changes
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'supabase/migrations/**'
+
+jobs:
+  deploy_migrations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Link to Production Project
+        run: supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_ID_PROD }} --password ${{ secrets.SUPABASE_DB_PASSWORD_PROD }}
+
+      - name: Push Migrations
+        run: supabase db push

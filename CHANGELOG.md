@@ -2,6 +2,32 @@
 
 Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
+## v3.1.10 - 18/12/2025
+
+### ✨ Funcionalidades
+
+* Criação de testes de integração com o Supabase.
+
+* Revisando código para nova estrutura do banco de dados.
+
+* Implement semantic search using Gemini embeddings and add comprehensive Supabase integration tests.
+
+* Revisão de conexão com base de dados para garantir integridade com o Supabase.
+
+
+### 🎨 Estilo e Formatação
+
+* Correções visuais no dashboard.
+
+
+### 🔧 Tarefas Internas
+
+* Pasta do ambiente virtual não deve ser comitada.
+
+* Reorganizção do `.gitignore`.
+
+* Criação de script para gerar embeddings.
+
 ## v3.1.9 - 17/12/2025
 
 ### ♻️ Refatoração & Melhorias

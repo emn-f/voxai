@@ -8,11 +8,7 @@ Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
 * Criação de testes de integração com o Supabase.
 
-* Revisando código para nova estrutura do banco de dados.
-
-* Implement semantic search using Gemini embeddings and add comprehensive Supabase integration tests.
-
-* Revisão de conexão com base de dados para garantir integridade com o Supabase.
+* Código revisado/ajustado para garantir integridade em conexão com o Supabase.
 
 
 ### 🎨 Estilo e Formatação

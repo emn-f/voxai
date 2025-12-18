@@ -2,6 +2,39 @@
 
 Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
+## v3.1.10 - 18/12/2025
+
+### ✨ Funcionalidades
+
+* Criação de testes de integração com o Supabase.
+
+* Código revisado/ajustado para garantir integridade em conexão com o Supabase.
+
+
+### 🎨 Estilo e Formatação
+
+* Correções visuais no dashboard.
+
+
+### 🔧 Tarefas Internas
+
+* Pasta do ambiente virtual não deve ser comitada.
+
+* Reorganizção do `.gitignore`.
+
+* Criação de script para gerar embeddings.
+
+## v3.1.9 - 17/12/2025
+
+### ♻️ Refatoração & Melhorias
+
+* CHANGELOG.md ajustado para melhor clareza
+
+
+### 🔧 Tarefas Internas
+
+* Atualiza regras de formatação, data e filtros do git-cliff
+
 ## v3.1.8 - 17/12/2025
 
 ### 🐛 Correções

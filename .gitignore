@@ -23,6 +23,7 @@ data/fontes_dados/
 scripts/migrate_to_supabase.py
 scripts/testa_conexao.py
 CONVENTIONAL_COMMITS.md
+scripts/gerar_embedding.py
 
 # --- OS Files ---
 .DS_Store

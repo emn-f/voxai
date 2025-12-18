@@ -15,7 +15,7 @@ media
 
 # Outras versões da base de dados do Vox
 data/fontes_dados/
-
+.old
 CONVENTIONAL_COMMITS.md
 GIT_COMANDOS.md
 

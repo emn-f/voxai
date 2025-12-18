@@ -32,29 +32,45 @@ def salvar_log_chat(session_id, git_version, prompt, response, tema_match):
         print("Não foi possível conectar com o banco de dados.")
         return
     try:
-        localizar_kb_id = (
-            client.table("knowledge_base")
-            .select("kb_id")
-            .eq("tema", tema_match)
-            .execute()
-        )
+        kb_id_real = "vox-kb-0000"
+        if tema_match:
+            try:
+                busca_kb = (
+                    client.table("knowledge_base")
+                    .select("kb_id") 
+                    .eq("tema", tema_match)
+                    .execute()
+                )
+                
+                if busca_kb.data and len(busca_kb.data) > 0:
+                    kb_id_real = str(busca_kb.data[0]['kb_id'])
+                    
+            except Exception as e_busca:
+                print(f"⚠️ Aviso: Não foi possível recuperar ID do tema: {e_busca}")
+
         data = {
             "session_id": session_id,
             "prompt": prompt,
             "response": str(response),
-            "kb_id": str(localizar_kb_id) if localizar_kb_id == "data=[] count=None" else "vox-kb-0000",
+            "kb_id": kb_id_real,
             "git_version": git_version,
         }
+        
         client.table("chat_logs").insert(data).execute()
+        
     except Exception as e:
         print(f"⚠️ Log do chat não está sendo salvo: {e}")
 
 def buscar_referencias_db(vector_embedding, threshold=0.5, limit=1):
     client = get_db_client()
     if not client:
-        print("não foi possível conectar a base de conhecimento.")
+        print("⚠️ Erro: Cliente Supabase não inicializado.")
         return None, None
     try:
+        if len(vector_embedding) != 768:
+            print(f"⚠️ Erro de Dimensão: O vetor gerado tem {len(vector_embedding)} dimensões, mas o banco espera 768.")
+            return None, None
+
         response = client.rpc(
             "match_knowledge_base",
             {
@@ -66,13 +82,16 @@ def buscar_referencias_db(vector_embedding, threshold=0.5, limit=1):
 
         if response.data and len(response.data) > 0:
             melhor_match = response.data[0]
+            print(f"✅ Match encontrado: {melhor_match['tema']} ({melhor_match['similarity']:.2f})")
             return melhor_match['tema'], melhor_match['descricao']
+            
+        print("⚠️ Nenhum match encontrado na base com esse threshold.")
         return None, None
 
     except Exception as e:
-        print(f"⚠️ Erro na busca vetorial: {e}")
+        print(f"❌ Erro CRÍTICO na busca vetorial (Supabase): {e}")
         return None, None
-    
+
 def salvar_erro(session_id, git_version, error_msg):
     client = get_db_client()
     if not client:
@@ -110,8 +129,6 @@ def salvar_report(session_id, git_version, history_text):
     except Exception as e:
         print(f"⚠️ Erro ao salvar report: {e}")
         return False
-
-
     
 def add_conhecimento_db(tema, descricao, referencias, autor):
     client = get_db_client()

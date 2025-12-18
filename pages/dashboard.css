@@ -230,7 +230,6 @@ header h1 {
 .stat-card h3 {
     margin-top: 0;
     font-size: 1rem;
-    text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border-color);

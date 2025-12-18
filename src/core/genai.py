@@ -48,9 +48,8 @@ def gerar_resposta(chat, prompt, info_adicional):
             return "Desculpe, não posso responder isso."
         except Exception as e:
             msg_placeholder.empty()
-            st.error("❌ Ocorreu um erro inesperado na comunicação com a IA.")
-            st.exception(e)
-            return "❌ Ocorreu um erro, tente novamente."
+            print(st.exception(e))
+            return "❌ Ocorreu um erro inesperado na comunicação com a IA."
 
 def transcrever_audio(audio_file):
     """

@@ -1,23 +1,30 @@
-# Arquivos de IDEs e Ferramentas de Desenvolvimento
+# --- Python & Virtual Env ---
+__pycache__/
+*.pyc
+.venv/
+.env
+vox
+
+# --- IDEs & Editors ---
 .idea/
 .vscode/
 
-# Arquivos de Ambiente Python
-# Pastas de ambiente virtual
-.venv/
-**/__pycache__/
-*.pyc
-data/__pycache__/sobre.cpython-313.pyc
-media
+# --- Streamlit ---
+# Ignore secrets, keep config.toml
+.streamlit/secrets.toml
+scripts/.streamlit
 
-# Arquivos de Credenciais e Configurações Locais
-.streamlit/
-
-# Outras versões da base de dados do Vox
+# --- Project Data & Media ---
+media/
 data/fontes_dados/
+.old/
 
-CONVENTIONAL_COMMITS.md
-GIT_COMANDOS.md
-
+# --- Specific Scripts & Files ---
 scripts/migrate_to_supabase.py
 scripts/testa_conexao.py
+CONVENTIONAL_COMMITS.md
+scripts/gerar_embedding.py
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db

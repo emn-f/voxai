@@ -10,25 +10,87 @@ def get_db_client() -> Client:
         key = st.secrets["supabase"]["key"]
         return create_client(url, key)
     except Exception as e:
-        st.error(f"Erro ao conectar no Supabase: {e}")
+        st.error(f"Erro ao conectar no banco de dados: {e}")
         return None
 
-def salvar_log_conversa(session_id, git_version, prompt, response, tema_match, desc_match):
+def salvar_sessao(session_id):
     client = get_db_client()
     if not client:
+        print("Não foi possível conectar com o banco de dados.")
         return
     try:
+        registro_sessao = {
+                "session_id" : session_id
+            }
+        client.table("sessions").insert(registro_sessao).execute()
+    except Exception as e:
+        print(f"⚠️ Erro ao tentar registrar sessão no banco de dados: {e}")
+
+def salvar_log_chat(session_id, git_version, prompt, response, tema_match):
+    client = get_db_client()
+    if not client:
+        print("Não foi possível conectar com o banco de dados.")
+        return
+    try:
+        kb_id_real = "vox-kb-0000"
+        if tema_match:
+            try:
+                busca_kb = (
+                    client.table("knowledge_base")
+                    .select("kb_id") 
+                    .eq("tema", tema_match)
+                    .execute()
+                )
+                
+                if busca_kb.data and len(busca_kb.data) > 0:
+                    kb_id_real = str(busca_kb.data[0]['kb_id'])
+                    
+            except Exception as e_busca:
+                print(f"⚠️ Aviso: Não foi possível recuperar ID do tema: {e_busca}")
+
         data = {
             "session_id": session_id,
-            "git_version": git_version,
             "prompt": prompt,
             "response": str(response),
-            "tema_match": tema_match if tema_match else "N/A",
-            "desc_match": desc_match if desc_match else "N/A"
+            "kb_id": kb_id_real,
+            "git_version": git_version,
         }
+        
         client.table("chat_logs").insert(data).execute()
+        
     except Exception as e:
-        print(f"⚠️ Erro silencioso ao salvar log: {e}")
+        print(f"⚠️ Log do chat não está sendo salvo: {e}")
+
+def buscar_referencias_db(vector_embedding, threshold=0.5, limit=1):
+    client = get_db_client()
+    if not client:
+        print("⚠️ Erro: Cliente Supabase não inicializado.")
+        return None, None
+    try:
+        if len(vector_embedding) != 768:
+            print(f"⚠️ Erro de Dimensão: O vetor gerado tem {len(vector_embedding)} dimensões, mas o banco espera 768.")
+            return None, None
+
+        response = client.rpc(
+            "match_knowledge_base",
+            {
+                "query_embedding": vector_embedding,
+                "match_threshold": threshold,
+                "match_count": limit
+            }
+        ).execute()
+
+        if response.data and len(response.data) > 0:
+            melhor_match = response.data[0]
+            print(f"✅ Match encontrado: {melhor_match['tema']} ({melhor_match['similarity']:.2f})")
+            return melhor_match['tema'], melhor_match['descricao']
+            
+        print("⚠️ Nenhum match encontrado na base com esse threshold.")
+        return None, None
+
+    except Exception as e:
+        print(f"❌ Erro CRÍTICO na busca vetorial (Supabase): {e}")
+        return None, None
 
 def salvar_erro(session_id, git_version, error_msg):
     client = get_db_client()
@@ -40,9 +102,9 @@ def salvar_erro(session_id, git_version, error_msg):
         
         data = {
             "error_id": error_id,
+            "error_message": str(error_msg),
             "session_id": session_id,
-            "git_version": git_version,
-            "error_message": str(error_msg)
+            "git_version": git_version
         }
         client.table("error_logs").insert(data).execute()
         return error_id
@@ -67,30 +129,6 @@ def salvar_report(session_id, git_version, history_text):
     except Exception as e:
         print(f"⚠️ Erro ao salvar report: {e}")
         return False
-
-
-def buscar_referencias_db(vector_embedding, threshold=0.4, limit=1):
-    client = get_db_client()
-    if not client:
-        return None, None
-    try:
-        response = client.rpc(
-            "match_knowledge_base",
-            {
-                "query_embedding": vector_embedding,
-                "match_threshold": threshold,
-                "match_count": limit
-            }
-        ).execute()
-
-        if response.data and len(response.data) > 0:
-            melhor_match = response.data[0]
-            return melhor_match['tema'], melhor_match['descricao']
-        return None, None
-
-    except Exception as e:
-        print(f"⚠️ Erro na busca vetorial: {e}")
-        return None, None
     
 def add_conhecimento_db(tema, descricao, referencias, autor):
     client = get_db_client()

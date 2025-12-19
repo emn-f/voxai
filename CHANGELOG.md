@@ -3,65 +3,28 @@
 Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
 ## v3.1.15 - 19/12/2025
-
-### 🐛 Correções
-
-* Adiciona variável de ambiente pendente.
-
-## v3.1.14 - 19/12/2025
-
-### 🐛 Correções
-
-* Adiciona variável de ambiente pendente.
-
-## v3.1.13 - 19/12/2025
-
-### 🐛 Correções
-
-* Adiciona variável de ambiente pendente.
-
-## v3.1.12 - 19/12/2025
-
-### 🐛 Correções
-
-* Adiciona variável de ambiente pendente.
-
-## v3.1.11 - 19/12/2025
-
 ### ✨ Funcionalidades
-
-* Adiciona id sequencial na tabela sessions
-
+* Adiciona `id` sequencial na tabela `sessions`.
 
 ### 🔧 Tarefas Internas
-
 * Estrutura inicial do banco de prod importada.
 
-
 ### 🤖 CI/CD & Automação
-
 * Exibição de logs na execução do deploy do database.
 
 ## v3.1.10 - 18/12/2025
 
 ### ✨ Funcionalidades
-
 * Criação de testes de integração com o Supabase.
-
 * Código revisado/ajustado para garantir integridade em conexão com o Supabase.
 
-
 ### 🎨 Estilo e Formatação
-
 * Correções visuais no dashboard.
-
 
 ### 🔧 Tarefas Internas
 
 * Pasta do ambiente virtual não deve ser comitada.
-
 * Reorganizção do `.gitignore`.
-
 * Criação de script para gerar embeddings.
 
 ## v3.1.9 - 17/12/2025

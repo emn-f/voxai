@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'supabase/migrations/**'
+  workflow_dispatch:
 
 jobs:
   deploy_migrations:

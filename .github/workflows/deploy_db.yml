@@ -10,6 +10,8 @@ on:
 jobs:
   deploy_migrations:
     runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     
     steps:
       - name: 📥 Checkout do Código

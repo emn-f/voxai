@@ -1,0 +1,64 @@
+name: 🎲 Deploy Database Changes
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'supabase/migrations/**'
+
+jobs:
+  deploy_migrations:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: 🔬 Análise Técnica (Raio-X das Migrações)
+        run: |
+          echo "============================================="
+          echo "📂 INVENTÁRIO DE ARQUIVOS"
+          echo "============================================="
+          ls -1 supabase/migrations/*.sql
+          
+          echo ""
+          echo "============================================="
+          echo "🕵️ OBJETOS IMPACTADOS (TABELAS/VIEWS)"
+          echo "============================================="
+          echo "Buscando definições de estrutura..."
+          grep -iE "create table|alter table|drop table|create view|alter view" supabase/migrations/*.sql | sed 's/^/   👉 /' || echo "⚠️ Nenhuma alteração de tabela detectada (podem ser apenas dados ou funções)."
+          echo "============================================="
+
+      - name: 🛠️ Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: 🔗 Conexão com Produção
+        run: |
+          echo "🔌 Autenticando com o projeto de Produção..."
+          supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_ID_PROD }} --password ${{ secrets.SUPABASE_DB_PASSWORD_PROD }}
+          echo "✅ Conexão segura estabelecida."
+
+      - name: 📤 Executar Migrações
+        run: |
+          echo "🚀 Aplicando mudanças no banco..."
+          supabase db push
+
+      - name: 🎉 Relatório Final
+        if: success()
+        run: |
+          echo "=========================================="
+          echo "✅ SUCESSO: BANCO ATUALIZADO"
+          echo "As tabelas e estruturas listadas acima foram aplicadas."
+          echo "=========================================="
+
+      - name: ❌ Alerta de Falha
+        if: failure()
+        run: |
+          echo "=========================================="
+          echo "🔥 ERRO CRÍTICO NO DEPLOY"
+          echo "Ocorreu uma falha ao aplicar o SQL."
+          echo "Verifique se há conflitos de chave ou sintaxe."
+          echo "=========================================="

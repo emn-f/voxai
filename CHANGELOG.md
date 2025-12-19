@@ -2,6 +2,22 @@
 
 Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 
+## v3.1.11 - 19/12/2025
+
+### ✨ Funcionalidades
+
+* Adiciona id sequencial na tabela sessions
+
+
+### 🔧 Tarefas Internas
+
+* Estrutura inicial do banco de prod importada.
+
+
+### 🤖 CI/CD & Automação
+
+* Exibição de logs na execução do deploy do database.
+
 ## v3.1.10 - 18/12/2025
 
 ### ✨ Funcionalidades

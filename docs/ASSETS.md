@@ -1,12 +1,11 @@
 # 🗺️ Vox AI: Inventário de Links e Ativos Digitais
 
-> **Última Atualização:** 23/11/2025
+**Objetivo:** Centralizar todas as URLs externas e internas para facilitar a manutenção e atualização dos canais.
 
-> **Responsável:** Emanuel Ferreira
+**Última Atualização:** 24/12/2025
 
-> **Objetivo:** Centralizar todas as URLs externas e internas para facilitar a manutenção e atualização dos canais.
+**Responsável:** Emanuel Ferreira
 
----
 
 ## 📱 Canais Oficiais (Redes Sociais)
 
@@ -19,7 +18,6 @@ Onde a marca Vox AI está presente publicamente.
 | **LinkedIn** | Projeto Vox | [https://www.linkedin.com/company/assistentevox/](https://www.linkedin.com/company/assistentevox/) | ✅ Ativo |
 | **Linktree** | @vox_ai | [https://linktr.ee/vox_ai](https://linktr.ee/vox_ai) | ✅ Ativo |
 
----
 
 ## 🚀 Infraestrutura & Deploy
 
@@ -27,12 +25,11 @@ Links técnicos de acesso à aplicação e código-fonte.
 
 | Ambiente | Descrição | Link |
 | :--- | :--- | :--- |
-| **App Oficial (Streamlit)** | Aplicação principal (Produção) | [https://assistentevox.streamlit.app/](https://assistentevox.streamlit.app/) |
-| **Espelho (Hugging Face)** | Ambiente de redundância | [https://huggingface.co/spaces/emn-f/vox-ai](https://huggingface.co/spaces/emn-f/vox-ai) |
-| **Repositório GitHub** | Código-fonte público | [https://github.com/emn-f/vox-ai](https://github.com/emn-f/vox-ai) |
-| **Dashboard (GitPages)** | Dashboard do Vox | [https://emn-f.github.io/vox-ai/](https://emn-f.github.io/vox-ai/) |
+| **App Oficial (Streamlit)** | Aplicação principal (Produção) | https://assistentevox.streamlit.app/ |
+| **Espelho (Hugging Face)** | Ambiente de redundância | https://huggingface.co/spaces/emn-f/vox-ai |
+| **Repositório GitHub** | Código-fonte público | https://github.com/emn-f/vox-ai |
+| **Dashboard (GitPages)** | Dashboard do Vox | https://emn-f.github.io/vox-ai/ |
 
----
 
 ## 🗣️ Feedback & Suporte
 
@@ -40,21 +37,19 @@ Canais de contato direto com o usuário.
 
 | Canal | Finalidade | Link |
 | :--- | :--- | :--- |
-| **Google Forms** | Avaliação e Feedback do Chatbot | [https://forms.gle/GpG9ESkUpBTA7HoV9](https://forms.gle/GpG9ESkUpBTA7HoV9) |
+| **Form de feedback** | Avaliação e Feedback do Chatbot | https://forms.gle/GpG9ESkUpBTA7HoV9 |
 | **E-mail Oficial** | Suporte, Denúncias e Parcerias | `assistentedeapoiolgbtvox@gmail.com` |
-
----
+| **Form para contribuir com a Knowledge Base** | Contribuir com a base de conhecimento | https://forms.gle/Bwb3NEurV7YoZFXG8
 
 ## ⚖️ Documentação Legal e Governança
 
 Links diretos para os arquivos markdown de governança no repositório (Branch Master).
 
-* **Política de Privacidade:** [Ver no GitHub](https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md)
-* **Termos de Segurança:** [Ver no GitHub](https://github.com/emn-f/vox-ai/blob/master/SECURITY.md)
-* **Código de Conduta:** [Ver no GitHub](https://github.com/emn-f/vox-ai/blob/master/CODE_OF_CONDUCT.md)
-* **Licença (MIT):** [Ver no GitHub](https://github.com/emn-f/vox-ai/blob/master/LICENSE)
-
----
+* **Política de Privacidade:** [PRIVACY_POLICY.md](https://github.com/emn-f/vox-ai/blob/master/PRIVACY_POLICY.md)
+* **Termos de Segurança:** [SECURITY.md](https://github.com/emn-f/vox-ai/blob/master/SECURITY.md)
+* **Código de Conduta:** [CODE_OF_CONDUCT.md](https://github.com/emn-f/vox-ai/blob/master/CODE_OF_CONDUCT.md)
+* **Licença (MIT):** [LICENSE](https://github.com/emn-f/vox-ai/blob/master/LICENSE)
+* **Guia de Contribuição:** [CONTRIBUTING.md](https://github.com/emn-f/vox-ai/blob/master/LICENSE/CONTRIBUTING.md)
 
 ## 🎨 Ativos de Design (Ícones)
 

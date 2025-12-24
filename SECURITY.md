@@ -4,7 +4,7 @@ Obrigado pelo interesse em manter o Vox seguro. Nós levamos a segurança e a pr
 
 ## Relatando uma Vulnerabilidade
 
-Se você descobriu uma vulnerabilidade de segurança neste projeto, por favor, **não abra uma Issue pública**. Issues públicas podem permitir que pessoas mal-intencionadas explorem a falha antes que possamos corrigi-la.
+Se você descobriu uma vulnerabilidade de segurança neste projeto, por favor, **não abra uma issue pública**. Issues públicas podem permitir que pessoas mal-intencionadas explorem a falha antes que possamos corrigi-la.
 
 Em vez disso, pedimos que siga este processo:
 
@@ -18,6 +18,4 @@ Em vez disso, pedimos que siga este processo:
 * **Análise:** Faremos uma análise técnica e manteremos você informado sobre o progresso.
 * **Correção:** Assim que a correção for aplicada, notificaremos você. Se desejar, daremos o devido crédito pela descoberta nas notas da versão (Release Notes).
 
----
-
-Obrigado por ajudar a comunidade e tornar o Vox mais seguro para todos!
+> Obrigado por ajudar a comunidade e tornar o Vox mais seguro para todos! 💛

@@ -81,7 +81,7 @@ Comprometemo-nos a agir e interagir de maneiras que contribuam para uma comunida
 Exemplos de comportamentos que contribuem para criar um ambiente positivo incluem:
 
 * **Respeito aos pronomes e identidades:** O uso da linguagem correta e respeitosa ao se referir a outras pessoas é obrigatório.
-* **Demonstração de empatia e bondade:** Lembre-se que por trás de cada PR ou Issue existe um ser humano.
+* **Demonstração de empatia e bondade:** Lembre-se que por trás de cada PR ou issue existe um ser humano.
 * **Receptividade a críticas construtivas:** Focamos em melhorar o código e o acolhimento do projeto.
 * **Responsabilidade:** Pedir desculpas e aprender com os erros quando causarmos impacto negativo em alguém.
 

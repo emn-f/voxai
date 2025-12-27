@@ -1,8 +1,11 @@
-import streamlit as st
-import google.generativeai as genai
 import os
-from src.config import SEMANTICA_THRESHOLD
-from src.core.database import buscar_referencias_db
+
+import google.generativeai as genai
+import streamlit as st
+
+from src.config import MODELO_SEMANTICO_NOME
+from src.core.database import recuperar_contexto_inteligente
+
 
 def _configurar_api():
     api_key = st.secrets.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
@@ -11,21 +14,22 @@ def _configurar_api():
     else:
         print("GEMINI_API_KEY não encontrada nas variáveis de ambiente.")
 
+
 def semantica(prompt):
     _configurar_api()
     try:
         result = genai.embed_content(
-            model="models/text-embedding-004",
-            content=prompt,
-            task_type="retrieval_query" 
+            model=MODELO_SEMANTICO_NOME, content=prompt, task_type="retrieval_query"
         )
-        vetor_prompt = result['embedding']
-        
-        tema, descricao = buscar_referencias_db(vetor_prompt, threshold=SEMANTICA_THRESHOLD)
-        
-        if tema:
-            return tema, descricao
-            
+        vetor_prompt = result["embedding"]
+
+        texto_contexto, fonte_identificaadora = recuperar_contexto_inteligente(
+            vetor_prompt
+        )
+
+        if texto_contexto:
+            return fonte_identificaadora, texto_contexto
+
         return None, None
 
     except Exception as e:

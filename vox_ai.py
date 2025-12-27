@@ -3,6 +3,7 @@ import os
 import re
 import unicodedata
 import uuid
+import traceback
 
 import streamlit as st
 
@@ -19,6 +20,7 @@ from src.core.genai import (
     configurar_api_gemini,
     gerar_resposta,
     inicializar_chat_modelo,
+    transcrever_audio,
 )
 from src.core.semantica import semantica
 from src.utils import git_version, texto_para_audio
@@ -85,8 +87,6 @@ if "key_api" in st.session_state:
             or st.session_state.ultimo_audio_id != audio_val.name
         ):
             with st.spinner("Ouvindo e transcrevendo... 🎧"):
-                from src.core.genai import transcrever_audio
-
                 texto_transcrito = transcrever_audio(audio_val)
                 if texto_transcrito:
                     prompt_final = texto_transcrito
@@ -102,7 +102,7 @@ if "key_api" in st.session_state:
 
         try:
 
-            tema_match, descricao_match = semantica(prompt_final)
+            tema_match, descricao_match, ids_referencia = semantica(prompt_final)
 
             info_adicional_contexto = ""
             if tema_match:
@@ -132,10 +132,12 @@ if "key_api" in st.session_state:
                     prompt_final,
                     resposta_log,
                     tema_match,
+                    ids_referencia,
                 )
 
             except Exception as e_log:
                 print(f"⚠️ Falha silenciosa ao registrar log de conversa: {e_log}")
+                traceback.print_exc()
 
             st.rerun()
 
@@ -152,5 +154,3 @@ if "key_api" in st.session_state:
             """,
                 icon="🚫",
             )
-
-            print(f"❌ ERRO CRÍTICO (ID {error_id}): {e}")

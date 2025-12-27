@@ -1,15 +1,17 @@
 import io
 import json
-import subprocess
 import os
 import re
+import subprocess
+
 import streamlit as st
 from gtts import gTTS
+
 
 def get_current_branch():
     try:
         branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"]).decode("utf-8").strip()
-        
+
         if branch in ["master", "main"]:
             return 1
         else:
@@ -17,8 +19,8 @@ def get_current_branch():
     except (subprocess.CalledProcessError, FileNotFoundError):
         return 0
 
+
 def get_version_from_changelog():
-    """Lê a versão mais recente do arquivo CHANGELOG.md."""
     try:
         changelog_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "CHANGELOG.md")
         with open(changelog_path, "r", encoding="utf-8") as f:
@@ -29,6 +31,7 @@ def get_version_from_changelog():
     except Exception as e:
         print(f"Erro ao ler CHANGELOG.md: {e}")
     return ""
+
 
 def git_version():
     try:

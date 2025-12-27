@@ -57,7 +57,7 @@ def gerar_resposta(chat, prompt, info_adicional):
             return "Desculpe, não posso responder isso."
         except Exception as e:
             msg_placeholder.empty()
-            print(st.exception(e))
+            st.exception(e)
             return "❌ Ocorreu um erro inesperado na comunicação com a IA."
 
 

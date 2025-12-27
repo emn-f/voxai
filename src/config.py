@@ -4,9 +4,13 @@ import os
 CSS_PATH = "static/css/style.css"
 
 # Configurações de IA
-MODELO_SEMANTICO_NOME = 'paraphrase-multilingual-MiniLM-L12-v2'
-SEMANTICA_THRESHOLD = 0.4
+MODELO_SEMANTICO_NOME = "models/text-embedding-004"
 GEMINI_MODEL_NAME = 'gemini-flash-latest'
+
+# Config da KB
+SEMANTICA_THRESHOLD = 0.5
+LIMITE_TEMAS = 10
+MAX_CHUNCK = 25
 
 # Configurações de UI
 PAGE_TITLE = 'Vox AI'

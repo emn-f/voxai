@@ -15,13 +15,11 @@ Este documento é um guia para ajudá-lo a contribuir da melhor forma possível.
 5.  [Base de conhecimento (RAG)](#-base-de-conhecimento-rag)
 6.  [Abrindo um pull request](#-abrindo-um-pull-request)
 
----
 
 ## 🤝 Código de Conduta
 
 Este projeto e todos os seus participantes estão sob o nosso [Código de Conduta](CODE_OF_CONDUCT.md). Ao participar, espera-se que você mantenha este código. Por favor, reporte comportamentos inaceitáveis para `assistentedeapoiolgbtvox@gmail.com`.
 
----
 
 ## 🚀 Como Começar
 
@@ -60,21 +58,20 @@ Se você quer rodar o projeto localmente para testar mudanças:
     > **🔒 Credenciais do Supabase (Interno):**
     > O Vox utiliza o **Supabase** para RAG e Logs. Essas credenciais não são públicas.
     > 
-    > * **Sem credenciais:** O projeto rodará normalmente, mas usando apenas o conhecimento geral da IA (sem a base de dados do projeto). Você verá avisos de conexão no terminal, o que é esperado.
-    > * **Precisa desenvolver algo no banco?** Se a feature que você deseja implementar depende estritamente do acesso ao banco de dados, envie um e-mail para a equipe ou abra uma ssue descrevendo a necessidade. Podemos fornecer credenciais temporárias ou um ambiente de sandbox.
+    > * **Sem credenciais:** <u>O projeto rodará sem conexão com a base de dados do projeto usando apenas a resposta da IA</u>. Você verá avisos de conexão no terminal, o que é esperado.
+    > * **Precisa de acesso ao banco?** Se a feature que você deseja implementar depende estritamente do acesso ao banco de dados, envie um e-mail para a equipe. Podemos fornecer credenciais temporárias ou um ambiente de sandbox.
 6.  **Execute o projeto:**
     ```bash
     streamlit run vox_ai.py
     ```
 
----
 
 ## 🔄 Fluxo de Desenvolvimento
 
 Utilizamos um fluxo simples baseado em branches:
 
-* **`master`**: Código em produção (estável). Não comite diretamente aqui.
-* **`dev`**: Branch principal de desenvolvimento. Seus PRs devem apontar para cá.
+* **`master`**: Código em produção (estável). Não é possível comitar diretamente aqui.
+* **`dev`**: Branch principal de desenvolvimento. **Suas PRs devem apontar para cá.**
 
 **Para nova feature ou correção:**
 1.  Crie uma branch a partir de `dev`:
@@ -82,14 +79,12 @@ Utilizamos um fluxo simples baseado em branches:
     git checkout -b feat/minha-nova-feature
     ```
 
----
 
 ## 📝 Padrões de Commit
 
 Utilizamos a especificação **[Conventional Commits](https://www.conventionalcommits.org/)**. Isso é **obrigatório**, pois nosso Changelog é gerado automaticamente com base nessas mensagens.
 
-A estrutura da mensagem deve ser:
-`tipo: descrição curta e imperativa`
+A estrutura da mensagem deve ser: `tipo: descrição curta e imperativa`, como exemplificado na tabela abaixo.
 
 **Tipos aceitos:**
 
@@ -104,17 +99,18 @@ A estrutura da mensagem deve ser:
 | **test** | Adição ou correção de testes | `test: adiciona teste unitário para utils.py` |
 | **chore** | Tarefas de build, configs, auxiliares | `chore: atualiza dependências do requirements.txt` |
 | **ci** | Alterações em arquivos de CI/CD (GitHub Actions) | `ci: ajusta workflow de deploy no hugging face` |
+| **build** | Alterações no sistema de build ou dependências externas. | `build: atualiza versão do streamlit no requirements.txt`
 
----
 
 ## 🧠 Base de Conhecimento (RAG)
 
 O Vox utiliza uma arquitetura RAG (Retrieval-Augmented Generation). Os dados são armazenados e consultados via **Supabase** (PostgreSQL com `pgvector`).
     
 ⚠️ **Atenção:**
-A base de conhecimento é gerida internamente e atualizada diretamente no banco.
+A base de conhecimento é gerida internamente.
 * **Não há arquivos JSON locais** para editar manualmente com conteúdo novo.
 * Se você encontrou um erro de informação ou quer sugerir um novo tema, por favor, utilize nosso **[Formulário de Sugestão de Conteúdo](https://docs.google.com/forms/d/e/1FAIpQLSemqzlBCsI8LmKNtCRccoHcvP6R8QTvZ7WmbPweBqcpJzqrBQ/viewform)**. A equipe de curadoria analisará sua contribuição.
+* Se planeja codar algo relacionado a base de dados e precisa de acesso a tudo que está presente lá, entre em contato conosco por [e-mail](mailto:assistentedeapoiolgbtvox@gmail.com).
 
 
 ## 📥 Abrindo um Pull Request
@@ -122,14 +118,14 @@ A base de conhecimento é gerida internamente e atualizada diretamente no banco.
 1.  Certifique-se de que seu código está rodando sem erros.
 2.  Faça o Push da sua branch para o seu fork.
 3.  Abra um Pull Request para a branch **`dev`** do repositório original.
-4.  Na descrição do PR, explique o que foi feito e vincule a Issue relacionada (se houver).
+4.  Na descrição do PR, explique o que foi feito e vincule a issue relacionada (se houver).
 5.  Aguarde a revisão da equipe! 💜
 
 
 ## 💬 Dúvidas e Discussões
 
-Antes de abrir uma Issue, verifique se sua dúvida já não foi respondida.
+Antes de abrir uma issue, verifique se sua dúvida já não foi respondida.
 
 * **Tem uma pergunta geral ou ideia?** Use o nosso [GitHub Discussions](https://github.com/emn-f/vox-ai/discussions). É o melhor lugar para sugerir melhorias que ainda não são features concretas ou tirar dúvidas de setup.
-* **Encontrou um bug ou quer uma feature específica?** Abra uma [Issue](https://github.com/emn-f/vox-ai/issues/new/choose) utilizando os templates oficiais.
+* **Encontrou um bug ou quer uma feature específica?** Abra uma [issue](https://github.com/emn-f/vox-ai/issues/new/choose) utilizando os templates oficiais.
 * **Assuntos sensíveis/segurança?** Envie um e-mail para `assistentedeapoiolgbtvox@gmail.com` (veja nossa [Política de Segurança](SECURITY.md)).

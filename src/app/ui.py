@@ -1,8 +1,10 @@
-import streamlit as st
 import time
+
+import streamlit as st
 
 from src.config import CSS_PATH
 from src.core.database import salvar_report
+
 
 def configurar_pagina():
     st.set_page_config(page_title='Vox AI', page_icon='🏳️‍🌈')

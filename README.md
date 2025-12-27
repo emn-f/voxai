@@ -20,83 +20,40 @@ license: mit
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://docs.github.com/en/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-> **Tecnologia social open source que une Inteligência Artificial e acolhimento para a comunidade LGBTQIA+.**
-
-### 🚀 [Acesse o Vox AI](https://assistentevox.streamlit.app/) | 📊 [Ver Dashboard no GitPages](https://emn-f.github.io/vox-ai/)
-
----
+### [Acesse aqui o Vox AI](https://assistentevox.streamlit.app/) | [Dashboard no GitPages](https://emn-f.github.io/vox-ai/)
 
 ## 📋 Sumário
 * [💡 Sobre o Projeto](#-sobre-o-projeto)
 * [✨ Funcionalidades](#-funcionalidades)
 * [💻 Tecnologias Utilizadas](#-tecnologias-utilizadas)
-* [🤝 Nossa Parceria: Casa Marielle Franco](#-nossa-parceria-casa-marielle-franco)
-* [🚀 Rodando o Projeto Localmente](#-rodando-o-projeto-localmente)
-* [🤝 Como Contribuir](#-como-contribuir)
 * [🤖 Automação e CI/CD](#-automação-e-cicd)
+* [🤝 Como Contribuir](#-como-contribuir)
 * [⚖️ Governança e Ética](#️-governança-e-ética)
 * [📝 Licença](#-licença)
+* [🤝 Parceria com a Casa de Cultura Marielle Franco](#--parceria-com-a-casa-de-cultura-marielle-franco)
 * [👥 Equipe](#-equipe)
 * [📬 Contato](#-contato)
 
 ## 💡 Sobre o Projeto
-O **Vox AI** é um assistente de apoio e informação LGBTQIA+. Iniciado como um projeto de extensão universitária na **Universidade Católica do Salvador (UCSal)**, o Vox evoluiu para uma iniciativa open source robusta de combate à desinformação e promoção da cidadania. Liderado por Emanuel Ferreira, o projeto foca na comunidade de Salvador, Bahia, mas serve como modelo replicável de IA Responsável. 
+O **Vox AI** é um chatbot de apoio e informação a comunidade LGBTQIA+.
 
 ### Missão
-Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orientação e acolhimento. O Vox AI usa tecnologia para combater a desinformação e promover cidadania, respeito e dignidade.
+Ser um ponto de apoio digital seguro, oferecendo informações confiáveis, orientação e acolhimento para a comunidade e seus aliados. O Vox AI usa tecnologia para combater a desinformação e promover cidadania, respeito e dignidade.
 
 ## ✨ Funcionalidades
 
 * **Interface Acolhedora:** Chatbot intuitivo desenvolvido com Streamlit, focado na experiência do usuário.
 * **Busca Semântica (RAG):** Respostas embasadas em uma base de conhecimento curada, utilizando `SentenceTransformers` para garantir precisão e evitar alucinações.
-* **IA Generativa Responsável:** Integração com Google Gemini, instruído para atuar com empatia e segurança.
+* **IA Generativa:** Integração com Google Gemini, instruído para atuar com empatia e segurança.
 * **Feedback Loop:** Mecanismo de avaliação integrado para melhoria contínua baseada na opinião da comunidade.
-* **Portal de Transparência:** Um [Dashboard](https://emn-f.github.io/vox-ai/) público para acompanhar changelogs, status da base de dados e métricas do projeto.
+* **Portal de Transparência:** Um [Dashboard](https://emn-f.github.io/vox-ai/) público para acompanhar changelogs, status da base de dados e outras métricas do projeto.
 
 ## 💻 Tecnologias Utilizadas
 
 * **Core:** Python 3.11+, Streamlit.
-* **IA:** Google Gemini 1.5 Flash (via `gemini-flash-latest`), Sentence-Transformers (RAG).
+* **IA:** Google Gemini Flash (modelo `gemini-flash-latest`), Sentence-Transformers (RAG).
 * **Dados:** Supabase (Banco Vetorial e Logs).
 * **DevOps:** GitHub Actions (CI/CD), Git Cliff (Changelog), Hugging Face (Deploy).
-
-## 🤝 Nossa Parceria: Casa Marielle Franco
-
-O Projeto Vox AI tem uma parceria oficial com a **Casa Marielle Franco**, instituição de acolhimento independente em Salvador (BA). A Casa atua como ponto de escuta e validação de nossos conteúdos, garantindo que a tecnologia esteja alinhada com as reais necessidades da comunidade.
-
-## 🚀 Rodando o Projeto Localmente
-
-Para contribuir ou testar:
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/emn-f/vox-ai.git
-    cd vox-ai
-    ```
-2.  **Instale as dependências:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-3.  **Configure:** Crie um arquivo `.streamlit/secrets.toml` com sua chave da API do Gemini:
-    ```toml
-    GEMINI_API_KEY = "SUA_CHAVE_AQUI"
-    
-    [supabase]
-    url = "SUA_URL_SUPABASE"
-    key = "SUA_CHAVE_ANON_SUPABASE"
-    ```
-    > **🔒 Acesso ao Banco de Dados (Supabase):**
-    > As credenciais do Supabase são internas da equipe Vox AI.
-    > * **Para rodar:** O projeto funciona **sem** elas (apenas sem histórico e busca na base de conhecimento). Basta configurar a `GEMINI_API_KEY`.
-    > * **Para desenvolver:** Se sua nova feature **exige** integração com o banco de dados, entre em contato com a equipe (`assistentedeapoiolgbtvox@gmail.com`) explicando sua proposta para avaliarmos o fornecimento de credenciais de teste.
-4.  **Execute:**
-    ```bash
-    streamlit run vox_ai.py
-    ```
-
-## 🤝 Como Contribuir
-
-Contribuições são bem-vindas! Consulte nosso [**Guia de Contribuição**](CONTRIBUTING.md) para detalhes sobre padrões de commit, setup e fluxo de desenvolvimento.
 
 ## 🤖 Automação e CI/CD
 
@@ -104,6 +61,11 @@ Contribuições são bem-vindas! Consulte nosso [**Guia de Contribuição**](CON
 * **Changelog Automático:** Gerado via Git Cliff a cada atualização.
 * **Sync de Dados:** Sincronização automática entre Google Sheets e JSON.
 * **Deploy Contínuo:** Espelhamento automático para o Hugging Face Spaces.
+
+## 🤝 Como Contribuir
+
+Contribuições são bem-vindas! Consulte nosso [**Guia de Contribuição**](CONTRIBUTING.md) para detalhes sobre padrões de commit, setup e fluxo de desenvolvimento.
+
 
 ## ⚖️ Governança e Ética
 
@@ -117,11 +79,15 @@ Segurança e respeito são pilares do Vox. Consulte nossos documentos oficiais:
 
 Licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE).
 
+## 🤝 Parceria com a Casa de Cultura Marielle Franco
+
+O Projeto Vox AI tem uma parceria oficial com a **Casa de Cultura Marielle Franco**, instituição de acolhimento independente em Salvador (BA). A Casa atua como ponto de escuta e validação de nossos conteúdos, garantindo que a tecnologia esteja alinhada com as reais necessidades da comunidade.
+
 ## 👥 Equipe
 
 **Liderança Técnica:** [Emanuel Ferreira](https://github.com/emn-f)
 
-**Colaboradores (Curadoria):** Alicia Batista, Brenda Pires, Fernanda Souza, [Kauã Araujo](https://github.com/Kauagit99), Lucca Pertigas, [Marcio Ventura](https://github.com/cau-r).
+**Colaboradores (Curadoria):** Alicia Batista, Brenda Pires, Fernanda Souza, Kauã Araujo, Lucca Pertigas, Marcio Ventura.
 
 ## 📬 Contato
 

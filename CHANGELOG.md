@@ -124,7 +124,7 @@ Todas as alterações notáveis neste projeto serão documentadas neste arquivo.
 ## v2.8.1 - 26/11/2025
 
 ### ✨ Funcionalidades
-- Adiciona Issue Templates para bug reports, feature requests e outras tarefas.
+- Adiciona issue Templates para bug reports, feature requests e outras tarefas.
 
 ### 📚 Documentação
 - Update `CHANGELOG.md`.

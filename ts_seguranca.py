@@ -1,0 +1,1 @@
+API_SECRET_KEY="test_key_fake_para_validar_o_bloqueio_do_gatekeep"

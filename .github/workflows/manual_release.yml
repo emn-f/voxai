@@ -68,6 +68,6 @@ jobs:
 
           git remote set-url origin https://emn-f:${{ secrets.TOKEN_DEPLOY_VOX }}@github.com/${{ github.repository }}.git
           
-          git push origin main --tags
+          git push origin ${{ github.ref_name }} --tags
 
           echo "✅ Versão Manual ${NEW_TAG} lançada!"

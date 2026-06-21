@@ -47,6 +47,12 @@ SIDEBAR_STYLES = """
 </style>
 """
 
+SAUDACAO = """
+Oi! Que bom te ver por aqui. Sou o Vox AI, seu espaço seguro para tirar dúvidas sobre saúde, direitos, acolhimento e tudo que envolve a nossa comunidade LGBTQIA+. 
+
+Como posso te apoiar hoje?
+"""
+
 SIDEBAR_BODY = f"""
 {SIDEBAR_STYLES}
 <div class="vox-sidebar-container">
@@ -57,8 +63,8 @@ SIDEBAR_BODY = f"""
             informações e recursos confiáveis.
         </div>
         
-        <div style="margin-bottom: 1.5em;">
             <div class="vox-title-group">Siga nosso trabalho</div>
+            
             <ul class="vox-sidebar-links" style="padding-left: 0; list-style: none; line-height: 1.8em;">
                 <li>
                     <a href="{INSTAGRAM_VOX}" target="_blank" class="link-insta">
@@ -82,7 +88,6 @@ SIDEBAR_BODY = f"""
                     </a>
                 </li>
             </ul>
-        </div>
 
         <div class="vox-title-group">Conecte-se</div>
         <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 1em;">

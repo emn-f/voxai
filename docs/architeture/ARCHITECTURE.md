@@ -155,9 +155,8 @@ O Vox AI foi desenhado seguindo princípios de *Privacy by Design* e em conformi
 * ***Vector Store***: Supabase (`pgvector`)
 * ***LLM & Embeddings***: Google Gemini API (`gemini-3-flash-preview` e `gemini-embedding-001`)
 * ***CI/CD***: GitHub Actions (Deploy automático de Migrations e Code Review)
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

@@ -1,6 +1,6 @@
 # Guia de Contribuição do Vox AI
 
-> Último modificação em 21/05/2026
+> Último modificação em 21/06/2026
 
 Primeiramente,
  **obrigado** por seu interesse em contribuir com o Vox AI! 🎉
@@ -8,6 +8,8 @@ Primeiramente,
 Somos um projeto de código aberto focado em tecnologia social e inclusão. Seja corrigindo um bug, melhorando a documentação, aprimorando nossa base de conhecimento ou propondo novas features, sua ajuda é essencial para tornarmos este assistente cada vez mais seguro e útil para a comunidade LGBTQIA+.
 
 Este documento é um guia para ajudá-lo a contribuir da melhor forma possível.
+
+Não é desenvolvedor? Veja nosso [Guia de Contribuição para Não Desenvolvedores](../docs/standards/CONTRIBUTING_NON_DEVS.md)
 
 ## 📚 Índice
 
@@ -34,7 +36,7 @@ Se você quer rodar o projeto localmente para testar mudanças:
     git clone https://github.com/SEU-USUARIO/vox-ai.git
     cd vox-ai
     ```
-3.  **Instale o uv** (Gerenciador de pacotes rápido do Python):
+3.  **Instale o uv**:
     ```bash
     # macOS e Linux
     curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -44,28 +46,15 @@ Se você quer rodar o projeto localmente para testar mudanças:
     ```
     Após a instalação ser concluída, reinicie o terminal.
 4.  **Crie e ative o ambiente virtual (Python >= 3.13):**
+    ```bash
+    # Criando o ambiente virtual (.venv):**
+    uv venv
     
-    * **Criando o ambiente virtual (.venv):**
-      ```bash
-      uv venv
-      # ou usando o Python diretamente:
-      python -m venv .venv
-      ```
+    # Ativando no Linux/macOS:**
+    source .venv/bin/activate
     
-    * **Ativando no Linux/macOS:**
-      ```bash
-      source .venv/bin/activate
-      ```
-    
-    * **Ativando no Windows (PowerShell):**
-      ```powershell
-      .venv\Scripts\Activate.ps1
-      ```
-    
-    * **Ativando no Windows (Prompt de Comando - CMD):**
-      ```cmd
-      .venv\Scripts\activate.bat
-      ```
+    # Ativando no Windows (shell)
+    .venv\Scripts\Activate.ps1
 5.  **Instale as dependências:**
     ```bash
     uv sync
@@ -101,23 +90,7 @@ Se você quer rodar o projeto localmente para testar mudanças:
 
 ## 🧪 Executando Testes
 
-O Vox AI possui testes unitários e de integração estruturados com `pytest`. Para executá-los, certifique-se de estar com o ambiente virtual ativado e execute:
-
-* **Executar todos os testes:**
-  ```bash
-  uv run pytest
-  ```
-
-* **Executar apenas testes unitários:**
-  ```bash
-  uv run pytest -m unit
-  ```
-
-* **Executar apenas testes de integração (requer chaves/APIs externas):**
-  ```bash
-  uv run pytest -m integration
-  ```
-
+O Vox AI possui testes unitários e de integração estruturados com `pytest`. Para executá-los, certifique-se de estar com o ambiente virtual ativado e execute `uv run pytest`.
 
 ## 🔄 Fluxo de Desenvolvimento
 
@@ -126,17 +99,11 @@ Utilizamos um fluxo simples baseado em branches:
 * **`main`**: Código em produção (estável). Não é possível comitar diretamente aqui.
 * **`develop`**: Branch principal de desenvolvimento. **Suas PRs devem apontar para cá.**
 
-**Para nova feature ou correção:**
-1.  Crie uma branch a partir de `main`:
-    ```bash
-    git checkout -b feat/minha-nova-feature
-    ```
-
 ##  📝 Padrões e Convenções
 
 ### Padrões de Commit
 
-Utilizamos a especificação **Conventional Commits**. Isso é **obrigatório**, pois nosso Changelog é gerado automaticamente. Nossos hooks bloquearão seu commit se ele estiver fora do padrão.
+Utilizamos a especificação **Conventional Commits**. Isso é **obrigatório**, pois nosso Changelog é gerado automaticamente (via [git-cliff](../cliff.toml)). Nossos [hooks](../scripts/install_hooks.py) bloquearão seu commit se ele estiver fora do padrão.
 
 Consulte o nosso arquivo **[CONVENTIONAL_COMMITS.md](../docs/standards/CONVENTIONAL_COMMITS.md)** para ver a lista completa de tipos, escopos aceitos e exemplos específicos do projeto.
 
@@ -165,7 +132,7 @@ Para mais informações sobre o acesso ao banco no Supabase, consulte **[SUPABAS
 
 ### Documentação de Funções (Docstrings e Tipagem)
 
-Para garantir que o código continue legível e de fácil manutenção por toda a comunidade, **toda nova função criada deve conter uma docstring explicativa** de acordo com o padrão **PEP 257** e anotações de tipos (*Type Hints*) corretas.
+Para garantir que o código continue legível e de fácil manutenção por toda a comunidade, **toda nova função criada deve conter uma docstring explicativa** de acordo com o padrão **[PEP 257](https://peps.python.org/pep-0257/)** e anotações de tipos (*Type Hints*) corretas.
 
 A docstring deve descrever resumidamente:
 1. O objetivo geral da função.
@@ -191,18 +158,17 @@ def texto_para_audio(texto: str) -> io.BytesIO:
 
 O Vox utiliza uma arquitetura RAG (Retrieval-Augmented Generation). Os dados são armazenados e consultados via **Supabase** (PostgreSQL com `pgvector`).
 
-> 🏳️‍🌈 **Não sabe programar?** Se você quer contribuir apenas criando, sugerindo ou revisando textos da base de conhecimento (como psicólogo, profissional de saúde ou ativista), criamos um guia especial para você: leia o **[Guia de Contribuição para Não-Devs](../docs/standards/CONTRIBUTING_NON_DEVS.md)**.
     
 ⚠️ **Atenção:**
 A base de conhecimento é gerida internamente.
 * Se você encontrou um erro de informação ou quer sugerir um novo tema, por favor, utilize nosso **[Formulário de Sugestão de Conteúdo](https://docs.google.com/forms/d/e/1FAIpQLSemqzlBCsI8LmKNtCRccoHcvP6R8QTvZ7WmbPweBqcpJzqrBQ/viewform)**. A equipe de curadoria analisará sua contribuição.
 * Se planeja codar algo relacionado a base de dados e precisa de acesso a tudo que está presente lá, entre em contato conosco por [e-mail](mailto:assistentedeapoiolgbtvox@gmail.com).
 
-## 📥 Abrindo um Pull Request
+## 📥 Abrindo um PR
 
 1.  Certifique-se de que seu código está rodando sem erros.
 2.  Faça o Push da sua branch para o seu fork.
-3.  Abra um Pull Request para a branch **`develop`** do repositório original.
+3.  **Abra um Pull Request para a branch `develop` do repositório original.**
 4.  Na descrição do PR, explique o que foi feito e vincule a issue relacionada (se houver).
 5.  Aguarde a revisão da equipe! 💜
 
@@ -214,10 +180,8 @@ Antes de abrir uma issue, verifique se sua dúvida já não foi respondida.
 * **Tem uma pergunta geral ou ideia?** Use o nosso [GitHub Discussions](https://github.com/emn-f/vox-ai/discussions). É o melhor lugar para sugerir melhorias que ainda não são features concretas ou tirar dúvidas de setup.
 * **Encontrou um bug ou quer uma feature específica?** Abra uma [issue](https://github.com/emn-f/vox-ai/issues/new/choose) utilizando os templates oficiais.
 * **Assuntos sensíveis/segurança?** Envie um e-mail para `assistentedeapoiolgbtvox@gmail.com` (veja nossa [Política de Segurança](SECURITY.md)).
-
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

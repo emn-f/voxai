@@ -27,9 +27,8 @@ Se você precisa de apoio emocional ou jurídico imediato:
 
 
 *Agradecemos por fazer parte da nossa comunidade!* 💜
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

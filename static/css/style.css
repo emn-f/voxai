@@ -47,73 +47,146 @@
 }
 
 .vox-sidebar-title {
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: bold;
     color: transparent;
     background: linear-gradient(90deg, #e63946, #f1c40f, #43aa8b, #4361ee, #b5179e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.6em;
+    text-align: center;
 }
 
-.vox-sidebar-section,
-.vox-sidebar-equipe,
-.disclaimer,
-.copyright {
-    color: #fff;
+/* Cards na sidebar */
+.vox-sidebar-card {
+    background: rgba(128, 128, 128, 0.08);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.vox-sidebar-links {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1em;
-}
-
-.vox-sidebar-links li {
-    margin-bottom: 0.3em;
-}
-
-.vox-sidebar-links a {
+.vox-sidebar-card-title {
+    font-size: 0.8em;
     font-weight: bold;
-    text-decoration: none;
-    transition: filter 0.2s ease-in-out;
-}
-
-.vox-sidebar-links a:hover {
-    filter: brightness(85%);
-}
-
-.footer-links a {
-    text-decoration: none;
     color: #888;
-    font-size:0.85em;
-    color:#888;
-    margin-bottom:0.5em;
-    font-weight:bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.footer-links img {
-    height: 1.5em;
-    vertical-align: middle;
-    margin-right: 5px;
-    filter: grayscale(1);
+.vox-sidebar-section {
+    font-size: 0.92em;
+    line-height: 1.4;
+    color: inherit;
+    opacity: 0.9;
 }
 
+/* Links em formato de botões de lista interativos */
+.vox-sidebar-list {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+.vox-sidebar-list-item a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(128, 128, 128, 0.05);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    border-radius: 8px;
+    text-decoration: none !important;
+    color: inherit !important;
+    font-size: 0.88em;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+div[data-testid="stMarkdownContainer"] .vox-sidebar-list li {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Container de redes sociais */
+.vox-social-grid {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.vox-social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(128, 128, 128, 0.08);
+    border: 1px solid rgba(128, 128, 128, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vox-social-icon:hover {
+    background: rgba(128, 128, 128, 0.18);
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vox-social-icon img {
+    height: 20px;
+    width: 20px;
+}
+
+/* Links Legais no Footer */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    text-align: center;
+    margin-top: 10px;
+}
 
 .legal-link {
     text-decoration: none;
     color: #888;
-    font-size: 0.85em;
+    font-size: 0.8em;
     transition: color 0.2s;
+    font-weight: 500;
 }
 
 .legal-link:hover {
-    color: #e0e0e0;
+    color: #fff;
     text-decoration: underline;
 }
 
-.link-casa-marielle {
-    display: flex;
-    align-items: center;
+/* Customização dos botões Streamlit na sidebar */
+div[data-testid="stSidebar"] button {
+    border-radius: 10px !important;
+    border: 1px solid rgba(128, 128, 128, 0.2) !important;
+    background-color: rgba(128, 128, 128, 0.05) !important;
+    color: inherit !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    padding: 6px 12px !important;
+}
+
+div[data-testid="stSidebar"] button:hover {
+    background-color: rgba(128, 128, 128, 0.12) !important;
+    border-color: rgba(128, 128, 128, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+div[data-testid="stSidebar"] button[kind="primary"] {
+    background: linear-gradient(90deg, #e63946, #b5179e) !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+div[data-testid="stSidebar"] button[kind="primary"]:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(181, 23, 158, 0.25) !important;
 }

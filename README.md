@@ -81,7 +81,7 @@ O **Vox AI** é um chatbot de apoio e informação a comunidade LGBTQIA+. Nossa 
 ## 💻 Tecnologias Utilizadas
 
 * **Core:** Python 3.13, Streamlit.
-* **IA:** Google Gemini Flash (modelo `gemini-flash-latest`).
+* **IA:** Google Gemini Flash.
 * **RAG:** Google GenAI Embeddings (`gemini-embedding-001`).
 * **Dados:** Supabase (Banco Relacional, Vetorial e Logs).
 * **DevOps:** GitHub Actions (CI/CD), Git Cliff (Changelog), Hugging Face (Deploy), uv (Gestão de Dependências).
@@ -128,9 +128,8 @@ O Projeto Vox tem uma parceria oficial com a **Casa de Cultura Marielle Franco**
 * **E-mail:** [assistentedeapoiolgbtvox@gmail.com](mailto:assistentedeapoiolgbtvox@gmail.com)
 * **Instagram:** [@projetovoxai](https://www.instagram.com/projetovoxai/)
 * **Linktree:** [linktr.ee/vox_ai](https://linktr.ee/vox_ai)
+---
 
-
-
-<div align="center">
-<p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

@@ -66,7 +66,7 @@ if "key_api" in st.session_state:
         )
         st.session_state.primeira_vez = True
 
-        with st.chat_message("assistant", avatar="🤖"):
+        with st.chat_message("assistant", avatar="🌈"):
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
             st.rerun()
@@ -94,7 +94,7 @@ if "key_api" in st.session_state:
         st.session_state.prompt = prompt_final
         st.session_state.hist_exibir.append({"role": "user", "parts": [prompt_final]})
 
-        with st.chat_message("user", avatar="🧑‍💻"):
+        with st.chat_message("user", avatar="👤"):
             st.markdown(prompt_final)
 
         try:
@@ -107,7 +107,7 @@ if "key_api" in st.session_state:
             else:
                 descricao_match = "N/A"
 
-            with st.chat_message("assistant", avatar="🤖"):
+            with st.chat_message("assistant", avatar="🌈"):
                 resposta = gerar_resposta(
                     inicializar_chat_modelo(), prompt_final, info_adicional_contexto
                 )

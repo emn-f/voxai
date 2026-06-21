@@ -15,3 +15,8 @@ Por favor, verifique se você cumpriu os itens abaixo:
 
 ## 📸 Screenshots (Opcional)
 <!-- Se houve mudança visual na interface, coloque prints aqui -->
+---
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

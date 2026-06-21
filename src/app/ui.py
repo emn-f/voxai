@@ -14,6 +14,43 @@ def configurar_pagina() -> None:
     e renderiza o cabeçalho estilizado da aplicação.
     """
     st.set_page_config(page_title="Vox AI: Assistente de Apoio e Informação LGBTQIA+", page_icon="🌈")
+    
+    # Injeta script para atualizar as meta tags no head principal para visual móvel
+    st.markdown(
+        """
+        <script>
+            const doc = window.parent.document;
+            
+            // Atualiza ou cria a tag meta theme-color para a barra de endereços do celular
+            let metaTheme = doc.querySelector('meta[name="theme-color"]');
+            if (!metaTheme) {
+                metaTheme = doc.createElement('meta');
+                metaTheme.name = "theme-color";
+                doc.getElementsByTagName('head')[0].appendChild(metaTheme);
+            }
+            metaTheme.content = "#7209b7";
+            
+            // Configurações para Safari no iOS
+            let appleCapable = doc.querySelector('meta[name="apple-mobile-web-app-capable"]');
+            if (!appleCapable) {
+                appleCapable = doc.createElement('meta');
+                appleCapable.name = "apple-mobile-web-app-capable";
+                doc.getElementsByTagName('head')[0].appendChild(appleCapable);
+            }
+            appleCapable.content = "yes";
+
+            let appleStatus = doc.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+            if (!appleStatus) {
+                appleStatus = doc.createElement('meta');
+                appleStatus.name = "apple-mobile-web-app-status-bar-style";
+                doc.getElementsByTagName('head')[0].appendChild(appleStatus);
+            }
+            appleStatus.content = "black-translucent";
+        </script>
+        """,
+        unsafe_allow_html=True,
+    )
+
     st.markdown(
         """
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">

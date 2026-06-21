@@ -22,3 +22,8 @@ POLICY_SECURITY = f"{GITHUB}/blob/main/.github/SECURITY.md"
 CHANGELOG = f"{GITHUB}/blob/main/CHANGELOG.md"
 LICENSE = f"{GITHUB}/blob/main/LICENSE"
 TERMS_OF_USE = f"{GITHUB}/blob/main/docs/legal/TERMS_OF_USE.md"
+CONTRIBUTING = f"{GITHUB}/blob/main/.github/CONTRIBUTING.md"
+
+# Canais de Apoio e Emergência
+CVV_LINK = "https://www.cvv.org.br/"
+DISQUE_100 = "https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos"

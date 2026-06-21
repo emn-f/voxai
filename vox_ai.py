@@ -66,7 +66,7 @@ if "key_api" in st.session_state:
         )
         st.session_state.primeira_vez = True
 
-        with st.chat_message("assistant", avatar="🤖"):
+        with st.chat_message("assistant", avatar="🌈"):
             msg_placeholder = st.empty()
             msg_placeholder.write_stream(stream_resposta(mensagem_boas_vindas))
             st.rerun()

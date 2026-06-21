@@ -1,5 +1,6 @@
 import time
 
+from src.external_links import CONTRIBUTING
 import streamlit as st
 
 from collections.abc import Iterator
@@ -12,11 +13,11 @@ def configurar_pagina() -> None:
     Configura as propriedades básicas da página web (título, ícone) no Streamlit 
     e renderiza o cabeçalho estilizado da aplicação.
     """
-    st.set_page_config(page_title="Vox AI", page_icon="🏳️‍🌈")
+    st.set_page_config(page_title="Vox AI: Assistente de Apoio e Informação LGBTQIA+", page_icon="🌈")
     st.markdown(
         """
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h1 style="text-align: center">Vox AI</h1>
+            <h2 style="text-align: center">Vox AI</h2>
             <p style="text-align: center; color: gray;">Assistente de Apoio e Informação LGBTQIA+</p>
         </div>
         """,
@@ -120,8 +121,8 @@ def carregar_sidebar(sidebar_content: str, sidebar_footer: str) -> None:
         st.markdown(sidebar_content, unsafe_allow_html=True)
 
         st.link_button(
-            label="💛 Ajude o Vox a crescer!",
-            url="https://forms.gle/fw8CNXaFme3FnNxn6",
+            label="❤️‍🔥 Quer contribuir com o Vox AI?",
+            url=f"{CONTRIBUTING}",
             use_container_width=True,
         )
 
@@ -177,7 +178,7 @@ def exibir_historico_chat(historico_conversa: list) -> None:
     
     for i, msg in enumerate(historico_conversa):
         if msg["role"] == "model":
-            with st.chat_message("assistant", avatar="🤖"):
+            with st.chat_message("assistant", avatar="🌈"):
                 st.markdown(msg["parts"][0], unsafe_allow_html=False)
 
                 chave_botao = f"btn_audio_{i}"
@@ -185,7 +186,7 @@ def exibir_historico_chat(historico_conversa: list) -> None:
                     audio_data = texto_para_audio(msg["parts"][0])
                     st.audio(audio_data, format="audio/mp3")
         else:
-            with st.chat_message("user", avatar="🧑‍💻"):
+            with st.chat_message("user", avatar="👤"):
                 st.markdown(msg["parts"][0])
 
 

@@ -81,7 +81,7 @@ O **Vox AI** é um chatbot de apoio e informação a comunidade LGBTQIA+. Nossa 
 ## 💻 Tecnologias Utilizadas
 
 * **Core:** Python 3.13, Streamlit.
-* **IA:** Google Gemini Flash (modelo `gemini-flash-latest`).
+* **IA:** Google Gemini Flash.
 * **RAG:** Google GenAI Embeddings (`gemini-embedding-001`).
 * **Dados:** Supabase (Banco Relacional, Vetorial e Logs).
 * **DevOps:** GitHub Actions (CI/CD), Git Cliff (Changelog), Hugging Face (Deploy), uv (Gestão de Dependências).

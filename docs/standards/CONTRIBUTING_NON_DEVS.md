@@ -4,7 +4,6 @@ Seja muito bem-vindo(a)! Se você é ativista, profissional de saúde, psicólog
 
 Sua contribuição é fundamental. O Vox AI só é um assistente seguro e acolhedor porque a base do seu conhecimento é escrita e revisada por pessoas de verdade.
 
----
 
 ## 🧠 Como o Vox AI funciona (De forma simples)
 
@@ -17,8 +16,6 @@ Imagine o seguinte fluxo:
 4. O Vox AI lê essas informações e formula uma resposta acolhedora para o usuário, baseando-se estritamente no que está na biblioteca.
 
 > 💡 **Sua missão:** Escrever, revisar ou atualizar os livros/textos dessa **Biblioteca de Apoio**!
-
----
 
 ## ✍️ Diretrizes de Produção de Conteúdo
 
@@ -41,7 +38,6 @@ Cada sugestão de conteúdo deve conter:
 > **Tópico:** Retificação de Nome em Cartório
 > **Descrição:** A retificação de nome e gênero para pessoas trans pode ser feita diretamente em cartórios de registro civil, sem a necessidade de processo judicial ou cirurgia, conforme decisão do STF de 2018 (ADI 4275). É necessário ter mais de 18 anos e apresentar os documentos exigidos pelo Provimento 73 do CNJ, como certidões de nascimento, casamento, e certidões negativas de protesto e distribuidor cível/criminal.
 
----
 
 ## 📩 Como Enviar Sua Contribuição (Sem Programar)
 
@@ -57,11 +53,12 @@ Envie um e-mail para **assistentedeapoiolgbtvox@gmail.com** com o assunto `[CONT
 ### Opção 3: Abrindo uma Issue no GitHub
 Se você já se sente um pouco à vontade com o GitHub, vá na aba **Issues** do projeto e abra uma nova issue com o título `[CONTEÚDO] - Seu tema`. Cole o texto sugerido nela e nós cuidamos do resto!
 
----
 
 ## 🛠️ Quer saber mais sobre a parte técnica?
 Se você, mesmo não sendo programador(a), tiver curiosidade sobre como tudo funciona por baixo dos panos, sinta-se à vontade para explorar a documentação de arquitetura técnica:
+* [Documentação Técnica do Vox AI](https://emn-f.github.io/vox-ai-docs/)
 * [Arquitetura Geral do Vox AI](../architeture/ARCHITECTURE.md)
+* [Guia de Contribuição (para devs)](../../.github/CONTRIBUTING.md)
 * [Guia de Acesso ao Supabase](SUPABASE_ACCESS.md)
 ---
 

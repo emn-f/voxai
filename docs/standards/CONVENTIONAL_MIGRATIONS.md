@@ -48,10 +48,8 @@ Use estes verbos no início do nome para categorizar o tipo de mudança:
 ---
 > **Dica**: No Supabase CLI, o comando fica:
 > `supabase db diff --use-migra -f <nome_padrao>`
-
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

@@ -20,3 +20,8 @@ Cole aqui imagens ou logs do erro (apenas se não contiverem dados sensíveis).
 ## 🌍 Ambiente (Opcional)
 - Dispositivo: [ex: Android, PC]
 - Navegador: [ex: Chrome, Edge]
+---
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

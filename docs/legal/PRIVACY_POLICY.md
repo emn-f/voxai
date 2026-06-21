@@ -100,6 +100,8 @@ Para dúvidas, reclamações ou solicitações relacionadas a privacidade, entre
 - Repositório do projeto: https://github.com/emn-f/vox-ai
 
 Obrigado por confiar no Vox AI. Trabalhamos para oferecer um ambiente seguro, respeitoso e útil para toda a comunidade.
-
 ---
-© 2026 Projeto Vox
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

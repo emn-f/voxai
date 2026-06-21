@@ -209,9 +209,8 @@ Avise a equipe por e-mail. Removeremos seu convite da organização Supabase e r
 
 **Posso usar o Supabase Studio para explorar o schema do banco?**
 Sim! O Studio é ótimo para isso. Só tome cuidado para não modificar dados ou schema diretamente — sempre via migration.
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

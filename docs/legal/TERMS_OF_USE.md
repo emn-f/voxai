@@ -52,6 +52,8 @@ Podemos atualizar estes Termos de Uso periodicamente para refletir mudanças na 
 ## 8. Contato
 
 Para dúvidas sobre estes termos, suporte ou denúncias, entre em contato através do e-mail: **assistentedeapoiolgbtvox@gmail.com**
-
 ---
-© 2026 Projeto Vox
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

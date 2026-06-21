@@ -64,10 +64,8 @@ Fontes dos ícones utilizados na interface (Icons8 - Biblioteca Fluency e Color)
 * **LinkedIn (Fluency):** `https://img.icons8.com/fluency/48/linkedin.png`
 * **Estrela/Avaliar (Fluency):** `https://img.icons8.com/fluency/48/star.png`
 * **Gmail (Fluency):** `https://img.icons8.com/fluency/48/gmail-new.png`
-
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
-</div>s
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

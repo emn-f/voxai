@@ -17,3 +17,8 @@ Se tiver exemplos, desenhos ou descrições de como seria a interação, coloque
 
 ## ℹ️ Informações Adicionais
 Algum outro contexto ou links de referência?
+---
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

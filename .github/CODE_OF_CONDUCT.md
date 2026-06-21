@@ -43,9 +43,8 @@ A equipe do projeto compromete-se a manter a confidencialidade em relação ao r
 ## 6. Atribuição
 
 Este Código de Conduta foi adaptado do [Contributor Covenant](https://www.contributor-covenant.org), versão 2.1.
-
 ---
 
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

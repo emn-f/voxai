@@ -180,3 +180,8 @@ Antes de abrir uma issue, verifique se sua dúvida já não foi respondida.
 * **Tem uma pergunta geral ou ideia?** Use o nosso [GitHub Discussions](https://github.com/emn-f/vox-ai/discussions). É o melhor lugar para sugerir melhorias que ainda não são features concretas ou tirar dúvidas de setup.
 * **Encontrou um bug ou quer uma feature específica?** Abra uma [issue](https://github.com/emn-f/vox-ai/issues/new/choose) utilizando os templates oficiais.
 * **Assuntos sensíveis/segurança?** Envie um e-mail para `assistentedeapoiolgbtvox@gmail.com` (veja nossa [Política de Segurança](SECURITY.md)).
+---
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
+</div>

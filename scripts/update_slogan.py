@@ -16,7 +16,7 @@ import subprocess
 
 ANO_ATUAL = datetime.today().year
 
-SLOGAN = f"Copyright © {ANO_ATUAL} Vox AI: Segurança para ser quem você é! 🏳️‍🌈"
+SLOGAN = f"© {ANO_ATUAL} Vox AI: Segurança para ser quem você é."
 
 FOOTER = f'\n---\n\n<div align="left">\n    <p>{SLOGAN}</p>\n</div>'
 

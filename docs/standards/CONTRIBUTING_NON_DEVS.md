@@ -63,8 +63,8 @@ Se você já se sente um pouco à vontade com o GitHub, vá na aba **Issues** do
 Se você, mesmo não sendo programador(a), tiver curiosidade sobre como tudo funciona por baixo dos panos, sinta-se à vontade para explorar a documentação de arquitetura técnica:
 * [Arquitetura Geral do Vox AI](../architeture/ARCHITECTURE.md)
 * [Guia de Acesso ao Supabase](SUPABASE_ACCESS.md)
-
 ---
-<div align="center">
-    <p>🤖 Vox AI: conversas que importam 🏳️‍🌈</p>
+
+<div align="left">
+    <p>© 2026 Vox AI: Segurança para ser quem você é.</p>
 </div>

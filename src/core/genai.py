@@ -22,7 +22,7 @@ def configurar_api_gemini() -> genai.Client:
             st.session_state.gemini_client = genai.Client(
                 api_key=get_secret("GEMINI_API_KEY")
             )
-            logger.info("API Gemini configurada com sucesso.")
+            logger.debug("API Gemini configurada com sucesso.")
         except Exception as e:
             logger.error(f"Erro ao configurar a API do Gemini: {e}")
             st.error(f"Erro ao configurar a API do Gemini: {e}")

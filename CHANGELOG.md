@@ -7,6 +7,9 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 > _Arquivo gerado automaticamente via `git-cliff`._
 
 
+## v4.0.2 - 21/06/2026
+
+
 ## v4.0.1 - 07/06/2026
 
 

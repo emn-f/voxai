@@ -11,6 +11,25 @@ logging.basicConfig(
     handlers=[logging.StreamHandler()],
 )
 
+# Silenciar loggers verbosos de terceiros e clientes HTTP para manter o log limpo e útil
+NOISY_LOGGERS = [
+    "google_genai",
+    "google_genai._api_client",
+    "google_genai.models",
+    "google_genai._common",
+    "google_genai._interactions",
+    "httpx",
+    "httpcore",
+    "urllib3",
+    "streamlit",
+    "absl",
+    "postgrest",
+    "asyncio",
+    "urllib3.connectionpool",
+]
+for logger_name in NOISY_LOGGERS:
+    logging.getLogger(logger_name).setLevel(logging.WARNING)
+
 # Logger principal
 logger = logging.getLogger("Vox AI")
 
@@ -19,15 +38,15 @@ logger = logging.getLogger("Vox AI")
 CSS_PATH = "static/css/style.css"
 
 # Configurações de IA
-GEMINI_MODEL_NAME = "gemini-3.5-flash"
+GEMINI_MODEL_NAME = "gemini-3.6-flash"
 GEMINI_MODEL_GATEKEEP = "gemini-3.1-flash-lite"
 MODELO_SEMANTICO_NOME = "gemini-embedding-001"
 TAMANHO_VETOR_SEMANTICO = 1536
 
 # Config da KB
-SEMANTICA_THRESHOLD = 0.5
-LIMITE_TEMAS = 10
-MAX_CHUNCK = 25
+SEMANTICA_THRESHOLD = 0.58
+LIMITE_TEMAS = 6
+MAX_CHUNCK = 15
 
 # Configurações de UI
 PAGE_TITLE = 'Vox AI'

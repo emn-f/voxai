@@ -97,12 +97,12 @@ def recuperar_contexto_inteligente(vector_embedding: list[float]) -> tuple[str |
     if not resultados_iniciais:
         return None, "Nenhuma referencia encontrada na base de conhecimento.", None
 
-    def _gerar_fallback_top5() -> tuple[list[str], list[dict[str, Any]]]:
-        top_5 = resultados_iniciais[:5]
-        contexto = [item["descricao"] for item in top_5]
+    def _gerar_fallback_top3() -> tuple[list[str], list[dict[str, Any]]]:
+        top_3 = resultados_iniciais[:3]
+        contexto = [item["descricao"] for item in top_3]
         ids_usados = []
         
-        for item in top_5:
+        for item in top_3:
             kid = item.get("kb_id") or item.get("id")
             if kid:
                 ids_usados.append({"kb_id": kid, "similarity": item.get("similarity")})
@@ -121,7 +121,7 @@ def recuperar_contexto_inteligente(vector_embedding: list[float]) -> tuple[str |
     fonte_origem = "Busca por similaridade (Fragmentos)"
 
     if not contagem_topicos:
-        contexto_final, lista_ids_usados = _gerar_fallback_top5()
+        contexto_final, lista_ids_usados = _gerar_fallback_top3()
         return "\n---\n".join(contexto_final), fonte_origem, lista_ids_usados
 
     topico_vencedor = max(contagem_topicos, key=contagem_topicos.get)
@@ -143,11 +143,11 @@ def recuperar_contexto_inteligente(vector_embedding: list[float]) -> tuple[str |
 
         except Exception as e:
             logger.warning(f"⚠️ Erro ao expandir contexto: {e}. Usando fallback.")
-            contexto_final, lista_ids_usados = _gerar_fallback_top5()
+            contexto_final, lista_ids_usados = _gerar_fallback_top3()
 
     else:
         logger.info(f"🔍 Estratégia: Tópicos mistos (Vencedor '{topico_vencedor}')")
         fonte_origem = f"Tópicos mistos (Vencedor: {topico_vencedor})"
-        contexto_final, lista_ids_usados = _gerar_fallback_top5()
+        contexto_final, lista_ids_usados = _gerar_fallback_top3()
 
     return "\n---\n".join(contexto_final), fonte_origem, lista_ids_usados
